@@ -1,0 +1,22 @@
+.basic {
+  .cancel-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 6px;
+    border-radius: 30px;
+    &:hover {
+      background-color: #eaf0f2;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #EAF0F2;
+    border-radius: 5px;
+  }
+}
+
+// p-2.5 bg-gray-100 rounded-[5px] flex justify-between items-center
