@@ -20,11 +20,11 @@ const TaskCardList = () => {
     <div className="card-list">
       <div className="card-list-title">
         <TitleLabel icon={taskImg} title="משימות" />
-        <div className="card-list-title-main">
+        <div className="card-list-title-buttons">
           <div style={{ padding: "10px" }}>
             <InlineSVG src={listImg} />
           </div>
-          <div className="card-list-title-main-text">כל המשימות</div>
+          <div className="card-list-title-buttons-text">כל המשימות</div>
         </div>
       </div>
       <TaskCard

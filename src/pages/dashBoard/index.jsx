@@ -4,25 +4,25 @@ import DashBoard1 from "./Dashboard1";
 import DashBoard2 from "./Dashboard2";
 
 const DashBoard = () => {
-  const [isClick, setClick] = useState(true);
+  const [click, setClick] = useState(true);
 
   return (
     <>
+      {click ? <DashBoard1 /> : <DashBoard2 />}
       <div className="dashboard">
         <button
           onClick={() => setClick(true)}
-          style={{ color: isClick ? "#60a5fa" : "white" }}
+          className={click ? "selected" : "unselected"}
         >
-          <div style={{ color: isClick ? "white" : "#60a5fa" }}>1</div>
+          1
         </button>
         <button
           onClick={() => setClick(false)}
-          style={{ color: isClick ? "#60a5fa" : "white" }}
+          className={click ? "unselected" : "selected"}
         >
-          <div style={{ color: isClick ? "white" : "#60a5fa" }}>2</div>
+          2
         </button>
       </div>
-      {isClick ? <DashBoard1 /> : <DashBoard2 />}
     </>
   );
 };

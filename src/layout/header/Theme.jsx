@@ -87,6 +87,7 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
           <div className="header-theme-modal-main-board">
             {colors.map((themeColors, index) => (
               <div
+                key={index}
                 style={{
                   paddingBottom:
                     index + 1 === colors.length ? "18.5px" : "12px",
@@ -100,8 +101,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                 className="header-theme-modal-main-board-theme"
               >
                 <div className="header-theme-modal-main-board-theme-bar">
-                  {themeColors.reverse().map((color) => (
+                  {themeColors.reverse().map((color, index) => (
                     <div
+                      key={index}
                       className="header-theme-modal-main-board-theme-bar-color"
                       style={{
                         background: color,

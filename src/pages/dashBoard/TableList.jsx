@@ -13,7 +13,7 @@ const TableList = () => {
   return (
     <div>
       <div className="table-list">
-        <div style={{ gridColumn: "span 2" }}>
+        <div style={{ gridColumn: "span 1" }}>
           <Table
             icon={usersImg}
             title="מגעים חסרים של מעל לשבוע"
@@ -21,7 +21,7 @@ const TableList = () => {
             data={TableData.Table1.data}
           />
         </div>
-        <div style={{ gridColumn: "span 2" }}>
+        <div style={{ gridColumn: "span 1" }}>
           <Table
             icon={attachImg}
             title="אישורים לקראת סיום"

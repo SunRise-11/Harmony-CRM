@@ -16,7 +16,13 @@ const MenuItem = ({
   subMenuSelected,
 }) => {
   return (
-    <>
+    <div
+      className={
+        !subMenuSelected || (hasSubMenu && !isSelect)
+          ? "sub-menu-unselected"
+          : "sub-menu-selected"
+      }
+    >
       <div
         className="menu-item"
         onClick={onClick}
@@ -79,7 +85,7 @@ const MenuItem = ({
           ))}
       </div>
       {isSelect && subMenus.map((subMenuItem) => subMenuItem)}
-    </>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ import TimeLabel from "../labels/TimeLabel";
 const TaskCard = ({ avatar, name, title, content, dueContent, color }) => {
   return (
     <div className="task-card">
-      <div>
+      <div className="task-card-header">
         <div className="task-card-avatar">
           <img src={avatar} />
           <div className="task-card-name">{name}</div>

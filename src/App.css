@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
   display: grid;
   place-items: center;
@@ -18,10 +14,9 @@
 }
 
 .ant-segmented .ant-segmented-item-selected {
-  background-color: #0075FF;
+  background-color: #0075ff;
   color: white;
 }
-
 
 .toggle1 .ant-segmented-item {
   padding: 10px 30px;
@@ -38,24 +33,23 @@
   width: 100%;
 }
 
-
 .toggle2 .ant-segmented-item {
   padding: 10px 15px;
 }
 
-.ant-picker .ant-picker-input>input {
+.ant-picker .ant-picker-input > input {
   text-align: right;
   color: black;
   font-size: 1rem;
   font-weight: 500;
-  font-family: 'Heebo';
+  font-family: Heebo;
 }
 
 .ant-picker .ant-picker-input {
   gap: 10px;
 }
 
-.flip-icon-input .ant-picker-input>input {
+.flip-icon-input .ant-picker-input > input {
   order: 1;
 }
 

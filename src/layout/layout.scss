@@ -54,7 +54,7 @@
     &-text {
       padding: 0.375rem 0;
       color: white;
-      font: bold 1.125rem/1.75rem "Nunito Sans";
+      font: bold 1.125rem/1.75rem Nunito Sans;
     }
   }
   &-footer {
@@ -91,7 +91,7 @@
         flex-basis: 0;
         opacity: 0.7;
         text-align: center;
-        font: normal 0.75rem/1rem "Segoe UI";
+        font: normal 0.75rem/1rem Segoe UI;
         &-version {
           text-decoration-line: underline;
         }
@@ -111,7 +111,7 @@
       border-top-right-radius: 0.5rem;
       border-bottom-width: 1px;
       color: black;
-      font: bold 1.125rem/1.75rem "Nunito Sans";
+      font: bold 1.125rem/1.75rem Nunito Sans;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -145,7 +145,7 @@
             align-items: center;
             color: #fff;
             text-align: center;
-            font-family: "Segoe UI";
+            font-family: Segoe UI;
             font-size: 16px;
             font-style: normal;
             font-weight: 600;
@@ -160,7 +160,7 @@
         text-align: right;
         font-size: 1rem;
         font-weight: 400;
-        font-family: "Segoe UI";
+        font-family: Segoe UI;
         line-height: 1.75rem;
       }
       &-gpt {
