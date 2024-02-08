@@ -1,0 +1,35 @@
+.bar-chart {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  & > div:first-child {
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 0.25rem;
+    border: 1px solid #f0f0f0;
+    text-align: right;
+
+    & > div:nth-child(1) {
+      color: #60a5fa;
+      font: 400 1.125rem/1.75rem "Afek 1.5 AAA";
+    }
+
+    & > div:nth-child(2) {
+      color: #1e3a8a;
+      font: 500 36.95px "Roboto";
+    }
+
+    & > div:nth-child(3) {
+      color: #6b7280;
+      font: 400 0.75rem/1rem "Afek 1.5 AAA";
+    }
+  }
+
+  &-main {
+    padding: 32px 16px;
+  }
+}

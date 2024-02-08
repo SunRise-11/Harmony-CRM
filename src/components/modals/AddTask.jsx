@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Modal from "./Basic";
-import Select from "../Select";
-import Input from "../Input";
-import DatePicker from "../DatePicker";
-import ToggleSelector from "../ToggleSelector";
-import UploadFile from "../UploadFile";
-import Label from "../Label";
+import Select from "../common/Select";
+import Input from "../common/Input";
+import DatePicker from "../pickers/DatePicker";
+import ToggleSelector from "../common/ToggleSelector";
+import UploadFile from "../uploads/UploadFile";
+import Label from "../labels/Label";
 
 import taskImg from "../../assets/icons/task.svg";
 import userImg from "../../assets/icons/user.svg";
@@ -22,8 +22,8 @@ const AddTask = ({ visible, onCancel }) => {
       icon={taskImg}
       title="משימה חדשה"
       content={
-        <div className="addtask">
-          <div className="task">
+        <div className="add-task">
+          <div className="add-task-info">
             <div className="w-half">
               <Label title="מקבל שירות" />
               <Select placeholder="בחירת מקבל שירות" icon={userImg} />
@@ -37,7 +37,7 @@ const AddTask = ({ visible, onCancel }) => {
               <Input />
             </div>
           </div>
-          <div className="date">
+          <div className="add-task-date">
             <div className="col-2">
               <Label title="תאריך" />
               <DatePicker />
@@ -47,7 +47,7 @@ const AddTask = ({ visible, onCancel }) => {
               <Select placeholder="יום לפני" />
             </div>
           </div>
-          <div className="state">
+          <div className="add-task-state">
             <div>
               <Label title="סטטוס" />
               <ToggleSelector
@@ -56,7 +56,7 @@ const AddTask = ({ visible, onCancel }) => {
                 options={["טרם התחיל", "בתהליך", "הסתיים"]}
               />
             </div>
-            <div className="mr-24">
+            <div className="add-task-upload">
               <Label title="צירוף קבצים" />
               <UploadFile label="העלאת קבצים" />
             </div>

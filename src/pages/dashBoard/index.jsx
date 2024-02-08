@@ -8,34 +8,18 @@ const DashBoard = () => {
 
   return (
     <>
-      <div className="fixed top-20 left-5 w-[30px] h-[65px] flex-col justify-start items-start gap-[5px] inline-flex">
+      <div className="dashboard">
         <button
           onClick={() => setClick(true)}
-          className={`w-[30px] h-[30px] p-2.5 ${
-            isClick ? "bg-blue-400" : "bg-white"
-          } rounded-[30px] flex-col justify-center items-center gap-2.5 flex`}
+          style={{ color: isClick ? "#60a5fa" : "white" }}
         >
-          <div
-            className={`text-center ${
-              isClick ? "text-white" : "text-blue-400 "
-            } text-2xl font-medium font-['Afek 1.5 AAA']`}
-          >
-            1
-          </div>
+          <div style={{ color: isClick ? "white" : "#60a5fa" }}>1</div>
         </button>
         <button
           onClick={() => setClick(false)}
-          className={`w-[30px] h-[30px] p-2.5 ${
-            !isClick ? "bg-blue-400" : "bg-white"
-          } rounded-[30px] flex-col justify-center items-center gap-2.5 flex`}
+          style={{ color: isClick ? "#60a5fa" : "white" }}
         >
-          <div
-            className={`text-center ${
-              isClick ? "text-blue-400" : "text-white"
-            } text-2xl font-medium font-['Afek 1.5 AAA']`}
-          >
-            2
-          </div>
+          <div style={{ color: isClick ? "white" : "#60a5fa" }}>2</div>
         </button>
       </div>
       {isClick ? <DashBoard1 /> : <DashBoard2 />}

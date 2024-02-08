@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import Modal from "./Basic";
-import DatePicker from "../DatePicker";
-import TimePicker from "../TimePicker";
-import CheckBox from "../CheckBox";
-import ToggleSelector from "../ToggleSelector";
-import UploadDoc from "../UploadDoc";
-import Label from "../Label";
+import DatePicker from "../pickers/DatePicker";
+import TimePicker from "../pickers/TimePicker";
+import CheckBox from "../common/CheckBox";
+import ToggleSelector from "../common/ToggleSelector";
+import UploadDoc from "../uploads/UploadDoc";
+import Label from "../labels/Label";
 
 import reportImg from "../../assets/icons/report.svg";
 
@@ -23,24 +23,24 @@ const AttendModal = ({ visible, onCancel }) => {
       title="טופס דיווח נוכחות"
       flag={false}
       content={
-        <div className="flex flex-col gap-y-5 py-[30px] mt-5 border-b border-gray-300">
-          <div className="grid grid-cols-3 justify-start items-center gap-x-5">
-            <div className="col-span-1">
+        <div className="attend">
+          <div className="attend-time">
+            <div>
               <Label title="תאריך" required={true} />
               <DatePicker />
             </div>
-            <div className="col-span-1">
+            <div>
               <Label title="שעת התחלה" />
               <TimePicker />
             </div>
-            <div className="col-span-1">
+            <div>
               <Label title="שעת סיום" />
               <TimePicker />
             </div>
           </div>
-          <div className="flex flex-col justify-center items-startpb-[15px]">
+          <div className="attend-vacation">
             <Label title="חופשה" required={true} />
-            <div className="flex flex-row items-center gap-x-[60px]">
+            <div className="attend-vacation-checkbox">
               <CheckBox
                 title="לא"
                 checked={!isVacation}
@@ -65,9 +65,9 @@ const AttendModal = ({ visible, onCancel }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-start pb-[15px]">
+          <div className="attend-sickness">
             <Label title="מחלה" required={true} />
-            <div className="w-full flex flex-row items-center gap-x-[60px]">
+            <div className="attend-sickness-checkbox">
               <CheckBox
                 title="לא"
                 checked={!isSickness}

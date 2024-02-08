@@ -1,0 +1,41 @@
+.label {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 0.125rem;
+  &-title {
+    text-align: right;
+    color: rgb(63, 63, 70);
+    font: medium 15px "Afek 1.5 AAA";
+  }
+  &-require {
+    color: #f87171;
+    font: 700 1.5rem/2rem "Afek 1.5 AAA";
+  }
+}
+
+.time-label {
+  border-radius: 5px;
+  padding: 3px 5px 3px 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 5px;
+  &-content {
+    color: white;
+    font: normal 11px/17.6px "Poppins";
+    letter-spacing: -0.025em;
+  }
+}
+
+.title-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 5px;
+  &-main {
+    color: #4a9ecd;
+    font: normal 1.125rem/1.75rem "Afek 1.5 AAA";
+  }
+}

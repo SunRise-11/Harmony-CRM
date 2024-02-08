@@ -2,12 +2,12 @@ import React from "react";
 import { Layout } from "antd";
 const { Sider, Content } = Layout;
 import ThemeContext from "./context/ThemeContext";
-import Header from "./Layout/Header";
-import SideBar from "./Layout/SideBar";
-import ChatGPT from "./Layout/ChatGpt";
+import Header from "./layout/Header";
+import SideBar from "./layout/SideBar";
+import ChatGPT from "./layout/ChatGpt";
 import Page from "./route";
-import "./assets/scss/App.scss";
-
+import "./styles.scss";
+import "./App.css";
 const App = () => {
   const [theme, setTheme] = React.useState("original"); // "suggested", "monday", "dynamics"
   const [ltrRtl, setLtrRtl] = React.useState("RTL");
