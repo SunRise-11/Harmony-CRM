@@ -13,59 +13,62 @@ const MenuItem = ({
   subMenus,
   isSelect,
   onClick,
+  subMenuSelected,
 }) => {
   return (
     <>
       <div
         className="menu-item"
-        style={
-          isSelect
-            ? hasSubMenu
-              ? { backgroundColor: "#E6F7FC" }
-              : {
-                  backgroundColor: "#F7F7F7",
-                  borderLeftWidth: "2px",
-                  borderColor: "#0096Eb",
-                }
-            : { backgroundColor: "#D3EDE6" }
-        }
         onClick={onClick}
+        style={
+          isSubMenu
+            ? isSelect
+              ? {
+                  backgroundColor: "#5FBCFF",
+                  color: "white",
+                }
+              : {
+                  color: "#434F68",
+                }
+            : isSelect
+            ? hasSubMenu
+              ? {
+                  backgroundColor: "#BBE3FF",
+                  color: "#0075FF",
+                  borderTop: subMenuSelected && "1px #0075FF solid",
+                }
+              : {
+                  color: "#FFFFFF",
+                  backgroundColor: "#5FBCFF",
+                  borderLeft: "3px #0096EB solid",
+                }
+            : {}
+        }
       >
-        <div>
+        <div className="menu-item-container">
           <InlineSVG
             src={isSubMenu ? subMenuImg : icon}
-            style={{
-              stroke: isSelect && (hasSubMenu ? "#0075FF" : "white"),
-            }}
-          />
-          <div
-            className="menu-item-title"
             style={
-              isSelect
+              isSubMenu
+                ? isSelect
+                  ? {
+                      stroke: "white",
+                    }
+                  : {
+                      stroke: "#434F68",
+                    }
+                : isSelect
                 ? hasSubMenu
                   ? {
-                      color: "#0075FF",
-                      fontWeight: "1.75rem",
-                      fontSize: "1.125rem",
+                      stroke: "#0075FF",
                     }
-                  : isSubMenu
-                  ? { color: "white", fontSize: "15px" }
                   : {
-                      color: "white",
-                      fontWeight: "1.75rem",
-                      fontSize: "1.125rem",
+                      stroke: "#FFFFFF",
                     }
-                : isSubMenu
-                ? { color: "#475569", fontSize: "15px" }
-                : {
-                    color: "#475569",
-                    fontWeight: "1.75rem",
-                    fontSize: "1.125rem",
-                  }
+                : {}
             }
-          >
-            {title}
-          </div>
+          />
+          <div className="menu-item-title">{title}</div>
         </div>
 
         {hasSubMenu &&
@@ -88,6 +91,7 @@ MenuItem.propTypes = {
   subMenus: PropTypes.arrayOf(PropTypes.any),
   isSelect: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  subMenuSelected: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
@@ -95,6 +99,7 @@ MenuItem.defaultProps = {
   isSubMenu: false,
   subMenus: [],
   icon: null,
+  subMenuSelected: false,
 };
 
 export default MenuItem;

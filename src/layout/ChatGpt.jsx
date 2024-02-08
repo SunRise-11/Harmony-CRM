@@ -37,130 +37,128 @@ const ChatGPT = () => {
           left: "0px",
         }}
       >
-        <div>
-          <div className="chat-gpt">
-            <div className="chat-gpt-board">
-              <div className="chat-gpt-board-title">
-                ChatGPT
-                <InlineSVG src={GPTGreenImg} />
+        <div className="chat-gpt">
+          <div className="chat-gpt-board">
+            <div className="chat-gpt-board-title">
+              ChatGPT
+              <InlineSVG src={GPTGreenImg} />
+            </div>
+            <div className="chat-gpt-board-history-user">
+              <div className="chat-gpt-board-history-user-icon">
+                <div className="chat-gpt-board-history-user-icon-main">Y</div>
               </div>
-              <div className="chat-gpt-board-history-user">
-                <div className="chat-gpt-board-history-user-icon">
-                  <div className="chat-gpt-board-history-user-icon-main">Y</div>
-                </div>
-                <div className="chat-gpt-board-history-user-text">
-                  תוכל לעזור לי להבין מה העקרונות לבניית תקציב אישי ?
-                </div>
-                <div className="chat-gpt-board-history-buttons">
-                  <button>
-                    <InlineSVG src={HandDownImg} />
-                  </button>
-                  <button>
-                    <InlineSVG src={HandUpImg} />
-                  </button>
-                </div>
+              <div className="chat-gpt-board-history-user-text">
+                תוכל לעזור לי להבין מה העקרונות לבניית תקציב אישי ?
               </div>
-              <div className="chat-gpt-board-history-gpt">
-                <InlineSVG
-                  src={GPTImg}
-                  className="chat-gpt-board-history-gpt-icon"
-                />
-                <div className="grow shrink basis-0 text-right">
-                  <span className="chat-gpt-board-history-text">
-                    כמובן, אשמח לעזור לך להבין את העקרונות הבסיסיים לבניית תקציב
-                    אישי.
-                    <br />
-                  </span>
-                  <span className="chat-gpt-board-history-text">
-                    1. תיעוד ההוצאות וההכנסות
-                    <br />
-                    2. קביעת מטרות
-                    <br />
-                    3. תכנון והקצאת תקציב
-                    <br />
-                    4. חיסכון והשקעה
-                  </span>
-                </div>
-                <div className="chat-gpt-board-history-buttons">
-                  <button>
-                    <InlineSVG src={HandDownImg} />
-                  </button>
-                  <button>
-                    <InlineSVG src={HandUpImg} />
-                  </button>
-                </div>
+              <div className="chat-gpt-board-history-buttons">
+                <button>
+                  <InlineSVG src={HandDownImg} />
+                </button>
+                <button>
+                  <InlineSVG src={HandUpImg} />
+                </button>
               </div>
-              <div className="chat-gpt-board-history-user">
-                <div className="chat-gpt-board-history-user-icon">
-                  <div className="chat-gpt-board-history-user-icon-main">Y</div>
-                </div>
-                <div className="chat-gpt-board-history-text">
-                  תוכל לפרט סעיף של קביעת מטרות?
-                </div>
-                <div className="chat-gpt-board-history-buttons">
-                  <button>
-                    <InlineSVG src={HandDownImg} />
-                  </button>
-                  <button>
-                    <InlineSVG src={HandUpImg} />
-                  </button>
-                </div>
-              </div>
-              <div className="chat-gpt-board-history-gpt">
-                <InlineSVG
-                  src={GPTImg}
-                  className="chat-gpt-board-history-gpt-icon"
-                />
-                <div className="chat-gpt-board-history-text">
-                  בוודאי, קביעת מטרות היא חלק חשוב מאוד
+            </div>
+            <div className="chat-gpt-board-history-gpt">
+              <InlineSVG
+                src={GPTImg}
+                className="chat-gpt-board-history-gpt-icon"
+              />
+              <div className="chat-gpt-board-history-text">
+                <span>
+                  כמובן, אשמח לעזור לך להבין את העקרונות הבסיסיים לבניית תקציב
+                  אישי.
                   <br />
-                  בתהליך בניית התקציב האישי. הנה כמה פרטים וטיפים על קביעת מטרות
-                  פיננסיות:
-                </div>
-                <div className="chat-gpt-board-history-buttons">
-                  <button>
-                    <InlineSVG src={HandDownImg} />
-                  </button>
-                  <button>
-                    <InlineSVG src={HandUpImg} />
-                  </button>
-                </div>
+                </span>
+                <span>
+                  1. תיעוד ההוצאות וההכנסות
+                  <br />
+                  2. קביעת מטרות
+                  <br />
+                  3. תכנון והקצאת תקציב
+                  <br />
+                  4. חיסכון והשקעה
+                </span>
+              </div>
+              <div className="chat-gpt-board-history-buttons">
+                <button>
+                  <InlineSVG src={HandDownImg} />
+                </button>
+                <button>
+                  <InlineSVG src={HandUpImg} />
+                </button>
               </div>
             </div>
-            <div className="chat-gpt-footer">
-              <div className="chat-gpt-footer-input">
-                <Input
-                  className="chat-gpt-footer-input-main"
-                  prefix={<InlineSVG src={SendImg} />}
-                />
+            <div className="chat-gpt-board-history-user">
+              <div className="chat-gpt-board-history-user-icon">
+                <div className="chat-gpt-board-history-user-icon-main">Y</div>
               </div>
-              <div className="chat-gpt-footer-info">
-                <div className="chat-gpt-footer-info-area">
-                  <a className="chat-gpt-footer-info-area-version">
-                    ChatGPT Jan 30 Version
-                  </a>
-                  <span>
-                    . Free Research Preview. Our goal is to make AI systems more
-                    natural and safe to interact with. Your feedback will help
-                    us improve.
-                  </span>
-                </div>
+              <div className="chat-gpt-board-history-text">
+                תוכל לפרט סעיף של קביעת מטרות?
+              </div>
+              <div className="chat-gpt-board-history-buttons">
+                <button>
+                  <InlineSVG src={HandDownImg} />
+                </button>
+                <button>
+                  <InlineSVG src={HandUpImg} />
+                </button>
               </div>
             </div>
-            <div className="chat-gpt-button-area">
-              <button onClick={() => setClick(!isClick)}>
-                <InlineSVG
-                  width={20}
-                  height={20}
-                  src={isClick ? CloseImg : DownImg}
-                  style={{ stroke: "white" }}
-                />
-              </button>
-              <div className="chat-gpt-button-area-svg">
-                <InlineSVG src={GPTImg} />
+            <div className="chat-gpt-board-history-gpt">
+              <InlineSVG
+                src={GPTImg}
+                className="chat-gpt-board-history-gpt-icon"
+              />
+              <div className="chat-gpt-board-history-text">
+                בוודאי, קביעת מטרות היא חלק חשוב מאוד
+                <br />
+                בתהליך בניית התקציב האישי. הנה כמה פרטים וטיפים על קביעת מטרות
+                פיננסיות:
               </div>
-              <div className="chat-gpt-button-area-text">ChatGPT</div>
+              <div className="chat-gpt-board-history-buttons">
+                <button>
+                  <InlineSVG src={HandDownImg} />
+                </button>
+                <button>
+                  <InlineSVG src={HandUpImg} />
+                </button>
+              </div>
             </div>
+          </div>
+          <div className="chat-gpt-footer">
+            <div className="chat-gpt-footer-input">
+              <Input
+                className="chat-gpt-footer-input-main"
+                prefix={<InlineSVG src={SendImg} />}
+              />
+            </div>
+            <div className="chat-gpt-footer-info">
+              <div className="chat-gpt-footer-info-area">
+                <a className="chat-gpt-footer-info-area-version">
+                  ChatGPT Jan 30 Version
+                </a>
+                <span>
+                  . Free Research Preview. Our goal is to make AI systems more
+                  natural and safe to interact with. Your feedback will help us
+                  improve.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="chat-gpt-button-area">
+            <button onClick={() => setClick(!isClick)}>
+              <InlineSVG
+                width={20}
+                height={20}
+                src={isClick ? CloseImg : DownImg}
+                style={{ stroke: "white" }}
+              />
+            </button>
+            <div className="chat-gpt-button-area-svg">
+              <InlineSVG src={GPTImg} />
+            </div>
+            <div className="chat-gpt-button-area-text">ChatGPT</div>
           </div>
         </div>
       </motion.div>

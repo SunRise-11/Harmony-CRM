@@ -1,77 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
-import { motion } from "framer-motion";
-import avatarImg from "../assets/images/avatar.png";
-import avatarImg1 from "../assets/images/avatar1.png";
-import avatarImg2 from "../assets/images/avatar2.png";
-import avatarImg3 from "../assets/images/avatar3.png";
-import avatarImg4 from "../assets/images/avatar4.png";
+import avatarImg1 from "../../assets/images/avatar1.png";
+import avatarImg2 from "../../assets/images/avatar2.png";
+import avatarImg3 from "../../assets/images/avatar3.png";
+import avatarImg4 from "../../assets/images/avatar4.png";
 
-import logoutImg from "../assets/icons/logout.svg";
-import settingImg from "../assets/icons/setting.svg";
-import searchImg from "../assets/icons/search.svg";
-import userImg from "../assets/icons/user.svg";
-import downImg from "../assets/icons/down.svg";
-import ThemeContext from "../context/ThemeContext";
+import searchImg from "../../assets/icons/search.svg";
+import userImg from "../../assets/icons/user.svg";
+import downImg from "../../assets/icons/down.svg";
+import Theme from "./Theme";
 
 const Header = () => {
   const [showChangeTheme, setShowChangeTheme] = useState(false);
   const [isDropVisible, setDropVisible] = useState("invisible");
   const [isSearchVisible, setSearchVisible] = useState("invisible");
-  const { setTheme } = useContext(ThemeContext);
-  const themes = ["original", "suggested", "monday", "dynamics"];
-  const colors = [
-    [
-      "#16BFD6",
-      "#0096EB",
-      "#4A9ECD",
-      "#5FBCFF",
-      "#B3E3E3",
-      "#D3EDF6",
-      "#8AD341",
-      "#E5D3B0",
-      "#FFAB48",
-      "#FF7979",
-      "#F765A3",
-      "#A155B9",
-      "#FFFFFF",
-      "#EAF0F2",
-      "#344449",
-      "#000000",
-    ],
-    [
-      "#70C6DD",
-      "#79AE94",
-      "#ABD1BC",
-      "#EEAE70",
-      "#FFFFFF",
-      "#EFEFEF",
-      "#271E31",
-    ],
-    [
-      "#599BFC",
-      "#01C875",
-      "#FECB02",
-      "#FDAC35",
-      "#FE58C4",
-      "#E0445A",
-      "#A35CDE",
-      "#FFFFFF",
-      "#4C4B50",
-      "#271E31",
-    ],
-    [
-      "#3499DB",
-      "#2ECC72",
-      "#F1C60E",
-      "#E77D24",
-      "#CC3C74",
-      "#FFFFFF",
-      "#3E5766",
-      "#271E31",
-    ],
-  ];
+
   return (
     <>
       {(isDropVisible !== "invisible" ||
@@ -708,61 +652,10 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="header-theme-button">
-            <a onClick={() => setShowChangeTheme(true)}>
-              <InlineSVG src={settingImg} />
-            </a>
-            <a>
-              <img src={avatarImg} width={44} height={44} />
-            </a>
-            <a>
-              <InlineSVG src={logoutImg} />
-            </a>
-          </div>
-          <div
-            initial="hidden"
-            animate="visible"
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-            ransition={{ duration: 0.5, delay: 0.2 }}
-            style={{
-              visibility: showChangeTheme ? "visible" : "hidden",
-            }}
-            className="header-theme-modal"
-          >
-            <div className="header-theme-modal-main">
-              <div className="header-theme-modal-main-title">צבעי תצוגה</div>
-              <div className="header-theme-modal-main-board">
-                {colors.map((themeColors, index) => (
-                  <div
-                    style={{
-                      paddingBottom:
-                        index + 1 === colors.length ? "18.5px" : "12px",
-                      borderRadius:
-                        index + 1 === colors.length ? "0 0 12px 12px" : 0,
-                    }}
-                    onClick={() => {
-                      setTheme(themes[index]);
-                      setShowChangeTheme(false);
-                    }}
-                    className="header-theme-modal-main-board-theme"
-                  >
-                    <div className="header-theme-modal-main-board-theme-bar">
-                      {themeColors.reverse().map((color) => (
-                        <div
-                          className="header-theme-modal-main-board-theme-bar-color"
-                          style={{
-                            background: color,
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <Theme
+          showChangeTheme={showChangeTheme}
+          setShowChangeTheme={setShowChangeTheme}
+        />
       </div>
     </>
   );

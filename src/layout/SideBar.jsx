@@ -31,6 +31,7 @@ const SideBar = () => {
         />
         <MenuItem
           hasSubMenu={true}
+          subMenuSelected={isSelected / 10 === 1}
           icon={usersImg}
           title="מקבלי שירות"
           onClick={() => setShowSubMenu(showSubMenu === 1 ? -1 : 1)}
@@ -77,6 +78,7 @@ const SideBar = () => {
         <MenuItem
           hasSubMenu={true}
           icon={pieImg}
+          subMenuSelected={isSelected / 10 === 2}
           title="דוחות"
           onClick={() => setShowSubMenu(showSubMenu === 2 ? -1 : 2)}
           isSelect={showSubMenu === 2}
@@ -129,6 +131,7 @@ const SideBar = () => {
           onClick={() => setShowSubMenu(showSubMenu === 5 ? -1 : 5)}
           isSelect={showSubMenu === 5}
           hasSubMenu={true}
+          subMenuSelected={isSelected / 10 === 5}
           icon={reportImg}
           title="דיווחים"
           subMenus={[
@@ -160,6 +163,7 @@ const SideBar = () => {
         />
         <MenuItem
           hasSubMenu={true}
+          subMenuSelected={isSelected / 10 === 7}
           icon={crmImg}
           title="CRM"
           onClick={() => setShowSubMenu(showSubMenu === 7 ? -1 : 7)}

@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 const { Sider, Content } = Layout;
 import ThemeContext from "./context/ThemeContext";
-import Header from "./layout/Header";
+import Header from "./layout/header/Header";
 import SideBar from "./layout/SideBar";
 import ChatGPT from "./layout/ChatGpt";
 import Page from "./route";
