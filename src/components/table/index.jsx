@@ -2,26 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import InlineSVG from "react-inlinesvg";
 
-import TitleLabel from "../TitleLabel";
+import TitleLabel from "../labels/TitleLabel";
 import sortImg from "../../assets/icons/sort.svg";
 
 const Table = ({ icon, title, columns, data }) => {
   return (
-    <div className={`h-full p-[30px] bg-white rounded-[10px] shadow`}>
+    <div className="table">
       <TitleLabel icon={icon} title={title} />
-      <table className="mt-[14px]">
-        <thead className="bg-[#EAF0F2] flex flex-row justify-start">
+      <table>
+        <thead>
           {columns.map((item, key) => {
             return (
               <tr key={key}>
-                <th
-                  className="py-3 pr-[10px] flex flex-row justify-between items-center"
-                  style={{ width: `${item.width}px` }}
-                >
-                  <div className="text-center text-black text-sm font-normal font-['Afek 1.5 AAA']">
-                    {item.title}
-                  </div>
-                  <InlineSVG src={sortImg} className="cursor-pointer" />
+                <th style={{ width: item.width }}>
+                  <div className="table-title">{item.title}</div>
+                  <InlineSVG src={sortImg} className="table-svg" />
                 </th>
               </tr>
             );
@@ -29,14 +24,9 @@ const Table = ({ icon, title, columns, data }) => {
         </thead>
         <tbody>
           {data.map((item, key) => (
-            <tr className="flex justify-start" key={key}>
+            <tr key={key}>
               {Object.keys(item).map((index, id) => (
-                <td
-                  className="flex justify-start py-3.5 pr-2.5
-                            border border-gray-100 text-right text-black text-[15px] font-normal font-['Afek 1.5 AAA']"
-                  style={{ width: `${item[index].width}px` }}
-                  key={id}
-                >
+                <td style={{ width: item[index].width }} key={id}>
                   {item[index].title}
                 </td>
               ))}

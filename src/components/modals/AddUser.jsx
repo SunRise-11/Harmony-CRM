@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Modal from "./Basic";
-import Input from "../Input";
-import Select from "../Select";
-import Label from "../Label";
+import Input from "../common/Input";
+import Select from "../common/Select";
+import Label from "../labels/Label";
 import addUserImg from "../../assets/icons/addUser.svg";
 
 const AddUserModal = ({ visible, onCancel }) => {
@@ -16,8 +16,8 @@ const AddUserModal = ({ visible, onCancel }) => {
       title="פרטי מקבל שירות חדש"
       flag={true}
       content={
-        <div className="adduser">
-          <div className="py-[30px] grid grid-cols-3 gap-x-5 justify-start items-center border-b border-gray-300">
+        <div className="add-user">
+          <div className="add-user-name">
             <div className="col-1">
               <Label title="שם פרטי" required={true} />
               <Input />
@@ -27,7 +27,7 @@ const AddUserModal = ({ visible, onCancel }) => {
               <Input />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-5 pb-[30px] border-b border-gray-300">
+          <div className="add-user-phone-number">
             <div className="col-1">
               <Label title="טלפון נייד" required={true} />
               <Input />
@@ -45,7 +45,7 @@ const AddUserModal = ({ visible, onCancel }) => {
               <Input />
             </div>
           </div>
-          <div className="w-full">
+          <div className="add-user-select">
             <Label title="בחירת תוכנית" required={true} />
             <Select placeholder="בחר... תעסוקה נתמכת / מפעל מוגן / מועדון תעסוקתי..." />
           </div>

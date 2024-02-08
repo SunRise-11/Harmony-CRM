@@ -12,8 +12,8 @@ import jobImg from "../../assets/icons/job.svg";
 const TableList = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-[30px]">
-        <div className="xl:col-span-1 lg:col-span-2 md:col-span-2 sm:col-span-2">
+      <div className="table-list">
+        <div style={{ gridColumn: "span 1" }}>
           <Table
             icon={usersImg}
             title="מגעים חסרים של מעל לשבוע"
@@ -21,7 +21,7 @@ const TableList = () => {
             data={TableData.Table1.data}
           />
         </div>
-        <div className="xl:col-span-1 lg:col-span-2 md:col-span-2 sm:col-span-2">
+        <div style={{ gridColumn: "span 1" }}>
           <Table
             icon={attachImg}
             title="אישורים לקראת סיום"
@@ -29,7 +29,7 @@ const TableList = () => {
             data={TableData.Table2.data}
           />
         </div>
-        <div className="col-span-2">
+        <div style={{ gridColumn: "span 2" }}>
           <Table
             icon={jobImg}
             title="הזדמנויות תעסוקה חדשות"

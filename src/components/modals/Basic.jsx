@@ -4,8 +4,8 @@ import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
 
-import ModalTitle from "../ModalTitle";
-import Button from "../Button";
+import ModalTitle from "./ModalTitle";
+import Button from "../common/Button";
 import closeImg from "../../assets/icons/close.svg";
 import addUserImg from "../../assets/icons/addUser.svg";
 import checkImg from "../../assets/icons/check.svg";
@@ -64,15 +64,15 @@ const Modal = ({
             exit="exit"
             transition={{ duration: 0.7 }}
           >
-            <div className="basic">
-              <button className="cancel-btn" onClick={onCancel}>
+            <div className="basic-modal">
+              <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeImg} />
               </button>
               <div>
                 <ModalTitle icon={icon} title={title} />
                 {content}
                 <div
-                  className="footer"
+                  className="basic-modal-footer"
                   style={{ marginTop: margin }}
                 >
                   <Button icon={flag ? addUserImg : checkImg} label="שמירה" />
