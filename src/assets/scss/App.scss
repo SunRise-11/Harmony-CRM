@@ -13,6 +13,13 @@
   border-color: transparent white transparent transparent;
 }
 
+.ant-layout-content {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+}
+
 @import "./components/modals/Basic.scss";
 @import "./components/modals/AddTask.scss";
 @import "./components/modals/AddUser.scss";
@@ -73,6 +80,37 @@
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
   display: grid;
   place-items: center;
+}
+
+.ant-table-wrapper .ant-table-column-title {
+  z-index: auto;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background: #eaf0f2;
+  padding: 12px 10px 12px 2px;
+
+  color: #000;
+  text-align: right;
+  font-family: Afek 1.5 AAA;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.12px;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  padding: 14px 10px;
+  
+  color: #000;
+  text-align: right;
+  font-family: Afek 1.5 AAA;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.15px;
 }
 
 .ant-checkbox .ant-checkbox-inner {

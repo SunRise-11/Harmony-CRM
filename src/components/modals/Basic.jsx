@@ -71,10 +71,7 @@ const Modal = ({
               <div>
                 <ModalTitle icon={icon} title={title} />
                 {content}
-                <div
-                  className="footer"
-                  style={{ marginTop: margin }}
-                >
+                <div className="footer" style={{ marginTop: margin }}>
                   <Button icon={flag ? addUserImg : checkImg} label="שמירה" />
                   <Button onClick={onCancel} icon={closeImg} label="ביטול" />
                 </div>

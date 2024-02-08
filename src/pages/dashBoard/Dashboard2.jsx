@@ -10,7 +10,7 @@ import PieChart from "../../components/PieChart";
 const DashBoard2 = () => {
   return (
     <div className="flex place-content-center">
-      <div className="grid grid-cols-3 gap-[30px] max-w-[1320px] mt-[30px]">
+      <div className="grid grid-cols-3 gap-[30px] w-[1320px]">
         <div className="col-span-3">
           <QuickInfo flag={false} />
         </div>

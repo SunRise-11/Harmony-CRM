@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import DashBoard from "./pages/dashBoard";
+import Reception from "./pages/receptions/Reception";
 
 const RoutePage = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<DashBoard />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<DashBoard />} />
+      <Route path="/reception" element={<Reception />} />
+    </Routes>
   );
 };
 export default RoutePage;

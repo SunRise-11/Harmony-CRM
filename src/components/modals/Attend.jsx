@@ -38,7 +38,7 @@ const AttendModal = ({ visible, onCancel }) => {
               <TimePicker />
             </div>
           </div>
-          <div className="flex flex-col justify-center items-startpb-[15px]">
+          <div className="flex flex-col justify-center items-start pb-[15px]">
             <Label title="חופשה" required={true} />
             <div className="flex flex-row items-center gap-x-[60px]">
               <CheckBox

@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout } from "antd";
+import { BrowserRouter } from "react-router-dom";
+import { Grid, Layout } from "antd";
 const { Sider, Content } = Layout;
 import ThemeContext from "./context/ThemeContext";
 import Header from "./Layout/Header";
@@ -12,22 +13,24 @@ const App = () => {
   const [theme, setTheme] = React.useState("original"); // "suggested", "monday", "dynamics"
   const [ltrRtl, setLtrRtl] = React.useState("RTL");
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, ltrRtl, setLtrRtl }}>
-      <div className="App" style={{ direction: ltrRtl }}>
-        <Layout>
-          <Sider theme="light" width={240}>
-            <SideBar />
-          </Sider>
+    <BrowserRouter>
+      <ThemeContext.Provider value={{ theme, setTheme, ltrRtl, setLtrRtl }}>
+        <div className="App" style={{ direction: ltrRtl }}>
           <Layout>
-            <Header />
-            <Content>
-              <Page />
-              <ChatGPT />
-            </Content>
+            <Sider theme="light" width={240}>
+              <SideBar />
+            </Sider>
+            <Layout>
+              <Header />
+              <Content>
+                <Page />
+                <ChatGPT />
+              </Content>
+            </Layout>
           </Layout>
-        </Layout>
-      </div>
-    </ThemeContext.Provider>
+        </div>
+      </ThemeContext.Provider>
+    </BrowserRouter>
   );
 };
 export default App;

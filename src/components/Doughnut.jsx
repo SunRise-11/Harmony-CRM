@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Doughnut as ReactDoughnut } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import PropTypes from "prop-types";
+
 import {
   Chart as ChartJS,
   ArcElement,
@@ -16,36 +19,39 @@ ChartJS.register(
   LinearScale,
   BarElement,
   ArcElement,
+  ChartDataLabels,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
-const Doughnut = () => {
+const Doughnut = ({ Data }) => {
   const data = {
-    labels: ["Red", "Blue", "Yellow"],
-    datasets: [
-      {
-        data: [300, 50, 100],
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
-        ],
-      },
-    ],
+    labels: ["Red", "Blue", "Yellow", "sd"],
+    datasets: [Data],
   };
 
   const options = {
+    responsive: true,
     maintainAspectRatio: false,
     plugins: {
+      datalabels: {
+        display: false,
+      },
       legend: {
-        display: true,
+        display: false,
+      },
+      tooltips: {
+        enabled: false,
       },
     },
   };
 
   return <ReactDoughnut data={data} options={options} />;
+};
+
+Doughnut.propTypes = {
+  Data: PropTypes.any,
 };
 
 export default Doughnut;
