@@ -21,7 +21,10 @@ const Info = () => {
         <div className="charts">
           <div className="chart">
             <div className="doughnut">
-              <Doughnut Data={DoughnutData.doughnut1} />
+              <Doughnut
+                Data={DoughnutData.doughnut1}
+                labels={["זכר", "עובדים", "אחר"]}
+              />
             </div>
             <div className="state">
               <div className="item">
@@ -40,7 +43,10 @@ const Info = () => {
           </div>
           <div className="chart">
             <div className="doughnut">
-              <Doughnut Data={DoughnutData.doughnut2} />
+              <Doughnut
+                Data={DoughnutData.doughnut2}
+                labels={["30-40", "20-30", "40-50"]}
+              />
             </div>
             <div className="state">
               <div className="item">
@@ -59,7 +65,10 @@ const Info = () => {
           </div>
           <div className="chart">
             <div className="doughnut">
-              <Doughnut Data={DoughnutData.doughnut3} />
+              <Doughnut
+                Data={DoughnutData.doughnut3}
+                labels={["עובדים", "עובדים", "מובטלים", "בחיפוש"]}
+              />
             </div>
             <div className="row">
               <div className="state2">

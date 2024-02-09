@@ -54,10 +54,9 @@
 
   color: #000;
   text-align: right;
-  font-family: Afek 1.5 AAA;
-  font-size: 12px;
+  font-size: 15px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   letter-spacing: -0.12px;
 }
@@ -65,10 +64,9 @@
 .ant-table-wrapper .ant-table-tbody > tr > td {
   padding: 14px 10px;
 
-  color: #000;
+  color: #344449;
   text-align: right;
-  font-family: Afek 1.5 AAA;
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -114,7 +112,6 @@
   color: black;
   font-size: 1rem;
   font-weight: 500;
-  font-family: Heebo;
 }
 
 .ant-picker .ant-picker-input {

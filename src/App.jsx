@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Grid, Layout } from "antd";
+import { Layout } from "antd";
 const { Sider, Content } = Layout;
+
 import ThemeContext from "./context/ThemeContext";
 import Header from "./layout/header/Header";
 import SideBar from "./layout/SideBar";
