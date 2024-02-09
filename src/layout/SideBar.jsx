@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import MenuItem from "../components/common/MenuItem";
 
 import logoImg from "../assets/images/logo.svg";
@@ -14,6 +15,8 @@ import videoImg from "../assets/icons/video.svg";
 import warnImg from "../assets/icons/warn.svg";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+
   const [isSelected, setSelected] = useState(0);
   const [showSubMenu, setShowSubMenu] = useState(-1);
 
@@ -27,8 +30,10 @@ const SideBar = () => {
           icon={homeImg}
           title="דף הבית"
           isSelect={isSelected === 0}
-          onClick={() => setSelected(0)}
-          key={0}
+          onClick={() => {
+            setSelected(0);
+            navigate("/");
+          }}
         />
         <MenuItem
           hasSubMenu={true}
@@ -36,15 +41,20 @@ const SideBar = () => {
           subMenuSelected={Math.floor(isSelected / 10) === 1}
           icon={usersImg}
           title="מקבלי שירות"
-          onClick={() => setShowSubMenu(showSubMenu === 1 ? -1 : 1)}
+          onClick={() => {
+            setShowSubMenu(showSubMenu === 1 ? -1 : 1);
+            navigate("/reception");
+          }}
           isSelect={showSubMenu === 1}
           subMenus={[
             <MenuItem
+              route="/reception"
               isSubMenu={true}
               title="שמוליק גוטמן"
               isSelect={isSelected === 10}
-              onClick={() => setSelected(10)}
-              key={10}
+              onClick={() => {
+                setSelected(10);
+              }}
             />,
             <MenuItem
               isSubMenu={true}

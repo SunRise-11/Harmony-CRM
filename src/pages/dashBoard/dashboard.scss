@@ -24,6 +24,10 @@
       padding: 5px 5px 5px 12px;
       gap: 4px;
       cursor: pointer;
+
+      &:hover {
+        border: #5FBCFF;
+      }
       &-text {
         color: #4a5568;
         font-size: 0.875rem;
@@ -74,7 +78,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
-    max-width: 1320px;
+    width: 1320px;
     margin-top: 30px;
     &-table {
       grid-column: span 2;
@@ -115,7 +119,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
-    max-width: 1320px;
+    width: 1320px;
     margin-top: 30px;
   }
 }
@@ -161,6 +165,18 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+}
+
+.table-style {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard {

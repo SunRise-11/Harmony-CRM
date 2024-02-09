@@ -65,20 +65,16 @@ const ChatGPT = () => {
                 className="chat-gpt-board-history-gpt-icon"
               />
               <div className="chat-gpt-board-history-text">
-                <span>
-                  כמובן, אשמח לעזור לך להבין את העקרונות הבסיסיים לבניית תקציב
-                  אישי.
-                  <br />
-                </span>
-                <span>
-                  1. תיעוד ההוצאות וההכנסות
-                  <br />
-                  2. קביעת מטרות
-                  <br />
-                  3. תכנון והקצאת תקציב
-                  <br />
-                  4. חיסכון והשקעה
-                </span>
+                כמובן, אשמח לעזור לך להבין את העקרונות הבסיסיים לבניית תקציב
+                אישי.
+                <br />
+                1. תיעוד ההוצאות וההכנסות
+                <br />
+                2. קביעת מטרות
+                <br />
+                3. תכנון והקצאת תקציב
+                <br />
+                4. חיסכון והשקעה
               </div>
               <div className="chat-gpt-board-history-buttons">
                 <button>

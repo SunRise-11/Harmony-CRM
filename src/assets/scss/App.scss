@@ -1,3 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.change-theme::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 100%;
+  margin-top: -11px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+
+.ant-layout-content {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+}
+
+@import "./components/modals/Basic.scss";
+@import "./components/modals/AddTask.scss";
+@import "./components/modals/AddUser.scss";
+@import "./components/modals/Attend.scss";
+
+@import "./components/table/table.scss";
+@import "./components/BarChart.scss";
+@import "./components/Button.scss";
+@import "./components/CheckBox.scss";
+@import "./components/DatePicker.scss";
+@import "./components/Doughnut.scss";
+@import "./components/Input.scss";
+@import "./components/Label.scss";
+@import "./components/MenuItem.scss";
+@import "./components/ModalTitle.scss";
+@import "./components/PieChart.scss";
+@import "./components/Select.scss";
+@import "./components/TaskCard.scss";
+@import "./components/TimeLabel.scss";
+@import "./components/ToggleSelector.scss";
+@import "./components/UploadDoc.scss";
+@import "./components//UploadFIle.scss";
+
 .col-1 {
   grid-column: span 1 / span 1;
 }
@@ -32,13 +77,6 @@
   margin-right: 96px;
 }
 
-.ant-layout-content {
-  min-height: calc(100vh - 64px);
-  display: flex;
-  justify-content: center;
-  padding: 30px 0px;
-}
-
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
   display: grid;
   place-items: center;
@@ -64,7 +102,7 @@
 
 .ant-table-wrapper .ant-table-tbody > tr > td {
   padding: 14px 10px;
-
+  
   color: #000;
   text-align: right;
   font-family: Afek 1.5 AAA;
@@ -114,7 +152,7 @@
   color: black;
   font-size: 1rem;
   font-weight: 500;
-  font-family: Heebo;
+  font-family: "Heebo";
 }
 
 .ant-picker .ant-picker-input {

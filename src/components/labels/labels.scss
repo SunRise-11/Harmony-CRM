@@ -1,18 +1,24 @@
 .label {
-  height: 30px;
+  height: 25px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   column-gap: 0.125rem;
+
   &-title {
+    color: #464648;
     text-align: right;
-    color: rgb(63, 63, 70);
-    font: medium 15px Afek 1.5 AAA;
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.15px;
   }
+  
   &-require {
     color: #f87171;
-    font: 700 1.5rem/2rem Afek 1.5 AAA;
   }
 }
 
@@ -45,6 +51,12 @@
   column-gap: 5px;
   &-main {
     color: #4a9ecd;
-    font: normal 1.125rem/1.75rem Afek 1.5 AAA;
+    text-align: right;
+    font-family: Afek 1.5 AAA;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
   }
 }
