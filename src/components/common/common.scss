@@ -22,7 +22,7 @@
 
   &:hover {
     color: #5fbcff;
-    border-color: #0075FF;
+    border-color: #0075ff;
   }
 }
 
@@ -133,13 +133,13 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border:2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 
   &:hover {
-    border:2px solid #2563eb;
+    border: 2px solid #2563eb;
   }
 
   &-header {
@@ -193,4 +193,70 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-width: 1px;
   color: #a1a1aa;
+}
+
+.date-picker {
+  border-radius: 6px;
+  border-left-width: 1px;
+  padding: 3px 10px 3px 20px;
+  gap: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: content;
+  border-color: transparent;
+  border-width: 2px;
+  transition: all 0.3;
+  &:hover {
+    border-color: #4096ff;
+  }
+  & span {
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    color: #434f68;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dropdown {
+  border-radius: 10px;
+  padding: 3px 15px 3px 10px;
+  gap: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-color: transparent;
+  border-width: 2px;
+  transition: all 0.3;
+  min-width: 160px;
+  box-sizing: border-box;
+  &:hover {
+    border-color: #4096ff;
+  }
+  & span {
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    color: #434f68;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
 }

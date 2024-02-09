@@ -107,21 +107,27 @@ const SideBar = () => {
               isSubMenu={true}
               title="דוח אירועים"
               isSelect={isSelected === 20}
-              onClick={() => setSelected(20)}
-              key={20}
+              onClick={() => {
+                setSelected(20);
+                navigate("/report/event");
+              }}
             />,
             <MenuItem
               isSubMenu={true}
               title="דוח חוסרים"
               isSelect={isSelected === 21}
-              onClick={() => setSelected(21)}
+              onClick={() => {
+                setSelected(21);
+              }}
               key={21}
             />,
             <MenuItem
               isSubMenu={true}
               title="דוח הוצאות"
               isSelect={isSelected === 22}
-              onClick={() => setSelected(22)}
+              onClick={() => {
+                setSelected(22);
+              }}
               key={22}
             />,
             <MenuItem
