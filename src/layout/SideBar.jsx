@@ -27,6 +27,7 @@ const SideBar = () => {
       </div>
       <div className="sidebar-main">
         <MenuItem
+          key={0}
           icon={homeImg}
           title="דף הבית"
           isSelect={isSelected === 0}
@@ -48,7 +49,7 @@ const SideBar = () => {
           isSelect={showSubMenu === 1}
           subMenus={[
             <MenuItem
-              route="/reception"
+              key={10}
               isSubMenu={true}
               title="שמוליק גוטמן"
               isSelect={isSelected === 10}
