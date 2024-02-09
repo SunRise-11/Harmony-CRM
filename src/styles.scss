@@ -1,6 +1,6 @@
-@import url(components/__combine.scss);
-@import url(layout/layout.scss);
-@import url(pages/dashBoard/dashboard.scss);
+@import url(components/_components-combined.scss);
+@import url(pages/_pages-combined.scss);
+@import url(common/_common-combined.scss);
 
 $theme-original: (
   background-color: #197213,

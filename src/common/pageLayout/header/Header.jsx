@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 
-import searchImg from "../../assets/icons/search.svg";
-import userImg from "../../assets/icons/user.svg";
-import downImg from "../../assets/icons/down.svg";
+import searchImg from "../../../assets/icons/search.svg";
+import userImg from "../../../assets/icons/user.svg";
+import downImg from "../../../assets/icons/down.svg";
 import Theme from "./Theme";
 
 const Header = () => {
