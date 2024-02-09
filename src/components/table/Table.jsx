@@ -4,7 +4,6 @@ import { Table as AntdTable } from "antd";
 import { ConfigProvider } from "antd";
 
 import sortImg from "../../assets/icons/sort.svg";
-import "./Table.scss";
 
 const Table = ({ columns, data }) => {
   return (

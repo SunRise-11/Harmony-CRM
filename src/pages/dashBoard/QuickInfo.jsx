@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../components/Button";
+import Button from "../../components/common/Button";
 import AddUserModal from "../../components/modals/AddUser";
 import AttendModal from "../../components/modals/Attend";
 import PropTypes from "prop-types";
@@ -15,19 +15,15 @@ const QuickInfo = ({ flag }) => {
 
   return (
     <>
-      <div className="max-w-[1318px] h-24 pl-5 pr-[50px] py-5 bg-[#B3E3E3] rounded-[5px] shadow justify-start items-center flex">
+      <div className="quick-info">
         <img src={picture} />
         {flag && (
-          <div className="mr-[50px]">
-            <div class="text-right text-gray-700 text-6xl font-extrabold font-['Lato']">
-              782
-            </div>
-            <div class="text-right text-gray-700 text-sm font-normal font-['Afek 1.5 AAA']">
-              מקבלי שירות רשומים במערכת
-            </div>
+          <div style={{ marginRight: "50px" }}>
+            <div class="quick-info-text1">782</div>
+            <div class="quick-info-text2">מקבלי שירות רשומים במערכת</div>
           </div>
         )}
-        <div className="flex justify-start items-center gap-x-5 mr-auto">
+        <div className="quick-info-buttons">
           <Button
             icon={addUserImg}
             label="הוספת מקבל שירות"

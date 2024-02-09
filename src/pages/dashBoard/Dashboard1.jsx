@@ -6,15 +6,15 @@ import TableList from "./TableList";
 
 const DashBoard1 = () => {
   return (
-    <div className="flex place-content-center">
-      <div className="grid grid-cols-3 gap-[30px] w-[1320px]">
-        <div className="col-span-3">
+    <div className="dashboard1">
+      <div className="dashboard1-main">
+        <div style={{ gridColumn: "span 3" }}>
           <QuickInfo flag={false} />
         </div>
-        <div className="xl:col-span-2 lg:col-span-3 md:col-span-3 sm:col-span-3">
+        <div className="dashboard1-main-table">
           <TableList />
         </div>
-        <div className="xl:col-span-1 lg:col-span-3 md:col-span-3 sm:col-span-3">
+        <div className="dashboard1-main-card">
           <CardList />
         </div>
       </div>

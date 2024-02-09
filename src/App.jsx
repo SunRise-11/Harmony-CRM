@@ -3,11 +3,12 @@ import { BrowserRouter } from "react-router-dom";
 import { Grid, Layout } from "antd";
 const { Sider, Content } = Layout;
 import ThemeContext from "./context/ThemeContext";
-import Header from "./Layout/Header";
-import SideBar from "./Layout/SideBar";
-import ChatGPT from "./Layout/ChatGpt";
+import Header from "./layout/header/Header";
+import SideBar from "./layout/SideBar";
+import ChatGPT from "./layout/ChatGpt";
 import Page from "./route";
-import "./assets/scss/App.scss";
+import "./styles.scss";
+import "./App.css";
 
 const App = () => {
   const [theme, setTheme] = React.useState("original"); // "suggested", "monday", "dynamics"

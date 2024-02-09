@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Button from "../../../components/Button";
+import Button from "../../../components/common/Button";
 import Doughnut from "../../../components/Doughnut";
 import AddUserModal from "../../../components/modals/AddUser";
 
