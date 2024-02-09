@@ -17,6 +17,9 @@
     justify-content: space-between;
     align-items: center;
     &-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid #778899;
       border-radius: 5px;
       display: flex;
@@ -26,20 +29,21 @@
       cursor: pointer;
 
       &:hover {
-        border: #5FBCFF;
+        color: #0075FF;
+        border: 1px solid #0075FF;
+        transition-duration: 0.5s;
       }
       &-text {
-        color: #4a5568;
+        // color: #4a5568;
         font-size: 0.875rem;
         font-weight: normal;
-        font-family: Afek 1.5 AAA;
       }
     }
   }
   &-buttons {
     justify-content: flex-start;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1rem;
     display: inline-flex;
     padding-bottom: 2rem;
     & button {
@@ -47,15 +51,15 @@
       background-color: #ffffff;
       border-radius: 0.9375rem;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      border-width: 2px;
-      border-color: transparent;
+      border: 2px solid transparent; 
       transition: all 0.3s ease;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 0.625rem;
       display: flex;
+
       &:hover {
-        border-color: #3182ce;
+        border: 2px solid #5FBCFF;
       }
     }
     & div {
@@ -63,7 +67,6 @@
       color: #6b7280;
       font-size: 15px;
       font-weight: 500;
-      font-family: Afek 1.5 AAA;
     }
   }
 }
@@ -143,14 +146,12 @@
     font-size: 4rem;
     line-height: 1;
     font-weight: 800;
-    font-family: Lato, sans-serif;
   }
   &-text2 {
     text-align: right;
     color: #4a5568;
     font-size: 0.875rem;
     font-weight: 400;
-    font-family: Afek 1.5 AAA, sans-serif;
   }
   &-buttons {
     display: flex;
@@ -200,7 +201,6 @@
     text-align: center;
     font-size: 1.25rem;
     font-weight: 500;
-    font-family: Afek 1.5 AAA, sans-serif;
     border: 1px solid #5fbcff;
     &:hover {
       cursor: pointer;

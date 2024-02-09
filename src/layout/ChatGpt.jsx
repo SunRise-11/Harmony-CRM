@@ -47,7 +47,7 @@ const ChatGPT = () => {
               <div className="chat-gpt-board-history-user-icon">
                 <div className="chat-gpt-board-history-user-icon-main">Y</div>
               </div>
-              <div className="chat-gpt-board-history-user-text">
+              <div className="chat-gpt-board-history-text">
                 תוכל לעזור לי להבין מה העקרונות לבניית תקציב אישי ?
               </div>
               <div className="chat-gpt-board-history-buttons">
@@ -60,10 +60,9 @@ const ChatGPT = () => {
               </div>
             </div>
             <div className="chat-gpt-board-history-gpt">
-              <InlineSVG
-                src={GPTImg}
-                className="chat-gpt-board-history-gpt-icon"
-              />
+              <div className="chat-gpt-board-history-gpt-icon">
+                <InlineSVG src={GPTImg} />
+              </div>
               <div className="chat-gpt-board-history-text">
                 כמובן, אשמח לעזור לך להבין את העקרונות הבסיסיים לבניית תקציב
                 אישי.
@@ -102,10 +101,9 @@ const ChatGPT = () => {
               </div>
             </div>
             <div className="chat-gpt-board-history-gpt">
-              <InlineSVG
-                src={GPTImg}
-                className="chat-gpt-board-history-gpt-icon"
-              />
+              <div className="chat-gpt-board-history-gpt-icon">
+                <InlineSVG src={GPTImg} />
+              </div>
               <div className="chat-gpt-board-history-text">
                 בוודאי, קביעת מטרות היא חלק חשוב מאוד
                 <br />

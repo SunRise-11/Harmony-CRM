@@ -25,9 +25,9 @@ ChartJS.register(
   Legend
 );
 
-const Doughnut = ({ Data }) => {
+const Doughnut = ({ Data, labels }) => {
   const data = {
-    labels: ["Red", "Blue", "Yellow", "sd"],
+    labels: labels,
     datasets: [Data],
   };
 
@@ -52,6 +52,7 @@ const Doughnut = ({ Data }) => {
 
 Doughnut.propTypes = {
   Data: PropTypes.any,
+  labels: PropTypes.arrayOf(PropTypes.any).isRequired
 };
 
 export default Doughnut;
