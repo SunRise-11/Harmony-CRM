@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Segmented, Table } from "antd";
 import InlineSVG from "react-inlinesvg";
-import uploadFile from "../../assets/icons/uploadFile.svg";
-import uploadDoc from "../../assets/icons/uploadDoc.svg";
+import pdfSvg from "../../assets/icons/pdf.svg";
+import excelSvg from "../../assets/icons/excel.svg";
 import Dropdown from "../../components/common/Dropdown";
 import DatePicker from "../../components/common/DatePicker";
 import AvatarImg2 from "../../assets/images/avatar2.png";
@@ -88,11 +88,11 @@ const EventReport = () => {
           </div>
           <div className="event-report-navbar-buttons">
             <Button>
-              <InlineSVG src={uploadDoc} />
+              <InlineSVG src={excelSvg} />
               <span>הורדה ל-Excel</span>
             </Button>
             <Button>
-              <InlineSVG src={uploadFile} />
+              <InlineSVG src={pdfSvg} />
               <span>הורדה ל-PDF</span>
             </Button>
           </div>

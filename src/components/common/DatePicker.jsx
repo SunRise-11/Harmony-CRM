@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import InlineSVG from "react-inlinesvg";
-import addImg from "../../assets/icons/add.svg";
+import planSvg from "../../assets/icons/plan.svg";
 import { Button } from "antd";
 
 const DatePicker = ({ text }) => {
   return (
     <Button className="date-picker">
-      <InlineSVG src={addImg} />
+      <InlineSVG src={planSvg} />
       <span>{text}</span>
     </Button>
   );
