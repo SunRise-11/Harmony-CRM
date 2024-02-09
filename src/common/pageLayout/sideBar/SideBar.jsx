@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-import MenuItem from "../components/common/MenuItem";
-import logoImg from "../assets/images/logo.svg";
-import homeImg from "../assets/icons/home.svg";
-import usersImg from "../assets/icons/users.svg";
-import pieImg from "../assets/icons/pie.svg";
-import taskImg from "../assets/icons/task.svg";
-import planImg from "../assets/icons/plan.svg";
-import reportImg from "../assets/icons/report.svg";
-import jobImg from "../assets/icons/job.svg";
-import crmImg from "../assets/icons/crm.svg";
-import videoImg from "../assets/icons/video.svg";
-import warnImg from "../assets/icons/warn.svg";
+import MenuItem from "../../../components/common/MenuItem";
+import logoImg from "../../../assets/images/logo.svg";
+import homeImg from "../../../assets/icons/home.svg";
+import usersImg from "../../../assets/icons/users.svg";
+import pieImg from "../../../assets/icons/pie.svg";
+import taskImg from "../../../assets/icons/task.svg";
+import planImg from "../../../assets/icons/plan.svg";
+import reportImg from "../../../assets/icons/report.svg";
+import jobImg from "../../../assets/icons/job.svg";
+import crmImg from "../../../assets/icons/crm.svg";
+import videoImg from "../../../assets/icons/video.svg";
+import warnImg from "../../../assets/icons/warn.svg";
 
 const SideBar = () => {
   const navigate = useNavigate();

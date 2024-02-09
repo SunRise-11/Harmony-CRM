@@ -1,12 +1,11 @@
-import ThemeContext from "../../context/ThemeContext";
 import { useContext } from "react";
 import InlineSVG from "react-inlinesvg";
-import avatarImg from "../../assets/images/avatar.png";
-import logoutImg from "../../assets/icons/logout.svg";
-import settingImg from "../../assets/icons/setting.svg";
+
+import avatarImg from "../../../assets/images/avatar.png";
+import logoutImg from "../../../assets/icons/logout.svg";
+import settingImg from "../../../assets/icons/setting.svg";
 
 const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
-  const { setTheme } = useContext(ThemeContext);
   const themes = ["original", "suggested", "monday", "dynamics"];
   const colors = [
     [
@@ -95,7 +94,6 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                     index + 1 === colors.length ? "0 0 12px 12px" : 0,
                 }}
                 onClick={() => {
-                  setTheme(themes[index]);
                   setShowChangeTheme(false);
                 }}
                 className="header-theme-modal-main-board-theme"

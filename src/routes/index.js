@@ -1,17 +1,18 @@
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Route } from 'react-router-dom';
 
-import Loader from '../common/loader/loader';
-import { ROUTES_CONSTANTS } from './routesConstants';
-import PageLayout from '../common/PageLayout/PageLayout';
+import Loader from '../common/loader/Loader';
+import PageLayout from '../common/pageLayout/PageLayout';
 
-function Routes() {
+import { ROUTES_CONSTANTS } from './routeConstants';
+
+function RoutesDefined() {
   return (
     <Router>
       <PageLayout>
         <Suspense fallback={<Loader />}>
-          <Switch>
+          <Routes>
             {ROUTES_CONSTANTS.map(({ path, component }) => {
               return (
                 <Route
@@ -21,11 +22,11 @@ function Routes() {
                 />
               );
             })}
-          </Switch>
+          </Routes>
         </Suspense>
       </PageLayout>
     </Router>
   );
 }
 
-export default Routes;
+export default RoutesDefined;
