@@ -25,7 +25,7 @@ ChartJS.register(
   Legend
 );
 
-const Doughnut = ({ Data, labels }) => {
+const Doughnut = ({ Data, labels, flag }) => {
   const data = {
     labels: labels,
     datasets: [Data],
@@ -36,7 +36,9 @@ const Doughnut = ({ Data, labels }) => {
     maintainAspectRatio: false,
     plugins: {
       datalabels: {
-        display: false,
+        display: flag,
+        textAlign: "center",
+        color: "white"
       },
       legend: {
         display: false,
@@ -46,13 +48,17 @@ const Doughnut = ({ Data, labels }) => {
       },
     },
   };
-
   return <ReactDoughnut data={data} options={options} />;
 };
 
 Doughnut.propTypes = {
-  Data: PropTypes.any,
-  labels: PropTypes.arrayOf(PropTypes.any).isRequired
+  Data: PropTypes.any.isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  flag: PropTypes.bool,
+};
+
+Doughnut.defaultProps = {
+  flag: false,
 };
 
 export default Doughnut;
