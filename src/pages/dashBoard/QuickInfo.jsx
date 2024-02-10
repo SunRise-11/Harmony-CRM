@@ -19,8 +19,8 @@ const QuickInfo = ({ flag }) => {
         <img src={picture} />
         {flag && (
           <div style={{ marginRight: "50px" }}>
-            <div class="quick-info-text1">782</div>
-            <div class="quick-info-text2">מקבלי שירות רשומים במערכת</div>
+            <div className="quick-info-text1">782</div>
+            <div className="quick-info-text2">מקבלי שירות רשומים במערכת</div>
           </div>
         )}
         <div className="quick-info-buttons">
