@@ -1,7 +1,7 @@
 .info {
   width: 1560px;
   display: flex;
-  padding: 5px 30px 5px 20px;
+  padding: 5px 30px 10px 20px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
@@ -47,7 +47,7 @@
       justify-content: flex-start;
       column-gap: 5px;
 
-      .chart {
+      .statistic {
         display: flex;
         justify-content: space-between;
         align-items: center;

@@ -3,8 +3,6 @@ import PropTypes, { node } from "prop-types";
 import { Table as AntdTable } from "antd";
 import { ConfigProvider } from "antd";
 
-import sortImg from "../../assets/icons/sort.svg";
-
 const Table = ({ columns, data }) => {
   return (
     <ConfigProvider direction="rtl">

@@ -19,7 +19,7 @@ const Info = () => {
           <div className="label">מקבלי שירות בטיפולך</div>
         </div>
         <div className="charts">
-          <div className="chart">
+          <div className="statistic">
             <div className="doughnut">
               <Doughnut
                 Data={DoughnutData.doughnut1}
@@ -41,7 +41,7 @@ const Info = () => {
               </div>
             </div>
           </div>
-          <div className="chart">
+          <div className="statistic">
             <div className="doughnut">
               <Doughnut
                 Data={DoughnutData.doughnut2}
@@ -63,7 +63,7 @@ const Info = () => {
               </div>
             </div>
           </div>
-          <div className="chart">
+          <div className="statistic">
             <div className="doughnut">
               <Doughnut
                 Data={DoughnutData.doughnut3}
