@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import InlineSVG from "react-inlinesvg";
 import { Button, Upload } from "antd";
 
-import Label from "../labels/Label";
+import Label from "../labels/label/Label";
 import UploadDocImg from "../../assets/icons/uploadDoc.svg";
 
 const UploadDoc = ({ title, label, visible }) => {

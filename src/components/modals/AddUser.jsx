@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Modal from "./Basic";
 import Input from "../common/Input";
 import Select from "../common/Select";
-import Label from "../labels/Label";
+import Label from "../../components/labels/label/Label";
 import addUserImg from "../../assets/icons/addUser.svg";
 
 const AddUserModal = ({ visible, onCancel }) => {

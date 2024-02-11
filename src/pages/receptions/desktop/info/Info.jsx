@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import Button from "../../../components/common/Button";
-import Doughnut from "../../../components/Doughnut";
-import AddUserModal from "../../../components/modals/AddUser";
+import Button from "../../../../components/common/Button";
+import Doughnut from "../../../../components/charts/Doughnut";
+import AddUserModal from "../../../../components/modals/AddUser";
 
-import addUserImg from "../../../assets/icons/addUser.svg";
+import addUserImg from "../../../../assets/icons/addUser.svg";
 import DoughnutData from "../../../mockup/DoughnutData.json";
 import "./Info.scss";
 

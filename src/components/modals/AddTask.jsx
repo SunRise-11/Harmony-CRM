@@ -7,8 +7,7 @@ import Input from "../common/Input";
 import DatePicker from "../pickers/DatePicker";
 import ToggleSelector from "../common/ToggleSelector";
 import UploadFile from "../uploads/UploadFile";
-import Label from "../labels/Label";
-
+import Label from "../labels/label/Label";
 import taskImg from "../../assets/icons/task.svg";
 import userImg from "../../assets/icons/user.svg";
 

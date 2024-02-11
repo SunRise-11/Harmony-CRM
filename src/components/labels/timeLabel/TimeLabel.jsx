@@ -2,7 +2,7 @@ import React from "react";
 import InlineSVG from "react-inlinesvg";
 import PropTypes from "prop-types";
 
-import clockImg from "../../assets/icons/clock.svg";
+import clockImg from "../../../assets/icons/clock.svg";
 
 const TimeLabel = ({ content, color }) => {
   return (

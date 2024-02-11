@@ -1,0 +1,28 @@
+.label {
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  column-gap: 0.125rem;
+
+  &-title {
+    color: #464648;
+    text-align: right;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.15px;
+  }
+
+  &-require {
+    color: #f87171;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: right;
+  }
+}

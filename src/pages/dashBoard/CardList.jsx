@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 
 import TaskCard from "../../components/common/TaskCard";
-import TitleLabel from "../../components/labels/TitleLabel";
+import TitleLabel from "../../components/labels/titleLabel/TitleLabel";
 import AddTask from "../../components/modals/AddTask";
 import TaskCardData from "../../mockup/TaskCard.json";
 
