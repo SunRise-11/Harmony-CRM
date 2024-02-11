@@ -1,17 +1,17 @@
 import React from "react";
 import InlineSVG from "react-inlinesvg";
 
-import Table from "../../components/table/Table";
+import Table from "../../../components/table/Table";
 import Info from "./info/Info";
-import ColorLabel from "../../components/colorLabel/ColorLabel";
+import ColorLabel from "../../../components/labels/colorLabel/ColorLabel";
 
-import AvatarImg2 from "../../assets/images/avatar2.png";
-import AvatarImg3 from "../../assets/images/avatar3.png";
-import AvatarImg7 from "../../assets/images/avatar7.png";
-import AvatarImg8 from "../../assets/images/avatar8.png";
-import AvatarImg9 from "../../assets/images/avatar9.png";
-import AvatarImg10 from "../../assets/images/avatar10.png";
-import AvatarImg11 from "../../assets/images/avatar11.png";
+import AvatarImg2 from "../../../assets/images/avatar2.png"
+import AvatarImg3 from "../../../assets/images/avatar3.png";
+import AvatarImg7 from "../../../assets/images/avatar7.png";
+import AvatarImg8 from "../../../assets/images/avatar8.png";
+import AvatarImg9 from "../../../assets/images/avatar9.png";
+import AvatarImg10 from "../../../assets/images/avatar10.png";
+import AvatarImg11 from "../../../assets/images/avatar11.png";
 
 import "./Reception.scss";
 

@@ -4,7 +4,7 @@ import QuickInfo from "./QuickInfo";
 import TableList from "./TableList";
 import CardList from "./CardList";
 import BarChart from "../../components/charts/BarChart";
-import Doughnut from "../../components/Doughnut";
+import Doughnut from "../../components/charts/Doughnut";
 import PieChart from "../../components/charts/PieChart";
 
 const barLabels = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני"];

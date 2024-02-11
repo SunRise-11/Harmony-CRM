@@ -1,7 +1,7 @@
 import React from "react";
 
 import Table from "../../components/table/Table";
-import TitleLabel from "../../components/labels/TitleLabel";
+import TitleLabel from "../../components/labels/titleLabel/TitleLabel";
 import TableData from "../../mockup/TableData.json";
 
 import attachImg from "../../assets/icons/attach.svg";
