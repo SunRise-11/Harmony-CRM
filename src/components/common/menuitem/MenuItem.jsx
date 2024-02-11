@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import InlineSVG from "react-inlinesvg";
 
-import leftImg from "../../assets/icons/left.svg";
-import subMenuImg from "../../assets/icons/subMenu.svg";
+import leftImg from "../../../assets/icons/left.svg";
+import subMenuImg from "../../../assets/icons/subMenu.svg";
 
 const MenuItem = ({
   hasSubMenu,

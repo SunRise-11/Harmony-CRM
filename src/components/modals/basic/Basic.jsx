@@ -4,11 +4,11 @@ import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
 
-import ModalTitle from "./ModalTitle";
-import Button from "../common/Button";
-import closeImg from "../../assets/icons/close.svg";
-import addUserImg from "../../assets/icons/addUser.svg";
-import checkImg from "../../assets/icons/check.svg";
+import ModalTitle from "../../labels/modaltitle/ModalTitle";
+import Button from "../../common/button/Button";
+import closeImg from "../../../assets/icons/close.svg";
+import addUserImg from "../../../assets/icons/addUser.svg";
+import checkImg from "../../../assets/icons/check.svg";
 
 ReactModal.setAppElement("#root");
 

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-import Button from "../../../../components/common/Button";
+import Button from "../../../../components/common/button/Button";
 import Doughnut from "../../../../components/charts/Doughnut";
-import AddUserModal from "../../../../components/modals/AddUser";
+import AddUserModal from "../../../../components/modals/adduser/AddUser";
 
 import addUserImg from "../../../../assets/icons/addUser.svg";
 import DoughnutData from "../../../mockup/DoughnutData.json";
-import "./Info.scss";
 
 const Info = () => {
   const [isClick, setClick] = useState(false);

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import Modal from "./Basic";
-import DatePicker from "../pickers/DatePicker";
-import TimePicker from "../pickers/TimePicker";
-import CheckBox from "../common/CheckBox";
-import ToggleSelector from "../common/ToggleSelector";
-import UploadDoc from "../uploads/UploadDoc";
-import Label from "../labels/label/Label";
+import Modal from "../basic/Basic";
+import DatePicker from "../../pickers/DatePicker";
+import TimePicker from "../../pickers/TimePicker";
+import CheckBox from "../../common/checkbox/CheckBox";
+import ToggleSelector from "../../common/toggleselector/ToggleSelector";
+import UploadDoc from "../../uploads/UploadDoc";
+import Label from "../../labels/label/Label";
 
-import reportImg from "../../assets/icons/report.svg";
+import reportImg from "../../../assets/icons/report.svg";
 
 const AttendModal = ({ visible, onCancel }) => {
   const [isVacation, setVacation] = useState(false);

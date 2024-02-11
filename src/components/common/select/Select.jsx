@@ -24,7 +24,6 @@ const Select = ({ placeholder, options, icon }) => {
             borderRadius: "10px",
             paddingTop: "3px",
             paddingBottom: "3px",
-            paddingLeft: "10px",
             paddingRight: `${icon ? "30px" : "0px"}`,
           }),
           indicatorSeparator: (base) => ({
@@ -40,7 +39,6 @@ const Select = ({ placeholder, options, icon }) => {
         style={{
           stroke: isHover && "#0075FF",
         }}
-        className="select-svg"
       />
     </div>
   );
