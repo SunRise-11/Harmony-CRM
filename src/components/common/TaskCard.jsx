@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import TimeLabel from "../labels/TimeLabel";
+import TimeLabel from "../labels/timeLabel/TimeLabel";
 
 const TaskCard = ({ avatar, name, title, content, dueContent, color }) => {
   return (

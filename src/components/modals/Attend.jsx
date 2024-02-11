@@ -7,7 +7,7 @@ import TimePicker from "../pickers/TimePicker";
 import CheckBox from "../common/CheckBox";
 import ToggleSelector from "../common/ToggleSelector";
 import UploadDoc from "../uploads/UploadDoc";
-import Label from "../labels/Label";
+import Label from "../labels/label/Label";
 
 import reportImg from "../../assets/icons/report.svg";
 
