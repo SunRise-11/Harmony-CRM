@@ -44,7 +44,7 @@ const SideBar = () => {
           title="מקבלי שירות"
           onClick={() => {
             setShowSubMenu(showSubMenu === 1 ? -1 : 1);
-            navigate("/reception");
+            navigate("/recipients");
           }}
           isSelect={showSubMenu === 1}
           subMenus={[
@@ -55,7 +55,7 @@ const SideBar = () => {
               isSelect={isSelected === 10}
               onClick={() => {
                 setSelected(10);
-                navigate("/reception/recipient");
+                navigate("/recipients/recipient");
               }}
             />,
             <MenuItem
