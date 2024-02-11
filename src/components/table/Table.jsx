@@ -5,14 +5,16 @@ import { ConfigProvider } from "antd";
 
 const Table = ({ columns, data }) => {
   return (
-    <ConfigProvider direction="rtl">
-      <AntdTable
-        dataSource={data}
-        columns={columns}
-        pagination={{ position: ["none", "none"] }}
-        bordered={true}
-      />
-    </ConfigProvider>
+    <div className="table">
+      <ConfigProvider direction="rtl">
+        <AntdTable
+          dataSource={data}
+          columns={columns}
+          pagination={{ position: ["none", "none"] }}
+          bordered={true}
+        />
+      </ConfigProvider>
+    </div>
   );
 };
 

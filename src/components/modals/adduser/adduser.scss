@@ -1,0 +1,30 @@
+.add-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 40px;
+  &-name {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-color: rgb(209, 213, 219);
+  }
+
+  &-phone-number {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding-bottom: 30px;
+    border-bottom-width: 1px;
+    border-color: rgb(209, 213, 219);
+  }
+
+  &-select {
+    width: 100%;
+  }
+}

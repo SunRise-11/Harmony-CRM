@@ -13,8 +13,6 @@ import AvatarImg9 from "../../../assets/images/avatar9.png";
 import AvatarImg10 from "../../../assets/images/avatar10.png";
 import AvatarImg11 from "../../../assets/images/avatar11.png";
 
-import "./Reception.scss";
-
 const columns = [
   {
     key: "area",

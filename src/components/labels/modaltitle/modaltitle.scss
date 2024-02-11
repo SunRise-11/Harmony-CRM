@@ -1,0 +1,20 @@
+.modal-title {
+  height: 34px;
+  border-bottom: 1px solid #ff8a00;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 5px;
+  display: inline-flex;
+  &-svg {
+    stroke: #ff8a00;
+  }
+  &-value {
+    color: #ff8a00;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+  }
+}

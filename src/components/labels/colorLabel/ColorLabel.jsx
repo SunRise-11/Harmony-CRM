@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./ColorLabel.scss";
-
 const ColorLabel = ({ color, text, flag }) => {
   return (
     <div

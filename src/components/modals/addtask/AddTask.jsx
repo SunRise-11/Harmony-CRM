@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Modal from "./Basic";
-import Select from "../common/Select";
-import Input from "../common/Input";
-import DatePicker from "../pickers/DatePicker";
-import ToggleSelector from "../common/ToggleSelector";
-import UploadFile from "../uploads/UploadFile";
-import Label from "../labels/label/Label";
-import taskImg from "../../assets/icons/task.svg";
-import userImg from "../../assets/icons/user.svg";
+import Modal from "../basic/Basic";
+import Select from "../../common/select/Select";
+import Input from "../../common/input/Input";
+import DatePicker from "../../pickers/DatePicker";
+import ToggleSelector from "../../common/toggleselector/ToggleSelector";
+import UploadFile from "../../uploads/UploadFile";
+import Label from "../../labels/label/Label";
+import taskImg from "../../../assets/icons/task.svg";
+import userImg from "../../../assets/icons/user.svg";
 
 const AddTask = ({ visible, onCancel }) => {
   return (

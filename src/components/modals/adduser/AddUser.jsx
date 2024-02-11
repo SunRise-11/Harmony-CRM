@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Modal from "./Basic";
-import Input from "../common/Input";
-import Select from "../common/Select";
-import Label from "../../components/labels/label/Label";
-import addUserImg from "../../assets/icons/addUser.svg";
+import Modal from "../basic/Basic";
+import Input from "../../common/input/Input";
+import Select from "../../common/select/Select";
+import Label from "../../labels/label/Label";
+import addUserImg from "../../../assets/icons/addUser.svg";
 
 const AddUserModal = ({ visible, onCancel }) => {
   return (

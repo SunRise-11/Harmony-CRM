@@ -39,40 +39,6 @@
   padding: 30px 0px;
 }
 
-.ReactModal__Overlay.ReactModal__Overlay--after-open {
-  display: grid;
-  place-items: center;
-}
-
-.ant-table-wrapper .ant-table-column-title {
-  z-index: auto;
-}
-
-.ant-table-wrapper .ant-table-thead > tr > th {
-  background: #eaf0f2;
-  padding: 12px 10px 12px 2px;
-
-  color: #000;
-  text-align: right;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.12px;
-}
-
-.ant-table-wrapper .ant-table-tbody > tr > td {
-  padding: 14px 10px;
-
-  color: #344449;
-  text-align: right;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.15px;
-}
-
 .ant-checkbox .ant-checkbox-inner {
   width: 30px;
   height: 30px;
@@ -99,29 +65,6 @@
   min-height: 0;
 }
 
-.ant-upload-wrapper .ant-upload {
-  width: 100%;
-}
-
 .toggle2 .ant-segmented-item {
   padding: 10px 15px;
-}
-
-.ant-picker .ant-picker-input > input {
-  text-align: right;
-  color: black;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.ant-picker .ant-picker-input {
-  gap: 10px;
-}
-
-.flip-icon-input .ant-picker-input > input {
-  order: 1;
-}
-
-.flip-icon-input .ant-picker-suffix {
-  order: 0;
 }
