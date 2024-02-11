@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import MenuItem from "../components/common/MenuItem";
+import MenuItem from "../components/common/menuitem/MenuItem";
 
 import logoImg from "../assets/images/logo.svg";
 import homeImg from "../assets/icons/home.svg";
@@ -55,6 +55,7 @@ const SideBar = () => {
               isSelect={isSelected === 10}
               onClick={() => {
                 setSelected(10);
+                navigate("/reception/recipient");
               }}
             />,
             <MenuItem

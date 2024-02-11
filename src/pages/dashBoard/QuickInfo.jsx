@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../../components/common/Button";
-import AddUserModal from "../../components/modals/AddUser";
-import AttendModal from "../../components/modals/Attend";
+import Button from "../../components/common/button/Button";
+import AddUserModal from "../../components/modals/adduser/AddUser";
+import AttendModal from "../../components/modals/attend/Attend"
 import PropTypes from "prop-types";
 
 import picture from "../../assets/images/picture.png";
