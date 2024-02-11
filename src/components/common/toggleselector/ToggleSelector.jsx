@@ -5,16 +5,18 @@ import { ConfigProvider } from "antd";
 
 const ToggleSelector = ({ visible, options, flag }) => {
   return (
-    <ConfigProvider direction="rtl">
-      <div>
-        {visible && (
-          <Segmented
-            className={`${flag ? "toggle1" : "toggle2"} toggle-selector`}
-            options={options}
-          ></Segmented>
-        )}
-      </div>
-    </ConfigProvider>
+    <div className="toggle-selector">
+      <ConfigProvider direction="rtl">
+        <div>
+          {visible && (
+            <Segmented
+              className={`${flag ? "toggle1" : "toggle2"} toggle-selector`}
+              options={options}
+            ></Segmented>
+          )}
+        </div>
+      </ConfigProvider>
+    </div>
   );
 };
 
