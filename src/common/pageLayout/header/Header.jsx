@@ -3,7 +3,7 @@ import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 
 import Table from "../../../components/table/Table";
-import Theme from "./Theme";
+import Theme from "./theme/Theme";
 
 import searchImg from "../../../assets/icons/search.svg";
 import userImg from "../../../assets/icons/user.svg";
@@ -11,7 +11,7 @@ import downImg from "../../../assets/icons/down.svg";
 import AvatarImg1 from "../../../assets/images/avatar1.png";
 import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
-import AvatarImg4 from "../../../assets/images/avatar4.png";
+import AvatarImg4 from "../../../assets/images/avatar4.png"
 
 const columns1 = [
   {

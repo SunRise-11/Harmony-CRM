@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Button from "../../../../components/button/Button";
-import Doughnut from "../../../../components/charts/Doughnut";
+import Doughnut from "../../../../components/charts/doughnut/Doughnut";
 import AddUserModal from "../../../../components/modals/addUser/AddUser";
 
 import addUserImg from "../../../../assets/icons/addUser.svg";

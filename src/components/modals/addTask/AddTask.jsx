@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import Modal from "../basic/Basic";
 import Select from "../../select/Select";
 import Input from "../../input/Input";
-import DatePicker from "../../pickers/DatePicker";
+import DatePicker from "../../pickers/datePicker/DatePicker";
 import ToggleSelector from "../../toggleSelector/ToggleSelector";
-import UploadFile from "../../uploads/UploadFile";
+import UploadFile from "../../uploads/uploadFile/UploadFile";
 import Label from "../../labels/label/Label";
 
 import taskImg from "../../../assets/icons/task.svg";
