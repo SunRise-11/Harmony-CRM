@@ -1,11 +1,11 @@
 import React from "react";
 
-import QuickInfo from "./QuickInfo";
-import TableList from "./TableList";
-import CardList from "./CardList";
-import BarChart from "../../components/charts/BarChart";
-import Doughnut from "../../components/charts/Doughnut";
-import PieChart from "../../components/charts/PieChart";
+import QuickInfo from "../quickInfo/QuickInfo";
+import TableList from "../tableList/TableList";
+import CardList from "../cardList/CardList";
+import BarChart from "../../../components/charts/BarChart";
+import Doughnut from "../../../components/charts/Doughnut";
+import PieChart from "../../../components/charts/PieChart";
 
 const barLabels = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני"];
 const barData = [25, 24, 23, 24, 23, 25];
