@@ -1,5 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import PropTypes from "prop-types";
+import "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
 import {
@@ -24,15 +26,13 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = () => {
-  const labels = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני"];
-
+const BarChart = ({ Data, labels }) => {
   const data = {
     labels: labels,
     datasets: [
       {
         backgroundColor: "#16BFD6",
-        data: [25, 24, 23, 24, 23, 25],
+        data: Data,
         barThickness: 17,
       },
     ],
@@ -45,8 +45,8 @@ const BarChart = () => {
         display: true,
         color: "black",
         anchor: "end",
-        offset: 3,
-        align: "right",
+        offset: "3",
+        align: "-16",
       },
       legend: {
         display: false,
@@ -60,18 +60,12 @@ const BarChart = () => {
       },
     },
   };
-  return (
-    <div className="bar-chart">
-      <div>
-        <div>כמות לקוחות פעילים בחלוקה לפי חודשים</div>
-        <div>3,021</div>
-        <div>ב 6 חודשים האחרונים</div>
-      </div>
-      <div className="bar-chart-main">
-        <Bar data={data} options={options} />
-      </div>
-    </div>
-  );
+  return <Bar data={data} options={options} />;
+};
+
+BarChart.propTypes = {
+  Data: PropTypes.arrayOf(PropTypes.any).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 export default BarChart;

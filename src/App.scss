@@ -5,23 +5,23 @@
 
 $theme-original: (
   background-color: #197213,
-  color: white,
+  color: white
 );
 
 $theme-suggested: (
   background-color: #0075ff,
   color: white,
-  priamry: #012931,
+  priamry: #012931
 );
 
 $theme-monday: (
   background-color: #293810,
-  color: white,
+  color: white
 );
 
 $theme-dynamics: (
   background-color: #237489,
-  color: white,
+  color: white
 );
 
 @mixin themify($property, $value) {
@@ -36,4 +36,44 @@ $theme-dynamics: (
   } @else {
     #{$property}: map-get($theme-original, $property);
   }
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+/*---width---*/
+
+.w-full {
+  width: 100%;
+}
+
+.w-half {
+  width: 50%;
+}
+
+/*--padding---*/
+
+/*---margin---*/
+
+.mr-24 {
+  margin-right: 96px;
+}
+
+.ant-layout-content {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
 }

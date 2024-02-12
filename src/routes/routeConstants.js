@@ -1,19 +1,31 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
-const Dashboard = lazy(() => import('../pages/dashBoard/index'));
-const PageNotFound = lazy(() => import('../common/pageNotFound/pageNotFound'));
+const Dashboard = lazy(() => import("../pages/dashboard/index"));
+const Recipient_desktop = lazy(() =>
+  import("../pages/recipients/desktop/Desktop")
+);
+const Recipient = lazy(() => import("../pages/recipients/recipient/Recipient"));
+const PageNotFound = lazy(() => import("../common/pageNotFound/pageNotFound"));
 
 export const ROUTES_CONSTANTS = [
   {
-    path: '/',
+    path: "/",
     element: <Dashboard />,
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {
-    path: '*',
+    path: "/recipients",
+    element: <Recipient_desktop />,
+  },
+  {
+    path: "/recipients/recipient",
+    element: <Recipient />,
+  },
+  {
+    path: "*",
     element: <PageNotFound />,
   },
 ];

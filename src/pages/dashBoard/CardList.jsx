@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 
-import TaskCard from "../../components/common/TaskCard";
-import TitleLabel from "../../components/labels/TitleLabel";
-import AddTask from "../../components/modals/AddTask";
+import MiniCard from "../../components/taskCards/miniCard/MiniCard";
+import TitleLabel from "../../components/labels/titleLabel/TitleLabel";
+import AddTask from "../../components/modals/addTask/AddTask";
 import TaskCardData from "../../mockup/TaskCard.json";
 
 import listImg from "../../assets/icons/list.svg";
@@ -27,7 +27,7 @@ const TaskCardList = () => {
           <div className="card-list-title-buttons-text">כל המשימות</div>
         </div>
       </div>
-      <TaskCard
+      <MiniCard
         avatar={avatarImg5}
         name={TaskCardData.TaskCard1[0].name}
         title={TaskCardData.TaskCard1[0].title}
@@ -35,7 +35,7 @@ const TaskCardList = () => {
         dueContent={TaskCardData.TaskCard1[0].dueContent}
         color={TaskCardData.TaskCard1[0].color}
       />
-      <TaskCard
+      <MiniCard
         avatar={avatarImg5}
         name={TaskCardData.TaskCard1[1].name}
         title={TaskCardData.TaskCard1[1].title}
@@ -43,7 +43,7 @@ const TaskCardList = () => {
         dueContent={TaskCardData.TaskCard1[1].dueContent}
         color={TaskCardData.TaskCard1[1].color}
       />
-      <TaskCard
+      <MiniCard
         avatar={avatarImg6}
         name={TaskCardData.TaskCard1[2].name}
         title={TaskCardData.TaskCard1[2].title}
@@ -51,7 +51,7 @@ const TaskCardList = () => {
         dueContent={TaskCardData.TaskCard1[2].dueContent}
         color={TaskCardData.TaskCard1[2].color}
       />
-      <TaskCard
+      <MiniCard
         avatar={avatarImg5}
         name={TaskCardData.TaskCard1[3].name}
         title={TaskCardData.TaskCard1[3].title}

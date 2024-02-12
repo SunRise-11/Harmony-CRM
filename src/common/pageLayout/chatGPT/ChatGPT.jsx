@@ -13,9 +13,8 @@ import CloseImg from "../../../assets/icons/close.svg";
 
 const modalVariants = {
   hidden: {
-    x: "-465px",
+    x: "-100%",
   },
-  
   visible: {
     x: 0,
   },
@@ -33,6 +32,7 @@ const ChatGPT = () => {
         animate={isClick ? "visible" : "hidden"}
         transition={{ duration: 0.7 }}
         style={{
+          zIndex: 7,
           position: "fixed",
           top: "64px",
           left: "0px",

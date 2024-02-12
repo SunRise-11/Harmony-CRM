@@ -77,7 +77,7 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
         variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
         ransition={{ duration: 0.5, delay: 0.2 }}
         style={{
-          visibility: showChangeTheme ? "visible" : "hidden",
+          display: showChangeTheme ? "block" : "none",
         }}
         className="header-theme-modal"
       >
@@ -88,8 +88,7 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
               <div
                 key={index}
                 style={{
-                  paddingBottom:
-                    index + 1 === colors.length ? "18.5px" : "12px",
+                  paddingBottom: index + 1 === colors.length ? "18.5px" : "0px",
                   borderRadius:
                     index + 1 === colors.length ? "0 0 12px 12px" : 0,
                 }}

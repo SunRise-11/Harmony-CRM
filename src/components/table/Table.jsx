@@ -3,18 +3,19 @@ import PropTypes, { node } from "prop-types";
 import { Table as AntdTable } from "antd";
 import { ConfigProvider } from "antd";
 
-import sortImg from "../../assets/icons/sort.svg";
-
 const Table = ({ columns, data }) => {
   return (
-    <ConfigProvider direction="rtl">
-      <AntdTable
-        dataSource={data}
-        columns={columns}
-        pagination={{ position: ["none", "none"] }}
-        bordered={true}
-      />
-    </ConfigProvider>
+    <div className="table">
+      <ConfigProvider direction="rtl">
+        <AntdTable
+          dataSource={data}
+          columns={columns}
+          pagination={{ position: ["none", "none"] }}
+          bordered={true}
+          scroll={{ x: "300px" }}
+        />
+      </ConfigProvider>
+    </div>
   );
 };
 

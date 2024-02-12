@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-import DashBoard1 from "./Dashboard1";
-import DashBoard2 from "./Dashboard2";
+import Dashboard1 from "./Dashboard1";
+import Dashboard2 from "./Dashboard2";
 
 const DashBoard = () => {
   const [click, setClick] = useState(true);
 
   return (
     <>
-      {click ? <DashBoard1 /> : <DashBoard2 />}
+      {click ? <Dashboard1 /> : <Dashboard2 />}
       <div className="dashboard">
         <button
           onClick={() => setClick(true)}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../../components/common/Button";
-import AddUserModal from "../../components/modals/AddUser";
-import AttendModal from "../../components/modals/Attend";
+import Button from "../../components/button/Button";
+import AddUserModal from "../../components/modals/addUser/AddUser";
+import AttendModal from "../../components/modals/attend/Attend";
 import PropTypes from "prop-types";
 
 import picture from "../../assets/images/picture.png";
@@ -18,9 +18,9 @@ const QuickInfo = ({ flag }) => {
       <div className="quick-info">
         <img src={picture} />
         {flag && (
-          <div style={{ marginRight: "50px" }}>
-            <div class="quick-info-text1">782</div>
-            <div class="quick-info-text2">מקבלי שירות רשומים במערכת</div>
+          <div className="quick-info-text">
+            <div className="text1">782</div>
+            <div className="text2">מקבלי שירות רשומים במערכת</div>
           </div>
         )}
         <div className="quick-info-buttons">

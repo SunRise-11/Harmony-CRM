@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-import MenuItem from "../../../components/common/MenuItem";
+import MenuItem from "../../../components/menuItem/MenuItem";
+
 import logoImg from "../../../assets/images/logo.svg";
 import homeImg from "../../../assets/icons/home.svg";
 import usersImg from "../../../assets/icons/users.svg";
@@ -21,7 +22,7 @@ const SideBar = () => {
   const [showSubMenu, setShowSubMenu] = useState(-1);
 
   return (
-    <>
+    <div>
       <div className="sidebar-logo">
         <img src={logoImg} />
       </div>
@@ -44,7 +45,7 @@ const SideBar = () => {
           title="מקבלי שירות"
           onClick={() => {
             setShowSubMenu(showSubMenu === 1 ? -1 : 1);
-            navigate("/reception");
+            navigate("/recipients");
           }}
           isSelect={showSubMenu === 1}
           subMenus={[
@@ -55,6 +56,7 @@ const SideBar = () => {
               isSelect={isSelected === 10}
               onClick={() => {
                 setSelected(10);
+                navigate("/recipients/recipient");
               }}
             />,
             <MenuItem
@@ -233,8 +235,7 @@ const SideBar = () => {
           key={9}
         />
       </div>
-    </>
+    </div>
   );
 };
-
 export default SideBar;

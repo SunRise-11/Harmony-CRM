@@ -29,8 +29,8 @@
       cursor: pointer;
 
       &:hover {
-        color: #0075FF;
-        border: 1px solid #0075FF;
+        color: #0075ff;
+        border: 1px solid #0075ff;
         transition-duration: 0.5s;
       }
       &-text {
@@ -51,7 +51,7 @@
       background-color: #ffffff;
       border-radius: 0.9375rem;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-      border: 2px solid transparent; 
+      border: 2px solid transparent;
       transition: all 0.3s ease;
       justify-content: flex-start;
       align-items: flex-start;
@@ -59,7 +59,7 @@
       display: flex;
 
       &:hover {
-        border: 2px solid #5FBCFF;
+        border: 2px solid #5fbcff;
       }
     }
     & div {
@@ -82,31 +82,9 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
     width: 1320px;
-    margin-top: 30px;
     &-table {
       grid-column: span 2;
     }
-
-    // @media (min-width: 1280px) {
-    //   &-table,
-    //   &-card {
-    //     grid-column: span 3;
-    //   }
-    // }
-
-    // @media (min-width: 768px) {
-    //   &-table,
-    //   &-card {
-    //     grid-column: span 3;
-    //   }
-    // }
-
-    // @media (min-width: 640px) {
-    //   &-table,
-    //   &-card {
-    //     grid-column: span 3;
-    //   }
-    // }
 
     &-card {
       grid-column: span 1;
@@ -123,16 +101,99 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
     width: 1320px;
-    margin-top: 30px;
+
+    .chart {
+      grid-column: span 1;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+      & > div:first-child {
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        row-gap: 0.25rem;
+        border: 1px solid #f0f0f0;
+        text-align: right;
+
+        & > div:nth-child(1) {
+          color: #60a5fa;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: -0.02em;
+          text-align: right;
+        }
+
+        & > div:nth-child(2) {
+          color: #1e3a8a;
+          font-size: 37px;
+          font-weight: 500;
+          line-height: 43px;
+          letter-spacing: -0.0375em;
+          text-align: right;
+        }
+
+        & > div:nth-child(3) {
+          color: #6b7280;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14px;
+          letter-spacing: -0.01em;
+          text-align: right;
+        }
+      }
+
+      &-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+
+        .labels {
+          display: grid;
+          column-gap: 20px;
+          row-gap: 5px;
+          grid-template-columns: auto auto;
+          align-items: center;
+          margin-top: 20px;
+
+          .item {
+            display: flex;
+            column-gap: 5px;
+            justify-content: flex-end;
+            align-items: center;
+          }
+        }
+
+        .pie-labels {
+          margin-top: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 15px;
+
+          .item {
+            display: flex;
+            column-gap: 5px;
+            justify-content: flex-start;
+            align-items: center;
+          }
+        }
+      }
+    }
   }
 }
 
 .quick-info {
   display: flex;
+  gap: 10px;
   justify-content: flex-start;
   align-items: center;
-  max-width: 1318px;
-  height: 6rem;
+  width: 1318px;
   padding-left: 1.25rem;
   padding-right: 1.563rem;
   padding-top: 1.25rem;
@@ -140,22 +201,30 @@
   background-color: #b3e3e3;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  &-text1 {
-    text-align: right;
-    color: #4a5568;
-    font-size: 4rem;
-    line-height: 1;
-    font-weight: 800;
-  }
-  &-text2 {
-    text-align: right;
-    color: #4a5568;
-    font-size: 0.875rem;
-    font-weight: 400;
+
+  &-text {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .text1 {
+      text-align: right;
+      color: #4a5568;
+      font-size: 4rem;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .text2 {
+      text-align: right;
+      color: #4a5568;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
   }
   &-buttons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     gap: 0.625rem;
     margin-right: auto;
@@ -166,18 +235,26 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
-}
 
-.table-style {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 14px;
-  padding: 30px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+  .table1 {
+    grid-column: span 1;
+  }
+
+  .table2 {
+    grid-column: span 2;
+  }
+
+  .table-style {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .dashboard {
@@ -214,5 +291,55 @@
   & .unselected {
     background-color: white;
     color: #5fbcff;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .quick-info {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+    &-text {
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+    }
+
+    &-buttons {
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+    }
+  }
+
+  .dashboard {
+    top: 200px;
+  }
+
+  .dashboard1-main {
+    width: 100vw;
+
+    &-table {
+      grid-column: span 3;
+    }
+
+    &-card {
+      grid-column: span 3;
+    }
+  }
+
+  .table-list {
+    .table1 {
+      grid-column: span 2;
+    }
+  }
+
+  .dashboard2-main {
+    width: 100vw;
+
+    .chart {
+      grid-column: span 3;
+    }
   }
 }

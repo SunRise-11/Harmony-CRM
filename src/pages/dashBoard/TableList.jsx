@@ -1,20 +1,18 @@
 import React from "react";
 
 import Table from "../../components/table/Table";
-import TitleLabel from "../../components/labels/TitleLabel";
+import TitleLabel from "../../components/labels/titleLabel/TitleLabel";
 import TableData from "../../mockup/TableData.json";
 
 import attachImg from "../../assets/icons/attach.svg";
 import usersImg from "../../assets/icons/users.svg";
 import jobImg from "../../assets/icons/job.svg";
 
-import "./_dashboard.scss";
-
 const TableList = () => {
   return (
     <div>
       <div className="table-list">
-        <div style={{ gridColumn: "span 1" }}>
+        <div className="table1">
           <div className="table-style">
             <TitleLabel icon={usersImg} title="מגעים חסרים של מעל לשבוע" />
             <Table
@@ -23,7 +21,7 @@ const TableList = () => {
             />
           </div>
         </div>
-        <div style={{ gridColumn: "span 1" }}>
+        <div className="table1">
           <div className="table-style">
             <TitleLabel icon={attachImg} title="אישורים לקראת סיום" />
             <Table
@@ -32,7 +30,7 @@ const TableList = () => {
             />
           </div>
         </div>
-        <div style={{ gridColumn: "span 2" }}>
+        <div className="table2">
           <div className="table-style">
             <TitleLabel icon={jobImg} title="הזדמנויות תעסוקה חדשות" />
             <Table
