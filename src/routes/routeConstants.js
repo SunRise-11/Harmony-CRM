@@ -6,14 +6,14 @@ const PageNotFound = lazy(() => import('../common/pageNotFound/pageNotFound'));
 export const ROUTES_CONSTANTS = [
   {
     path: '/',
-    component: Dashboard,
+    element: <Dashboard />,
   },
   {
     path: '/dashboard',
-    component: Dashboard,
+    element: <Dashboard />,
   },
   {
     path: '*',
-    component: PageNotFound,
+    element: <PageNotFound />,
   },
 ];

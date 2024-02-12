@@ -13,13 +13,13 @@ function RoutesDefined() {
       <PageLayout>
         <Suspense fallback={<Loader />}>
           <Routes>
-            {ROUTES_CONSTANTS.map(({ path, component }) => {
+            {ROUTES_CONSTANTS.map(({ path, element }) => {
               return (
                 <Route
                   key={path}
                   exact
                   path={path}
-                  component={component}
+                  element={element}
                 />
               );
             })}
