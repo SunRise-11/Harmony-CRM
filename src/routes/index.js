@@ -16,6 +16,7 @@ function RoutesDefined() {
             {ROUTES_CONSTANTS.map(({ path, component }) => {
               return (
                 <Route
+                  key={path}
                   exact
                   path={path}
                   component={component}

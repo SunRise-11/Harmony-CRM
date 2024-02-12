@@ -8,7 +8,7 @@ import attachImg from "../../assets/icons/attach.svg";
 import usersImg from "../../assets/icons/users.svg";
 import jobImg from "../../assets/icons/job.svg";
 
-import "./dashboard.scss";
+import "./_dashboard.scss";
 
 const TableList = () => {
   return (

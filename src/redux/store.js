@@ -1,10 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore } from 'redux-persist';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-import persistedReducer from './rootReducer';
+const emptyReducer = createSlice({
+  name: 'empty',
+  initialState: null,
+  reducers: {
 
-export const store = configureStore(
-  persistedReducer,
-);
+  },
+}).reducer;
 
-export const persistStoreData = persistStore(store);
+export const store = configureStore({
+  reducer: {
+    emptyState: emptyReducer,
+  },
+});
