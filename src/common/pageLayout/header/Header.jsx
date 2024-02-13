@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 import PropTypes from "prop-types";
-import logoSvg from "../../../assets/images/mark.svg";
+import logoSvg from "../../../assets/icons/mark.svg";
 import Table from "../../../components/table/Table";
 import Theme from "./theme/Theme";
 
