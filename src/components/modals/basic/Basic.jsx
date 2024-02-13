@@ -45,6 +45,8 @@ const Modal = ({
       flexDirection: "column",
       justifyContent: "end",
       inset: "0",
+      maxWidth: "70vh",
+      width: "90%",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
@@ -107,8 +109,8 @@ Modal.propTypes = {
 Modal.defaultProps = {
   margin: 40,
   flag: false,
-  px: 100,
-  py: 50,
+  // px: 100,
+  // py: 50,
 };
 
 export default Modal;

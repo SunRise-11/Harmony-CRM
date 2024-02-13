@@ -24,7 +24,7 @@ const PageLayout = (props) => {
         <Sider
           theme="light"
           width={240}
-          breakpoint="xs"
+          breakpoint="lg"
           collapsedWidth="0"
           style={{ zIndex: 10 }}
         >

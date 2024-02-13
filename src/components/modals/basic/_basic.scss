@@ -8,13 +8,16 @@
     top: 8px;
     padding: 6px;
     border-radius: 30px;
+
     &:hover {
       background-color: #eaf0f2;
     }
   }
+
   &-footer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     padding: 10px;
     background-color: #eaf0f2;
@@ -28,8 +31,21 @@
   z-index: 20;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
+  .basic-modal-footer {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    & button {
+      width: 100%;
+    }
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .basic-modal {
     padding: 20px 50px;
+    flex-wrap: wrap;
   }
 }

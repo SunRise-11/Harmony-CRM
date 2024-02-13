@@ -39,3 +39,16 @@
     margin-right: 6rem;
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .add-task {
+    align-items: center;
+
+    &-info,
+    &-date,
+    &-state {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

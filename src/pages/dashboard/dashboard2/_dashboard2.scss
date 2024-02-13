@@ -6,7 +6,11 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
-    width: 1320px;
+    width: 100%;
+
+    & > div:first-child {
+      grid-column: span 3;
+    }
 
     .chart {
       grid-column: span 1;
@@ -94,12 +98,51 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 605px) {
   .dashboard2-main {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard2-main {
+    width: 90vw;
 
     .chart {
       grid-column: span 3;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .dashboard2-main {
+    width: 95%;
+    & .quick-info-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      & button {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .dashboard2-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    & > div:first-child {
+      grid-column: span 2;
+    }
+
+    .chart {
+      grid-column: span 1;
+    }
+
+    & .chart:nth-child(4) {
+      grid-column: span 2;
     }
   }
 }

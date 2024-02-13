@@ -8,7 +8,7 @@ const DashBoard1 = () => {
   return (
     <div className="dashboard1">
       <div className="dashboard1-main">
-        <div style={{ gridColumn: "span 3" }}>
+        <div>
           <QuickInfo flag={false} />
         </div>
         <div className="dashboard1-main-table">

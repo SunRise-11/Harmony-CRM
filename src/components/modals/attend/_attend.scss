@@ -48,3 +48,23 @@
     }
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .attend {
+    align-items: center;
+
+    &-time,
+    &-vacation,
+    &-sickness {
+      display: flex;
+      flex-wrap: wrap;
+      & div {
+        width: 100%;
+      }
+
+      & .label-title {
+        width: auto;
+      }
+    }
+  }
+}

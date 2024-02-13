@@ -31,7 +31,7 @@ const DashBoard2 = () => {
   return (
     <div className="dashboard2">
       <div className="dashboard2-main">
-        <div style={{ gridColumn: "span 3" }}>
+        <div>
           <QuickInfo flag={true} />
         </div>
         <div className="chart">
