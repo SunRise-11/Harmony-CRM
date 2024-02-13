@@ -12,6 +12,7 @@ const Table = ({ columns, data }) => {
           columns={columns}
           pagination={{ position: ["none", "none"] }}
           bordered={true}
+          scroll={{ x: "300px" }}
         />
       </ConfigProvider>
     </div>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import Modal from "../basic/Basic";
-import DatePicker from "../../pickers/DatePicker";
-import TimePicker from "../../pickers/TimePicker";
-import CheckBox from "../../common/checkbox/CheckBox";
-import ToggleSelector from "../../common/toggleselector/ToggleSelector";
-import UploadDoc from "../../uploads/UploadDoc";
+import DatePicker from "../../pickers/datePicker/DatePicker";
+import TimePicker from "../../pickers/timePicker/TimePicker";
+import CheckBox from "../../checkBox/CheckBox";
+import ToggleSelector from "../../toggleSelector/ToggleSelector";
+import UploadDoc from "../../uploads/uploadDoc/UploadDoc";
 import Label from "../../labels/label/Label";
 
 import reportImg from "../../../assets/icons/report.svg";
