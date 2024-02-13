@@ -14,57 +14,52 @@
     align-items: center;
     gap: 20px;
     & > div {
-      grid-column: span 1 / span 1;
+      grid-column: span 1;
     }
   }
 
-  &-vacation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-bottom: 15px;
-
-    &-checkbox {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 60px;
-    }
-  }
-
+  &-vacation,
   &-sickness {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding-bottom: 15px;
-    &-checkbox {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      column-gap: 60px;
-    }
+  }
+
+  &-vacation-checkbox,
+  &-sickness-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 40px;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 400px) {
   .attend {
     align-items: center;
 
-    &-time,
-    &-vacation,
-    &-sickness {
+    &-time {
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      & div {
+      flex-direction: column;
+      & > div {
+        & .picker {
+          width: 100%;
+        }
         width: 100%;
       }
 
       & .label-title {
         width: auto;
       }
+    }
+
+    &-vacation-checkbox,
+    &-sickness-checkbox {
+      column-gap: 10px;
+      flex-wrap: wrap;
     }
   }
 }

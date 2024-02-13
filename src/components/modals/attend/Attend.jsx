@@ -51,18 +51,16 @@ const AttendModal = ({ visible, onCancel }) => {
                 checked={isVacation}
                 onChange={() => setVacation(true)}
               />
-              <div>
-                <Label
-                  title="אורך החופשה"
-                  required={true}
-                  visible={isVacation}
-                />
-                <ToggleSelector
-                  visible={isVacation}
-                  options={["חצי יום", "יום"]}
-                  flag={true}
-                />
-              </div>
+              {isVacation && (
+                <div>
+                  <Label title="אורך החופשה" required={true} visible={true} />
+                  <ToggleSelector
+                    options={["חצי יום", "יום"]}
+                    flag={true}
+                    visible={true}
+                  />
+                </div>
+              )}
             </div>
           </div>
           <div className="attend-sickness">
@@ -78,11 +76,13 @@ const AttendModal = ({ visible, onCancel }) => {
                 checked={isSickness}
                 onChange={() => setSickness(true)}
               />
-              <UploadDoc
-                visible={isSickness}
-                title="אישור מחלה"
-                label="העלאת מסמך"
-              />
+              {isSickness && (
+                <UploadDoc
+                  title="אישור מחלה"
+                  label="העלאת מסמך"
+                  visible={true}
+                />
+              )}
             </div>
           </div>
         </div>

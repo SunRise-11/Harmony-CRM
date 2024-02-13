@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 
 import MenuItem from "../../../components/menuItem/MenuItem";
 
@@ -15,7 +16,7 @@ import crmImg from "../../../assets/icons/crm.svg";
 import videoImg from "../../../assets/icons/video.svg";
 import warnImg from "../../../assets/icons/warn.svg";
 
-const SideBar = () => {
+const SideBar = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
 
   const [isSelected, setSelected] = useState(0);
@@ -24,7 +25,7 @@ const SideBar = () => {
   return (
     <div>
       <div className="sidebar-logo">
-        <img src={logoImg} />
+        <img src={logoImg} onClick={() => setCollapsed()} />
       </div>
       <div className="sidebar-main">
         <MenuItem
@@ -241,4 +242,10 @@ const SideBar = () => {
     </div>
   );
 };
+
+SideBar.propTypes = {
+  collapsed: PropTypes.bool.isRequired,
+  setCollapsed: PropTypes.func.isRequired,
+};
+
 export default SideBar;

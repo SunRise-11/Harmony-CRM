@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 // import { useSelector } from 'react-redux';
 
@@ -12,6 +12,7 @@ import ChatGPT from "./chatGPT/ChatGPT";
 const PageLayout = (props) => {
   const { children } = props;
 
+  const [collapsed, setCollapsed] = useState(false);
   // // Redirect to login page if not logged in.
   // const loggedUserDetails = useSelector(({ loggedUserProfile }) => loggedUserProfile);
   // if (!loggedUserDetails?.email) {
@@ -26,12 +27,23 @@ const PageLayout = (props) => {
           width={240}
           breakpoint="lg"
           collapsedWidth="0"
-          style={{ zIndex: 10 }}
+          collapsible
+          collapsed={collapsed}
+          onCollapse={() => setCollapsed(!collapsed)}
+          style={{
+            zIndex: 10,
+          }}
         >
-          <SideBar />
+          <SideBar
+            setCollapsed={() => setCollapsed(!collapsed)}
+            collapsed={collapsed}
+          />
         </Sider>
         <Layout>
-          <Header />
+          <Header
+            collapsed={collapsed}
+            setCollapsed={() => setCollapsed(!collapsed)}
+          />
           <Content>
             {children}
             <ChatGPT />

@@ -1,7 +1,8 @@
 .basic-modal {
-  padding: 20px 50px;
-  max-height: 100vh;
+  padding: 20px 20px;
+  max-height: 90vh;
   overflow-y: auto;
+  box-sizing: border-box;
   &-cancel-btn {
     background-color: transparent;
     border: 0;
@@ -19,12 +20,18 @@
 
   &-footer {
     display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
     justify-content: space-between;
     width: 100%;
     align-items: center;
     padding: 10px;
     background-color: #eaf0f2;
     border-radius: 5px;
+    & button {
+      height: 48px;
+      width: 125px;
+    }
   }
 }
 
@@ -34,11 +41,10 @@
   z-index: 20;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 350px) {
   .basic-modal-footer {
-    align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     & button {
       width: 100%;
     }
@@ -46,8 +52,8 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .basic-modal {
-    flex-wrap: wrap;
-  }
-}
+// @media only screen and (max-width: 800px) {
+//   .basic-modal {
+//     flex-wrap: wrap;
+//   }
+// }

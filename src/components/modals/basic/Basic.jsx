@@ -46,6 +46,7 @@ const Modal = ({
       justifyContent: "end",
       inset: "0",
       maxWidth: "70vh",
+      maxHeight: "70vh",
       width: "90%",
     },
     overlay: {
@@ -107,7 +108,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  margin: 40,
+  margin: 20,
   flag: false,
   // px: 100,
   // py: 50,

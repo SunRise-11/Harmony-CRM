@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
-
+import PropTypes from "prop-types";
+import logoSvg from "../../../assets/images/mark.svg";
 import Table from "../../../components/table/Table";
 import Theme from "./theme/Theme";
 
@@ -197,7 +198,7 @@ const data4 = [
   },
 ];
 
-const Header = () => {
+const Header = ({ collapsed, setCollapsed }) => {
   const [showChangeTheme, setShowChangeTheme] = useState(false);
   const [isDropVisible, setDropVisible] = useState("invisible");
   const [isSearchVisible, setSearchVisible] = useState("invisible");
@@ -217,116 +218,150 @@ const Header = () => {
           }}
         ></div>
       )}
-      <div className="header">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          backgroundColor: "white",
+          boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.1)",
+          borderBottom: "1px solid #bb91ff",
+        }}
+      >
         <div
-          style={{
-            flexWrap: "wrap",
-            display: "flex",
-            flexDirection: "row",
-            gap: "10px",
-            justifyContent: "center",
-          }}
+          className="logo"
+          style={{ visibility: collapsed ? "visible" : "hidden" }}
         >
-          <div>
-            <Button
-              className="header-select"
-              onClick={() => {
-                setDropVisible("visible");
-                setSearchVisible("invisible");
-              }}
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-              icon={
-                <InlineSVG
-                  src={userImg}
-                  style={{
-                    stroke: isHover && "#0075FF",
-                  }}
-                />
-              }
-            >
-              חיפוש מקבל שירות...
-              <InlineSVG src={downImg} />
-            </Button>
-            <div
-              className="modal"
-              style={{
-                visibility: isDropVisible == "visible" ? "visible" : "hidden",
-              }}
-            >
-              <button className="modal-button">
-                שא
-                <InlineSVG src={searchImg} />
-              </button>
-              <div className="modal-table">
-                <div className="table">
-                  <div className="title" style={{ backgroundColor: "#FFCD4C" }}>
-                    מקבל שירות
-                  </div>
-                  <div className="sm-table">
-                    <Table columns={columns1} data={data1} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <Button
-              className="header-search"
-              onClick={() => {
-                setSearchVisible("visible");
-                setDropVisible("invisible");
-              }}
-            >
-              <div className="header-search-text">חיפוש כללי...</div>
-              <InlineSVG src={searchImg} />
-            </Button>
-            <div
-              className="modal"
-              style={{
-                visibility: isSearchVisible == "visible" ? "visible" : "hidden",
-              }}
-            >
-              <button className="modal-button">
-                שא
-                <InlineSVG src={searchImg} />
-              </button>
-              <div className="modal-table">
-                <div className="table">
-                  <div className="title" style={{ backgroundColor: "#BBE3FF" }}>
-                    עובד
-                  </div>
-                  <div className="sm-table">
-                    <Table columns={columns2} data={data2} />
-                  </div>
-                </div>
-                <div className="table">
-                  <div className="title" style={{ backgroundColor: "#FFCD4C" }}>
-                    מקבל שירות
-                  </div>
-                  <div className="sm-table">
-                    <Table columns={columns3} data={data3} />
-                  </div>
-                </div>
-                <div className="table">
-                  <div className="title" style={{ backgroundColor: "#ADE055" }}>
-                    שאלון
-                  </div>
-                  <div className="sm-table">
-                    <Table columns={columns4} data={data4} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <InlineSVG src={logoSvg} onClick={() => setCollapsed()} />
         </div>
-        <Theme
-          showChangeTheme={showChangeTheme}
-          setShowChangeTheme={setShowChangeTheme}
-        />
+        <div className="header">
+          <div
+            style={{
+              flexWrap: "wrap",
+              display: "flex",
+              flexDirection: "row",
+              gap: "10px",
+              justifyContent: "center",
+            }}
+          >
+            <div>
+              <Button
+                className="header-select"
+                onClick={() => {
+                  setDropVisible("visible");
+                  setSearchVisible("invisible");
+                }}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                icon={
+                  <InlineSVG
+                    src={userImg}
+                    style={{
+                      stroke: isHover && "#0075FF",
+                    }}
+                  />
+                }
+              >
+                חיפוש מקבל שירות...
+                <InlineSVG src={downImg} />
+              </Button>
+              <div
+                className="modal"
+                style={{
+                  visibility: isDropVisible == "visible" ? "visible" : "hidden",
+                }}
+              >
+                <button className="modal-button">
+                  שא
+                  <InlineSVG src={searchImg} />
+                </button>
+                <div className="modal-table">
+                  <div className="table">
+                    <div
+                      className="title"
+                      style={{ backgroundColor: "#FFCD4C" }}
+                    >
+                      מקבל שירות
+                    </div>
+                    <div className="sm-table">
+                      <Table columns={columns1} data={data1} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Button
+                className="header-search"
+                onClick={() => {
+                  setSearchVisible("visible");
+                  setDropVisible("invisible");
+                }}
+              >
+                <div className="header-search-text">חיפוש כללי...</div>
+                <InlineSVG src={searchImg} />
+              </Button>
+              <div
+                className="modal"
+                style={{
+                  visibility:
+                    isSearchVisible == "visible" ? "visible" : "hidden",
+                }}
+              >
+                <button className="modal-button">
+                  שא
+                  <InlineSVG src={searchImg} />
+                </button>
+                <div className="modal-table">
+                  <div className="table">
+                    <div
+                      className="title"
+                      style={{ backgroundColor: "#BBE3FF" }}
+                    >
+                      עובד
+                    </div>
+                    <div className="sm-table">
+                      <Table columns={columns2} data={data2} />
+                    </div>
+                  </div>
+                  <div className="table">
+                    <div
+                      className="title"
+                      style={{ backgroundColor: "#FFCD4C" }}
+                    >
+                      מקבל שירות
+                    </div>
+                    <div className="sm-table">
+                      <Table columns={columns3} data={data3} />
+                    </div>
+                  </div>
+                  <div className="table">
+                    <div
+                      className="title"
+                      style={{ backgroundColor: "#ADE055" }}
+                    >
+                      שאלון
+                    </div>
+                    <div className="sm-table">
+                      <Table columns={columns4} data={data4} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Theme
+            showChangeTheme={showChangeTheme}
+            setShowChangeTheme={setShowChangeTheme}
+          />
+        </div>
       </div>
     </>
   );
+};
+
+Header.propTypes = {
+  collapsed: PropTypes.bool.isRequired,
+  setCollapsed: PropTypes.func.isRequired,
 };
 
 export default Header;
