@@ -6,6 +6,9 @@ const Recipient_desktop = lazy(() =>
 );
 const Recipient = lazy(() => import("../pages/recipients/recipient/Recipient"));
 const PageNotFound = lazy(() => import("../common/pageNotFound/pageNotFound"));
+const EventReport = lazy(() =>
+  import("../pages/reports/eventReport/EventReport")
+);
 
 export const ROUTES_CONSTANTS = [
   {
@@ -23,6 +26,10 @@ export const ROUTES_CONSTANTS = [
   {
     path: "/recipients/recipient",
     element: <Recipient />,
+  },
+  {
+    path: "/report/event",
+    element: <EventReport />,
   },
   {
     path: "*",

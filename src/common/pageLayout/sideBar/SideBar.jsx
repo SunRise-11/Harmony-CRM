@@ -109,7 +109,10 @@ const SideBar = () => {
               isSubMenu={true}
               title="דוח אירועים"
               isSelect={isSelected === 20}
-              onClick={() => setSelected(20)}
+              onClick={() => {
+                setSelected(20);
+                navigate("/report/event");
+              }}
               key={20}
             />,
             <MenuItem
