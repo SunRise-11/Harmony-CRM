@@ -5,23 +5,23 @@
 
 $theme-original: (
   background-color: #197213,
-  color: white
+  color: white,
 );
 
 $theme-suggested: (
   background-color: #0075ff,
   color: white,
-  priamry: #012931
+  priamry: #012931,
 );
 
 $theme-monday: (
   background-color: #293810,
-  color: white
+  color: white,
 );
 
 $theme-dynamics: (
   background-color: #237489,
-  color: white
+  color: white,
 );
 
 @mixin themify($property, $value) {

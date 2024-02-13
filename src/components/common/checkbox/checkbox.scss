@@ -1,0 +1,27 @@
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.625rem;
+  &-title {
+    text-align: right;
+    color: rgb(63, 63, 70);
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    text-align: right;
+  }
+  
+  .ant-checkbox .ant-checkbox-inner {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .ant-checkbox-checked .ant-checkbox-inner:after {
+    width: 10px;
+    height: 17px;
+  }
+}
