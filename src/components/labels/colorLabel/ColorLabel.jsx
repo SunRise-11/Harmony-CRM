@@ -19,7 +19,7 @@ const ColorLabel = ({ color, text, flag }) => {
 ColorLabel.propTypes = {
   color: PropTypes.any.isRequired,
   text: PropTypes.string.isRequired,
-  flag: PropTypes.bool.isRequired
+  flag: PropTypes.bool.isRequired,
 };
 
 export default ColorLabel;

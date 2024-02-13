@@ -4,8 +4,8 @@ import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
 
-import ModalTitle from "../../labels/modaltitle/ModalTitle";
-import Button from "../../common/button/Button";
+import ModalTitle from "../../labels/modalTitle/ModalTitle";
+import Button from "../../button/Button";
 import closeImg from "../../../assets/icons/close.svg";
 import addUserImg from "../../../assets/icons/addUser.svg";
 import checkImg from "../../../assets/icons/check.svg";
@@ -40,14 +40,11 @@ const Modal = ({
       direction: "rtl",
       background: "#ffffff",
       borderRadius: "10px",
-      paddingTop: `${py}px`,
-      paddingRight: `${px}px`,
-      paddingBottom: `${py}px`,
-      paddingLeft: `${px}px`,
       position: "relative",
       display: "flex",
       flexDirection: "column",
       justifyContent: "end",
+      inset: "0",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
@@ -64,7 +61,15 @@ const Modal = ({
             exit="exit"
             transition={{ duration: 0.7 }}
           >
-            <div className="basic-modal">
+            <div
+              className="basic-modal"
+              style={{
+                paddingTop: `${py}px`,
+                paddingRight: `${px}px`,
+                paddingBottom: `${py}px`,
+                paddingLeft: `${px}px`,
+              }}
+            >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeImg} />
               </button>
