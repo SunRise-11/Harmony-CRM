@@ -11,24 +11,26 @@ const DatePicker = ({ pl, pr, py }) => {
 
   return (
     <div className="picker">
-      <AntdDatePicker
-        style={{
-          paddingLeft: `${pl}px`,
-          paddingRight: `${pr}px`,
-          paddingTop: `${py}px`,
-          paddingBottom: `${py}px`,
-        }}
-        className="picker-main"
-        placeholder="23/12/2023"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        suffixIcon={
-          <InlineSVG
-            src={planImg}
-            className={`${isHover && "stroke-[#0075FF]"}`}
-          />
-        }
-      />
+      <ConfigProvider direction="rtl">
+        <AntdDatePicker
+          style={{
+            paddingLeft: `${pl}px`,
+            paddingRight: `${pr}px`,
+            paddingTop: `${py}px`,
+            paddingBottom: `${py}px`,
+          }}
+          className="picker-main"
+          placeholder="23/12/2023"
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          suffixIcon={
+            <InlineSVG
+              src={planImg}
+              className={`${isHover && "stroke-[#0075FF]"}`}
+            />
+          }
+        />
+      </ConfigProvider>
     </div>
   );
 };

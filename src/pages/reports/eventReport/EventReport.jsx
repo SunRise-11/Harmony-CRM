@@ -1,11 +1,11 @@
 import { Button, ConfigProvider, Segmented, Table } from "antd";
 import InlineSVG from "react-inlinesvg";
-import pdfSvg from "../../assets/icons/pdf.svg";
-import excelSvg from "../../assets/icons/excel.svg";
-import Dropdown from "../../components/common/Dropdown";
-import DatePicker from "../../components/common/DatePicker";
-import AvatarImg2 from "../../assets/images/avatar2.png";
-import AvatarImg3 from "../../assets/images/avatar3.png";
+import pdfSvg from "../../../assets/icons/pdf.svg";
+import excelSvg from "../../../assets/icons/excel.svg";
+import Dropdown from "../../../components/dropdown/Dropdown";
+import DatePicker from "../../../components/pickers/datePicker/DatePicker";
+import AvatarImg2 from "../../../assets/images/avatar2.png";
+import AvatarImg3 from "../../../assets/images/avatar3.png";
 
 const columns = [
   {
@@ -54,6 +54,7 @@ const data = [
     activity: "הערכה מקצועית",
     eventType: "פגישה פיזית",
     date: "12/12/2023",
+    key: "1",
     service: {
       name: "יוסי כהן",
       avatar: AvatarImg2,
@@ -64,6 +65,7 @@ const data = [
     activity: "אישפוז",
     eventType: "אירוע חריג",
     date: "12/12/2023",
+    key: "2",
     service: {
       name: "יואל קמינסקי",
       avatar: AvatarImg3,
