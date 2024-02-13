@@ -17,5 +17,10 @@
     align-items: center;
     gap: 0.5rem;
     display: inline-flex;
+    cursor: pointer;
   }
+}
+
+.ant-layout-sider .ant-layout-sider-zero-width-trigger {
+  display: none;
 }
