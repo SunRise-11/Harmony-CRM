@@ -47,6 +47,7 @@ const Modal = ({
       inset: "0",
       maxWidth: "80vw",
     },
+ 
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
     },
