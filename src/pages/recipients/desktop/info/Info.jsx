@@ -14,7 +14,9 @@ const Info = () => {
       <div className="statistic">
         <div className="count">
           <div className="number">6</div>
-          <div className="label">מקבלי שירות בטיפולך</div>
+          <div className="label" style={{ marginTop: "-10px" }}>
+            מקבלי שירות בטיפולך
+          </div>
         </div>
         <div className="charts">
           <div className="statistic">
