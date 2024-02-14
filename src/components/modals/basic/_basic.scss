@@ -1,6 +1,6 @@
 .basic-modal {
   padding: 20px 20px;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
   box-sizing: border-box;
   &-cancel-btn {
@@ -41,7 +41,7 @@
   z-index: 20;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
   .basic-modal-footer {
     display: flex;
     flex-direction: column;

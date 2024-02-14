@@ -45,8 +45,7 @@ const Modal = ({
       flexDirection: "column",
       justifyContent: "end",
       inset: "0",
-      maxWidth: "70vh",
-      maxHeight: "70vh",
+      maxWidth: "80vw",
       width: "90%",
     },
     overlay: {
