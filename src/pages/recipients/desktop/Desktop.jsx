@@ -205,7 +205,7 @@ const data = [
 const Reception = () => {
   return (
     <div className="reception">
-      <div>
+      <div style={{ width: "100%i" }}>
         <Info />
       </div>
       <div className="service-table">

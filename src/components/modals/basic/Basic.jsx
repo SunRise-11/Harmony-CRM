@@ -81,7 +81,11 @@ const Modal = ({
                   className="basic-modal-footer"
                   style={{ marginTop: margin }}
                 >
-                  <Button icon={flag ? addUserImg : checkImg} label="שמירה" />
+                  <Button
+                    onClick={onCancel}
+                    icon={flag ? addUserImg : checkImg}
+                    label="שמירה"
+                  />
                   <Button onClick={onCancel} icon={closeImg} label="ביטול" />
                 </div>
               </div>
