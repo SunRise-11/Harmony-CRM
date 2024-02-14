@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Segmented, Table } from "antd";
+import { Button, ConfigProvider, Segmented } from "antd";
 import InlineSVG from "react-inlinesvg";
 import pdfSvg from "../../../assets/icons/pdf.svg";
 import excelSvg from "../../../assets/icons/excel.svg";
@@ -6,6 +6,7 @@ import Dropdown from "../../../components/dropdown/Dropdown";
 import DatePicker from "../../../components/pickers/datePicker/DatePicker";
 import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
+import Table from "../../../components/table/Table";
 
 const columns = [
   {
@@ -100,12 +101,7 @@ const EventReport = () => {
           </div>
         </div>
         <div className="event-report-table">
-          <Table
-            dataSource={data}
-            columns={columns}
-            pagination={{ position: ["none", "none"] }}
-            bordered={true}
-          />
+          <Table data={data} columns={columns} />
         </div>
       </div>
     </ConfigProvider>

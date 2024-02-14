@@ -3,6 +3,7 @@
 .logo {
   margin: auto;
   margin-right: 20px;
+  margin-top: 10px;
   // width: 38px;
   // height: 38px;
   // overflow: hidden;
@@ -28,7 +29,7 @@
 .header {
   width: 100%;
   padding-left: 20px;
-  padding-right: 60px;
+  padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   // background-color: #ffffff;
@@ -58,7 +59,7 @@
 
   &-search {
     width: 100%;
-    min-width: 30vw;
+    min-width: 25vw;
     height: 2.75rem;
     padding-left: 0.75rem;
     padding-right: 1.875rem;

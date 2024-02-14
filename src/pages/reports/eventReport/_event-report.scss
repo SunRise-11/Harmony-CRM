@@ -15,16 +15,25 @@
 
   &-navbar {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    row-gap: 10px;
+    align-items: center;
     &-toggle {
       background-color: white;
       padding: 0px;
       height: 44px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       align-items: center;
-      color: #464648;
+      // color: #464648;
+
+      & .ant-segmented-item-selected {
+        background-color: #0075ff;
+        color: #cfd3d9;
+      }
+
       & label {
         height: 44px;
         box-sizing: border-box;
@@ -49,6 +58,7 @@
       display: flex;
       flex-direction: row;
       gap: 10px;
+      justify-content: space-evenly;
       & button {
         box-sizing: border-box;
         display: flex;
@@ -80,9 +90,14 @@
     &-others {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      // align-items: flex-start;
       gap: 10px;
-      height: 44px;
+      // height: 44px;
+      & .picker {
+        width: auto;
+      }
     }
   }
 

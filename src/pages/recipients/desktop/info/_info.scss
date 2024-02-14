@@ -1,6 +1,7 @@
 .info {
-  width: 1560px;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   padding: 5px 30px 10px 20px;
   justify-content: space-between;
   align-items: center;
@@ -10,14 +11,20 @@
 
   .statistic {
     display: flex;
-
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-grow: initial;
+    flex-direction: row;
+    column-gap: 20px;
     .count {
       max-width: 85px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      row-gap: 7px;
+      margin-top: 5px;
+      // row-gap: 7px;
 
       .number {
         color: #344449;
@@ -40,12 +47,14 @@
     }
 
     .charts {
+      flex-wrap: wrap;
       display: flex;
-      margin-right: 30px;
       padding-top: 10px;
       padding-bottom: 10px;
       justify-content: flex-start;
       column-gap: 5px;
+      gap: 10px;
+      // flex-grow: 1;
 
       .statistic {
         display: flex;
@@ -54,6 +63,7 @@
         padding: 3px 15px 3px 10px;
         border-radius: 10px;
         background: #ffffff;
+        row-gap: 10px;
 
         .doughnut {
           width: 80px;
@@ -155,4 +165,18 @@
 
 .red {
   color: #ff7979 !important;
+}
+
+@media only screen and (max-width: 1470px) {
+  .reception {
+    & .info {
+      & button {
+        flex-grow: 1;
+      }
+    }
+
+    & .statistic {
+      flex-grow: 1;
+    }
+  }
 }

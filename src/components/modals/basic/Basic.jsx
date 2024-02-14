@@ -45,10 +45,9 @@ const Modal = ({
       flexDirection: "column",
       justifyContent: "end",
       inset: "0",
-      maxWidth: "70vh",
-      maxHeight: "70vh",
-      width: "90%",
+      maxWidth: "80vw",
     },
+ 
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
     },
@@ -83,7 +82,11 @@ const Modal = ({
                   className="basic-modal-footer"
                   style={{ marginTop: margin }}
                 >
-                  <Button icon={flag ? addUserImg : checkImg} label="שמירה" />
+                  <Button
+                    onClick={onCancel}
+                    icon={flag ? addUserImg : checkImg}
+                    label="שמירה"
+                  />
                   <Button onClick={onCancel} icon={closeImg} label="ביטול" />
                 </div>
               </div>

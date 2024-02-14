@@ -29,20 +29,20 @@
   }
 }
 
-@media only screen and (max-width: 635px) {
-  .add-user {
-    align-items: center;
-    row-gap: 20px;
+// @media only screen and (max-width: 700px) {
+//   .add-user {
+//     align-items: center;
+//     row-gap: 20px;
 
-    &-name,
-    &-phone-number,
-    &-select {
-      & > div {
-        width: 100%;
-      }
-    }
-  }
-}
+//     &-name,
+//     &-phone-number,
+//     &-select {
+//       & > div {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 
 @media only screen and (max-width: 700px) {
   .add-user {
@@ -56,6 +56,9 @@
       flex-wrap: wrap;
       row-gap: 7px;
       justify-content: center;
+      & > div {
+        width: 100%;
+      }
     }
   }
 }
