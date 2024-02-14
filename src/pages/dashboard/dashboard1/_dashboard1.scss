@@ -1,9 +1,9 @@
 .dashboard1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 30px;
+
   &-main {
     & > div:first-child {
       grid-column: span 3;
