@@ -46,7 +46,6 @@ const Modal = ({
       justifyContent: "end",
       inset: "0",
       maxWidth: "80vw",
-      width: "90%",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
