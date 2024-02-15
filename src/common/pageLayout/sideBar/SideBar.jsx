@@ -178,7 +178,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"דיווח נוכחות"}
               isSelect={isSelected === 50}
-              onClick={() => setSelected(50)}
+              onClick={() => {
+                setSelected(50);
+                navigate("/reporting/presence");
+              }}
               key={50}
             />,
             <MenuItem
