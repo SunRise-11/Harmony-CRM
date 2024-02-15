@@ -10,6 +10,7 @@ const EventReport = lazy(() =>
   import("../pages/reports/eventReport/EventReport")
 );
 const MainTask = lazy(() => import("../pages/mainTask/MainTask"));
+const Presence = lazy(() => import("../pages/reporting/presence/Presence"));
 
 export const ROUTES_CONSTANTS = [
   {
@@ -35,6 +36,10 @@ export const ROUTES_CONSTANTS = [
   {
     path: "/maintask",
     element: <MainTask />,
+  },
+  {
+    path: "/reporting/presence",
+    element: <Presence />,
   },
   {
     path: "*",
