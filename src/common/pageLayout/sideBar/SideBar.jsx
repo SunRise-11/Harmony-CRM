@@ -150,14 +150,19 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           icon={taskImg}
           title="משימות"
           isSelect={isSelected === 3}
-          onClick={() => setSelected(3)}
+          onClick={() => {
+            setSelected(3);
+            navigate("/maintask");
+          }}
           key={3}
         />
         <MenuItem
           icon={planImg}
           title="יומן פגישות"
           isSelect={isSelected === 4}
-          onClick={() => setSelected(4)}
+          onClick={() => {
+            setSelected(4);
+          }}
           key={4}
         />
         <MenuItem
