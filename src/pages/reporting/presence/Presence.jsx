@@ -78,10 +78,34 @@ const columns = [
 ];
 
 const data = [
-  { date: "12/12/2023", beginTime: "10:00", endTime: "11:00", freedom: "0.5" },
-  { date: "12/12/2023", beginTime: "10:00", endTime: "11:00", freedom: "0.5" },
-  { date: "12/12/2023", beginTime: "10:00", endTime: "11:00", freedom: "0.5" },
-  { date: "12/12/2023", beginTime: "10:00", endTime: "11:00", freedom: "0.5" },
+  {
+    date: "12/12/2023",
+    beginTime: "10:00",
+    endTime: "11:00",
+    freedom: "0.5",
+    key: "1",
+  },
+  {
+    date: "12/12/2023",
+    beginTime: "10:00",
+    endTime: "11:00",
+    freedom: "0.5",
+    key: "2",
+  },
+  {
+    date: "12/12/2023",
+    beginTime: "10:00",
+    endTime: "11:00",
+    freedom: "0.5",
+    key: "3",
+  },
+  {
+    date: "12/12/2023",
+    beginTime: "10:00",
+    endTime: "11:00",
+    freedom: "0.5",
+    key: "4",
+  },
 ];
 const Presence = () => {
   return (

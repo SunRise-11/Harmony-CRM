@@ -188,7 +188,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"דיווח הוצאות"}
               isSelect={isSelected === 51}
-              onClick={() => setSelected(51)}
+              onClick={() => {
+                setSelected(51);
+                navigate("/reporting/expense");
+              }}
               key={51}
             />,
             <MenuItem
