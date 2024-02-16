@@ -184,7 +184,7 @@ const Customers = () => {
   return (
     <div className="customers">
       <div className="customers-navbar">
-        <span className="customers-navbar-title">מבקשי שירות פוטנציאליים</span>
+        <span className="customers-navbar-title">לקוחות פוטנציאליים</span>
         <Button>
           <InlineSVG src={reportSVG} width={20} />
           <span>טווח תאריכים</span>
