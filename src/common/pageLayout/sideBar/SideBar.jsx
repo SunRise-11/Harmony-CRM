@@ -229,7 +229,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"מבקשי שירות פוטנציאליים"}
               isSelect={isSelected === 70}
-              onClick={() => setSelected(70)}
+              onClick={() => {
+                setSelected(70);
+                navigate("/crm/service-applicants");
+              }}
               key={70}
             />,
             <MenuItem
