@@ -210,7 +210,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           icon={jobImg}
           title="הזדמנויות תעסוקה"
           isSelect={isSelected === 6}
-          onClick={() => setSelected(6)}
+          onClick={() => {
+            setSelected(6);
+            navigate("/employment");
+          }}
           key={6}
         />
         <MenuItem
