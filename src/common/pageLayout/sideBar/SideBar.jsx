@@ -198,7 +198,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"דיווח תעסוקה"}
               isSelect={isSelected === 52}
-              onClick={() => setSelected(52)}
+              onClick={() => {
+                setSelected(52);
+                navigate("/reporting/employment");
+              }}
               key={52}
             />,
           ]}

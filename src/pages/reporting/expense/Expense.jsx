@@ -103,7 +103,7 @@ const data = [
     key: "4",
   },
 ];
-const Presence = () => {
+const Expense = () => {
   return (
     <ConfigProvider direction="rtl">
       <div className="expense">
@@ -134,4 +134,4 @@ const Presence = () => {
   );
 };
 
-export default Presence;
+export default Expense;
