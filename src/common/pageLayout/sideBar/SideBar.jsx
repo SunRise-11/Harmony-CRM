@@ -239,7 +239,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"לקוחות פוטנציאליים"}
               isSelect={isSelected === 71}
-              onClick={() => setSelected(71)}
+              onClick={() => {
+                setSelected(71);
+                navigate("/crm/customers");
+              }}
               key={71}
             />,
           ]}

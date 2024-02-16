@@ -18,10 +18,10 @@ const Employment = lazy(() =>
 const Opportunities = lazy(() =>
   import("../pages/employmentOpportunities/Opportunities")
 );
-
 const ServiceApplicants = lazy(() =>
   import("../pages/crm/serviceApplicants/ServiceApplicants")
 );
+const Customers = lazy(() => import("../pages/crm/customers/Customers"));
 
 export const ROUTES_CONSTANTS = [
   {
@@ -67,6 +67,10 @@ export const ROUTES_CONSTANTS = [
   {
     path: "/crm/service-applicants",
     element: <ServiceApplicants />,
+  },
+  {
+    path: "/crm/customers",
+    element: <Customers />,
   },
   {
     path: "*",
