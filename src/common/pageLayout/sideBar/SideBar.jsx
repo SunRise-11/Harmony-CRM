@@ -261,7 +261,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           icon={warnImg}
           title="התראות"
           isSelect={isSelected === 9}
-          onClick={() => setSelected(9)}
+          onClick={() => {
+            setSelected(9);
+            navigate("/alerts");
+          }}
           key={9}
         />
       </div>

@@ -23,6 +23,7 @@ const ServiceApplicants = lazy(() =>
 );
 const Customers = lazy(() => import("../pages/crm/customers/Customers"));
 const Tutorials = lazy(() => import("../pages/tutorials/Tutorials"));
+const Alerts = lazy(() => import("../pages/alerts/Alerts"));
 
 export const ROUTES_CONSTANTS = [
   {
@@ -76,6 +77,10 @@ export const ROUTES_CONSTANTS = [
   {
     path: "/tutorials",
     element: <Tutorials />,
+  },
+  {
+    path: "/alerts",
+    element: <Alerts />,
   },
   {
     path: "*",

@@ -1,0 +1,16 @@
+.title-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.title-label-main {
+  color: #4a9ecd;
+  text-align: right;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.36px;
+}/*# sourceMappingURL=titleLabel.css.map */
