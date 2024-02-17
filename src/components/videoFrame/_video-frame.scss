@@ -1,0 +1,91 @@
+.video-frame {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  width: 300px;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-over {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #00000026;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+
+    & > svg {
+      width: 51px;
+      height: 51px;
+    }
+
+    &-time {
+      display: flex;
+      flex-direction: row;
+      column-gap: 10px;
+      align-items: center;
+      background-color: #eaf0f2;
+      color: #5177a4;
+      border-radius: 8px;
+      padding: 4px 5px 4px 10px;
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      margin: 10px;
+      & svg {
+        stroke: #5177a4;
+      }
+    }
+  }
+
+  &-name {
+    font-family: Afek 1.5 AAA;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .video-frame-over {
+      background-color: #0000000d;
+      & > svg {
+        width: 71px;
+        height: 71px;
+        stroke: #0075ff;
+
+        & path {
+          fill: #0075ff;
+        }
+      }
+
+      &-time {
+        color: white;
+        background-color: black;
+
+        & svg {
+          stroke: white;
+        }
+      }
+    }
+
+    .video-frame-name {
+      color: #0075ff;
+    }
+  }
+}

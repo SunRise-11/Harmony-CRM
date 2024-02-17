@@ -251,7 +251,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           icon={videoImg}
           title="הדרכות"
           isSelect={isSelected === 8}
-          onClick={() => setSelected(8)}
+          onClick={() => {
+            setSelected(8);
+            navigate("/tutorials");
+          }}
           key={8}
         />
         <MenuItem

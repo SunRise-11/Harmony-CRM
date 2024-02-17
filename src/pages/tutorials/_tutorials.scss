@@ -1,0 +1,82 @@
+.tutorials {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 90%;
+
+  &-navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #eef2f9;
+
+    & button {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      width: 168px;
+      height: 44px;
+      font-family: Afek 1.5 AAA;
+      font-size: 15px;
+      text-align: right;
+      border-width: 2px;
+      border-color: transparent;
+
+      &:hover {
+        border-color: #4096ff;
+      }
+
+      & span {
+        color: #434f68;
+      }
+    }
+  }
+
+  &-board {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    &-line {
+      display: flex;
+      flex-direction: column;
+      row-gap: 17px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #ced8db;
+
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 20px;
+        border-radius: 30px;
+        gap: 15px;
+        background-color: #5fbcff;
+        color: white;
+        font-family: Afek 1.5 AAA;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: right;
+        height: 46px;
+      }
+
+      &-videos {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
