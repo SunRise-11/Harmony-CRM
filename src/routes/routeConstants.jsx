@@ -24,6 +24,7 @@ const ServiceApplicants = lazy(() =>
 const Customers = lazy(() => import("../pages/crm/customers/Customers"));
 const Tutorials = lazy(() => import("../pages/tutorials/Tutorials"));
 const Alerts = lazy(() => import("../pages/alerts/Alerts"));
+const DailyPlanner = lazy(() => import("../pages/dailyPlanner/DailyPlanner"));
 
 export const ROUTES_CONSTANTS = [
   {
@@ -49,6 +50,10 @@ export const ROUTES_CONSTANTS = [
   {
     path: "/maintask",
     element: <MainTask />,
+  },
+  {
+    path: "/daily-planner",
+    element: <DailyPlanner />,
   },
   {
     path: "/reporting/presence",

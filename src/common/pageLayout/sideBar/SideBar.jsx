@@ -162,6 +162,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           isSelect={isSelected === 4}
           onClick={() => {
             setSelected(4);
+            navigate("/daily-planner");
           }}
           key={4}
         />
