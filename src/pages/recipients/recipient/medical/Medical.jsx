@@ -66,15 +66,15 @@ const columns = [
 
 const Medical = () => {
   return (
-    <div className="medical">
-      <div className="medical-navbar">
-        <span className="medical-navbar-title"></span>
+    <div className="recipient-medical">
+      <div className="recipient-medical-navbar">
+        <span className="recipient-medical-navbar-title"></span>
         <Button>
           <InlineSVG src={uploadSVG} width={20} />
           <span>העלאת מסמך</span>
         </Button>
       </div>
-      <div className="medical-table">
+      <div className="recipient-medical-table">
         <Table columns={columns} data={data} />
       </div>
     </div>

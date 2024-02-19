@@ -94,9 +94,9 @@ const columns = [
 
 const Documents = () => {
   return (
-    <div className="documents">
-      <div className="documents-navbar">
-        <span className="documents-navbar-title"></span>
+    <div className="recipient-documents">
+      <div className="recipient-documents-navbar">
+        <span className="recipient-documents-navbar-title"></span>
         <Button>
           <InlineSVG src={uploadSVG} width={20} />
           <span>העלאת מסמך</span>
@@ -104,7 +104,7 @@ const Documents = () => {
         <Button>שליחת מסמך</Button>
         <Button>שליחת טופס דיגיטלי</Button>
       </div>
-      <div className="documents-table">
+      <div className="recipient-documents-table">
         <Table columns={columns} data={data} />
       </div>
     </div>

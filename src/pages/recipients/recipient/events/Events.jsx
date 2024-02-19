@@ -2,10 +2,6 @@ import { Button, ConfigProvider, Segmented } from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../../../assets/icons/plan.svg";
 import Table from "../../../../components/table/Table";
-import eyeSVG from "../../../../assets/icons/eye.svg";
-import downloadSVG from "../../../../assets/icons/download.svg";
-import trashSVG from "../../../../assets/icons/trash.svg";
-import ColorLabel from "../../../../components/labels/colorLabel/ColorLabel";
 import Dropdown from "../../../../components/dropdown/Dropdown";
 
 const data = [
@@ -76,14 +72,14 @@ const columns = [
 
 const Events = () => {
   return (
-    <div className="events">
-      <div className="events-navbar">
-        <span className="events-navbar-title"></span>
+    <div className="recipient-events">
+      <div className="recipient-events-navbar">
+        <span className="recipient-events-navbar-title"></span>
         <Dropdown text="סוג אירוע" />
         <Dropdown text="בחירת פעילות" />
         <ConfigProvider direction="rtl">
           <Segmented
-            className="events-navbar-toggle"
+            className="recipient-events-navbar-toggle"
             options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
           />
         </ConfigProvider>
@@ -92,7 +88,7 @@ const Events = () => {
           <span>טווח תאריכים</span>
         </Button>
       </div>
-      <div className="events-table">
+      <div className="recipient-events-table">
         <Table columns={columns} data={data} />
       </div>
     </div>

@@ -1,4 +1,4 @@
-.recipient .medical {
+.recipient-medical {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -37,6 +37,7 @@
       text-align: right;
       border-width: 2px;
       border-color: transparent;
+
       &:hover {
         border-color: #4096ff;
       }
