@@ -1,2 +1,27 @@
-.recipient {
+@import "home/home.scss";
+@import "profile/profile";
+@import "medical/medical";
+@import "documents/documents";
+@import "events/events";
+@import "dailyPlanner/daily-planner";
+@import "tasks/tasks";
+@import "studies/studies";
+@import "employment/employment";
+@import "questionnaires";
+
+.recipient-detail {
+  width: 100%;
+  margin-top: -30px;
+
+  .ant-tabs-nav-wrap {
+    justify-content: center;
+    color: #434f68;
+    //styleName: Main_15;
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-align: right;
+  }
 }

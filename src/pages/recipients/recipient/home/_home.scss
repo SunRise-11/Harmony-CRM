@@ -1,0 +1,17 @@
+@import "cardList/card-list";
+@import "employment/employment";
+@import "recentEvents/recent-events";
+
+.recipient-home {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}

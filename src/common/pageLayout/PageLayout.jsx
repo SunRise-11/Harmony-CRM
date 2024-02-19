@@ -13,11 +13,6 @@ const PageLayout = (props) => {
   const { children } = props;
 
   const [collapsed, setCollapsed] = useState(false);
-  // // Redirect to login page if not logged in.
-  // const loggedUserDetails = useSelector(({ loggedUserProfile }) => loggedUserProfile);
-  // if (!loggedUserDetails?.email) {
-  //   return children;
-  // }
 
   return (
     <div className="layout-container" style={{ direction: "RTL" }}>
