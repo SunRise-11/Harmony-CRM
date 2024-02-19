@@ -89,7 +89,7 @@ const Recipient = () => {
   return (
     <ConfigProvider direction="rtl">
       <Tabs
-        className="recipient-detail"
+        className="recipient"
         defaultActiveKey="1"
         items={tabs}
         tabBarStyle={{
