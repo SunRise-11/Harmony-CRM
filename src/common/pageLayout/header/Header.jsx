@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "antd";
+import { Button, Input } from "antd";
 import InlineSVG from "react-inlinesvg";
 import PropTypes from "prop-types";
 import logoSvg from "../../../assets/icons/mark.svg";
@@ -13,6 +13,7 @@ import AvatarImg1 from "../../../assets/images/avatar1.png";
 import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
 import AvatarImg4 from "../../../assets/images/avatar4.png";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const columns1 = [
   {
@@ -203,6 +204,7 @@ const Header = ({ collapsed, setCollapsed }) => {
   const [isDropVisible, setDropVisible] = useState("invisible");
   const [isSearchVisible, setSearchVisible] = useState("invisible");
   const [isHover, setHover] = useState(false);
+  const viewportWidth = useViewportWidth();
 
   return (
     <>
@@ -227,53 +229,49 @@ const Header = ({ collapsed, setCollapsed }) => {
           borderBottom: "1px solid #bb91ff",
         }}
       >
-        <div
-          className="logo"
-          style={{ visibility: collapsed ? "visible" : "hidden" }}
-        >
-          <InlineSVG src={logoSvg} onClick={() => setCollapsed()} />
-        </div>
+        {collapsed && (
+          <div
+            className="logo"
+            style={{ visibility: collapsed ? "visible" : "hidden" }}
+          >
+            <InlineSVG src={logoSvg} onClick={() => setCollapsed()} />
+          </div>
+        )}
         <div className="header">
           <div
             style={{
-              flexWrap: "wrap",
-              display: "flex",
-              flexDirection: "row",
-              gap: "10px",
-              justifyContent: "center",
+              width: "calc(40% - 106px)",
+              minWidth: "70px",
+              position: "relative",
             }}
           >
-            <div>
-              <Button
-                className="header-select"
-                onClick={() => {
-                  setDropVisible("visible");
-                  setSearchVisible("invisible");
-                }}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-                icon={
-                  <InlineSVG
-                    src={userImg}
-                    style={{
-                      stroke: isHover && "#0075FF",
-                    }}
-                  />
-                }
-              >
-                חיפוש מקבל שירות...
-                <InlineSVG src={downImg} />
-              </Button>
-              <div
-                className="modal"
-                style={{
-                  visibility: isDropVisible == "visible" ? "visible" : "hidden",
-                }}
-              >
-                <button className="modal-button">
-                  שא
-                  <InlineSVG src={searchImg} />
-                </button>
+            <Button
+              className="header-select"
+              onClick={() => {
+                setDropVisible("visible");
+                setSearchVisible("invisible");
+              }}
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+              icon={
+                <InlineSVG
+                  src={userImg}
+                  style={{
+                    stroke: isHover && "#0075FF",
+                  }}
+                />
+              }
+            >
+              {viewportWidth > 1100 && "חיפוש מקבל שירות..."}
+              <InlineSVG src={downImg} />
+            </Button>
+            {isDropVisible == "visible" && (
+              <div className="header-select-modal">
+                <Input
+                  className="modal-button"
+                  suffix={<InlineSVG src={searchImg} />}
+                  placeholder="שא"
+                />
                 <div className="modal-table">
                   <div className="table">
                     <div
@@ -288,29 +286,37 @@ const Header = ({ collapsed, setCollapsed }) => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <Button
-                className="header-search"
-                onClick={() => {
-                  setSearchVisible("visible");
-                  setDropVisible("invisible");
-                }}
-              >
-                <div className="header-search-text">חיפוש כללי...</div>
-                <InlineSVG src={searchImg} />
-              </Button>
-              <div
-                className="modal"
-                style={{
-                  visibility:
-                    isSearchVisible == "visible" ? "visible" : "hidden",
-                }}
-              >
-                <button className="modal-button">
-                  שא
-                  <InlineSVG src={searchImg} />
-                </button>
+            )}
+          </div>
+          <div style={{ width: "calc(60% - 106px)", position: "relative" }}>
+            <Button
+              className="header-search"
+              style={
+                viewportWidth < 480 && {
+                  justifyContent: "center",
+                  width: "50px",
+                  padding: "5px",
+                }
+              }
+              onClick={() => {
+                setSearchVisible("visible");
+                setDropVisible("invisible");
+              }}
+            >
+              {viewportWidth > 480 && (
+                <div className="header-search-text">
+                  {viewportWidth > 560 && "חיפוש כללי..."}
+                </div>
+              )}
+              <InlineSVG src={searchImg} />
+            </Button>
+            {isSearchVisible == "visible" && (
+              <div className="header-search-modal">
+                <Input
+                  className="modal-button"
+                  suffix={<InlineSVG src={searchImg} />}
+                  placeholder="שא"
+                />
                 <div className="modal-table">
                   <div className="table">
                     <div
@@ -347,7 +353,7 @@ const Header = ({ collapsed, setCollapsed }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           <Theme
             showChangeTheme={showChangeTheme}
