@@ -7,9 +7,17 @@
     gap: 16px;
   }
 
-  .rbc-header {
-    background-color: #333; /* Set header background color */
-    color: #fff; /* Set header text color */
+  .rbc-time-header {
+    background-color: white; /* Set background color */
+    color: #71717a; /* Set text color */
+    font-size: 14px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+    text-align: center; /* Align text to the center */
+
+    & > div {
+      color: red;
+      /* Customize individual time slots in the header if needed */
+    }
   }
 
   .rbc-event {

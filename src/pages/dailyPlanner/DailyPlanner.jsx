@@ -1,11 +1,15 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "moment/locale/he";
 import { Button, Segmented, ConfigProvider } from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../assets/icons/plan.svg";
 import createSVG from "../../assets/icons/addevent.svg";
-moment.locale("he");
+
+const customDayHeaderFormat = (date, culture, localizer) => {
+  // Implement your custom logic to format day labels
+  const dayName = date.toLocaleDateString("he-IL", { weekday: "short" });
+  return localizer.format(date, "dddd", culture); // Example: Display full day names
+};
 
 const CustomToolbar = (props) => {
   return (
@@ -41,7 +45,11 @@ const CustomToolbar = (props) => {
 };
 
 const DailyPlanner = () => {
-  const localizer = momentLocalizer(moment);
+  const localizer = momentLocalizer(moment, {
+    formats: {
+      dayFormat: customDayHeaderFormat,
+    },
+  });
 
   const events = [
     {
@@ -58,7 +66,7 @@ const DailyPlanner = () => {
       events={events}
       startAccessor="start"
       endAccessor="end"
-      view="day"
+      view="week"
       style={{ width: "90%", height: "100%" }}
       components={{
         event: (event) => (
