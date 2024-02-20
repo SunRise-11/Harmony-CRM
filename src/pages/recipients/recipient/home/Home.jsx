@@ -1,5 +1,5 @@
-import BarChart from "../../../../components/charts/barChart/BarChart";
-import PieChart from "../../../../components/charts/pieChart/PieChart";
+import BarChart from "./barChart";
+import PieChart from "./pieChart";
 import CardList from "./cardList/CardList";
 import Employment from "./employment/Employment";
 import RecentEvents from "./recentEvents/RecentEvents";
@@ -14,13 +14,19 @@ const Home = () => {
   return (
     <div className="recipient-home">
       <div>
-        {/* <BarChart />
-        <PieChart Data={pieData} labels={pieLabels} />
-        <CardList /> */}
+        <div>
+          <BarChart />
+        </div>
+        <div>
+          <PieChart Data={pieData} labels={pieLabels} />
+        </div>
+        <div>
+          <CardList />
+        </div>
       </div>
       <div>
-        {/* <RecentEvents />
-        <Employment /> */}
+        <RecentEvents />
+        <Employment />
       </div>
     </div>
   );

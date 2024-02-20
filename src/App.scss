@@ -3,37 +3,41 @@
 @import "pages/pages-combined";
 @import "common/common-combined";
 
-$theme-original: (
-  background-color: #197213,
+$theme-original: (background-color: #197213,
   color: white,
 );
 
-$theme-suggested: (
-  background-color: #0075ff,
+$theme-suggested: (background-color: #0075ff,
   color: white,
   priamry: #012931,
 );
 
-$theme-monday: (
-  background-color: #293810,
+$theme-monday: (background-color: #293810,
   color: white,
 );
 
-$theme-dynamics: (
-  background-color: #237489,
+$theme-dynamics: (background-color: #237489,
   color: white,
 );
 
 @mixin themify($property, $value) {
-  @if $value == "original" {
+  @if $value=="original" {
     #{$property}: map-get($theme-original, $property);
-  } @else if $value == "suggested" {
+  }
+
+  @else if $value=="suggested" {
     #{$property}: map-get($theme-suggested, $property);
-  } @else if $value == "monday" {
+  }
+
+  @else if $value=="monday" {
     #{$property}: map-get($theme-monday, $property);
-  } @else if $value == "dynamics" {
+  }
+
+  @else if $value=="dynamics" {
     #{$property}: map-get($theme-dynamics, $property);
-  } @else {
+  }
+
+  @else {
     #{$property}: map-get($theme-original, $property);
   }
 }
@@ -76,4 +80,24 @@ $theme-dynamics: (
   display: flex;
   justify-content: center;
   padding: 30px 0px;
+}
+
+th {
+  color: #000;
+  font-family: "Afek 1.5 AAA";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.12px;
+}
+
+td {
+  color: #000;
+  font-family: "Afek 1.5 AAA";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.15px;
 }

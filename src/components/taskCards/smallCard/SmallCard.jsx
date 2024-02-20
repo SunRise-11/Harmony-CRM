@@ -7,7 +7,7 @@ import moreSvg from "../../../assets/icons/more.svg";
 import QuickMenu from "../../quickMenu/QuickMenu";
 import TimeLabel from "../../labels/timeLabel/TimeLabel";
 
-const MediumCard = ({ title, content, name, avatar, labelColor }) => {
+const SmallCard = ({ title, content, labelColor }) => {
   const [visible, setVisible] = useState(false);
   return (
     <div className="small-card">
@@ -26,7 +26,7 @@ const MediumCard = ({ title, content, name, avatar, labelColor }) => {
           <span className="card-number-text">כרטיס:</span>
           <span className="card-number">2546</span>
         </div>
-        <TimeLabel content="24 במאי" color={labelColor} />
+        <TimeLabel content="24 במאי" color={labelColor || "#EA4335"} />
       </div>
       <div className="small-card-more" onClick={() => setVisible(true)}>
         <InlineSVG src={moreSvg} style={{ stroke: "#B6C3C5" }} />
@@ -36,4 +36,4 @@ const MediumCard = ({ title, content, name, avatar, labelColor }) => {
   );
 };
 
-export default MediumCard;
+export default SmallCard;
