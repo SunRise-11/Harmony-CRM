@@ -134,15 +134,15 @@ const columns = [
 
 const Employment = () => {
   return (
-    <div className="recipient-studies">
-      <div className="recipient-studies-navbar">
-        <span className="recipient-studies-navbar-title"></span>
+    <div className="recipient-employment">
+      <div className="recipient-employment-navbar">
+        <span className="recipient-employment-navbar-title"></span>
         <Button>
           <InlineSVG src={createSVG} width={20} />
           <span>הוספת רשומה</span>
         </Button>
       </div>
-      <div className="recipient-studies-table">
+      <div className="recipient-employment-table">
         <Table columns={columns} data={data} />
       </div>
     </div>
