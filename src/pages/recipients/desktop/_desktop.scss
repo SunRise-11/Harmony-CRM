@@ -11,6 +11,14 @@
     border-radius: 10px;
     box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
 
+    .ant-table-cell-with-append {
+      & button {
+        border-color: transparent;
+        background-color: transparent;
+        padding-right: 10px;
+      }
+    }
+
     .name {
       display: flex;
       justify-content: flex-start;

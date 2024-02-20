@@ -15,6 +15,12 @@ import AvatarImg11 from "../../../assets/images/avatar11.png";
 
 const columns = [
   {
+    key: "plus",
+    dataIndex: "plus",
+    title: " ",
+    width: "10px",
+  },
+  {
     key: "area",
     dataIndex: "area",
     title: "אזור",
