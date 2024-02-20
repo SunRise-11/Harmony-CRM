@@ -16,12 +16,26 @@
   .ant-tabs-nav-wrap {
     justify-content: center;
     color: #434f68;
-    //styleName: Main_15;
     font-family: Afek 1.5 AAA;
     font-size: 15px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.01em;
     text-align: right;
+  }
+
+  & .ant-tabs-tab-btn {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #434F68;
+    text-align: right;
+    font-family: "Afek 1.5 AAA";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.15px;
   }
 }
