@@ -6,9 +6,9 @@ import TitleLabel from "../../../components/labels/titleLabel/TitleLabel";
 import AddTask from "../../../components/modals/addTask/AddTask";
 import TaskCardData from "../../../mockup/TaskCard.json";
 
-import listImg from "../../../assets/icons/list.svg";
-import taskImg from "../../../assets/icons/task.svg";
-import addImg from "../../../assets/icons/add.svg";
+import listSVG from "../../../assets/icons/list.svg";
+import taskSVG from "../../../assets/icons/task.svg";
+import addSVG from "../../../assets/icons/add.svg";
 
 import avatarImg5 from "../../../assets/images/avatar5.png";
 import avatarImg6 from "../../../assets/images/avatar6.png";
@@ -19,10 +19,10 @@ const TaskCardList = () => {
   return (
     <div className="card-list">
       <div className="card-list-title">
-        <TitleLabel icon={taskImg} title="משימות" />
+        <TitleLabel icon={taskSVG} title="משימות" />
         <div className="card-list-title-buttons">
           <div style={{ padding: "10px" }}>
-            <InlineSVG src={listImg} />
+            <InlineSVG src={listSVG} />
           </div>
           <div className="card-list-title-buttons-text">כל המשימות</div>
         </div>
@@ -61,7 +61,7 @@ const TaskCardList = () => {
       />
       <div className="card-list-buttons">
         <button onClick={() => setVisible(true)}>
-          <InlineSVG src={addImg} />
+          <InlineSVG src={addSVG} />
         </button>
         <div>משימה חדשה</div>
       </div>

@@ -1,8 +1,8 @@
-@import "cardList/card-list";
-@import "dashboard1/dashboard1";
-@import "dashboard2/dashboard2";
-@import "quickInfo/quick-info";
-@import "tableList/table-list";
+@import "cardList";
+@import "dashboard1";
+@import "dashboard2";
+@import "quickInfo";
+@import "tableList";
 
 .dashboard {
   display: inline-flex;
@@ -27,10 +27,12 @@
     font-size: 1.25rem;
     font-weight: 500;
     border: 1px solid #5fbcff;
+
     &:hover {
       cursor: pointer;
     }
   }
+
   & .selected {
     background-color: #5fbcff;
     color: white;
@@ -39,11 +41,5 @@
   & .unselected {
     background-color: white;
     color: #5fbcff;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .dashboard {
-    // top: 200px;
   }
 }
