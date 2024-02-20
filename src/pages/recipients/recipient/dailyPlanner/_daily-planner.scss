@@ -10,11 +10,13 @@
     flex-direction: row;
     gap: 10px;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &>div {
       display: flex;
       flex-direction: row;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     &-toggle {
