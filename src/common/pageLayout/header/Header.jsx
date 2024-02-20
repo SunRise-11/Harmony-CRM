@@ -253,16 +253,18 @@ const Header = ({ collapsed, setCollapsed }) => {
               }}
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
-              icon={
+            >
+              <div
+                style={{ display: "flex", flexDirection: "row", gap: "10px" }}
+              >
                 <InlineSVG
                   src={userImg}
                   style={{
                     stroke: isHover && "#0075FF",
                   }}
                 />
-              }
-            >
-              {viewportWidth > 1100 && "חיפוש מקבל שירות..."}
+                {viewportWidth > 1100 && "חיפוש מקבל שירות..."}
+              </div>
               <InlineSVG src={downImg} />
             </Button>
             {isDropVisible == "visible" && (
