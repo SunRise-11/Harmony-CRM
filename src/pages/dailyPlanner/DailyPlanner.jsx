@@ -4,11 +4,12 @@ import { Button, Segmented, ConfigProvider } from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../assets/icons/plan.svg";
 import createSVG from "../../assets/icons/addevent.svg";
+import nextSVG from "../../assets/icons/next.svg";
+import previousSVG from "../../assets/icons/previous.svg";
 
 const customDayHeaderFormat = (date, culture, localizer) => {
-  // Implement your custom logic to format day labels
   const dayName = date.toLocaleDateString("he-IL", { weekday: "short" });
-  return localizer.format(date, "dddd", culture); // Example: Display full day names
+  return localizer.format(date, "dddd", culture);
 };
 
 const CustomToolbar = (props) => {
@@ -17,8 +18,8 @@ const CustomToolbar = (props) => {
       <div className="daily-planner-navbar-others">
         <Button className="daily-planner-navbar-others-current">
           <div>
-            <InlineSVG src={planSVG} width={20} />
-            <InlineSVG src={planSVG} width={20} />
+            <InlineSVG src={nextSVG} width={20} />
+            <InlineSVG src={previousSVG} width={20} />
           </div>
           <span>נובמבר 2023</span>
         </Button>
@@ -50,15 +51,77 @@ const DailyPlanner = () => {
       dayFormat: customDayHeaderFormat,
     },
   });
+  const colors = [
+    {
+      backgroundColor: "#D3EDF680",
+      borderColor: "#5FBCFF",
+      color: "#0369A1",
+    },
+    {
+      backgroundColor: "#FFB40080",
+      borderColor: "#FFB400",
+      color: "#0369A1",
+    },
+    {
+      backgroundColor: "#FF949480",
+      borderColor: "#FF7979",
+      color: "#0369A1",
+    },
+    {
+      backgroundColor: "#8AD34180",
+      borderColor: "#8AD341 ",
+      color: "#0369A1",
+    },
+  ];
 
   const events = [
     {
-      title: "Meeting",
-      start: new Date(2024, 1, 17, 10, 0),
-      end: new Date(2024, 1, 17, 12, 0),
+      title: "פגישת זום",
+      start: new Date(2024, 1, 23, 7, 0),
+      end: new Date(2024, 1, 23, 12, 0),
+      desc: "ישראל ישראלי",
+      theme: 0,
+      backgroundColor: "#D3EDF680",
+      borderColor: "#5FBCFF",
+      color: "#0369A1",
     },
-    // Add more events as needed
+    {
+      title: "פגישות מיון ",
+      start: new Date(2024, 1, 22, 10, 0),
+      end: new Date(2024, 1, 22, 12, 0),
+      hexColor: colors[1],
+      theme: 1,
+    },
+    {
+      title: "פגישת זום",
+      start: new Date(2024, 1, 21, 10, 0),
+      end: new Date(2024, 1, 21, 12, 0),
+      theme: 2,
+    },
+    {
+      title: "פגישות מיון",
+      start: new Date(2024, 1, 18, 10, 0),
+      end: new Date(2024, 1, 18, 12, 0),
+      theme: 3,
+    },
   ];
+
+  const eventStyleGetter = (event, start, end, isSelected) => {
+    var style = {
+      backgroundColor: colors[event.theme].backgroundColor,
+      borderColor: colors[event.theme].borderColor,
+      color: colors[event.theme].color,
+      borderRadius: "0px",
+      opacity: 0.8,
+      color: "black",
+      border: "0px",
+      display: "block",
+    };
+    return {
+      style: style,
+    };
+  };
+
   return (
     <Calendar
       className="daily-planner"
@@ -76,6 +139,7 @@ const DailyPlanner = () => {
               borderRadius: "5px",
               padding: "5px",
               marginBottom: "5px",
+              border: "1px 3px 1px 1px",
             }}
           >
             <strong>{event.title}</strong>
@@ -84,6 +148,7 @@ const DailyPlanner = () => {
         ),
         toolbar: CustomToolbar,
       }}
+      eventPropGetter={eventStyleGetter}
     />
   );
 };

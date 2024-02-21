@@ -13,10 +13,14 @@
     font-size: 14px; /* Set font size */
     font-weight: bold; /* Set font weight */
     text-align: center; /* Align text to the center */
+    & .rbc-allday-cell {
+      display: none;
+    }
 
     & > div {
-      color: red;
-      /* Customize individual time slots in the header if needed */
+      font-size: 42px;
+      font-weight: bold;
+      color: black;
     }
   }
 
@@ -31,17 +35,20 @@
     gap: 10px;
     padding-bottom: 10px;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &-others {
       display: flex;
       flex-direction: row;
-      gap: 40px;
+      column-gap: 40px;
+      row-gap: 10px;
       flex-wrap: wrap;
 
       &-setting {
         display: flex;
         flex-direction: row;
         gap: 10px;
+        flex-wrap: wrap;
       }
 
       &-current {
