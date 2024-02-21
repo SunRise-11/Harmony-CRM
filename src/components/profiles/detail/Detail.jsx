@@ -1,31 +1,54 @@
 import Basic from "../basic/Basic";
-import geometricsSVG from "../../../assets/icons/geometrics.svg";
+import detailSVG from "../../../assets/icons/detail.svg";
 import Item from "../basic/item/Item";
+import CheckBox from "../../checkBox/CheckBox";
 
 const Detail = ({ selected }) => {
   return (
     <Basic
-      title="אנשי קשר"
-      icon={geometricsSVG}
+      title="פרטים נוספים"
+      icon={detailSVG}
       selected={selected}
       content={
         <>
-          <Item type="dropdown" width="200px" required text="ישוב" />
-          <Item type="input" width="200px" required text="רחוב" />
-          <Item type="input" width="200px" required text="מספר" />
-          <Item type="input" width="640px" text="הערות" />
           <div
-            style={{
-              paddingBottom: "10px",
-              borderBottom: "1px solid #CED8DB",
-              width: "100%",
-            }}
-          ></div>
-          <Item type="input" width="200px" required text="טלפון נייד" />
-          <Item type="input" width="200px" text="טלפון בבית" />
-          <Item type="input" width="200px" text="טלפון נוסף" />
-
-          <Item type="input" width="640px" required text="דואר אלקטרוני" />
+            className="profiles-item"
+            style={{ width: "200px", borderLeft: "1px solid #CED8DB" }}
+          >
+            <div className="profiles-item-name">
+              <span>שירות צבאי</span>
+            </div>
+            <div style={{ display: "flex", gap: "60px" }}>
+              <CheckBox title="לא" />
+              <CheckBox title="כן" />
+            </div>
+          </div>
+          <div
+            className="profiles-item"
+            style={{ width: "200px", borderLeft: "1px solid #CED8DB" }}
+          >
+            <div className="profiles-item-name">
+              <span>רישום פלילי</span>
+              <span style={{ color: "red" }}>*</span>
+            </div>
+            <div style={{ display: "flex", gap: "60px" }}>
+              <CheckBox title="לא" />
+              <CheckBox title="כן" />
+            </div>
+          </div>
+          <div className="profiles-item">
+            <div className="profiles-item-name">
+              <span>מדד תאוצה</span>
+            </div>
+            <div style={{ display: "flex", gap: "60px" }}>
+              <CheckBox title="לא" />
+              <CheckBox title="כן" />
+            </div>
+          </div>
+          <Item type="input" width="640px" text="הערות" />
+          <Item type="dropdown" width="200px" text="רישיון נהיגה" />
+          <Item type="dropdown" width="200px" text="קופת חולים" />
+          <Item type="dropdown" width="200px" text="פסיכיאטר" />
         </>
       }
     />
