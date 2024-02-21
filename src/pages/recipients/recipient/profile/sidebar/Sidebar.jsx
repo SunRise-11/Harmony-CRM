@@ -57,6 +57,10 @@ const SideBar = ({ current, setCurrent }) => {
           }
           onClick={() => {
             setCurrent(index);
+            const [element] = document.getElementsByClassName(
+              "recipient-profile-board"
+            );
+            element.children[index].scrollIntoView({ behavior: "smooth" });
           }}
         >
           <InlineSVG
