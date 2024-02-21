@@ -7,6 +7,10 @@ import Plan from "../../../../components/profiles/plan/Plan";
 import Detail from "../../../../components/profiles/detail/Detail";
 import SideBar from "./sidebar/Sidebar";
 import { useState } from "react";
+import createSVG from "../../../../assets/icons/addUser.svg";
+import closeSVG from "../../../../assets/icons/close.svg";
+import { Button } from "antd";
+import InlineSVG from "react-inlinesvg";
 
 const Profile = () => {
   const [current, setCurrent] = useState(0);
@@ -22,7 +26,16 @@ const Profile = () => {
         <Plan selected={current === 5} />
         <Detail selected={current === 6} />
       </div>
-      <div className="recipient-profile-footer"></div>
+      <div className="recipient-profile-footer">
+        <Button>
+          <InlineSVG src={createSVG} />
+          <span>שמירה</span>
+        </Button>
+        <Button>
+          <InlineSVG src={closeSVG} />
+          <span>ביטול</span>
+        </Button>
+      </div>
     </div>
   );
 };

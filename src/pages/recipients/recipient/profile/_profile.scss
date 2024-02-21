@@ -3,7 +3,7 @@
 .recipient-profile {
   width: 96%;
   margin: auto;
-  height: calc(100vh - 128px);
+  height: calc(100vh - 192px);
   overflow: auto;
 
   &-board {
@@ -13,5 +13,51 @@
     flex-direction: column;
     row-gap: 20px;
     overflow: auto;
+    margin-bottom: calc(100% - 800px);
+  }
+
+  &-footer {
+    box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 100%;
+    bottom: -64px;
+    left: 0px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    align-self: stretch;
+    background-color: #d3edf6;
+    height: 64px;
+
+    & button {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      height: 44px;
+      font-family: Afek 1.5 AAA;
+      font-size: 15px;
+      text-align: right;
+      border-width: 2px;
+      border-color: transparent;
+
+      &:hover {
+        border-color: #4096ff;
+      }
+
+      & span {
+        color: #434f68;
+      }
+
+      & svg {
+        border-radius: 8px;
+      }
+    }
   }
 }
