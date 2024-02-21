@@ -3,6 +3,7 @@
 .profiles-basic {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   row-gap: 40px;
   padding: 50px 100px 100px 100px;
@@ -15,6 +16,7 @@
     padding-bottom: 10px;
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5px;
     border-bottom: 1.5px solid #ff8a00;
@@ -24,7 +26,7 @@
 
   &-board {
     display: flex;
-    width: 650px;
+    max-width: 650px;
     gap: 20px;
     flex-wrap: wrap;
   }

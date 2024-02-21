@@ -8,8 +8,6 @@ import createSvg from "../../../../assets/icons/create.svg";
 import avatarImg1 from "../../../../assets/images/avatar1.png";
 import avatarImg2 from "../../../../assets/images/avatar2.png";
 import avatarImg3 from "../../../../assets/images/avatar3.png";
-import avatarImg4 from "../../../../assets/images/avatar4.png";
-import avatarImg5 from "../../../../assets/images/avatar5.png";
 import addImg from "../../../../assets/icons/add.svg";
 
 const items = [

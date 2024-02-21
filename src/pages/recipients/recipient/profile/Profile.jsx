@@ -11,12 +11,45 @@ import createSVG from "../../../../assets/icons/addUser.svg";
 import closeSVG from "../../../../assets/icons/close.svg";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
+import useViewportWidth from "../../../../hooks/useViewportWidth";
 
 const Profile = () => {
   const [current, setCurrent] = useState(0);
+  const [showSideBar, setShowSideBar] = useState(false);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-profile">
-      <SideBar current={current} setCurrent={setCurrent} />
+      {showSideBar === true && viewportWidth < 1520 && (
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "transparent",
+            zIndex: 1000,
+          }}
+          onClick={() => setShowSideBar(false)}
+        ></div>
+      )}
+      {viewportWidth < 1520 && showSideBar === false ? (
+        <Button
+          style={{
+            position: "absolute",
+            backgroundColor: "rgb(255, 180, 0)",
+            width: "5px",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            display: "flex",
+            color: "white",
+          }}
+          onClick={() => setShowSideBar(true)}
+        >
+          1
+        </Button>
+      ) : (
+        <SideBar current={current} setCurrent={setCurrent} />
+      )}
       <div className="recipient-profile-board">
         <Service selected={current === 0} />
         <Address selected={current === 1} />
