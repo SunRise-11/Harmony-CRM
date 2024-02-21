@@ -26,7 +26,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = ({ Data, labels }) => {
+const BarChart = ({ Data, labels, defaultOptions, defaultData }) => {
   const data = {
     labels: labels,
     datasets: [
@@ -60,12 +60,21 @@ const BarChart = ({ Data, labels }) => {
       },
     },
   };
-  return <Bar data={data} options={options} />;
+  return <Bar data={defaultData || data} options={defaultOptions || options} />;
 };
 
 BarChart.propTypes = {
-  Data: PropTypes.arrayOf(PropTypes.any).isRequired,
-  labels: PropTypes.arrayOf(PropTypes.any).isRequired,
+  Data: PropTypes.arrayOf(PropTypes.any),
+  labels: PropTypes.arrayOf(PropTypes.any),
+  defaultOptions: PropTypes.any,
+  defaultData: PropTypes.any,
+};
+
+BarChart.defaultProps = {
+  defaultOptions: null,
+  defaultData: null,
+  Data: null,
+  labels: null,
 };
 
 export default BarChart;

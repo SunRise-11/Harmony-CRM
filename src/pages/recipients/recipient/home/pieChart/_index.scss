@@ -1,0 +1,93 @@
+.recipient-pie-charts {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    box-shadow: 0px 1.848px 9.238px 0px rgba(0, 0, 0, 0.10);
+    width: 400px;
+    height: 100%;
+    padding: 30px;
+    gap: 20px;
+
+    &-header {
+        display: flex;
+        flex-direction: row;
+        gap: 44px;
+        justify-content: space-around;
+
+        &-title {
+            color: #13566C;
+            text-align: right;
+            font-family: "Afek 1.5 AAA";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.36px;
+        }
+
+        &-count {
+            color: #0B1354;
+            text-align: right;
+
+            font-family: Roboto;
+            font-size: 36.951px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -1.386px;
+        }
+
+        &-period {
+            color: #4F4F4F;
+            font-family: "Afek 1.5 AAA";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.12px;
+        }
+    }
+
+    &-line {
+        width: calc(100% + 60px);
+        left: 30px;
+        position: relative;
+        border-bottom: 2px solid #ECECEC;
+    }
+
+    &-board {
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            color: #4F4F4F;
+            font-family: "Afek 1.5 AAA";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.12px;
+
+            &>div {
+                display: flex;
+                flex-direction: row;
+                column-gap: 5px;
+                align-items: center;
+            }
+
+            &-color {
+                width: 20px;
+                height: 8px;
+                border-radius: 2px;
+            }
+        }
+    }
+}

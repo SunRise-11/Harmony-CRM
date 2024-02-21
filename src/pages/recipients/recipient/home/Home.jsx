@@ -18,7 +18,7 @@ const Home = () => {
           <BarChart />
         </div>
         <div>
-          <PieChart Data={pieData} labels={pieLabels} />
+          <PieChart />
         </div>
         <div>
           <CardList />

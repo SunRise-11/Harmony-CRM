@@ -1,6 +1,8 @@
 @import "cardList/card-list";
 @import "employment/employment";
 @import "recentEvents/recent-events";
+@import "pieChart";
+@import "barChart";
 
 .recipient-home {
   width: 90%;
@@ -9,7 +11,7 @@
   flex-direction: column;
   gap: 20px;
 
-  & > div {
+  &>div {
     display: flex;
     flex-direction: row;
     gap: 20px;
