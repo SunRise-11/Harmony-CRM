@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Input as AntdInput } from "antd";
-import InlineSVG from "react-inlinesvg";
 
 const Input = ({ placeholder }) => {
   return (

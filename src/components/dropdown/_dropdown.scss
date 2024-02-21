@@ -13,17 +13,22 @@
   border-width: 2px;
   transition: all 0.3;
   box-sizing: border-box;
+  width: 100%;
+
   &:hover {
     border-color: #4096ff;
   }
+
   & span {
     font-family: Afek 1.5 AAA;
     font-size: 15px;
     color: #434f68;
   }
+
   &:hover {
     cursor: pointer;
   }
+
   & svg {
     width: 24px;
     height: 24px;

@@ -1,0 +1,11 @@
+.profiles-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+
+  &-name {
+    display: flex;
+    gap: 2px;
+  }
+}

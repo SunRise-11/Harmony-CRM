@@ -1,0 +1,15 @@
+@import "sidebar";
+
+.recipient-profile {
+  width: 96%;
+  margin: auto;
+  position: relative;
+
+  &-board {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
