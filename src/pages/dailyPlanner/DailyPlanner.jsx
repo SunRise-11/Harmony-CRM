@@ -81,7 +81,7 @@ const DailyPlanner = () => {
       end: new Date(2024, 1, 23, 12, 0),
       desc: "ישראל ישראלי",
       theme: 0,
-      backgroundColor: "#D3EDF680",
+      backgroundColor: "#5FBCFF80",
       borderColor: "#5FBCFF",
       color: "#0369A1",
     },
@@ -113,7 +113,6 @@ const DailyPlanner = () => {
       color: colors[event.theme].color,
       borderRadius: "0px",
       opacity: 0.8,
-      color: "black",
       border: "0px",
       display: "block",
     };
