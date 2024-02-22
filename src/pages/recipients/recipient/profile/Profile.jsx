@@ -6,7 +6,7 @@ import Working from "../../../../components/profiles/working/Working";
 import Plan from "../../../../components/profiles/plan/Plan";
 import Detail from "../../../../components/profiles/detail/Detail";
 import SideBar from "./sidebar/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import createSVG from "../../../../assets/icons/addUser.svg";
 import closeSVG from "../../../../assets/icons/close.svg";
 import { Button } from "antd";
@@ -14,6 +14,21 @@ import InlineSVG from "react-inlinesvg";
 import useViewportWidth from "../../../../hooks/useViewportWidth";
 
 const Profile = () => {
+  useEffect(() => {
+    if (document !== null) {
+      const [parent] = document.getElementsByClassName("recipient-profile");
+      parent.onscroll = () => {
+        const elements = document.getElementsByClassName("profiles-basic");
+        for (let i = 0; i < elements.length; i++) {
+          const position = elements[i].getBoundingClientRect();
+          if (position.top >= 0 && position.bottom <= parent.clientHeight) {
+            setCurrent(i);
+          }
+        }
+      };
+    }
+  }, []);
+
   const [current, setCurrent] = useState(0);
   const [showSideBar, setShowSideBar] = useState(false);
   const viewportWidth = useViewportWidth();
