@@ -6,6 +6,7 @@
   width: 95%;
   margin: auto;
   overflow: auto;
+  height: calc(100vh - 150px);
 
   &-step {
     display: flex;
