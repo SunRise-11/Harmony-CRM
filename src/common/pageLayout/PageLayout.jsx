@@ -39,13 +39,12 @@ const PageLayout = (props) => {
             collapsed={collapsed}
             setCollapsed={() => setCollapsed(!collapsed)}
           />
-          <Content>
+          <Content style={{ height: "calc(90vh - 65px)", overflow: "auto" }}>
             {children}
             <ChatGPT />
           </Content>
         </Layout>
       </Layout>
-      ;
     </div>
   );
 };

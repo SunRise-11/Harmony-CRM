@@ -23,7 +23,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
   const [showSubMenu, setShowSubMenu] = useState(-1);
 
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ height: "100vh", overflow: "auto" }}>
       <div className="sidebar-logo">
         <img src={logoImg} onClick={() => setCollapsed()} />
       </div>
