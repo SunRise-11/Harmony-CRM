@@ -57,6 +57,7 @@ const Profile = () => {
             textAlign: "center",
             display: "flex",
             color: "white",
+            zIndex: "1001",
           }}
           onClick={() => setShowSideBar(true)}
         >
