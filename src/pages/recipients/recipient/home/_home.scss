@@ -1,0 +1,19 @@
+@import "cardList";
+@import "board";
+@import "statusBar";
+
+.recipient-home {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: auto;
+
+  & > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
