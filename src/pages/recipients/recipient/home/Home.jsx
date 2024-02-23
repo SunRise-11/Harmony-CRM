@@ -6,9 +6,7 @@ const Home = () => {
   return (
     <div className="recipient-home">
       <div>
-        <div>
-          <StatusBar />
-        </div>
+        <StatusBar />
         <div>
           <Board />
         </div>

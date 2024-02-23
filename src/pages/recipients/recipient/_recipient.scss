@@ -10,7 +10,8 @@
 @import "questionnaires";
 
 .recipient {
-  width: 100%;
+  width: fit-content;
+  overflow: auto;
   margin-top: -30px;
   height: 100%;
 
