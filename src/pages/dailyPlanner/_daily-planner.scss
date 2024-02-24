@@ -1,4 +1,7 @@
+@import "createModal";
+
 .daily-planner {
+  width: 90%;
   padding: 30px 0px;
   .rbc-month-view,
   .rbc-time-view {
@@ -134,6 +137,12 @@
       & span {
         color: #434f68;
       }
+    }
+  }
+
+  &-create-modal {
+    & .ant-picker {
+      border: 3px solid #f37021;
     }
   }
 }

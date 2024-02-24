@@ -1,0 +1,29 @@
+.recipient-daily-planner-create {
+  &-title {
+    display: flex;
+    height: 39px;
+    min-height: 39px;
+    padding: 0px 4px 0px 15px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    border: #ff8a00 1px solid;
+    width: fit-content;
+
+    & span {
+      color: #000;
+      text-align: right;
+      font-family: Afek 1.5 AAA;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.15px;
+    }
+  }
+
+  & .ant-picker {
+    border: 3px solid #f37021;
+  }
+}

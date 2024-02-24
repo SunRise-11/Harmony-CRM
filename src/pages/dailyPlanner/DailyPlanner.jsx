@@ -6,13 +6,15 @@ import planSVG from "../../assets/icons/plan.svg";
 import createSVG from "../../assets/icons/addevent.svg";
 import nextSVG from "../../assets/icons/next.svg";
 import previousSVG from "../../assets/icons/previous.svg";
+import { useState } from "react";
+import CreateModal from "./createModal/CreateModal";
 
 const customDayHeaderFormat = (date, culture, localizer) => {
   const dayName = date.toLocaleDateString("he-IL", { weekday: "short" });
   return localizer.format(date, "dddd", culture);
 };
 
-const CustomToolbar = (props) => {
+const CustomToolbar = ({ setShowCreateModal }) => {
   return (
     <div className="daily-planner-navbar">
       <div className="daily-planner-navbar-others">
@@ -37,7 +39,7 @@ const CustomToolbar = (props) => {
           </ConfigProvider>
         </div>
       </div>
-      <Button>
+      <Button onClick={() => setShowCreateModal(true)}>
         <InlineSVG src={createSVG} width={20} />
         <span>צור פגישה</span>
       </Button>
@@ -46,6 +48,7 @@ const CustomToolbar = (props) => {
 };
 
 const DailyPlanner = () => {
+  const [showCreateModal, setShowCreateModal] = useState(false);
   const localizer = momentLocalizer(moment, {
     formats: {
       dayFormat: customDayHeaderFormat,
@@ -122,33 +125,41 @@ const DailyPlanner = () => {
   };
 
   return (
-    <Calendar
-      className="daily-planner"
-      localizer={localizer}
-      events={events}
-      startAccessor="start"
-      endAccessor="end"
-      view="week"
-      style={{ width: "90%", height: "100%" }}
-      components={{
-        event: (event) => (
-          <div
-            style={{
-              backgroundColor: event.color,
-              borderRadius: "5px",
-              padding: "5px",
-              marginBottom: "5px",
-              border: "1px 3px 1px 1px",
-            }}
-          >
-            <strong>{event.title}</strong>
-            <p>{event.desc}</p>
-          </div>
-        ),
-        toolbar: CustomToolbar,
-      }}
-      eventPropGetter={eventStyleGetter}
-    />
+    <div className="daily-planner">
+      <Calendar
+        // className="daily-planner"
+        localizer={localizer}
+        events={events}
+        startAccessor="start"
+        endAccessor="end"
+        view="week"
+        style={{ width: "100%", height: "100%" }}
+        components={{
+          event: (event) => (
+            <div
+              style={{
+                backgroundColor: event.color,
+                borderRadius: "5px",
+                padding: "5px",
+                marginBottom: "5px",
+                border: "1px 3px 1px 1px",
+              }}
+            >
+              <strong>{event.title}</strong>
+              <p>{event.desc}</p>
+            </div>
+          ),
+          toolbar: (props) => (
+            <CustomToolbar {...props} setShowCreateModal={setShowCreateModal} />
+          ),
+        }}
+        eventPropGetter={eventStyleGetter}
+      />
+      <CreateModal
+        visible={showCreateModal}
+        onCancel={() => setShowCreateModal(false)}
+      />
+    </div>
   );
 };
 

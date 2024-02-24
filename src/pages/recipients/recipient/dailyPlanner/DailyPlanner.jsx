@@ -6,6 +6,8 @@ import addEventSVG from "../../../../assets/icons/addevent.svg";
 import searchSVG from "../../../../assets/icons/search.svg";
 import trashSVG from "../../../../assets/icons/trash.svg";
 import editSVG from "../../../../assets/icons/pencil.svg";
+import { useState } from "react";
+import CreateModal from "./createModal/CreateModal";
 
 const data = [
   {
@@ -115,6 +117,7 @@ const columns = [
 ];
 
 const DailyPlanner = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="recipient-daily-planner">
       <div className="recipient-daily-planner-navbar">
@@ -139,7 +142,7 @@ const DailyPlanner = () => {
             <span>טווח תאריכים</span>
           </Button>
         </div>
-        <Button>
+        <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={addEventSVG} width={20} />
           <span>הוסף פגישה</span>
         </Button>
@@ -162,6 +165,7 @@ const DailyPlanner = () => {
           ]}
         />
       </div>
+      <CreateModal visible={showModal} onCancel={() => setShowModal(false)} />
     </div>
   );
 };

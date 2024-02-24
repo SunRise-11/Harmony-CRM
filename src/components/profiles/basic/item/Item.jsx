@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Input from "../../../input/Input";
 import Select from "../../../select/Select";
 import DatePicker from "../../../pickers/datePicker/DatePicker";
+import TimePicker from "../../../pickers/timePicker/TimePicker";
 const Item = ({ type, width, required, text }) => {
   return (
     <div className="profiles-item" style={{ width }}>
@@ -22,6 +23,7 @@ const Item = ({ type, width, required, text }) => {
           ></div>
         )}
         {type === "date-picker" && <DatePicker py={7.5} />}
+        {type === "time-picker" && <TimePicker py={7.5} />}
       </div>
     </div>
   );
