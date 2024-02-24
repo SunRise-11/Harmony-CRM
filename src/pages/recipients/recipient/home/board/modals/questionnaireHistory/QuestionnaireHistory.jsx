@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import closeImg from "../../../../../../../assets/icons/close.svg";
 import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
 import recoverySVG from "../../../../../../../assets/icons/recovery.svg";
+import Table from "../../../../../../../components/table/Table";
 
 ReactModal.setAppElement("#root");
 
@@ -19,6 +20,34 @@ const modalVariants = {
     opacity: 0,
   },
 };
+
+const columns = [
+  {
+    key: "date",
+    title: "תאריך",
+    dataIndex: "date",
+    sorter: true,
+  },
+  {
+    key: "questionnaire",
+    title: "שאלון",
+    dataIndex: "questionnaire",
+    sorter: true,
+  },
+];
+
+const data = [
+  {
+    key: 1,
+    questionnaire: "מוטיבציה",
+    date: "12/12/2023",
+  },
+  {
+    key: 2,
+    questionnaire: "מוטיבציה",
+    date: "03/11/2023",
+  },
+];
 
 const QuestionnaireHistory = ({ visible, onCancel }) => {
   const Styles = {
@@ -53,13 +82,20 @@ const QuestionnaireHistory = ({ visible, onCancel }) => {
               className="basic-modal"
               style={{
                 padding: "30px 50px",
+                width: "80vw",
+                maxWidth: "800px",
+                minWidth: "600px",
               }}
             >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeImg} />
               </button>
+
               <div>
                 <ModalTitle icon={recoverySVG} title="היסטורית שאלונים" />
+                <div style={{ marginTop: "10px" }}>
+                  <Table columns={columns} data={data} />
+                </div>
               </div>
             </div>
           </motion.div>

@@ -55,6 +55,10 @@ const NewQuestionnaire = ({ visible, onCancel }) => {
               className="basic-modal"
               style={{
                 padding: "30px 50px",
+                width: "80vw",
+                maxWidth: "800px",
+                minWidth: "300px",
+                flexWrap: "wrap",
               }}
             >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
@@ -68,8 +72,7 @@ const NewQuestionnaire = ({ visible, onCancel }) => {
                     flexDirection: "column",
                     gap: "20px",
                     marginTop: "20px",
-                    width: "400px",
-                    flexWrap: "wrap",
+                    justifyContent: "flex-start",
                   }}
                 >
                   <div
@@ -77,7 +80,8 @@ const NewQuestionnaire = ({ visible, onCancel }) => {
                       display: "flex",
                       flexDirection: "row",
                       flexWrap: "wrap",
-                      gap: "20px",
+                      columnGap: "20px",
+                      width: "100%",
                     }}
                   >
                     <Item
