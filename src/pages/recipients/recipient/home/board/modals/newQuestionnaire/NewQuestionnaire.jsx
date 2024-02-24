@@ -6,6 +6,7 @@ import closeImg from "../../../../../../../assets/icons/close.svg";
 import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
 import questionSVG from "../../../../../../../assets/icons/question.svg";
 import Button from "../../../../../../../components/button/Button";
+import Item from "../../../../../../../components/profiles/basic/item/Item";
 
 ReactModal.setAppElement("#root");
 
@@ -61,7 +62,60 @@ const NewQuestionnaire = ({ visible, onCancel }) => {
               </button>
               <div>
                 <ModalTitle icon={questionSVG} title="הוספת שאלון" />
-                <div>content</div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "20px",
+                    marginTop: "20px",
+                    width: "400px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      gap: "20px",
+                    }}
+                  >
+                    <Item
+                      type="dropdown"
+                      width="calc(50% - 10px)"
+                      required
+                      text="סוג אירוע"
+                    />
+                    <Item
+                      type="date-picker"
+                      width="calc(50% - 10px)"
+                      required
+                      text="תאריך"
+                    />
+                  </div>
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                      gap: "20px",
+                    }}
+                  >
+                    <Item
+                      type="dropdown"
+                      width="calc(50% - 10px)"
+                      required
+                      text="מיקום"
+                    />
+                    <Item
+                      type="dropdown"
+                      width="calc(50% - 10px)"
+                      required
+                      text="פרטים"
+                    />
+                  </div>
+                </div>
                 <div
                   className="basic-modal-footer"
                   style={{ marginTop: "20px" }}
