@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { useState } from "react";
 import InlineSVG from "react-inlinesvg";
-import AddTask from "../../../../components/modals/addTask/AddTask";
+import AddTask from "./addTask/AddTask";
 import SmallCard from "../../../../components/taskCards/smallCard/SmallCard";
 
 import createSvg from "../../../../assets/icons/create.svg";
