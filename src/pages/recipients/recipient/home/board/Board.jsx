@@ -12,6 +12,7 @@ import abilitySVG from "../../../../../assets/images/ability.svg";
 import overviewSVG from "../../../../../assets/images/overview.svg";
 import effect1SVG from "../../../../../assets/icons/effect1.svg";
 import effect2SVG from "../../../../../assets/icons/effect2.svg";
+import sendSVG from "../../../../../assets/icons/send.svg";
 
 import cover2SVG from "../../../../../assets/images/cover2.svg";
 import cover4SVG from "../../../../../assets/images/cover4.svg";
@@ -151,16 +152,31 @@ const Board = () => {
             <Item text="סיכום שאלונים" icon={overviewSVG} />
           </div>
         </div>
-        <div>
-          <Button>
-            <InlineSVG src={addEventSVG} />
-            <span>הוסף אירוע</span>
-          </Button>
-          <Button>
-            <InlineSVG src={recoverySVG} />
-            <span>היסטורית אירועים</span>
-          </Button>
-        </div>
+        {secondSelected === 0 && (
+          <div>
+            <Button>
+              <InlineSVG src={addEventSVG} />
+              <span>הוסף אירוע</span>
+            </Button>
+            <Button>
+              <InlineSVG src={recoverySVG} />
+              <span>היסטורית אירועים</span>
+            </Button>
+          </div>
+        )}
+        {secondSelected === 1 && (
+          <div>
+            <Button>
+              <InlineSVG src={sendSVG} stroke="#434F68" width={24} />
+              <span>שלח שאלון</span>
+            </Button>
+            <Button>
+              <InlineSVG src={recoverySVG} />
+              <span>היסטורית שאלונים</span>
+            </Button>
+          </div>
+        )}
+        {(secondSelected === 2 || secondSelected === 3) && <div></div>}
       </div>
     </div>
   );
