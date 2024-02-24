@@ -23,12 +23,23 @@ import cover8SVG from "../../../../../assets/images/cover8.svg";
 import Item from "./item/Item";
 import { Button } from "antd";
 import { useState } from "react";
+import EventHistory from "./modals/EventHistory";
+import NewEvent from "./modals/NewEvent";
+import NewQuestionnaire from "./modals/NewQuestionnaire";
+import QuestionnaireHistory from "./modals/QuestionnaireHistory";
 
 const Board = () => {
   const [firstSelected, setFirstSelected] = useState(0);
   const [secondSelected, setSecondSelected] = useState(0);
+  const [showEventHistory, setShowEventHistory] = useState(false);
+  const [showNewEvent, setShowNewEvent] = useState(false);
+  const [showNewQuestionnaire, setShowNewQuestionnaire] = useState(false);
+  const [showQuestionnaireHistory, setShowQuestionnaireHistory] =
+    useState(false);
+
   const firstRights = ["20px", "210px", "420px", "620px"];
   const secondRights = ["22px", "190px", "385px", "600px"];
+
   return (
     <div className="recipient-home-board">
       <div className="recipient-home-board-title">
@@ -154,11 +165,11 @@ const Board = () => {
         </div>
         {secondSelected === 0 && (
           <div>
-            <Button>
+            <Button onClick={() => setShowNewEvent(true)}>
               <InlineSVG src={addEventSVG} />
               <span>הוסף אירוע</span>
             </Button>
-            <Button>
+            <Button onClick={() => setShowEventHistory(true)}>
               <InlineSVG src={recoverySVG} />
               <span>היסטורית אירועים</span>
             </Button>
@@ -166,11 +177,11 @@ const Board = () => {
         )}
         {secondSelected === 1 && (
           <div>
-            <Button>
+            <Button onClick={() => setShowNewQuestionnaire(true)}>
               <InlineSVG src={sendSVG} stroke="#434F68" width={24} />
               <span>שלח שאלון</span>
             </Button>
-            <Button>
+            <Button onClick={() => setShowQuestionnaireHistory(true)}>
               <InlineSVG src={recoverySVG} />
               <span>היסטורית שאלונים</span>
             </Button>
@@ -178,6 +189,22 @@ const Board = () => {
         )}
         {(secondSelected === 2 || secondSelected === 3) && <div></div>}
       </div>
+      <EventHistory
+        visible={showEventHistory}
+        onCancel={() => setShowEventHistory(false)}
+      />
+      <NewEvent
+        visible={showNewEvent}
+        onCancel={() => setShowNewEvent(false)}
+      />
+      <NewQuestionnaire
+        visible={showNewQuestionnaire}
+        onCancel={() => setShowNewQuestionnaire(false)}
+      />
+      <QuestionnaireHistory
+        visible={showQuestionnaireHistory}
+        onCancel={() => setShowQuestionnaireHistory(false)}
+      />
     </div>
   );
 };
