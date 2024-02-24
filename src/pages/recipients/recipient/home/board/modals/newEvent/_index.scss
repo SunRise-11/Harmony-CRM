@@ -1,0 +1,15 @@
+.recipient-home-new-event {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0px;
+
+  textarea {
+    border: 2px solid #a1a1aa;
+    border-radius: 10px;
+
+    &:hover {
+      border-color: #5fbbff;
+    }
+  }
+}

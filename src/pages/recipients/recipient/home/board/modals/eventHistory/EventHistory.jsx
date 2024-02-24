@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import closeImg from "../../../../../../assets/icons/close.svg";
-import ModalTitle from "../../../../../../components/labels/modalTitle/ModalTitle";
-import addEventSVG from "../../../../../../assets/icons/addevent.svg";
-import Button from "../../../../../../components/button/Button";
-
+import closeImg from "../../../../../../../assets/icons/close.svg";
+import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
+import recoverySVG from "../../../../../../../assets/icons/recovery.svg";
 ReactModal.setAppElement("#root");
 
 const modalVariants = {
@@ -21,7 +19,7 @@ const modalVariants = {
   },
 };
 
-const NewEvent = ({ visible, onCancel }) => {
+const EventHistory = ({ visible, onCancel }) => {
   const Styles = {
     content: {
       direction: "rtl",
@@ -60,15 +58,8 @@ const NewEvent = ({ visible, onCancel }) => {
                 <InlineSVG src={closeImg} />
               </button>
               <div>
-                <ModalTitle icon={addEventSVG} title="אירוע חדש" />
+                <ModalTitle icon={recoverySVG} title="היסטורית אירועים" />
                 <div>content</div>
-                <div
-                  className="basic-modal-footer"
-                  style={{ marginTop: "20px" }}
-                >
-                  <Button onClick={onCancel} label="שמירה" />
-                  <Button onClick={onCancel} icon={closeImg} label="ביטול" />
-                </div>
               </div>
             </div>
           </motion.div>
@@ -78,4 +69,4 @@ const NewEvent = ({ visible, onCancel }) => {
   );
 };
 
-export default NewEvent;
+export default EventHistory;

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import closeImg from "../../../../../../assets/icons/close.svg";
-import ModalTitle from "../../../../../../components/labels/modalTitle/ModalTitle";
-import recoverySVG from "../../../../../../assets/icons/recovery.svg";
+import closeImg from "../../../../../../../assets/icons/close.svg";
+import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
+import recoverySVG from "../../../../../../../assets/icons/recovery.svg";
 
 ReactModal.setAppElement("#root");
 

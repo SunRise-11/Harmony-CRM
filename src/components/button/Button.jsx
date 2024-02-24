@@ -28,7 +28,7 @@ const Button = ({ icon, label, paddingX, paddingY, onClick }) => {
 };
 
 Button.propTypes = {
-  icon: PropTypes.any.isRequired,
+  icon: PropTypes.any,
   label: PropTypes.string.isRequired,
   paddingX: PropTypes.number,
   paddingY: PropTypes.number,
@@ -36,6 +36,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  icon: null,
   paddingX: 20,
   paddingY: 10,
 };

@@ -23,10 +23,10 @@ import cover8SVG from "../../../../../assets/images/cover8.svg";
 import Item from "./item/Item";
 import { Button } from "antd";
 import { useState } from "react";
-import EventHistory from "./modals/EventHistory";
-import NewEvent from "./modals/NewEvent";
-import NewQuestionnaire from "./modals/NewQuestionnaire";
-import QuestionnaireHistory from "./modals/QuestionnaireHistory";
+import EventHistory from "./modals/eventHistory/EventHistory";
+import NewEvent from "./modals/newEvent/NewEvent";
+import NewQuestionnaire from "./modals/newQuestionnaire/NewQuestionnaire";
+import QuestionnaireHistory from "./modals/questionnaireHistory/QuestionnaireHistory";
 
 const Board = () => {
   const [firstSelected, setFirstSelected] = useState(0);

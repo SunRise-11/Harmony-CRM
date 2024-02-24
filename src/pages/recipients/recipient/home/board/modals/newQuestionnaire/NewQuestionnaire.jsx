@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import closeImg from "../../../../../../assets/icons/close.svg";
-import ModalTitle from "../../../../../../components/labels/modalTitle/ModalTitle";
-import questionSVG from "../../../../../../assets/icons/question.svg";
-import Button from "../../../../../../components/button/Button";
+import closeImg from "../../../../../../../assets/icons/close.svg";
+import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
+import questionSVG from "../../../../../../../assets/icons/question.svg";
+import Button from "../../../../../../../components/button/Button";
 
 ReactModal.setAppElement("#root");
 
