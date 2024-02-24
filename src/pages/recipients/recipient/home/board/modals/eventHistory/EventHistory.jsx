@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import closeImg from "../../../../../../../assets/icons/close.svg";
 import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
 import recoverySVG from "../../../../../../../assets/icons/recovery.svg";
+import Table from "../../../../../../../components/table/Table";
 ReactModal.setAppElement("#root");
 
 const modalVariants = {
@@ -18,6 +19,36 @@ const modalVariants = {
     opacity: 0,
   },
 };
+
+const columns = [
+  {
+    key: "eventType",
+    dataIndex: "eventType",
+    title: "סוג אירוע",
+    sorter: true,
+  },
+  {
+    key: "date",
+    dataIndex: "date",
+    title: "סוג אירוע",
+    sorter: true,
+    width: 140,
+  },
+  { key: "details", dataIndex: "details", title: "סוג אירוע", sorter: true },
+];
+
+const data = [
+  {
+    key: 1,
+    eventType: "פגישה פיזית",
+    date: "12/12/2023",
+  },
+  {
+    key: 2,
+    eventType: "פגישת אונלייון",
+    date: "03/11/2023",
+  },
+];
 
 const EventHistory = ({ visible, onCancel }) => {
   const Styles = {
@@ -52,6 +83,9 @@ const EventHistory = ({ visible, onCancel }) => {
               className="basic-modal"
               style={{
                 padding: "30px 50px",
+                width: "80vw",
+                maxWidth: "800px",
+                minWidth: "600px",
               }}
             >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
@@ -59,7 +93,9 @@ const EventHistory = ({ visible, onCancel }) => {
               </button>
               <div>
                 <ModalTitle icon={recoverySVG} title="היסטורית אירועים" />
-                <div>content</div>
+                <div style={{ marginTop: "10px" }}>
+                  <Table columns={columns} data={data} />
+                </div>
               </div>
             </div>
           </motion.div>
