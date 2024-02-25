@@ -34,7 +34,7 @@ const ChatGPT = () => {
         style={{
           zIndex: 7,
           position: "fixed",
-          top: "64px",
+          top: "calc(50% - 367px)",
           left: "0px",
         }}
       >

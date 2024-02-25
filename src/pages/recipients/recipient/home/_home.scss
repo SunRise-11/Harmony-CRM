@@ -3,12 +3,12 @@
 @import "statusBar";
 
 .recipient-home {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  margin: auto 2%;
   display: flex;
   flex-direction: row;
   gap: 20px;
-  overflow: auto;
+  overflow: scroll;
 
   & > div:first-child {
     display: flex;
