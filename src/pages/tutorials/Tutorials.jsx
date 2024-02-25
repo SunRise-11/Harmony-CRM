@@ -35,7 +35,7 @@ const Tutorials = () => {
         <div className="tutorials-board-line">
           <div
             className="tutorials-board-line-title"
-            style={{ backgroundColor: "#90BE6D", width: "184px" }}
+            style={{ backgroundColor: "#90BE6D", width: "190px" }}
           >
             תפעול מערכת
           </div>
