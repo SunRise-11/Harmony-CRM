@@ -3,12 +3,15 @@ import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import closeImg from "../../../../assets/icons/close.svg";
-import addEventSVG from "../../../../assets/icons/addevent.svg";
-import avatarImg1 from "../../../../assets/images/avatar1.png";
+import uploadSVG from "../../../../assets/icons/uploadDoc.svg";
 import Button from "../../../../components/button/Button";
 import Item from "../../../../components/profiles/basic/item/Item";
-import CheckBox from "../../../../components/checkBox/CheckBox";
-import addImg from "../../../../assets/icons/add.svg";
+import reportSVG from "../../../../assets/icons/report.svg";
+import ModalTitle from "../../../../components/labels/modalTitle/ModalTitle";
+import ReactSelect from "react-select";
+import userSVG from "../../../../assets/icons/user.svg";
+import addUserSVG from "../../../../assets/icons/addUser.svg";
+import { ConfigProvider, Segmented } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -25,6 +28,8 @@ const modalVariants = {
 };
 
 const Expense = ({ visible, onCancel }) => {
+  const [isHover, setHover] = useState(false);
+  const options = [];
   const Styles = {
     content: {
       direction: "rtl",
@@ -42,7 +47,7 @@ const Expense = ({ visible, onCancel }) => {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
     },
   };
-  const [checked, setChecked] = useState(false);
+
   return (
     <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
@@ -59,173 +64,123 @@ const Expense = ({ visible, onCancel }) => {
               style={{
                 padding: "30px 50px",
                 width: "80vw",
-                maxWidth: "800px",
-                minWidth: "600px",
+                maxWidth: "700px",
+                minWidth: "500px",
               }}
             >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeImg} />
               </button>
               <div className="recipient-daily-planner-create">
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <span className="modal-title">
-                    <InlineSVG src={addEventSVG} className="modal-title-svg" />
-                    <div className="modal-title-value">פגישה חדשה עבור:</div>
-                  </span>
-                  <span className="recipient-daily-planner-create-title">
-                    <img src={avatarImg1} width={32} height={32} />
-                    <span>יואל קמינסקי</span>
-                  </span>
-                </div>
+                <ModalTitle title="טופס דיווח נוכחות" icon={reportSVG} />
                 <div
                   style={{
-                    marginTop: "25px",
                     display: "flex",
                     flexDirection: "column",
                     gap: "25px",
+                    margin: "30px 0px",
                   }}
                 >
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: "column",
+                      flexDirection: "row",
                       gap: "20px",
-                      paddingBottom: "25px",
-                      borderBottom: "1px solid #CED8DB",
                     }}
                   >
-                    <Item type="input" width="100%" required text="נושא" />
-                    <div className="profiles-item">
+                    <Item
+                      type="date-picker"
+                      text="תאריך"
+                      required
+                      width="calc(50% - 10px)"
+                    />
+                    <div
+                      className="profiles-item"
+                      style={{ width: "calc(50% - 10px)" }}
+                    >
                       <div className="profiles-item-name">
-                        <span>סוג פגישה</span>
+                        <span>סוג הוצאה</span>
                         <span style={{ color: "red" }}>*</span>
                       </div>
-                      <div
+                      <ConfigProvider direction="rtl">
+                        <Segmented
+                          className="expense-modal-toggle"
+                          options={["כיבוד", "משרדי", "נסיעות", "נסיעות - ק”מ"]}
+                        />
+                      </ConfigProvider>
+                    </div>
+                  </div>
+                  <div className="profiles-item" style={{ width: "100%" }}>
+                    <div className="profiles-item-name">מקבל שירות</div>
+                    <div className="select">
+                      <ReactSelect
+                        className="select-main"
+                        isRtl={true}
+                        isSearchable={true}
+                        isClearable={true}
+                        options={options}
+                        placeholder=""
+                        isDisabled
+                        styles={{
+                          control: (baseStyles) => ({
+                            ...baseStyles,
+                            backgroundColor: "white",
+                            borderColor: "#B9B9B9",
+                            borderWidth: "2px",
+                            borderRadius: "10px",
+                            paddingTop: "3px",
+                            paddingBottom: "3px",
+                            paddingRight: "90px",
+                          }),
+                          indicatorSeparator: (base) => ({
+                            ...base,
+                            width: "0px",
+                          }),
+                        }}
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                      />
+                      <InlineSVG
+                        src={userSVG}
+                        className="select-svg"
                         style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          gap: "61px",
+                          stroke: isHover && "#0075FF",
+                        }}
+                      />
+                      <span
+                        style={{
+                          position: "absolute",
+                          marginRight: "45px",
+                          marginTop: "3px",
                         }}
                       >
-                        <CheckBox
-                          title="אונליין"
-                          checked={checked}
-                          onChange={() => setChecked(true)}
-                        />
-                        <CheckBox
-                          title="פיזית"
-                          checked={!checked}
-                          onChange={() => setChecked(false)}
-                        />
-                      </div>
+                        חיפוש או בחירת מקבל שירות
+                      </span>
                     </div>
                   </div>
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: "column",
-                      gap: "15px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        gap: "20px",
-                        width: "100%",
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <Item
-                        type="date-picker"
-                        width="calc(33% - 13px)"
-                        required
-                        text="תאריך"
-                      />
-                      <Item
-                        type="time-picker"
-                        width="calc(33% - 13px)"
-                        text="שעת התחלה"
-                      />
-                      <Item
-                        type="time-picker"
-                        width="calc(33% - 13px)"
-                        text="שעת סיום"
-                      />
-                    </div>
-                    <CheckBox title="פגישת זום" />
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
+                      flexDirection: "row",
                       gap: "20px",
                     }}
                   >
+                    <Item text="סכום" type="input" required width="200px" />
                     <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "20px",
-                        borderBottom: "1px solid #CED8DB",
-                        paddingBottom: "15px",
-                      }}
+                      className="profiles-item"
+                      style={{ width: "calc(100% - 220px)" }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                          gap: "40px",
-                        }}
-                      >
-                        <Item type="dropdown" text="תזכורת" width="200px" />
-                        <div
-                          className="profiles-item"
-                          style={{
-                            width: "calc(100% - 260px)",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "10px",
-                          }}
-                        >
-                          <div className="profiles-item-name">
-                            <span>סוג תזכורת</span>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexDirection: "row",
-                              justifyContent: "space-between",
-                              gap: "10px",
-                              flexWrap: "wrap",
-                            }}
-                          >
-                            <CheckBox title="הודעה" />
-                            <CheckBox title="דוא”ל" />
-                            <CheckBox title="WhatsApp" />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="main-task-step-add"
-                        style={{ paddingRight: "10px" }}
-                      >
-                        <button>
-                          <InlineSVG src={addImg} />
-                        </button>
-                        <div>משימה חדשה</div>
-                      </div>
+                      <div className="profiles-item-name">חשבוניות</div>
+                      <Button label="העלאת מסמכים" icon={uploadSVG} />
                     </div>
-                    <Item type="input" text="הערות" width="100%" />
                   </div>
+                  <Item text="הערות" type="input" />
                 </div>
                 <div
                   className="basic-modal-footer"
                   style={{ marginTop: "20px" }}
                 >
-                  <Button onClick={onCancel} label="שמירה" />
+                  <Button onClick={onCancel} label="שמירה" icon={addUserSVG} />
                   <Button onClick={onCancel} icon={closeImg} label="ביטול" />
                 </div>
               </div>

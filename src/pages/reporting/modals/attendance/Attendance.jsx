@@ -6,9 +6,7 @@ import closeImg from "../../../../assets/icons/close.svg";
 import reportSVG from "../../../../assets/icons/report.svg";
 import Button from "../../../../components/button/Button";
 import Item from "../../../../components/profiles/basic/item/Item";
-import CheckBox from "../../../../components/checkBox/CheckBox";
-import addImg from "../../../../assets/icons/add.svg";
-import ModalTitle from "../../../../components/labels/modaltitle/ModalTitle";
+import ModalTitle from "../../../../components/labels/modalTitle/ModalTitle";
 
 ReactModal.setAppElement("#root");
 

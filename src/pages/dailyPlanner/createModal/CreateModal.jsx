@@ -98,7 +98,6 @@ const CreateModal = ({ visible, onCancel }) => {
                   <Item type="input" width="100%" required text="נושא אירוע" />
                   <div className="profiles-item" style={{ width: "100%" }}>
                     <div className="profiles-item-name">מקבל שירות</div>
-
                     <div className="select">
                       <ReactSelect
                         className="select-main"
