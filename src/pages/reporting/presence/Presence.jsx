@@ -8,6 +8,8 @@ import checkSVG from "../../../assets/icons/check.svg";
 import downloadSVG from "../../../assets/icons/download.svg";
 
 import Table from "../../../components/table/Table";
+import AttendanceModal from "../modals/attendance/Attendance";
+import { useState } from "react";
 
 const columns = [
   {
@@ -108,6 +110,7 @@ const data = [
   },
 ];
 const Presence = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <ConfigProvider direction="rtl">
       <div className="presence">
@@ -124,7 +127,7 @@ const Presence = () => {
                 <span>טווח תאריכים</span>
               </Button>
             </div>
-            <Button>
+            <Button onClick={() => setShowModal(true)}>
               <InlineSVG src={reportSVG} width={20} />
               <span>דיווח חדש</span>
             </Button>
@@ -133,6 +136,10 @@ const Presence = () => {
             <Table data={data} columns={columns} />
           </div>
         </div>
+        <AttendanceModal
+          visible={showModal}
+          onCancel={() => setShowModal(false)}
+        />
       </div>
     </ConfigProvider>
   );

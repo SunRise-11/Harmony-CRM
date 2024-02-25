@@ -3,7 +3,11 @@ import Input from "../../../input/Input";
 import Select from "../../../select/Select";
 import DatePicker from "../../../pickers/datePicker/DatePicker";
 import TimePicker from "../../../pickers/timePicker/TimePicker";
+import CheckBox from "../../../checkBox/CheckBox";
+import { useState } from "react";
+
 const Item = ({ type, width, required, text }) => {
+  const [checked, setChecked] = useState(false);
   return (
     <div className="profiles-item" style={{ width }}>
       <div className="profiles-item-name">
@@ -24,6 +28,20 @@ const Item = ({ type, width, required, text }) => {
         )}
         {type === "date-picker" && <DatePicker py={7.5} />}
         {type === "time-picker" && <TimePicker py={7.5} />}
+        {type === "checkbox" && (
+          <div style={{ display: "flex", gap: "60px" }}>
+            <CheckBox
+              title="לא"
+              checked={!checked}
+              onChange={() => setChecked(false)}
+            />
+            <CheckBox
+              title="כן"
+              checked={checked}
+              onChange={() => setChecked(true)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

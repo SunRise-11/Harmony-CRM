@@ -6,6 +6,8 @@ import downloadSVG from "../../../assets/icons/download.svg";
 import avatarImg1 from "../../../assets/images/avatar1.png";
 
 import Table from "../../../components/table/Table";
+import ExpenseModal from "../modals/expense/Expense";
+import { useState } from "react";
 
 const columns = [
   {
@@ -104,6 +106,8 @@ const data = [
   },
 ];
 const Expense = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <ConfigProvider direction="rtl">
       <div className="expense">
@@ -120,7 +124,7 @@ const Expense = () => {
                 <span>טווח תאריכים</span>
               </Button>
             </div>
-            <Button>
+            <Button onClick={() => setShowModal(true)}>
               <InlineSVG src={reportSVG} width={20} />
               <span>דיווח חדש</span>
             </Button>
@@ -129,6 +133,10 @@ const Expense = () => {
             <Table data={data} columns={columns} />
           </div>
         </div>
+        <ExpenseModal
+          visible={showModal}
+          onCancel={() => setShowModal(false)}
+        />
       </div>
     </ConfigProvider>
   );
