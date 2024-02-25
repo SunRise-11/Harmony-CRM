@@ -5,7 +5,7 @@ import InlineSVG from "react-inlinesvg";
 const ModalTitle = ({ icon, title }) => {
   return (
     <div className="modal-title">
-      <InlineSVG src={icon} className="modal-title-svg" />
+      <InlineSVG src={icon} className="modal-title-svg" stroke="#FF8A00" />
       <div className="modal-title-value">{title}</div>
     </div>
   );

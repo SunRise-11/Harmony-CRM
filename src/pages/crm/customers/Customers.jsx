@@ -2,6 +2,8 @@ import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 import Table from "../../../components/table/Table";
 import reportSVG from "../../../assets/icons/report.svg";
+import { useState } from "react";
+import NewRecordModal from "../newRecord/NewRecord";
 
 const columns = [
   {
@@ -181,11 +183,12 @@ const data = [
 ];
 
 const Customers = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="customers">
       <div className="customers-navbar">
         <span className="customers-navbar-title">לקוחות פוטנציאליים</span>
-        <Button>
+        <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={reportSVG} width={20} />
           <span>טווח תאריכים</span>
         </Button>
@@ -193,6 +196,10 @@ const Customers = () => {
       <div className="customers-table">
         <Table columns={columns} data={data} />
       </div>
+      <NewRecordModal
+        visible={showModal}
+        onCancel={() => setShowModal(false)}
+      />
     </div>
   );
 };

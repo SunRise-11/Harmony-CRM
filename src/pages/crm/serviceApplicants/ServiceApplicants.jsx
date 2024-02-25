@@ -2,6 +2,8 @@ import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 import Table from "../../../components/table/Table";
 import reportSVG from "../../../assets/icons/report.svg";
+import NewRecordModal from "../newRecord/NewRecord";
+import { useState } from "react";
 
 const columns = [
   {
@@ -189,13 +191,14 @@ const data = [
 ];
 
 const ServiceApplicants = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="service-applicants">
       <div className="service-applicants-navbar">
         <span className="service-applicants-navbar-title">
           מבקשי שירות פוטנציאליים
         </span>
-        <Button>
+        <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={reportSVG} width={20} />
           <span>טווח תאריכים</span>
         </Button>
@@ -203,6 +206,10 @@ const ServiceApplicants = () => {
       <div className="service-applicants-table">
         <Table columns={columns} data={data} />
       </div>
+      <NewRecordModal
+        visible={showModal}
+        onCancel={() => setShowModal(false)}
+      />
     </div>
   );
 };
