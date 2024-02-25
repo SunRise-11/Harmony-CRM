@@ -1,9 +1,9 @@
-import { Button } from "antd";
+import { Button, Table, ConfigProvider } from "antd";
 import InlineSVG from "react-inlinesvg";
-import Table from "../../../components/table/Table";
 import reportSVG from "../../../assets/icons/report.svg";
 import NewRecordModal from "../newRecord/NewRecord";
 import { useState } from "react";
+import Drawer from "../drawer/Drawer";
 
 const columns = [
   {
@@ -192,6 +192,7 @@ const data = [
 
 const ServiceApplicants = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showDrawer, setShowDrawer] = useState(false);
   return (
     <div className="service-applicants">
       <div className="service-applicants-navbar">
@@ -204,12 +205,28 @@ const ServiceApplicants = () => {
         </Button>
       </div>
       <div className="service-applicants-table">
-        <Table columns={columns} data={data} />
+        <div className="table">
+          <ConfigProvider direction="rtl">
+            <Table
+              dataSource={data}
+              columns={columns}
+              pagination={{ position: ["none", "none"] }}
+              bordered={true}
+              scroll={{ x: "300px" }}
+              onRow={(record, rowIndex) => {
+                return {
+                  onClick: () => setShowDrawer(true),
+                };
+              }}
+            />
+          </ConfigProvider>
+        </div>
       </div>
       <NewRecordModal
         visible={showModal}
         onCancel={() => setShowModal(false)}
       />
+      <Drawer open={showDrawer} onClose={() => setShowDrawer(false)} />
     </div>
   );
 };

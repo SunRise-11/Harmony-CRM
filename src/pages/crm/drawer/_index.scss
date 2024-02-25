@@ -1,0 +1,87 @@
+.crm-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &-title {
+    color: #4a9ecd;
+    text-align: right;
+    font-family: "Afek 1.5 AAA";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.9px;
+  }
+
+  &-board {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & > div:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1.6px solid #5177a4;
+      background-color: #eef2f9;
+    }
+
+    & > div:nth-child(2) {
+      padding: 10px;
+      border-radius: 20px;
+      background-color: #eef2f9;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+
+  & .crm-drawer-card {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+
+    &-title {
+      color: #5177a4;
+      font-family: Afek 1.5 AAA;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.15px;
+      text-align: center;
+    }
+
+    &-phone {
+      overflow: hidden;
+      color: #0075ff;
+      text-align: right;
+      text-overflow: ellipsis;
+
+      font-family: "Afek 1.5 AAA";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.15px;
+    }
+
+    &-status {
+      display: flex;
+      padding: 6px 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex: 1 0 0;
+      border-radius: 6px;
+      background: #8ad341;
+      color: white;
+    }
+  }
+}
