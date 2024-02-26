@@ -4,16 +4,24 @@
 
 .recipient-home {
   width: 100%;
-  margin: auto 2%;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   gap: 20px;
-  overflow: scroll;
+  overflow: auto;
+  height: 100%;
 
   & > div:first-child {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 1000px;
     flex-wrap: wrap;
+    height: 100%;
+  }
+
+  & > div:last-child {
+    height: 100%;
+    width: 100%;
   }
 }

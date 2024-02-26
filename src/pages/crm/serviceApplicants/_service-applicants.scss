@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  min-width: 800px;
   padding: 30px 5%;
   position: relative;
 
@@ -50,7 +51,7 @@
 
   &-table {
     width: 100%;
-    min-width: 600px;
+    min-width: 900px;
     padding: 20px;
     background: #fff;
     border-radius: 10px;

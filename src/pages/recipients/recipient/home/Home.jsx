@@ -11,7 +11,7 @@ const Home = () => {
           <Board />
         </div>
       </div>
-      <div style={{ width: "100%" }}>
+      <div>
         <CardList />
       </div>
     </div>

@@ -3,7 +3,7 @@
 .recipient-profile {
   width: 96%;
   margin: auto;
-  height: calc(100vh - 192px);
+  height: 100%;
   overflow: auto;
 
   &-board {
@@ -19,7 +19,7 @@
     box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.25);
     position: absolute;
     width: 100%;
-    bottom: -46px;
+    bottom: -64px;
     left: 0px;
     display: flex;
     padding: 10px;

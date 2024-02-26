@@ -1,11 +1,12 @@
-import { Button, ConfigProvider, Segmented } from "antd";
+import { Button, ConfigProvider, Segmented, Input } from "antd";
 import InlineSVG from "react-inlinesvg";
 import reportSVG from "../../assets/icons/report.svg";
 import Dropdown from "../../components/dropdown/Dropdown";
-import downloadSVG from "../../assets/icons/download.svg";
-import avatarImg1 from "../../assets/images/avatar1.png";
-
 import Table from "../../components/table/Table";
+import Modal from "../../components/modals/basic/Basic";
+import Item from "../../components/profiles/basic/item/Item";
+import jobSVG from "../../assets/icons/job.svg";
+import { useState } from "react";
 
 const columns = [
   {
@@ -102,6 +103,7 @@ const data = [
   },
 ];
 const Opportunities = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <ConfigProvider direction="rtl">
       <div className="opportunities">
@@ -113,7 +115,10 @@ const Opportunities = () => {
               options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
             />
           </div>
-          <Button className="opportunities-navbar-button">
+          <Button
+            className="opportunities-navbar-button"
+            onClick={() => setShowModal(true)}
+          >
             <InlineSVG src={reportSVG} width={20} />
             <span>הוספת רשומה</span>
           </Button>
@@ -122,6 +127,97 @@ const Opportunities = () => {
           <Table data={data} columns={columns} />
         </div>
       </div>
+      <Modal
+        visible={showModal}
+        onCancel={() => setShowModal(false)}
+        icon={jobSVG}
+        title="רשומת לימודים חדשה"
+        flag={false}
+        content={
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginTop: "20px",
+              gap: "20px",
+              width: "fit-content",
+              minWidth: "400px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                gap: "20px",
+                width: "100%",
+              }}
+            >
+              <Item
+                type="dropdown"
+                width="calc(50% - 10px)"
+                required
+                text="מוסד לימודים"
+              />
+              <Item
+                type="dropdown"
+                width="calc(50% - 10px)"
+                required
+                text="סוג תעודה"
+              />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                gap: "20px",
+              }}
+            >
+              <Item
+                type="dropdown"
+                width="calc(50% - 10px)"
+                required
+                text="עיסוק"
+              />
+              <div
+                className="profiles-item"
+                style={{ width: "calc(50% - 10px)" }}
+              >
+                <div className="profiles-item-name">
+                  <span>היקף המשרה</span>
+                  <span style={{ color: "red" }}>*</span>
+                </div>
+                <div className="input">
+                  <Input
+                    placeholder="100%"
+                    type="number"
+                    className="input-main"
+                  />
+                </div>
+              </div>
+            </div>
+            <Item type="input" width="100%" text="תיאור" />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                gap: "20px",
+                width: "100%",
+              }}
+            >
+              <Item
+                type="input"
+                width="calc(50% - 10px)"
+                text="תאריך התחלה"
+                required
+              />
+              <Item type="input" width="calc(50% - 10px)" text="תאריך סיום" />
+            </div>
+          </div>
+        }
+      />
     </ConfigProvider>
   );
 };

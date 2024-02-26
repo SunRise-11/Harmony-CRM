@@ -176,16 +176,15 @@ const secondItem = {
 const NewDrawer = ({ onClose, open }) => {
   return (
     <Drawer
-      title={false}
+      title={<div className="crm-drawer-title">פרטים מלאים</div>}
       placement="left"
-      closable={false}
+      closable={true}
       onClose={onClose}
       open={open}
+      size="large"
       getContainer={false}
-      width={600}
     >
       <div className="crm-drawer">
-        <div className="crm-drawer-title">פרטים מלאים</div>
         <div className="crm-drawer-board">
           <div>
             {items.map((item, index) => (

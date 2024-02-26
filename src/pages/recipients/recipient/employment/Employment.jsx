@@ -8,7 +8,6 @@ import { useState } from "react";
 import jobSVG from "../../../../assets/icons/job.svg";
 import Modal from "../../../../components/modals/basic/Basic";
 import Item from "../../../../components/profiles/basic/item/Item";
-import CheckBox from "../../../../components/checkBox/CheckBox";
 
 const data = [
   {
@@ -164,7 +163,8 @@ const Employment = () => {
               flexDirection: "column",
               marginTop: "20px",
               gap: "20px",
-              width: "40vw",
+              width: "fit-content",
+              minWidth: "400px",
             }}
           >
             <div
@@ -231,16 +231,12 @@ const Employment = () => {
               }}
             >
               <Item
-                type="dropdown"
+                type="input"
                 width="calc(50% - 10px)"
                 text="תאריך התחלה"
                 required
               />
-              <Item
-                type="dropdown"
-                width="calc(50% - 10px)"
-                text="תאריך סיום"
-              />
+              <Item type="input" width="calc(50% - 10px)" text="תאריך סיום" />
             </div>
           </div>
         }
