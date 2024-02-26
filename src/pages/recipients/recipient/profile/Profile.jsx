@@ -19,7 +19,7 @@ const Profile = () => {
       const [parent] = document.getElementsByClassName("recipient-profile");
       parent.onscroll = () => {
         const elements = document.getElementsByClassName("profiles-basic");
-        for (let i = 0; i < elements.length; i++) {
+        for (let i = elements.length - 1; i >= 0; i--) {
           const position = elements[i].getBoundingClientRect();
           if (position.top >= 0 && position.bottom <= parent.clientHeight) {
             setCurrent(i);

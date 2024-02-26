@@ -159,7 +159,7 @@ const Recipient = () => {
         tabBarStyle={{
           backgroundColor: "white",
           height: "64px",
-          padding: "0px 3%",
+          padding: "0px 20px",
         }}
       />
     </ConfigProvider>

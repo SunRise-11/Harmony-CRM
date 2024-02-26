@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
 
 import MenuItem from "../../../components/menuItem/MenuItem";
+import InlineSVG from "react-inlinesvg";
 
 import logoImg from "../../../assets/images/logo.svg";
 import homeImg from "../../../assets/icons/home.svg";
@@ -15,6 +16,7 @@ import jobImg from "../../../assets/icons/job.svg";
 import crmImg from "../../../assets/icons/crm.svg";
 import videoImg from "../../../assets/icons/video.svg";
 import warnImg from "../../../assets/icons/warn.svg";
+import addSVG from "../../../assets/icons/add.svg";
 
 const SideBar = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
@@ -137,13 +139,19 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               onClick={() => setSelected(23)}
               key={23}
             />,
-            <MenuItem
-              isSubMenu={true}
-              title="סטטיסטיקת היסטוריות"
-              isSelect={isSelected === 24}
-              onClick={() => setSelected(24)}
-              key={24}
-            />,
+            <div className="sub-menu-unselected">
+              <div className="menu-item" style={{ color: "#0075FF" }}>
+                <div className="menu-item-container">
+                  <InlineSVG
+                    src={addSVG}
+                    stroke="#0075FF"
+                    width={24}
+                    height={24}
+                  />
+                  <div className="menu-item-title">סטטיסטיקת היסטוריות</div>
+                </div>
+              </div>
+            </div>,
           ]}
         />
         <MenuItem

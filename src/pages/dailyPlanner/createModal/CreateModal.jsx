@@ -240,7 +240,7 @@ const CreateModal = ({ visible, onCancel }) => {
                       className="main-task-step-add"
                       style={{ paddingRight: "10px" }}
                     >
-                      <button onClick={() => setVisible(true)}>
+                      <button>
                         <InlineSVG src={addImg} />
                       </button>
                       <div>משימה חדשה</div>

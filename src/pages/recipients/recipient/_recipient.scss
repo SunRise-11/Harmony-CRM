@@ -11,8 +11,8 @@
 
 .recipient {
   width: 100%;
-  overflow: auto;
-  height: 100%;
+  // overflow: auto;
+  height: calc(100% - 64px);
 
   .ant-tabs-content {
     padding: 0 3%;

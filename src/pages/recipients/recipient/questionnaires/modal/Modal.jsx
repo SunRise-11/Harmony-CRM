@@ -79,9 +79,12 @@ const Modal = ({ visible, onCancel }) => {
                       justifyContent: "center",
                     }}
                   >
-                    <Radio value={1}>טופס ויתור סודיות</Radio>
-                    <Radio value={2}>טופס השלמת פרטים</Radio>
-                    <Radio value={3}>טופס העדפות תעסוקה</Radio>
+                    <Radio value={1}>ציר מוטיבציה</Radio>
+                    <Radio value={2}>פרואקטיביות</Radio>
+                    <Radio value={3}>אמונה ביכולת</Radio>
+                    <Radio value={4}>שאלון 4</Radio>
+                    <Radio value={5}>שאלון 5</Radio>
+                    <Radio value={6}>דוח ארועים</Radio>
                   </div>
                 </Radio.Group>
               </div>

@@ -5,6 +5,8 @@ import Table from "../../../../components/table/Table";
 import sendSVG from "../../../../assets/icons/send.svg";
 import ColorLabel from "../../../../components/labels/colorLabel/ColorLabel";
 
+import Modal from "./modal/Modal";
+import { useState } from "react";
 const data = [
   {
     key: 1,
@@ -138,11 +140,12 @@ const columns = [
 ];
 
 const Employment = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="recipient-questionnaires">
       <div className="recipient-questionnaires-navbar">
         <span className="recipient-questionnaires-navbar-title"></span>
-        <Button>
+        <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={sendSVG} width={20} stroke="#434f68" />
           <span>שליחת שאלון</span>
         </Button>
@@ -150,6 +153,7 @@ const Employment = () => {
       <div className="recipient-questionnaires-table">
         <Table columns={columns} data={data} />
       </div>
+      <Modal visible={showModal} onCancel={() => setShowModal(false)} />
     </div>
   );
 };
