@@ -139,7 +139,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               onClick={() => setSelected(23)}
               key={23}
             />,
-            <div className="sub-menu-unselected">
+            <div className="sub-menu-unselected" key="24">
               <div className="menu-item" style={{ color: "#0075FF" }}>
                 <div className="menu-item-container">
                   <InlineSVG

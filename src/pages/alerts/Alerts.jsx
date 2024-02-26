@@ -3,7 +3,7 @@ import { Button, Tabs } from "antd";
 import InlineSVG from "react-inlinesvg";
 import Table from "../../components/table/Table";
 import Dropdown from "../../components/dropdown/Dropdown";
-
+import Select from "../../components/select/Select";
 import AvatarImg1 from "../../assets/images/avatar1.png";
 import AvatarImg2 from "../../assets/images/avatar2.png";
 
@@ -77,7 +77,16 @@ const Alerts = () => {
     <div className="alerts">
       <div className="alerts-navbar">
         <Dropdown text="בחר מקבל שירות" />
-        <Dropdown text="סוג התראה" />
+        <div style={{ width: "240px" }}>
+          <Select
+            placeholder="סוג התראה"
+            options={[
+              { label: "עדכון תוכנית שיקום", value: 0 },
+              { label: "דוח סיום שירות", value: 1 },
+              { label: "בקשה להערכה", value: 2 },
+            ]}
+          />
+        </div>
         <Button>
           <InlineSVG src={planSVG} width={20} />
           <span>טווח תאריכים</span>

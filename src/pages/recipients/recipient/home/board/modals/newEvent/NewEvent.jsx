@@ -6,9 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import closeImg from "../../../../../../../assets/icons/close.svg";
 import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
 import addEventSVG from "../../../../../../../assets/icons/addevent.svg";
+import geometricsSVG from "../../../../../../../assets/icons/geometrics.svg";
 import Button from "../../../../../../../components/button/Button";
 import DatePicker from "../../../../../../../components/pickers/datePicker/DatePicker";
 import CheckBox from "../../../../../../../components/checkBox/CheckBox";
+
 ReactModal.setAppElement("#root");
 const { TextArea } = Input;
 const modalVariants = {
@@ -85,19 +87,53 @@ const NewEvent = ({ visible, onCancel }) => {
                       style={{
                         display: "flex",
                         flexDirection: "row",
-                        gap: "61px",
+                        gap: "30px",
                       }}
                     >
-                      <CheckBox
-                        title="אונליין"
-                        checked={!checked}
-                        onChange={() => setChecked(true)}
-                      />
-                      <CheckBox
-                        title="פיזית"
-                        checked={checked}
-                        onChange={() => setChecked(false)}
-                      />
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          gap: "20px",
+                        }}
+                      >
+                        <CheckBox
+                          title="אונליין"
+                          checked={!checked}
+                          onChange={() => setChecked(false)}
+                        />
+                        <CheckBox
+                          title="פיזית"
+                          checked={checked}
+                          onChange={() => setChecked(true)}
+                        />
+                      </div>
+                      {checked && (
+                        <div
+                          className="profiles-item"
+                          style={{ width: "calc(100% - 210px)" }}
+                        >
+                          <div className="profiles-item-name">
+                            <span>מיקום</span>
+                            <span style={{ color: "red" }}>*</span>
+                          </div>
+                          <div>
+                            <div className="input">
+                              <Input
+                                type="text"
+                                placeholder="חפש או הקלד"
+                                prefix={
+                                  <InlineSVG
+                                    src={geometricsSVG}
+                                    stroke="#999"
+                                  />
+                                }
+                                className="input-main"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="profiles-item">

@@ -34,3 +34,11 @@
     }
   }
 }
+
+.expense-modal-upload {
+  width: 100%;
+  & button,
+  & .ant-upload {
+    width: 100%;
+  }
+}

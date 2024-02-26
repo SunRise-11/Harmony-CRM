@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Upload } from "antd";
 import InlineSVG from "react-inlinesvg";
 import uploadSVG from "../../../../assets/icons/uploadDoc.svg";
 import Table from "../../../../components/table/Table";
@@ -100,10 +100,12 @@ const Documents = () => {
     <div className="recipient-documents">
       <div className="recipient-documents-navbar">
         <span className="recipient-documents-navbar-title"></span>
-        <Button>
-          <InlineSVG src={uploadSVG} width={20} />
-          <span>העלאת מסמך</span>
-        </Button>
+        <Upload>
+          <Button>
+            <InlineSVG src={uploadSVG} width={20} />
+            <span>העלאת מסמך</span>
+          </Button>
+        </Upload>
         <Button>שליחת מסמך</Button>
         <Button onClick={() => setShowModal(true)}>שליחת טופס דיגיטלי</Button>
       </div>

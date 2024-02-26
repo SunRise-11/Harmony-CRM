@@ -11,7 +11,7 @@ import ModalTitle from "../../../../components/labels/modalTitle/ModalTitle";
 import ReactSelect from "react-select";
 import userSVG from "../../../../assets/icons/user.svg";
 import addUserSVG from "../../../../assets/icons/addUser.svg";
-import { ConfigProvider, Segmented } from "antd";
+import { ConfigProvider, Segmented, Upload } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -29,6 +29,7 @@ const modalVariants = {
 
 const Expense = ({ visible, onCancel }) => {
   const [isHover, setHover] = useState(false);
+  const [currentSelected, setCurrentSelected] = useState("");
   const options = [];
   const Styles = {
     content: {
@@ -106,10 +107,14 @@ const Expense = ({ visible, onCancel }) => {
                         <Segmented
                           className="expense-modal-toggle"
                           options={["כיבוד", "משרדי", "נסיעות", "נסיעות - ק”מ"]}
+                          onChange={(e) => setCurrentSelected(e)}
                         />
                       </ConfigProvider>
                     </div>
                   </div>
+                  {currentSelected === "נסיעות - ק”מ" && (
+                    <Item type="input" text="ק”מ" width="240px" required />
+                  )}
                   <div className="profiles-item" style={{ width: "100%" }}>
                     <div className="profiles-item-name">מקבל שירות</div>
                     <div className="select">
@@ -131,6 +136,14 @@ const Expense = ({ visible, onCancel }) => {
                             paddingTop: "3px",
                             paddingBottom: "3px",
                             paddingRight: "90px",
+                            backgroundColor:
+                              currentSelected === "משרדי"
+                                ? "#E5E9EE"
+                                : "transparent",
+                            color:
+                              currentSelected === "משרדי"
+                                ? "#808285"
+                                : "#464648",
                           }),
                           indicatorSeparator: (base) => ({
                             ...base,
@@ -171,7 +184,9 @@ const Expense = ({ visible, onCancel }) => {
                       style={{ width: "calc(100% - 220px)" }}
                     >
                       <div className="profiles-item-name">חשבוניות</div>
-                      <Button label="העלאת מסמכים" icon={uploadSVG} />
+                      <Upload className="expense-modal-upload">
+                        <Button label="העלאת מסמכים" icon={uploadSVG} />
+                      </Upload>
                     </div>
                   </div>
                   <Item text="הערות" type="input" />

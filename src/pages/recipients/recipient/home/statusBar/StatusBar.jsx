@@ -58,7 +58,14 @@ const StatusBar = () => {
         <div>
           <div>סטטוס קבוע</div>
           <div className="recipient-home-statusbar-setting-temp-state">
-            <div onClick={() => setVisible1(true)}>
+            <div
+              onClick={() => setVisible1(true)}
+              className={
+                visible1
+                  ? "recipient-home-statusbar-setting-temp-state-hover"
+                  : ""
+              }
+            >
               <label
                 onClick={(e) => {
                   if (visible1) {
@@ -111,7 +118,14 @@ const StatusBar = () => {
         <div>
           <div>סטטוס זמני</div>
           <div className="recipient-home-statusbar-setting-state">
-            <div onClick={() => setVisible2(true)}>
+            <div
+              onClick={() => setVisible2(true)}
+              className={
+                visible1
+                  ? "recipient-home-statusbar-setting-temp-state-hover"
+                  : ""
+              }
+            >
               <label
                 onClick={(e) => {
                   if (visible2) {

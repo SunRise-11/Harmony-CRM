@@ -42,6 +42,7 @@ const PageLayout = (props) => {
           <Content
             style={{
               height: "calc(90vh - 65px)",
+              overflow: "auto",
               padding: "0px",
             }}
           >

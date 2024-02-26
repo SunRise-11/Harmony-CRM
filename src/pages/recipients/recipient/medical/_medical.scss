@@ -1,3 +1,4 @@
+@import "modal";
 .recipient-medical {
   display: flex;
   flex-direction: column;
@@ -54,5 +55,24 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+
+    &-see {
+      display: flex;
+      align-items: center;
+      padding: 2px;
+      border-radius: 10px;
+
+      & svg {
+        margin: auto;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: #434f68;
+
+        & svg {
+          stroke: white;
+        }
+      }
+    }
   }
 }

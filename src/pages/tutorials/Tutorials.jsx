@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Upload } from "antd";
 import uploadSVG from "../../assets/icons/uploadFile.svg";
 import searchSVG from "../../assets/icons/search.svg";
 import VideoFrame from "../../components/videoFrame/VidoeFrame";
@@ -12,10 +12,12 @@ const Tutorials = () => {
           <span>תהליך שיקומי</span>
           <InlineSVG src={searchSVG} width={20} />
         </Button>
-        <Button>
-          <InlineSVG src={uploadSVG} width={20} />
-          <span>הוסף הדרכה</span>
-        </Button>
+        <Upload>
+          <Button>
+            <InlineSVG src={uploadSVG} width={20} />
+            <span>הוסף הדרכה</span>
+          </Button>
+        </Upload>
       </div>
       <div className="tutorials-board">
         <div className="tutorials-board-line">
