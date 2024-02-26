@@ -44,6 +44,7 @@ const PageLayout = (props) => {
               height: "calc(90vh - 65px)",
               overflow: "auto",
               padding: "0px",
+              position: "relative",
             }}
           >
             {children}

@@ -1,4 +1,11 @@
-import { Button, ConfigProvider, Input, Segmented, Tabs } from "antd";
+import {
+  Button,
+  ConfigProvider,
+  Input,
+  Segmented,
+  Tabs,
+  DatePicker,
+} from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../../../assets/icons/plan.svg";
 import Table from "../../../../components/table/Table";
@@ -8,6 +15,7 @@ import trashSVG from "../../../../assets/icons/trash.svg";
 import editSVG from "../../../../assets/icons/pencil.svg";
 import { useState } from "react";
 import CreateModal from "./createModal/CreateModal";
+const { RangePicker } = DatePicker;
 
 const data = [
   {
@@ -118,6 +126,7 @@ const columns = [
 
 const DailyPlanner = () => {
   const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className="recipient-daily-planner">
       <div className="recipient-daily-planner-navbar">
@@ -137,10 +146,15 @@ const DailyPlanner = () => {
               options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
             />
           </ConfigProvider>
-          <Button>
+          <Button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
             <InlineSVG src={planSVG} width={20} />
             <span>טווח תאריכים</span>
           </Button>
+          {open && <RangePicker style={{ marginRight: "-180px" }} />}
         </div>
         <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={addEventSVG} width={20} />

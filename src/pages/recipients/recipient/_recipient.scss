@@ -14,6 +14,10 @@
   // overflow: auto;
   height: calc(100% - 64px);
 
+  .ant-tabs-tab:first-child {
+    margin-left: 32px;
+  }
+
   .ant-tabs-content {
     padding: 0 3%;
     height: 100%;

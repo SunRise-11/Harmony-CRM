@@ -1,6 +1,6 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { Button, Segmented, ConfigProvider } from "antd";
+import { Button, Segmented, ConfigProvider, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../assets/icons/plan.svg";
 import createSVG from "../../assets/icons/addevent.svg";
@@ -8,6 +8,7 @@ import nextSVG from "../../assets/icons/next.svg";
 import previousSVG from "../../assets/icons/previous.svg";
 import { useState } from "react";
 import CreateModal from "./createModal/CreateModal";
+const { RangePicker } = DatePicker;
 
 const customDayHeaderFormat = (date, culture, localizer) => {
   const dayName = date.toLocaleDateString("he-IL", { weekday: "short" });
@@ -15,6 +16,7 @@ const customDayHeaderFormat = (date, culture, localizer) => {
 };
 
 const CustomToolbar = ({ setShowCreateModal }) => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="daily-planner-navbar">
       <div className="daily-planner-navbar-others">
@@ -32,10 +34,15 @@ const CustomToolbar = ({ setShowCreateModal }) => {
               className="daily-planner-navbar-toggle"
               options={["היום", "שבוע", "חודש"]}
             />
-            <Button>
+            <Button
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
               <InlineSVG src={planSVG} width={20} />
               <span>טווח תאריכים</span>
             </Button>
+            {open && <RangePicker style={{ marginRight: "-165px" }} />}
           </ConfigProvider>
         </div>
       </div>

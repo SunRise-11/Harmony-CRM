@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Segmented } from "antd";
+import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import reportSVG from "../../../assets/icons/report.svg";
 import planSVG from "../../../assets/icons/plan.svg";
@@ -11,6 +11,7 @@ import Table from "../../../components/table/Table";
 // import AttendanceModal from "../modals/attendance/Attendance";
 import AttendModal from "../../../components/modals/attend/Attend";
 import { useState } from "react";
+const { RangePicker } = DatePicker;
 
 const columns = [
   {
@@ -112,6 +113,7 @@ const data = [
 ];
 const Presence = () => {
   const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <ConfigProvider direction="rtl">
       <div className="presence">
@@ -123,10 +125,15 @@ const Presence = () => {
                 className="presence-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}
               />
-              <Button>
+              <Button
+                onClick={() => {
+                  setOpen(!open);
+                }}
+              >
                 <InlineSVG src={planSVG} width={20} />
                 <span>טווח תאריכים</span>
               </Button>
+              {open && <RangePicker style={{ marginRight: "-180px" }} />}
             </div>
             <Button onClick={() => setShowModal(true)}>
               <InlineSVG src={reportSVG} width={20} />

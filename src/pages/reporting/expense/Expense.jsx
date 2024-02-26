@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Segmented } from "antd";
+import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import reportSVG from "../../../assets/icons/report.svg";
 import planSVG from "../../../assets/icons/plan.svg";
@@ -8,6 +8,7 @@ import avatarImg1 from "../../../assets/images/avatar1.png";
 import Table from "../../../components/table/Table";
 import ExpenseModal from "../modals/expense/Expense";
 import { useState } from "react";
+const { RangePicker } = DatePicker;
 
 const columns = [
   {
@@ -107,6 +108,7 @@ const data = [
 ];
 const Expense = () => {
   const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <ConfigProvider direction="rtl">
@@ -119,10 +121,15 @@ const Expense = () => {
                 className="expense-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}
               />
-              <Button>
+              <Button
+                onClick={() => {
+                  setOpen(!open);
+                }}
+              >
                 <InlineSVG src={planSVG} width={20} />
                 <span>טווח תאריכים</span>
               </Button>
+              {open && <RangePicker style={{ marginRight: "-180px" }} />}
             </div>
             <Button onClick={() => setShowModal(true)}>
               <InlineSVG src={reportSVG} width={20} />

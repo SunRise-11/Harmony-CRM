@@ -1,8 +1,11 @@
-import { Button, ConfigProvider, Segmented } from "antd";
+import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import planSVG from "../../../../assets/icons/plan.svg";
 import Table from "../../../../components/table/Table";
 import Dropdown from "../../../../components/dropdown/Dropdown";
+import { useState } from "react";
+
+const { RangePicker } = DatePicker;
 
 const data = [
   {
@@ -71,6 +74,7 @@ const columns = [
 ];
 
 const Events = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="recipient-events">
       <div className="recipient-events-navbar">
@@ -83,10 +87,15 @@ const Events = () => {
             options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
           />
         </ConfigProvider>
-        <Button>
+        <Button
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
           <InlineSVG src={planSVG} width={20} />
           <span>טווח תאריכים</span>
         </Button>
+        {open && <RangePicker style={{ marginRight: "-180px" }} />}
       </div>
       <div className="recipient-events-table">
         <Table columns={columns} data={data} />

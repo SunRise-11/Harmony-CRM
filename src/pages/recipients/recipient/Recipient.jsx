@@ -149,20 +149,18 @@ const Recipient = () => {
   ];
 
   return (
-    <ConfigProvider direction="rtl">
-      <Tabs
-        className="recipient"
-        defaultActiveKey="1"
-        activeKey={activeKey}
-        onTabClick={(data) => setActiveKey(data)}
-        items={tabs}
-        tabBarStyle={{
-          backgroundColor: "white",
-          height: "64px",
-          padding: "0px 20px",
-        }}
-      />
-    </ConfigProvider>
+    <Tabs
+      className="recipient"
+      defaultActiveKey="1"
+      activeKey={activeKey}
+      onTabClick={(data) => setActiveKey(data)}
+      items={tabs}
+      tabBarStyle={{
+        backgroundColor: "white",
+        height: "64px",
+        padding: "0px 20px",
+      }}
+    />
   );
 };
 

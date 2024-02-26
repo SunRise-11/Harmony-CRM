@@ -1,12 +1,14 @@
 import planSVG from "../../assets/icons/plan.svg";
-import { Button, Tabs } from "antd";
+import { Button, Tabs, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import Table from "../../components/table/Table";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Select from "../../components/select/Select";
 import AvatarImg1 from "../../assets/images/avatar1.png";
 import AvatarImg2 from "../../assets/images/avatar2.png";
+import { useState } from "react";
 
+const { RangePicker } = DatePicker;
 const columns = [
   {
     title: "תאריך",
@@ -73,6 +75,7 @@ const data = [
 ];
 
 const Alerts = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="alerts">
       <div className="alerts-navbar">
@@ -87,10 +90,17 @@ const Alerts = () => {
             ]}
           />
         </div>
-        <Button>
+        <Button
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
           <InlineSVG src={planSVG} width={20} />
           <span>טווח תאריכים</span>
         </Button>
+        {open && (
+          <RangePicker style={{ marginRight: "-180px", height: "100%" }} />
+        )}
       </div>
       <div className="alerts-table">
         <Tabs
