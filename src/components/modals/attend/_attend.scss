@@ -21,10 +21,17 @@
   &-vacation,
   &-sickness {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
     justify-content: flex-start;
     align-items: flex-start;
     padding-bottom: 15px;
+    flex-wrap: wrap;
+  }
+
+  &-sickness > div:last-child {
+    width: calc(100% - 200px);
+    min-width: 200px;
   }
 
   &-vacation-checkbox,

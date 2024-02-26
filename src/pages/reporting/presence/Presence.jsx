@@ -8,7 +8,8 @@ import checkSVG from "../../../assets/icons/check.svg";
 import downloadSVG from "../../../assets/icons/download.svg";
 
 import Table from "../../../components/table/Table";
-import AttendanceModal from "../modals/attendance/Attendance";
+// import AttendanceModal from "../modals/attendance/Attendance";
+import AttendModal from "../../../components/modals/attend/Attend";
 import { useState } from "react";
 
 const columns = [
@@ -136,10 +137,7 @@ const Presence = () => {
             <Table data={data} columns={columns} />
           </div>
         </div>
-        <AttendanceModal
-          visible={showModal}
-          onCancel={() => setShowModal(false)}
-        />
+        <AttendModal visible={showModal} onCancel={() => setShowModal(false)} />
       </div>
     </ConfigProvider>
   );
