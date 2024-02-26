@@ -139,10 +139,12 @@
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 10px;
+    transition: all 0.3s;
 
     & > div {
       flex-direction: column;
       display: flex;
+      gap: 10px;
       color: #434f68;
       text-align: right;
       font-family: Afek 1.5 AAA;
@@ -171,9 +173,11 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        gap: 2px;
       }
 
       & label {
+        width: 60px;
         padding: 6px 10px;
         align-items: center;
         justify-content: center;
@@ -189,5 +193,10 @@
       border-color: transparent;
       color: white;
     }
+  }
+
+  .rotate-180 {
+    rotate: 180deg;
+    transition: all 0.3s;
   }
 }

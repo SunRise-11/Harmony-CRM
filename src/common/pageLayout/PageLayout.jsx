@@ -19,7 +19,7 @@ const PageLayout = (props) => {
       <Layout>
         <Sider
           theme="light"
-          width={240}
+          width={270}
           breakpoint="lg"
           collapsedWidth="0"
           collapsible

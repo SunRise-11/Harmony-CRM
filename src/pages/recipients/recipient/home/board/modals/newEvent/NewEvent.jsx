@@ -24,7 +24,7 @@ const modalVariants = {
 };
 
 const NewEvent = ({ visible, onCancel }) => {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const Styles = {
     content: {
       direction: "rtl",
@@ -90,12 +90,12 @@ const NewEvent = ({ visible, onCancel }) => {
                     >
                       <CheckBox
                         title="אונליין"
-                        checked={checked}
+                        checked={!checked}
                         onChange={() => setChecked(true)}
                       />
                       <CheckBox
                         title="פיזית"
-                        checked={!checked}
+                        checked={checked}
                         onChange={() => setChecked(false)}
                       />
                     </div>

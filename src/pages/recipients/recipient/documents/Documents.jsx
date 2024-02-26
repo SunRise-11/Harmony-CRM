@@ -6,6 +6,8 @@ import eyeSVG from "../../../../assets/icons/eye.svg";
 import downloadSVG from "../../../../assets/icons/download.svg";
 import trashSVG from "../../../../assets/icons/trash.svg";
 import ColorLabel from "../../../../components/labels/colorLabel/ColorLabel";
+import { useState } from "react";
+import Modal from "./modal/Modal";
 
 const data = [
   {
@@ -93,6 +95,7 @@ const columns = [
 ];
 
 const Documents = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="recipient-documents">
       <div className="recipient-documents-navbar">
@@ -102,11 +105,12 @@ const Documents = () => {
           <span>העלאת מסמך</span>
         </Button>
         <Button>שליחת מסמך</Button>
-        <Button>שליחת טופס דיגיטלי</Button>
+        <Button onClick={() => setShowModal(true)}>שליחת טופס דיגיטלי</Button>
       </div>
       <div className="recipient-documents-table">
         <Table columns={columns} data={data} />
       </div>
+      <Modal visible={showModal} onCancel={() => setShowModal(false)} />
     </div>
   );
 };

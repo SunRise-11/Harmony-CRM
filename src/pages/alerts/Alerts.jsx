@@ -77,13 +77,11 @@ const Alerts = () => {
     <div className="alerts">
       <div className="alerts-navbar">
         <Dropdown text="בחר מקבל שירות" />
-        <div className="alerts-navbar-others">
-          <Dropdown text="סוג התראה" />
-          <Button>
-            <InlineSVG src={planSVG} width={20} />
-            <span>טווח תאריכים</span>
-          </Button>
-        </div>
+        <Dropdown text="סוג התראה" />
+        <Button>
+          <InlineSVG src={planSVG} width={20} />
+          <span>טווח תאריכים</span>
+        </Button>
       </div>
       <div className="alerts-table">
         <Tabs

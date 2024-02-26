@@ -8,10 +8,12 @@ import picture from "../../../assets/images/picture.png";
 import addUserImg from "../../../assets/icons/addUser.svg";
 import taskImg from "../../../assets/icons/task.svg";
 import existReportImg from "../../../assets/icons/existReport.svg";
+import AddTask from "../../../components/modals/addTask/AddTask";
 
 const QuickInfo = ({ flag }) => {
   const [isAddVisible, setAddVisible] = useState(false);
   const [isReportVisible, setReportVisible] = useState(false);
+  const [isTaskVisible, setIsTaskVisible] = useState(false);
 
   return (
     <>
@@ -30,7 +32,12 @@ const QuickInfo = ({ flag }) => {
             paddingY={15}
             onClick={() => setAddVisible(true)}
           />
-          <Button icon={taskImg} label="משימות" paddingY={15} />
+          <Button
+            icon={taskImg}
+            label="משימה חדשה"
+            paddingY={15}
+            onClick={() => setIsTaskVisible(true)}
+          />
           <Button
             icon={existReportImg}
             label="דיווח נוכחות"
@@ -46,6 +53,10 @@ const QuickInfo = ({ flag }) => {
       <AttendModal
         onCancel={() => setReportVisible(false)}
         visible={isReportVisible}
+      />
+      <AddTask
+        visible={isTaskVisible}
+        onCancel={() => setIsTaskVisible(false)}
       />
     </>
   );

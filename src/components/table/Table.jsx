@@ -12,7 +12,7 @@ const Table = ({ columns, data, checkbox }) => {
           columns={columns}
           pagination={{ position: ["none", "none"] }}
           bordered={true}
-          scroll={{ x: "400px" }}
+          scroll={{ x: "300px" }}
           rowSelection={
             checkbox && {
               type: "checkbox",

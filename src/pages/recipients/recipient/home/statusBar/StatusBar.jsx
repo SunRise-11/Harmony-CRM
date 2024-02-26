@@ -1,8 +1,13 @@
 import InlineSVG from "react-inlinesvg";
 // import avatarImg from "../../../../../assets/images/avatar3.png";
 import downSVG from "../../../../../assets/icons/down.svg";
+import { useState } from "react";
 
 const StatusBar = () => {
+  const [visible1, setVisible1] = useState(false);
+  const [state1, setState1] = useState(0);
+  const [visible2, setVisible2] = useState(false);
+  const [state2, setState2] = useState(0);
   return (
     <div className="recipient-home-statusbar">
       <div className="recipient-home-statusbar-overview">
@@ -53,45 +58,110 @@ const StatusBar = () => {
         <div>
           <div>סטטוס קבוע</div>
           <div className="recipient-home-statusbar-setting-temp-state">
-            <div>
-              <label style={{ backgroundColor: "#8AD341" }}>עובד</label>
-              <label style={{ backgroundColor: "#5FBCFF", display: "none" }}>
+            <div onClick={() => setVisible1(true)}>
+              <label
+                onClick={(e) => {
+                  if (visible1) {
+                    setState1(0);
+                    setVisible1(false);
+                    e.stopPropagation();
+                  }
+                }}
+                style={{
+                  backgroundColor: "#8AD341",
+                  display: visible1 || state1 === 0 ? "initial" : "none",
+                }}
+              >
+                עובד
+              </label>
+              <label
+                onClick={(e) => {
+                  if (visible1) {
+                    setState1(1);
+                    setVisible1(false);
+                    e.stopPropagation();
+                  }
+                }}
+                style={{
+                  backgroundColor: "#5FBCFF",
+                  display: visible1 || state1 === 1 ? "initial" : "none",
+                }}
+              >
                 לומד
               </label>
-              <label style={{ backgroundColor: "#FF7979", display: "none" }}>
+              <label
+                onClick={(e) => {
+                  if (visible1) {
+                    setState1(2);
+                    setVisible1(false);
+                    e.stopPropagation();
+                  }
+                }}
+                style={{
+                  backgroundColor: "#FF7979",
+                  display: visible1 || state1 === 2 ? "initial" : "none",
+                }}
+              >
                 מובטל
               </label>
             </div>
-            <InlineSVG src={downSVG} />
+            <InlineSVG src={downSVG} className={visible1 && "rotate-180"} />
           </div>
         </div>
         <div>
           <div>סטטוס זמני</div>
           <div className="recipient-home-statusbar-setting-state">
-            <div>
-              <label style={{ color: "#5FBCFF", borderColor: "#5FBCFF" }}>
+            <div onClick={() => setVisible2(true)}>
+              <label
+                onClick={(e) => {
+                  if (visible2) {
+                    setState2(0);
+                    setVisible2(false);
+                    e.stopPropagation();
+                  }
+                }}
+                style={{
+                  color: "#5FBCFF",
+                  borderColor: "#5FBCFF",
+                  display: visible2 || state2 === 0 ? "initial" : "none",
+                }}
+              >
                 חופשה
               </label>
               <label
+                onClick={(e) => {
+                  if (visible2) {
+                    setState2(1);
+                    setVisible2(false);
+                    e.stopPropagation();
+                  }
+                }}
                 style={{
                   color: "#FF4D4D",
                   borderColor: "#FF4D4D",
-                  display: "none",
+                  display: visible2 || state2 === 1 ? "initial" : "none",
                 }}
               >
                 מחלה
               </label>
               <label
+                onClick={(e) => {
+                  if (visible2) {
+                    setState2(2);
+                    setVisible2(false);
+                    e.stopPropagation();
+                  }
+                }}
                 style={{
                   color: "#FC8F66",
                   borderColor: "#FC8F66",
-                  display: "none",
+                  display: visible2 || state2 === 2 ? "initial" : "none",
                 }}
               >
                 חו”ל
               </label>
             </div>
-            <InlineSVG src={downSVG} />
+            <InlineSVG src={downSVG} className={visible2 && "rotate-180"} />
           </div>
         </div>
       </div>

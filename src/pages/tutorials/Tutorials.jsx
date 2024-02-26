@@ -14,7 +14,7 @@ const Tutorials = () => {
         </Button>
         <Button>
           <InlineSVG src={uploadSVG} width={20} />
-          <span>תהליך שיקומי</span>
+          <span>הוסף הדרכה</span>
         </Button>
       </div>
       <div className="tutorials-board">

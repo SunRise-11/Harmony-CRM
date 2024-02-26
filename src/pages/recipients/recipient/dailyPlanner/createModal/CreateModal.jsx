@@ -8,8 +8,9 @@ import avatarImg1 from "../../../../../assets/images/avatar1.png";
 import Button from "../../../../../components/button/Button";
 import Item from "../../../../../components/profiles/basic/item/Item";
 import CheckBox from "../../../../../components/checkBox/CheckBox";
-import { Button as AntdButton } from "antd";
 import addImg from "../../../../../assets/icons/add.svg";
+import geometricsSVG from "../../../../../assets/icons/geometrics.svg";
+import { Input } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -96,29 +97,63 @@ const CreateModal = ({ visible, onCancel }) => {
                     }}
                   >
                     <Item type="input" width="100%" required text="נושא" />
-                    <div className="profiles-item">
-                      <div className="profiles-item-name">
-                        <span>סוג פגישה</span>
-                        <span style={{ color: "red" }}>*</span>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "20px",
+                      }}
+                    >
+                      <div className="profiles-item">
+                        <div className="profiles-item-name">
+                          <span>סוג פגישה</span>
+                          <span style={{ color: "red" }}>*</span>
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            gap: "61px",
+                          }}
+                        >
+                          <CheckBox
+                            title="אונליין"
+                            checked={!checked}
+                            onChange={() => setChecked(false)}
+                          />
+                          <CheckBox
+                            title="פיזית"
+                            checked={checked}
+                            onChange={() => setChecked(true)}
+                          />
+                        </div>
                       </div>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          gap: "61px",
-                        }}
-                      >
-                        <CheckBox
-                          title="אונליין"
-                          checked={checked}
-                          onChange={() => setChecked(true)}
-                        />
-                        <CheckBox
-                          title="פיזית"
-                          checked={!checked}
-                          onChange={() => setChecked(false)}
-                        />
-                      </div>
+                      {checked && (
+                        <div
+                          className="profiles-item"
+                          style={{ width: "calc(100% - 242px)" }}
+                        >
+                          <div className="profiles-item-name">
+                            <span>מיקום</span>
+                            <span style={{ color: "red" }}>*</span>
+                          </div>
+                          <div>
+                            <div className="input">
+                              <Input
+                                type="text"
+                                placeholder="חפש או הקלד"
+                                prefix={
+                                  <InlineSVG
+                                    src={geometricsSVG}
+                                    stroke="#999"
+                                  />
+                                }
+                                className="input-main"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div
