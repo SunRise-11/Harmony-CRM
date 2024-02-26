@@ -168,12 +168,12 @@ const DailyPlanner = () => {
             {
               key: "1",
               label: "פגישות מתוכננות",
-              children: <Table data={data} columns={columns} />,
+              children: <Table data={data} columns={columns} checkbox />,
             },
             {
               key: "2",
               label: "ארכיון פגישות",
-              children: <Table data={data} columns={columns} />,
+              children: <Table data={data} columns={columns} checkbox />,
             },
             ,
           ]}

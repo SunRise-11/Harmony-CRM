@@ -111,7 +111,10 @@ const NewEvent = ({ visible, onCancel }) => {
                       {checked && (
                         <div
                           className="profiles-item"
-                          style={{ width: "calc(100% - 210px)" }}
+                          style={{
+                            width: "calc(100% - 210px)",
+                            marginTop: "-25px",
+                          }}
                         >
                           <div className="profiles-item-name">
                             <span>מיקום</span>

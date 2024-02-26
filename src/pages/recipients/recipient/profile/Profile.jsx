@@ -59,10 +59,9 @@ const Profile = () => {
             color: "white",
             zIndex: "1001",
           }}
+          // icon={moreSVG}
           onClick={() => setShowSideBar(true)}
-        >
-          1
-        </Button>
+        ></Button>
       ) : (
         <SideBar current={current} setCurrent={setCurrent} />
       )}

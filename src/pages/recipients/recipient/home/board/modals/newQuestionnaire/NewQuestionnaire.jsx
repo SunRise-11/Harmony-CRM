@@ -64,7 +64,7 @@ const NewQuestionnaire = ({ visible, onCancel }) => {
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeImg} />
               </button>
-              <div>
+              <div className="recipient-questionnaire-modal">
                 <ModalTitle icon={questionSVG} title="הוספת שאלון" />
                 <div
                   style={{

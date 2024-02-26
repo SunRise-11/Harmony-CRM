@@ -26,17 +26,35 @@ const AddTask = ({ visible, onCancel }) => {
       content={
         <div className="add-task">
           <div className="add-task-info">
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "40px",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
               <div style={{ width: "calc(40% - 10px)", paddingRight: "10px" }}>
                 <Label title="מקבל שירות" />
                 <div className="add-task-user">
-                  <InlineSVG src={userImg} stroke="#0075ff" />
+                  <InlineSVG
+                    src={userImg}
+                    stroke="#0075ff"
+                    style={{ marginRight: "10px" }}
+                  />
                   <span>שמוליק גוטמן</span>
                 </div>
               </div>
-              <div style={{ width: "calc(40% - 10px)" }}>
+              <div style={{ width: "calc(60% - 10px)" }}>
                 <Label title="פתיחת משימה ל:" />
-                <div style={{ display: "flex" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    gap: "20px",
+                    marginTop: "7px",
+                  }}
+                >
                   <CheckBox title="מקבל השירות" />
                   <CheckBox title="עצמי" />
                 </div>

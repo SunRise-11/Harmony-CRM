@@ -110,12 +110,12 @@ const Alerts = () => {
             {
               label: "הודעות שנקראו",
               key: 1,
-              children: <Table data={data} columns={columns} checkbox={true} />,
+              children: <Table data={data} columns={columns} checkbox />,
             },
             {
               label: "הודעות שלא נקראו",
               key: 2,
-              children: <Table data={data} columns={columns} />,
+              children: <Table data={data} columns={columns} checkbox />,
             },
           ]}
         ></Tabs>

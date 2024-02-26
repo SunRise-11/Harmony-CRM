@@ -88,7 +88,7 @@ const Tasks = () => {
               style={{ paddingRight: "10px" }}
             >
               <button onClick={() => setVisible(true)}>
-                <InlineSVG src={addImg} />
+                <InlineSVG src={addImg} width={24} height={24} />
               </button>
               <div>משימה חדשה</div>
             </div>

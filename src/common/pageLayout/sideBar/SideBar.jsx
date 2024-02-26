@@ -90,13 +90,19 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               onClick={() => setSelected(14)}
               key={14}
             />,
-            <MenuItem
-              isSubMenu={true}
-              title="אהרון ליפשיץ"
-              isSelect={isSelected === 15}
-              onClick={() => setSelected(15)}
-              key={15}
-            />,
+            <div className="sub-menu-unselected" key="15">
+              <div className="menu-item" style={{ color: "#0075FF" }}>
+                <div className="menu-item-container">
+                  <InlineSVG
+                    src={addSVG}
+                    stroke="#0075FF"
+                    width={24}
+                    height={24}
+                  />
+                  <div className="menu-item-title">אהרון ליפשיץ</div>
+                </div>
+              </div>
+            </div>,
           ]}
         />
         <MenuItem
@@ -139,19 +145,13 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               onClick={() => setSelected(23)}
               key={23}
             />,
-            <div className="sub-menu-unselected" key="24">
-              <div className="menu-item" style={{ color: "#0075FF" }}>
-                <div className="menu-item-container">
-                  <InlineSVG
-                    src={addSVG}
-                    stroke="#0075FF"
-                    width={24}
-                    height={24}
-                  />
-                  <div className="menu-item-title">סטטיסטיקת היסטוריות</div>
-                </div>
-              </div>
-            </div>,
+            <MenuItem
+              isSubMenu={true}
+              title="סטטיסטיקת היסטוריות"
+              isSelect={isSelected === 24}
+              onClick={() => setSelected(24)}
+              key={24}
+            />,
           ]}
         />
         <MenuItem
