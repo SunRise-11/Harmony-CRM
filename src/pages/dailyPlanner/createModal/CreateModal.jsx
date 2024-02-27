@@ -45,6 +45,9 @@ const CreateModal = ({ visible, onCancel }) => {
   };
   const [isHover, setHover] = useState(false);
   const options = [];
+  const [checked, setChecked] = useState(false);
+  const [zoomMeeting, setZoomMeeting] = useState(false);
+  const [reminderType, setReminderType] = useState(0);
   return (
     <ReactModal
       isOpen={visible}
@@ -180,10 +183,18 @@ const CreateModal = ({ visible, onCancel }) => {
                       text="שעת סיום"
                     />
                     <div style={{ marginTop: "31px" }}>
-                      <CheckBox title="כל היום" />
+                      <CheckBox
+                        title="כל היום"
+                        checked={checked}
+                        onChange={() => setChecked(!checked)}
+                      />
                     </div>
                   </div>
-                  <CheckBox title="פגישת זום" />
+                  <CheckBox
+                    title="פגישת זום"
+                    checked={zoomMeeting}
+                    onChange={() => setZoomMeeting(!zoomMeeting)}
+                  />
                 </div>
                 <div
                   style={{
@@ -230,9 +241,21 @@ const CreateModal = ({ visible, onCancel }) => {
                             flexWrap: "wrap",
                           }}
                         >
-                          <CheckBox title="הודעה" />
-                          <CheckBox title="דוא”ל" />
-                          <CheckBox title="WhatsApp" />
+                          <CheckBox
+                            title="הודעה"
+                            checked={reminderType === 0}
+                            onChange={() => setReminderType(0)}
+                          />
+                          <CheckBox
+                            title="דוא”ל"
+                            checked={reminderType === 1}
+                            onChange={() => setReminderType(1)}
+                          />
+                          <CheckBox
+                            title="WhatsApp"
+                            checked={reminderType === 2}
+                            onChange={() => setReminderType(2)}
+                          />
                         </div>
                       </div>
                     </div>

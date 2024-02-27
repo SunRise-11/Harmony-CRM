@@ -8,7 +8,6 @@ import checkSVG from "../../../assets/icons/check.svg";
 import downloadSVG from "../../../assets/icons/download.svg";
 
 import Table from "../../../components/table/Table";
-// import AttendanceModal from "../modals/attendance/Attendance";
 import AttendModal from "../../../components/modals/attend/Attend";
 import { useState } from "react";
 const { RangePicker } = DatePicker;
@@ -115,16 +114,18 @@ const Presence = () => {
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
   return (
-    <ConfigProvider direction="rtl">
-      <div className="presence">
-        <div className="presence-title">דיווח נוכחות</div>
-        <div className="presence-board">
-          <div className="presence-navbar">
-            <div className="presence-navbar-others">
+    <div className="presence">
+      <div className="presence-title">דיווח נוכחות</div>
+      <div className="presence-board">
+        <div className="presence-navbar">
+          <div className="presence-navbar-others">
+            <ConfigProvider direction="rtl">
               <Segmented
                 className="presence-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}
               />
+            </ConfigProvider>
+            {!open && (
               <Button
                 onClick={() => {
                   setOpen(!open);
@@ -133,20 +134,20 @@ const Presence = () => {
                 <InlineSVG src={planSVG} width={20} />
                 <span>טווח תאריכים</span>
               </Button>
-              {open && <RangePicker style={{ marginRight: "-180px" }} />}
-            </div>
-            <Button onClick={() => setShowModal(true)}>
-              <InlineSVG src={reportSVG} width={20} />
-              <span>דיווח חדש</span>
-            </Button>
+            )}
+            {open && <RangePicker style={{ height: "44px" }} />}
           </div>
-          <div className="presence-table">
-            <Table data={data} columns={columns} />
-          </div>
+          <Button onClick={() => setShowModal(true)}>
+            <InlineSVG src={reportSVG} width={20} />
+            <span>דיווח חדש</span>
+          </Button>
         </div>
-        <AttendModal visible={showModal} onCancel={() => setShowModal(false)} />
+        <div className="presence-table">
+          <Table data={data} columns={columns} />
+        </div>
       </div>
-    </ConfigProvider>
+      <AttendModal visible={showModal} onCancel={() => setShowModal(false)} />
+    </div>
   );
 };
 

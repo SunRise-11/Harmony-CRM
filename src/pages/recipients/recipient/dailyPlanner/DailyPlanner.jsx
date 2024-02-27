@@ -146,15 +146,17 @@ const DailyPlanner = () => {
               options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
             />
           </ConfigProvider>
-          <Button
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <InlineSVG src={planSVG} width={20} />
-            <span>טווח תאריכים</span>
-          </Button>
-          {open && <RangePicker style={{ marginRight: "-180px" }} />}
+          {!open && (
+            <Button
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              <InlineSVG src={planSVG} width={20} />
+              <span>טווח תאריכים</span>
+            </Button>
+          )}
+          {open && <RangePicker style={{ height: "44px" }} />}
         </div>
         <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={addEventSVG} width={20} />

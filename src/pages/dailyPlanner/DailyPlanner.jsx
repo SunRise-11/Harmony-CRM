@@ -28,12 +28,14 @@ const CustomToolbar = ({ setShowCreateModal }) => {
           <span>נובמבר 2023</span>
         </Button>
         <div className="daily-planner-navbar-others-setting">
+          <Button>היום</Button>
           <ConfigProvider direction="rtl">
-            <Button>היום</Button>
             <Segmented
               className="daily-planner-navbar-toggle"
               options={["היום", "שבוע", "חודש"]}
             />
+          </ConfigProvider>
+          {!open && (
             <Button
               onClick={() => {
                 setOpen(!open);
@@ -42,8 +44,8 @@ const CustomToolbar = ({ setShowCreateModal }) => {
               <InlineSVG src={planSVG} width={20} />
               <span>טווח תאריכים</span>
             </Button>
-            {open && <RangePicker style={{ marginRight: "-165px" }} />}
-          </ConfigProvider>
+          )}
+          {open && <RangePicker style={{ height: "44px" }} />}
         </div>
       </div>
       <Button onClick={() => setShowCreateModal(true)}>
@@ -87,31 +89,76 @@ const DailyPlanner = () => {
   const events = [
     {
       title: "פגישת זום",
-      start: new Date(2024, 1, 23, 7, 0),
-      end: new Date(2024, 1, 23, 12, 0),
+      start: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() - 1,
+        7,
+        0
+      ),
+      end: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() - 1,
+        12,
+        0
+      ),
       desc: "ישראל ישראלי",
       theme: 0,
-      backgroundColor: "#5FBCFF80",
-      borderColor: "#5FBCFF",
-      color: "#0369A1",
     },
     {
       title: "פגישות מיון ",
-      start: new Date(2024, 1, 22, 10, 0),
-      end: new Date(2024, 1, 22, 12, 0),
+      start: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate(),
+        10,
+        0
+      ),
+      end: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate(),
+        12,
+        0
+      ),
       hexColor: colors[1],
       theme: 1,
     },
     {
       title: "פגישת זום",
-      start: new Date(2024, 1, 21, 10, 0),
-      end: new Date(2024, 1, 21, 12, 0),
+      start: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() - 2,
+        10,
+        0
+      ),
+      end: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() - 2,
+        12,
+        0
+      ),
       theme: 2,
     },
     {
       title: "פגישות מיון",
-      start: new Date(2024, 1, 18, 10, 0),
-      end: new Date(2024, 1, 18, 12, 0),
+      start: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() + 1,
+        9,
+        0
+      ),
+      end: new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        new Date().getDate() + 1,
+        13,
+        0
+      ),
       theme: 3,
     },
   ];

@@ -12,6 +12,7 @@ import addImg from "../../../../../assets/icons/add.svg";
 import geometricsSVG from "../../../../../assets/icons/geometrics.svg";
 import { Input } from "antd";
 
+const { TextArea } = Input;
 ReactModal.setAppElement("#root");
 
 const modalVariants = {
@@ -45,6 +46,8 @@ const CreateModal = ({ visible, onCancel }) => {
     },
   };
   const [checked, setChecked] = useState(false);
+  const [zoomMeeting, setZoomMeeting] = useState(false);
+  const [reminderType, setReminderType] = useState(0);
   return (
     <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
@@ -190,7 +193,11 @@ const CreateModal = ({ visible, onCancel }) => {
                         text="שעת סיום"
                       />
                     </div>
-                    <CheckBox title="פגישת זום" />
+                    <CheckBox
+                      title="פגישת זום"
+                      checked={zoomMeeting}
+                      onChange={() => setZoomMeeting(!zoomMeeting)}
+                    />
                   </div>
                   <div
                     style={{
@@ -238,9 +245,21 @@ const CreateModal = ({ visible, onCancel }) => {
                               flexWrap: "wrap",
                             }}
                           >
-                            <CheckBox title="הודעה" />
-                            <CheckBox title="דוא”ל" />
-                            <CheckBox title="WhatsApp" />
+                            <CheckBox
+                              title="הודעה"
+                              checked={reminderType === 0}
+                              onChange={() => setReminderType(0)}
+                            />
+                            <CheckBox
+                              title="דוא”ל"
+                              checked={reminderType === 1}
+                              onChange={() => setReminderType(1)}
+                            />
+                            <CheckBox
+                              title="WhatsApp"
+                              checked={reminderType === 2}
+                              onChange={() => setReminderType(2)}
+                            />
                           </div>
                         </div>
                       </div>
@@ -254,7 +273,15 @@ const CreateModal = ({ visible, onCancel }) => {
                         <div>משימה חדשה</div>
                       </div>
                     </div>
-                    <Item type="input" text="הערות" width="100%" />
+                    {/* <Item type="input" text="הערות" width="100%" /> */}
+                    <div className="profiles-item">
+                      <div className="profiles-item-name">
+                        <span>הערות</span>
+                      </div>
+                      <div>
+                        <TextArea placeholder="הקלד פרטים..." />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div

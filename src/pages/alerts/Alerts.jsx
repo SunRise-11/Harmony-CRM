@@ -2,7 +2,6 @@ import planSVG from "../../assets/icons/plan.svg";
 import { Button, Tabs, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import Table from "../../components/table/Table";
-import Dropdown from "../../components/dropdown/Dropdown";
 import Select from "../../components/select/Select";
 import AvatarImg1 from "../../assets/images/avatar1.png";
 import AvatarImg2 from "../../assets/images/avatar2.png";
@@ -79,7 +78,9 @@ const Alerts = () => {
   return (
     <div className="alerts">
       <div className="alerts-navbar">
-        <Dropdown text="בחר מקבל שירות" />
+        <div style={{ width: "240px" }}>
+          <Select placeholder="בחר מקבל שירות" />
+        </div>
         <div style={{ width: "240px" }}>
           <Select
             placeholder="סוג התראה"
@@ -90,17 +91,17 @@ const Alerts = () => {
             ]}
           />
         </div>
-        <Button
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          <InlineSVG src={planSVG} width={20} />
-          <span>טווח תאריכים</span>
-        </Button>
-        {open && (
-          <RangePicker style={{ marginRight: "-180px", height: "100%" }} />
+        {!open && (
+          <Button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <InlineSVG src={planSVG} width={20} />
+            <span>טווח תאריכים</span>
+          </Button>
         )}
+        {open && <RangePicker style={{ height: "44px" }} />}
       </div>
       <div className="alerts-table">
         <Tabs

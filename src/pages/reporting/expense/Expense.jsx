@@ -111,16 +111,18 @@ const Expense = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <ConfigProvider direction="rtl">
-      <div className="expense">
-        <div className="expense-title">דיווח הוצאות</div>
-        <div className="expense-board">
-          <div className="expense-navbar">
-            <div className="expense-navbar-others">
+    <div className="expense">
+      <div className="expense-title">דיווח הוצאות</div>
+      <div className="expense-board">
+        <div className="expense-navbar">
+          <div className="expense-navbar-others">
+            <ConfigProvider direction="rtl">
               <Segmented
                 className="expense-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}
               />
+            </ConfigProvider>
+            {!open && (
               <Button
                 onClick={() => {
                   setOpen(!open);
@@ -129,23 +131,20 @@ const Expense = () => {
                 <InlineSVG src={planSVG} width={20} />
                 <span>טווח תאריכים</span>
               </Button>
-              {open && <RangePicker style={{ marginRight: "-180px" }} />}
-            </div>
-            <Button onClick={() => setShowModal(true)}>
-              <InlineSVG src={reportSVG} width={20} />
-              <span>דיווח חדש</span>
-            </Button>
+            )}
+            {open && <RangePicker style={{ height: "44px" }} />}
           </div>
-          <div className="expense-table">
-            <Table data={data} columns={columns} />
-          </div>
+          <Button onClick={() => setShowModal(true)}>
+            <InlineSVG src={reportSVG} width={20} />
+            <span>דיווח חדש</span>
+          </Button>
         </div>
-        <ExpenseModal
-          visible={showModal}
-          onCancel={() => setShowModal(false)}
-        />
+        <div className="expense-table">
+          <Table data={data} columns={columns} />
+        </div>
       </div>
-    </ConfigProvider>
+      <ExpenseModal visible={showModal} onCancel={() => setShowModal(false)} />
+    </div>
   );
 };
 

@@ -106,7 +106,9 @@ const Documents = () => {
             <span>העלאת מסמך</span>
           </Button>
         </Upload>
-        <Button>שליחת מסמך</Button>
+        <Upload>
+          <Button>שליחת מסמך</Button>
+        </Upload>
         <Button onClick={() => setShowModal(true)}>שליחת טופס דיגיטלי</Button>
       </div>
       <div className="recipient-documents-table">

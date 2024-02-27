@@ -13,8 +13,10 @@ import CheckBox from "../../../../../components/checkBox/CheckBox";
 import taskImg from "../../../../../assets/icons/task.svg";
 import userImg from "../../../../../assets/icons/user.svg";
 import InlineSVG from "react-inlinesvg";
+import { useState } from "react";
 
 const AddTask = ({ visible, onCancel }) => {
+  const [checked, setChecked] = useState(false);
   return (
     <Modal
       px={50}
@@ -55,8 +57,16 @@ const AddTask = ({ visible, onCancel }) => {
                     marginTop: "7px",
                   }}
                 >
-                  <CheckBox title="מקבל השירות" />
-                  <CheckBox title="עצמי" />
+                  <CheckBox
+                    title="מקבל השירות"
+                    checked={!checked}
+                    onChange={() => setChecked(false)}
+                  />
+                  <CheckBox
+                    title="עצמי"
+                    checked={checked}
+                    onChange={() => setChecked(true)}
+                  />
                 </div>
               </div>
             </div>

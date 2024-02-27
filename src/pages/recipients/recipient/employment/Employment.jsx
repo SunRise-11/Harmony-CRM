@@ -231,12 +231,16 @@ const Employment = () => {
               }}
             >
               <Item
-                type="input"
+                type="date-picker"
                 width="calc(50% - 10px)"
                 text="תאריך התחלה"
                 required
               />
-              <Item type="input" width="calc(50% - 10px)" text="תאריך סיום" />
+              <Item
+                type="date-picker"
+                width="calc(50% - 10px)"
+                text="תאריך סיום"
+              />
             </div>
           </div>
         }

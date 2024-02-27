@@ -201,7 +201,7 @@ const ServiceApplicants = () => {
         </span>
         <Button onClick={() => setShowModal(true)}>
           <InlineSVG src={reportSVG} width={20} />
-          <span>טווח תאריכים</span>
+          <span>הוספת רשומה</span>
         </Button>
       </div>
       <div className="service-applicants-table">

@@ -112,7 +112,7 @@ const StatusBar = () => {
                 מובטל
               </label>
             </div>
-            <InlineSVG src={downSVG} className={visible1 && "rotate-180"} />
+            <InlineSVG src={downSVG} className={visible1 ? "rotate-180" : ""} />
           </div>
         </div>
         <div>
@@ -175,7 +175,7 @@ const StatusBar = () => {
                 חו”ל
               </label>
             </div>
-            <InlineSVG src={downSVG} className={visible2 && "rotate-180"} />
+            <InlineSVG src={downSVG} className={visible2 ? "rotate-180" : ""} />
           </div>
         </div>
       </div>

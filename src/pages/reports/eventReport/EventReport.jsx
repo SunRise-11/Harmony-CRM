@@ -1,12 +1,14 @@
-import { Button, ConfigProvider, Segmented } from "antd";
+import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import pdfSvg from "../../../assets/icons/pdf.svg";
 import excelSvg from "../../../assets/icons/excel.svg";
-import Dropdown from "../../../components/dropdown/Dropdown";
-import DatePicker from "../../../components/pickers/datePicker/DatePicker";
+import Select from "../../../components/select/Select";
+// import DatePicker from "../../../components/pickers/datePicker/DatePicker";
 import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
 import Table from "../../../components/table/Table";
+
+const { RangePicker } = DatePicker;
 
 const columns = [
   {
@@ -75,36 +77,42 @@ const data = [
 ];
 const EventReport = () => {
   return (
-    <ConfigProvider direction="rtl">
-      <div className="event-report">
-        <div className="event-report-title">דו”ח אירועים</div>
-        <div className="event-report-navbar">
-          <div className="event-report-navbar-others">
-            <Dropdown text="חיפוש / בחירת מקבל שירות" />
-            <Dropdown text="בחירת פעילות" />
-            <Dropdown text="סוג אירוע" />
+    <div className="event-report">
+      <div className="event-report-title">דו”ח אירועים</div>
+      <div className="event-report-navbar">
+        <div className="event-report-navbar-others">
+          <div style={{ width: "200px" }}>
+            <Select placeholder="חיפוש / בחירת מקבל שירות" />
+          </div>
+          <div style={{ width: "200px" }}>
+            <Select placeholder="בחירת פעילות" />
+          </div>
+          <div style={{ width: "200px" }}>
+            <Select placeholder="סוג אירוע" />
+          </div>
+          <ConfigProvider direction="rtl">
             <Segmented
               className="event-report-navbar-toggle"
               options={["הכל", "שנה אחרונה", "3 שנים אחרונות"]}
             />
-            <DatePicker text="טווח תאריכים" />
-          </div>
-          <div className="event-report-navbar-buttons">
-            <Button>
-              <InlineSVG src={excelSvg} />
-              <span>הורדה ל-Excel</span>
-            </Button>
-            <Button>
-              <InlineSVG src={pdfSvg} />
-              <span>הורדה ל-PDF</span>
-            </Button>
-          </div>
+          </ConfigProvider>
+          <RangePicker text="טווח תאריכים" style={{ height: "44px" }} />
         </div>
-        <div className="event-report-table">
-          <Table data={data} columns={columns} />
+        <div className="event-report-navbar-buttons">
+          <Button>
+            <InlineSVG src={excelSvg} />
+            <span>הורדה ל-Excel</span>
+          </Button>
+          <Button>
+            <InlineSVG src={pdfSvg} />
+            <span>הורדה ל-PDF</span>
+          </Button>
         </div>
       </div>
-    </ConfigProvider>
+      <div className="event-report-table">
+        <Table data={data} columns={columns} />
+      </div>
+    </div>
   );
 };
 

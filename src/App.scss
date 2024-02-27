@@ -125,3 +125,9 @@ td {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #666;
 }
+
+.ant-picker-range {
+  & .ant-picker-input {
+    width: 75px;
+  }
+}

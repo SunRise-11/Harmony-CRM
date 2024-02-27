@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Segmented, Input } from "antd";
+import { Button, ConfigProvider, Segmented, InputNumber } from "antd";
 import InlineSVG from "react-inlinesvg";
 import reportSVG from "../../assets/icons/report.svg";
 import Dropdown from "../../components/dropdown/Dropdown";
@@ -189,10 +189,13 @@ const Opportunities = () => {
                   <span style={{ color: "red" }}>*</span>
                 </div>
                 <div className="input">
-                  <Input
-                    placeholder="100%"
-                    type="number"
+                  <InputNumber
                     className="input-main"
+                    formatter={(value) => `${value}%`}
+                    parser={(value) => value.replace("%", "")}
+                    defaultValue={100}
+                    min={0}
+                    max={100}
                   />
                 </div>
               </div>
