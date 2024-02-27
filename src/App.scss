@@ -131,3 +131,8 @@ td {
     width: 75px;
   }
 }
+
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-radio-checked .ant-radio-inner {
+  background-color: #f37021 !important;
+}
