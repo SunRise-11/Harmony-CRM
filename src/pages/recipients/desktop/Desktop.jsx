@@ -34,7 +34,6 @@ const columns = [
     width: "15%",
     render: (name, record) => (
       <div className="name">
-        <img src={record.icon} />
         <div>{name}</div>
       </div>
     ),
