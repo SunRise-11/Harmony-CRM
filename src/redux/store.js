@@ -1,15 +1,25 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const emptyReducer = createSlice({
-  name: 'empty',
-  initialState: null,
-  reducers: {
-
+const appSlice = createSlice({
+  name: "app",
+  initialState: {
+    theme: "light",
+    direction: "rtl",
   },
-}).reducer;
+  reducers: {
+    setTheme: (state, action) => {
+      state.theme = action.payload;
+    },
+    setDirection: (state, action) => {
+      state.direction = action.payload;
+    },
+  },
+});
+
+export const { setTheme, setDirection } = appSlice.actions;
 
 export const store = configureStore({
   reducer: {
-    emptyState: emptyReducer,
+    app: appSlice.reducer,
   },
 });

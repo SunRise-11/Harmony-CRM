@@ -8,14 +8,22 @@ const { Sider, Content } = Layout;
 import Header from "./header/Header";
 import SideBar from "./sideBar/SideBar";
 import ChatGPT from "./chatGPT/ChatGPT";
+import { useSelector } from "react-redux";
 
 const PageLayout = (props) => {
   const { children } = props;
 
   const [collapsed, setCollapsed] = useState(false);
-
+  const theme = useSelector((state) => state.app.theme);
+  const direction = useSelector((state) => state.app.direction);
+  const backgroundColors = {
+    original: "#E2ECF6",
+    suggested: "#F0F0F0",
+    monday: "#F5F9F8",
+    dynamics: "#F4F9FF",
+  };
   return (
-    <div className="layout-container" style={{ direction: "RTL" }}>
+    <div className="layout-container" style={{ direction }}>
       <Layout>
         <Sider
           theme="light"
@@ -45,6 +53,7 @@ const PageLayout = (props) => {
               overflow: "auto",
               padding: "0px",
               position: "relative",
+              backgroundColor: backgroundColors[theme],
             }}
           >
             {children}

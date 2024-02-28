@@ -1,11 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import InlineSVG from "react-inlinesvg";
-
+import { motion, AnimatePresence } from "framer-motion";
 import avatarImg from "../../../../assets/images/avatar.png";
 import logoutImg from "../../../../assets/icons/logout.svg";
 import settingImg from "../../../../assets/icons/setting.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { setTheme, setDirection } from "../../../../redux/store";
 
 const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.app.theme);
+  const direction = useSelector((state) => state.app.direction);
+  const handleThemeChange = (e) => {
+    dispatch(setTheme(e.target.value));
+  };
+
+  const handleDirectionChange = (e) => {
+    dispatch(setDirection(e.target.value));
+  };
+  // const [showChangeTheme, setShowChangeTheme] = useState(false);
   const themes = ["original", "suggested", "monday", "dynamics"];
   const colors = [
     [
@@ -71,48 +84,52 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
           <InlineSVG src={logoutImg} />
         </a>
       </div>
-      <div
-        initial="hidden"
-        animate="visible"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        ransition={{ duration: 0.5, delay: 0.2 }}
-        style={{
-          display: showChangeTheme ? "block" : "none",
-        }}
-        className="header-theme-modal"
-      >
-        <div className="header-theme-modal-main">
-          <div className="header-theme-modal-main-title">צבעי תצוגה</div>
-          <div className="header-theme-modal-main-board">
-            {colors.map((themeColors, index) => (
-              <div
-                key={index}
-                style={{
-                  paddingBottom: index + 1 === colors.length ? "18.5px" : "0px",
-                  borderRadius:
-                    index + 1 === colors.length ? "0 0 12px 12px" : 0,
-                }}
-                onClick={() => {
-                  setShowChangeTheme(false);
-                }}
-                className="header-theme-modal-main-board-theme"
-              >
-                <div className="header-theme-modal-main-board-theme-bar">
-                  {themeColors.reverse().map((color, index) => (
-                    <div
-                      key={index}
-                      className="header-theme-modal-main-board-theme-bar-color"
-                      style={{
-                        background: color,
-                      }}
-                    />
-                  ))}
+      <AnimatePresence>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{
+            display: showChangeTheme ? "block" : "none",
+          }}
+          className="header-theme-modal"
+        >
+          <div className="header-theme-modal-main">
+            <div className="header-theme-modal-main-title">צבעי תצוגה</div>
+            <div className="header-theme-modal-main-board">
+              {colors.map((themeColors, index) => (
+                <div
+                  key={index}
+                  style={{
+                    paddingBottom:
+                      index + 1 === colors.length ? "18.5px" : "12px",
+                    borderRadius:
+                      index + 1 === colors.length ? "0 0 12px 12px" : 0,
+                  }}
+                  onClick={() => {
+                    setShowChangeTheme(false);
+                    dispatch(setTheme(themes[index]));
+                  }}
+                  className="header-theme-modal-main-board-theme"
+                >
+                  <div className="header-theme-modal-main-board-theme-bar">
+                    {themeColors.reverse().map((color, index) => (
+                      <div
+                        key={index}
+                        className="header-theme-modal-main-board-theme-bar-color"
+                        style={{
+                          background: color,
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
