@@ -41,7 +41,7 @@ const Profile = () => {
             width: "100%",
             height: "100%",
             backgroundColor: "transparent",
-            zIndex: 1000,
+            zIndex: 100,
           }}
           onClick={() => setShowSideBar(false)}
         ></div>
@@ -57,7 +57,7 @@ const Profile = () => {
             textAlign: "center",
             display: "flex",
             color: "white",
-            zIndex: "1001",
+            zIndex: "101",
           }}
           // icon={moreSVG}
           onClick={() => setShowSideBar(true)}

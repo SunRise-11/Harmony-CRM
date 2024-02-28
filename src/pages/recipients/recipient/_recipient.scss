@@ -10,7 +10,15 @@
 @import "questionnaires";
 
 .recipient {
+<<<<<<< Updated upstream
   height: calc(100% - 64px);
+=======
+  & .ant-tabs-nav {
+    position: sticky;
+    top: 0px;
+    z-index: 12;
+  }
+>>>>>>> Stashed changes
 
   .ant-tabs-content {
     padding: 0 3%;
