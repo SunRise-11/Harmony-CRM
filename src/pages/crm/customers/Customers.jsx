@@ -4,6 +4,7 @@ import reportSVG from "../../../assets/icons/report.svg";
 import { useState } from "react";
 import NewRecordModal from "../newRecord/NewRecord";
 import Drawer from "../drawer/Drawer";
+import { useSelector } from "react-redux";
 
 const columns = [
   {
@@ -185,6 +186,7 @@ const data = [
 const Customers = () => {
   const [showModal, setShowModal] = useState(false);
   const [showDrawer, setShowDrawer] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <div className="customers">
@@ -197,7 +199,7 @@ const Customers = () => {
       </div>
       <div className="customers-table">
         <div className="table">
-          <ConfigProvider direction="rtl">
+          <ConfigProvider direction={direction}>
             <Table
               dataSource={data}
               columns={columns}

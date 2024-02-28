@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Segmented } from "antd";
-import { ConfigProvider } from "antd";
+import { Segmented, ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
 
-const ToggleSelector = ({ visible, options, flag }) => {
+const ToggleSelector = ({ visible, options }) => {
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="toggle-selector">
-      <ConfigProvider direction="rtl">
-        <div>
-          {visible && (
-            <Segmented
-              className={`${flag ? "toggle1" : "toggle2"} toggle-selector`}
-              options={options}
-            ></Segmented>
-          )}
-        </div>
+      <ConfigProvider direction={direction}>
+        {visible && (
+          <Segmented className="toggle-selector" options={options}></Segmented>
+        )}
       </ConfigProvider>
     </div>
   );

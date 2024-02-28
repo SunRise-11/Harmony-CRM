@@ -7,6 +7,7 @@ import Modal from "../../components/modals/basic/Basic";
 import Item from "../../components/profiles/basic/item/Item";
 import jobSVG from "../../assets/icons/job.svg";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const columns = [
   {
@@ -104,16 +105,19 @@ const data = [
 ];
 const Opportunities = () => {
   const [showModal, setShowModal] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
-    <ConfigProvider direction="rtl">
+    <>
       <div className="opportunities">
         <div className="opportunities-navbar">
           <div className="opportunities-navbar-others">
             <Dropdown text="ישוב" />
-            <Segmented
-              className="opportunities-navbar-toggle"
-              options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
-            />
+            <ConfigProvider direction={direction}>
+              <Segmented
+                className="opportunities-navbar-toggle"
+                options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
+              />
+            </ConfigProvider>
           </div>
           <Button
             className="opportunities-navbar-button"
@@ -221,7 +225,7 @@ const Opportunities = () => {
           </div>
         }
       />
-    </ConfigProvider>
+    </>
   );
 };
 

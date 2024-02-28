@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactSelect from "react-select";
 import InlineSVG from "react-inlinesvg";
+import { useSelector } from "react-redux";
 
 const Select = ({ placeholder, options, icon }) => {
   const [isHover, setHover] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <div className="select">
       <ReactSelect
         className="select-main"
-        isRtl={true}
+        isRtl={direction === "rtl"}
         isSearchable={true}
         isClearable={true}
         options={options}

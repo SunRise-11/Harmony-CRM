@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ConfigProvider, Tabs } from "antd";
+import { useSelector } from "react-redux";
 import InlineSVG from "react-inlinesvg";
 import homeSVG from "../../../assets/icons/home.svg";
 import profileSVG from "../../../assets/icons/profile.svg";
@@ -148,19 +149,23 @@ const Recipient = () => {
     },
   ];
 
+  const direction = useSelector((state) => state.app.direction);
   return (
-    <Tabs
-      className="recipient"
-      defaultActiveKey="1"
-      activeKey={activeKey}
-      onTabClick={(data) => setActiveKey(data)}
-      items={tabs}
-      tabBarStyle={{
-        backgroundColor: "white",
-        height: "64px",
-        padding: "0px 20px",
-      }}
-    />
+    <ConfigProvider direction={direction}>
+      <Tabs
+        className="recipient"
+        defaultActiveKey="1"
+        activeKey={activeKey}
+        onTabClick={(data) => setActiveKey(data)}
+        items={tabs}
+        tabBarStyle={{
+          backgroundColor: "white",
+          height: "64px",
+          overflow: "auto",
+          padding: "0px 20px",
+        }}
+      />
+    </ConfigProvider>
   );
 };
 

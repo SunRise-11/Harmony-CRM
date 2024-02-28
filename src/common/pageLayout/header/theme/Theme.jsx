@@ -6,18 +6,12 @@ import logoutImg from "../../../../assets/icons/logout.svg";
 import settingImg from "../../../../assets/icons/setting.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { setTheme, setDirection } from "../../../../redux/store";
+import { Switch } from "antd";
 
 const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.app.theme);
   const direction = useSelector((state) => state.app.direction);
-  const handleThemeChange = (e) => {
-    dispatch(setTheme(e.target.value));
-  };
-
-  const handleDirectionChange = (e) => {
-    dispatch(setDirection(e.target.value));
-  };
   // const [showChangeTheme, setShowChangeTheme] = useState(false);
   const themes = ["original", "suggested", "monday", "dynamics"];
   const colors = [
@@ -96,17 +90,13 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
           className="header-theme-modal"
         >
           <div className="header-theme-modal-main">
-            <div className="header-theme-modal-main-title">צבעי תצוגה</div>
+            <div className="header-theme-modal-main-title">
+              <span>צבעי תצוגה</span>
+            </div>
             <div className="header-theme-modal-main-board">
               {colors.map((themeColors, index) => (
                 <div
                   key={index}
-                  style={{
-                    paddingBottom:
-                      index + 1 === colors.length ? "18.5px" : "12px",
-                    borderRadius:
-                      index + 1 === colors.length ? "0 0 12px 12px" : 0,
-                  }}
                   onClick={() => {
                     setShowChangeTheme(false);
                     dispatch(setTheme(themes[index]));
@@ -126,6 +116,16 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                   </div>
                 </div>
               ))}
+              <div className="header-theme-modal-main-title">
+                <Switch
+                  onChange={(checked) =>
+                    dispatch(setDirection(checked ? "rtl" : "ltr"))
+                  }
+                  checkedChildren="rtl"
+                  unCheckedChildren="ltr"
+                  checked={direction === "rtl"}
+                />
+              </div>
             </div>
           </div>
         </motion.div>

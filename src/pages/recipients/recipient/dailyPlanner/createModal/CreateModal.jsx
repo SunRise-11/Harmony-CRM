@@ -10,6 +10,7 @@ import Item from "../../../../../components/profiles/basic/item/Item";
 import CheckBox from "../../../../../components/checkBox/CheckBox";
 import addImg from "../../../../../assets/icons/add.svg";
 import geometricsSVG from "../../../../../assets/icons/geometrics.svg";
+import { useSelector } from "react-redux";
 import { Input } from "antd";
 
 const { TextArea } = Input;
@@ -28,9 +29,10 @@ const modalVariants = {
 };
 
 const CreateModal = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

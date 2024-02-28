@@ -9,6 +9,7 @@ import Button from "../../button/Button";
 import closeImg from "../../../assets/icons/close.svg";
 import addUserImg from "../../../assets/icons/addUser.svg";
 import checkImg from "../../../assets/icons/check.svg";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -35,9 +36,10 @@ const Modal = ({
   visible,
   onCancel,
 }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

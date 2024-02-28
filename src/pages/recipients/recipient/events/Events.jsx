@@ -4,6 +4,7 @@ import planSVG from "../../../../assets/icons/plan.svg";
 import Table from "../../../../components/table/Table";
 import Select from "../../../../components/select/Select";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const { RangePicker } = DatePicker;
 
@@ -75,6 +76,7 @@ const columns = [
 
 const Events = () => {
   const [open, setOpen] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="recipient-events">
       <div className="recipient-events-navbar">
@@ -85,7 +87,7 @@ const Events = () => {
         <div style={{ width: "240px" }}>
           <Select placeholder="בחירת פעילות" />
         </div>
-        <ConfigProvider direction="rtl">
+        <ConfigProvider direction={direction}>
           <Segmented
             className="recipient-events-navbar-toggle"
             options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}

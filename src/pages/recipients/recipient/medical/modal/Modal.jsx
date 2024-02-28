@@ -10,6 +10,7 @@ import nextSVG from "../../../../../assets/icons/signin.svg";
 import downloadSVG from "../../../../../assets/icons/download.svg";
 import Button from "../../../../../components/button/Button";
 import articleImg from "../../../../../assets/images/article.png";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 const modalVariants = {
@@ -25,9 +26,10 @@ const modalVariants = {
 };
 
 const Modal = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

@@ -8,6 +8,7 @@ import nextSVG from "../../assets/icons/next.svg";
 import previousSVG from "../../assets/icons/previous.svg";
 import { useState } from "react";
 import CreateModal from "./createModal/CreateModal";
+import { useSelector } from "react-redux";
 const { RangePicker } = DatePicker;
 
 const customDayHeaderFormat = (date, culture, localizer) => {
@@ -17,6 +18,7 @@ const customDayHeaderFormat = (date, culture, localizer) => {
 
 const CustomToolbar = ({ setShowCreateModal }) => {
   const [open, setOpen] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="daily-planner-navbar">
       <div className="daily-planner-navbar-others">
@@ -29,7 +31,7 @@ const CustomToolbar = ({ setShowCreateModal }) => {
         </Button>
         <div className="daily-planner-navbar-others-setting">
           <Button>היום</Button>
-          <ConfigProvider direction="rtl">
+          <ConfigProvider direction={direction}>
             <Segmented
               className="daily-planner-navbar-toggle"
               options={["היום", "שבוע", "חודש"]}

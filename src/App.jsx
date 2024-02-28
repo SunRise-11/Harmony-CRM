@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 
 import RoutesDefined from "./routes";
 import { store } from "./redux/store";
-
 import "./App.scss";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 

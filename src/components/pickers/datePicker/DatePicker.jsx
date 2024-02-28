@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 import { DatePicker as AntdDatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import { ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
 
 import planImg from "../../../assets/icons/plan.svg";
 
 const DatePicker = ({ pl, pr, py }) => {
   const [isHover, setHover] = useState(false);
-
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="picker">
-      <ConfigProvider direction="rtl">
+      <ConfigProvider direction={direction}>
         <AntdDatePicker
           style={{
             paddingLeft: `${pl}px`,

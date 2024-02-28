@@ -7,6 +7,7 @@ import Select from "../../../components/select/Select";
 import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
 import Table from "../../../components/table/Table";
+import { useSelector } from "react-redux";
 
 const { RangePicker } = DatePicker;
 
@@ -76,6 +77,7 @@ const data = [
   },
 ];
 const EventReport = () => {
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="event-report">
       <div className="event-report-title">דו”ח אירועים</div>
@@ -90,7 +92,7 @@ const EventReport = () => {
           <div style={{ width: "200px" }}>
             <Select placeholder="סוג אירוע" />
           </div>
-          <ConfigProvider direction="rtl">
+          <ConfigProvider direction={direction}>
             <Segmented
               className="event-report-navbar-toggle"
               options={["הכל", "שנה אחרונה", "3 שנים אחרונות"]}

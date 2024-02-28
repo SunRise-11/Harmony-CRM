@@ -2,11 +2,13 @@ import React from "react";
 import PropTypes, { node } from "prop-types";
 import { Table as AntdTable } from "antd";
 import { ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
 
 const Table = ({ columns, data, checkbox }) => {
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="table">
-      <ConfigProvider direction="rtl">
+      <ConfigProvider direction={direction}>
         <AntdTable
           dataSource={data}
           columns={columns}

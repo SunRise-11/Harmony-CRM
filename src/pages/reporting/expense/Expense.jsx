@@ -8,6 +8,7 @@ import avatarImg1 from "../../../assets/images/avatar1.png";
 import Table from "../../../components/table/Table";
 import ExpenseModal from "../modals/expense/Expense";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const { RangePicker } = DatePicker;
 
 const columns = [
@@ -109,6 +110,7 @@ const data = [
 const Expense = () => {
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <div className="expense">
@@ -116,7 +118,7 @@ const Expense = () => {
       <div className="expense-board">
         <div className="expense-navbar">
           <div className="expense-navbar-others">
-            <ConfigProvider direction="rtl">
+            <ConfigProvider direction={direction}>
               <Segmented
                 className="expense-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}

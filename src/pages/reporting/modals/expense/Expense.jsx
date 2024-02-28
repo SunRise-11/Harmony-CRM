@@ -11,7 +11,8 @@ import ModalTitle from "../../../../components/labels/modalTitle/ModalTitle";
 import ReactSelect from "react-select";
 import userSVG from "../../../../assets/icons/user.svg";
 import addUserSVG from "../../../../assets/icons/addUser.svg";
-import { ConfigProvider, Segmented, Upload } from "antd";
+import { Segmented, Upload, ConfigProvider } from "antd";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -31,9 +32,10 @@ const Expense = ({ visible, onCancel }) => {
   const [isHover, setHover] = useState(false);
   const [currentSelected, setCurrentSelected] = useState("");
   const options = [];
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",
@@ -103,7 +105,7 @@ const Expense = ({ visible, onCancel }) => {
                         <span>סוג הוצאה</span>
                         <span style={{ color: "red" }}>*</span>
                       </div>
-                      <ConfigProvider direction="rtl">
+                      <ConfigProvider direction={direction}>
                         <Segmented
                           className="expense-modal-toggle"
                           options={["כיבוד", "משרדי", "נסיעות", "נסיעות - ק”מ"]}
@@ -120,7 +122,7 @@ const Expense = ({ visible, onCancel }) => {
                     <div className="select">
                       <ReactSelect
                         className="select-main"
-                        isRtl={true}
+                        isRtl={direction === "rtl"}
                         isSearchable={true}
                         isClearable={true}
                         options={options}

@@ -10,6 +10,7 @@ import CheckBox from "../../../components/checkBox/CheckBox";
 import addImg from "../../../assets/icons/add.svg";
 import ReactSelect from "react-select";
 import userSVG from "../../../assets/icons/user.svg";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -26,9 +27,10 @@ const modalVariants = {
 };
 
 const CreateModal = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",
@@ -104,7 +106,7 @@ const CreateModal = ({ visible, onCancel }) => {
                     <div className="select">
                       <ReactSelect
                         className="select-main"
-                        isRtl={true}
+                        isRtl={direction === "rtl"}
                         isSearchable={true}
                         isClearable={true}
                         options={options}

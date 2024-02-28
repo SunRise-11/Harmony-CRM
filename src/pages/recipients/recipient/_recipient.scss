@@ -10,33 +10,27 @@
 @import "questionnaires";
 
 .recipient {
-  width: 100%;
-  // overflow: auto;
   height: calc(100% - 64px);
-
-  .ant-tabs-tab:first-child {
-    margin-left: 32px;
-  }
 
   .ant-tabs-content {
     padding: 0 3%;
     height: 100%;
   }
 
-  .ant-tabs-tabpane {
-    height: 100%;
-  }
+  //   .ant-tabs-tabpane {
+  //     height: 100%;
+  //   }
 
-  .ant-tabs-nav-wrap {
-    justify-content: center;
-    color: #434f68;
-    font-family: Afek 1.5 AAA;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: -0.01em;
-    text-align: right;
-  }
+  //   .ant-tabs-nav-wrap {
+  //   justify-content: center;
+  //     color: #434f68;
+  //     font-family: Afek 1.5 AAA;
+  //     font-size: 15px;
+  //     font-weight: 500;
+  //     line-height: 18px;
+  //     letter-spacing: -0.01em;
+  //     text-align: right;
+  //   }
 
   & .ant-tabs-tab-btn {
     align-items: center;

@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import closeImg from "../../../../../assets/icons/close.svg";
-import { Radio, Space } from "antd";
+import { Radio } from "antd";
 import sendSVG from "../../../../../assets/icons/send.svg";
 import Button from "../../../../../components/button/Button";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 const modalVariants = {
@@ -21,9 +22,10 @@ const modalVariants = {
 };
 
 const Modal = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

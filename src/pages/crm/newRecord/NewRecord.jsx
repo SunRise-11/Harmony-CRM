@@ -5,11 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import closeImg from "../../../assets/icons/close.svg";
 import Button from "../../../components/button/Button";
 import Item from "../../../components/profiles/basic/item/Item";
-import CheckBox from "../../../components/checkBox/CheckBox";
-import addImg from "../../../assets/icons/add.svg";
-import ReactSelect from "react-select";
 import addUserImg from "../../../assets/icons/addUser.svg";
 import createSVG from "../../../assets/icons/create2.svg";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -26,9 +24,10 @@ const modalVariants = {
 };
 
 const CreateModal = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

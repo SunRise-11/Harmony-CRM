@@ -10,6 +10,7 @@ import geometricsSVG from "../../../../../../../assets/icons/geometrics.svg";
 import Button from "../../../../../../../components/button/Button";
 import DatePicker from "../../../../../../../components/pickers/datePicker/DatePicker";
 import CheckBox from "../../../../../../../components/checkBox/CheckBox";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 const { TextArea } = Input;
@@ -26,10 +27,11 @@ const modalVariants = {
 };
 
 const NewEvent = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const [checked, setChecked] = useState(false);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

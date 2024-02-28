@@ -7,6 +7,7 @@ import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalT
 import questionSVG from "../../../../../../../assets/icons/question.svg";
 import Button from "../../../../../../../components/button/Button";
 import Item from "../../../../../../../components/profiles/basic/item/Item";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -23,9 +24,10 @@ const modalVariants = {
 };
 
 const NewQuestionnaire = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

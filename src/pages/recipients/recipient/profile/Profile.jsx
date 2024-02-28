@@ -16,7 +16,7 @@ import useViewportWidth from "../../../../hooks/useViewportWidth";
 const Profile = () => {
   useEffect(() => {
     if (document !== null) {
-      const [parent] = document.getElementsByClassName("recipient-profile");
+      const [parent] = document.getElementsByClassName("ant-layout-content");
       parent.onscroll = () => {
         const elements = document.getElementsByClassName("profiles-basic");
         for (let i = elements.length - 1; i >= 0; i--) {

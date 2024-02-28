@@ -6,6 +6,7 @@ import closeImg from "../../../../../../../assets/icons/close.svg";
 import ModalTitle from "../../../../../../../components/labels/modalTitle/ModalTitle";
 import recoverySVG from "../../../../../../../assets/icons/recovery.svg";
 import Table from "../../../../../../../components/table/Table";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -50,9 +51,10 @@ const data = [
 ];
 
 const QuestionnaireHistory = ({ visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   const Styles = {
     content: {
-      direction: "rtl",
+      direction,
       background: "#ffffff",
       borderRadius: "10px",
       position: "relative",

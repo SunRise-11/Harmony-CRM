@@ -111,28 +111,22 @@ const Employment = () => {
     },
   ];
   return (
-    <ConfigProvider direction="rtl">
-      <div className="employment">
-        <div className="employment-title">דיווח תעסוקה ינואר 2024</div>
-        <div className="employment-table">
-          <Table data={data} columns={columns} />
-          <div className="employment-table-buttons">
-            <Button>
-              <InlineSVG src={downloadSVG} width={20} />
-              <span>שליחה</span>
-            </Button>
-            <Button>
-              <InlineSVG
-                src={sendSVG}
-                width={20}
-                style={{ stroke: "#434F68" }}
-              />
-              <span>שמירה</span>
-            </Button>
-          </div>
+    <div className="employment">
+      <div className="employment-title">דיווח תעסוקה ינואר 2024</div>
+      <div className="employment-table">
+        <Table data={data} columns={columns} />
+        <div className="employment-table-buttons">
+          <Button>
+            <InlineSVG src={downloadSVG} width={20} />
+            <span>שליחה</span>
+          </Button>
+          <Button>
+            <InlineSVG src={sendSVG} width={20} style={{ stroke: "#434F68" }} />
+            <span>שמירה</span>
+          </Button>
         </div>
       </div>
-    </ConfigProvider>
+    </div>
   );
 };
 

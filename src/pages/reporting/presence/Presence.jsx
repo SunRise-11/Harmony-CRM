@@ -10,6 +10,7 @@ import downloadSVG from "../../../assets/icons/download.svg";
 import Table from "../../../components/table/Table";
 import AttendModal from "../../../components/modals/attend/Attend";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const { RangePicker } = DatePicker;
 
 const columns = [
@@ -112,6 +113,7 @@ const data = [
 ];
 const Presence = () => {
   const [showModal, setShowModal] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   const [open, setOpen] = useState(false);
   return (
     <div className="presence">
@@ -119,7 +121,7 @@ const Presence = () => {
       <div className="presence-board">
         <div className="presence-navbar">
           <div className="presence-navbar-others">
-            <ConfigProvider direction="rtl">
+            <ConfigProvider direction={direction}>
               <Segmented
                 className="presence-navbar-toggle"
                 options={["בשבוע האחרון", "בחודש אחרון", "בשנה האחרונה"]}

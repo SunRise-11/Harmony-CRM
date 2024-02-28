@@ -15,6 +15,7 @@ import trashSVG from "../../../../assets/icons/trash.svg";
 import editSVG from "../../../../assets/icons/pencil.svg";
 import { useState } from "react";
 import CreateModal from "./createModal/CreateModal";
+import { useSelector } from "react-redux";
 const { RangePicker } = DatePicker;
 
 const data = [
@@ -127,6 +128,7 @@ const columns = [
 const DailyPlanner = () => {
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="recipient-daily-planner">
       <div className="recipient-daily-planner-navbar">
@@ -140,7 +142,7 @@ const DailyPlanner = () => {
               width: "320px",
             }}
           />
-          <ConfigProvider direction="rtl">
+          <ConfigProvider direction={direction}>
             <Segmented
               className="recipient-daily-planner-navbar-toggle"
               options={["אתמול", "בשבוע האחרון", "בחודש האחרון"]}
