@@ -22,7 +22,7 @@ const Profile = () => {
         for (let i = elements.length - 1; i >= 0; i--) {
           const position = elements[i].getBoundingClientRect();
           if (position.top >= 0 && position.bottom <= parent.clientHeight) {
-            setCurrent(i);
+            // setCurrent(i);
           }
         }
       };
@@ -49,7 +49,7 @@ const Profile = () => {
       {viewportWidth < 1520 && showSideBar === false ? (
         <Button
           style={{
-            position: "absolute",
+            position: "fixed",
             backgroundColor: "rgb(255, 180, 0)",
             width: "5px",
             alignItems: "center",

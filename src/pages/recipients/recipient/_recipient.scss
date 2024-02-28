@@ -10,7 +10,11 @@
 @import "questionnaires";
 
 .recipient {
-  height: calc(100% - 64px);
+  & .ant-tabs-nav {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+  }
 
   .ant-tabs-content {
     padding: 0 3%;
