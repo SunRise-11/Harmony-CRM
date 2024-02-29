@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import InlineSVG from "react-inlinesvg";
 
 import leftImg from "../../assets/icons/left.svg";
+import rightImg from "../../assets/icons/next.svg";
+
 import subMenuImg from "../../assets/icons/subMenu.svg";
 import { useSelector } from "react-redux";
 
@@ -36,6 +38,7 @@ const MenuItem = ({
   subMenuSelected,
 }) => {
   const theme = useSelector((state) => state.app.theme);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div
       className={
@@ -101,9 +104,12 @@ const MenuItem = ({
 
         {hasSubMenu &&
           (!isSelect ? (
-            <InlineSVG src={leftImg} />
+            <InlineSVG src={direction === "rtl" ? leftImg : rightImg} />
           ) : (
-            <InlineSVG src={leftImg} className="menu-item-svg" />
+            <InlineSVG
+              src={direction === "rtl" ? leftImg : rightImg}
+              className="menu-item-svg"
+            />
           ))}
       </div>
       {isSelect && subMenus.map((subMenuItem) => subMenuItem)}

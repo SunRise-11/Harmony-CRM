@@ -229,6 +229,7 @@ const Header = ({ collapsed, setCollapsed }) => {
   const [isHover, setHover] = useState(false);
   const viewportWidth = useViewportWidth();
   const theme = useSelector((state) => state.app.theme);
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <>

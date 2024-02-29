@@ -210,7 +210,7 @@ const data = [
 const Reception = () => {
   return (
     <div className="reception">
-      <div style={{ width: "100%i" }}>
+      <div style={{ width: "100%" }}>
         <Info />
       </div>
       <div className="service-table">

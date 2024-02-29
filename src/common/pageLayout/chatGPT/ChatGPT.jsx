@@ -10,18 +10,20 @@ import HandDownImg from "../../../assets/icons/handDown.svg";
 import SendImg from "../../../assets/icons/send.svg";
 import GPTGreenImg from "../../../assets/icons/gpt-green.svg";
 import CloseImg from "../../../assets/icons/close.svg";
-
-const modalVariants = {
-  hidden: {
-    x: "-100%",
-  },
-  visible: {
-    x: 0,
-  },
-};
+import { useSelector } from "react-redux";
 
 const ChatGPT = () => {
   const [isClick, setClick] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
+
+  const modalVariants = {
+    hidden: {
+      x: direction === "rtl" ? "-100%" : "100%",
+    },
+    visible: {
+      x: 0,
+    },
+  };
 
   return (
     <AnimatePresence>
@@ -35,10 +37,27 @@ const ChatGPT = () => {
           zIndex: 102,
           position: "fixed",
           top: "calc(50% - 367px)",
-          left: "0px",
+          left: direction === "rtl" ? "0px" : "initial",
+          right: direction === "ltr" ? "0px" : "initial",
         }}
       >
         <div className="chat-gpt">
+          {direction === "ltr" && (
+            <div className="chat-gpt-button-area">
+              <button onClick={() => setClick(!isClick)}>
+                <InlineSVG
+                  width={20}
+                  height={20}
+                  src={isClick ? CloseImg : DownImg}
+                  style={{ stroke: "white" }}
+                />
+              </button>
+              <div className="chat-gpt-button-area-svg">
+                <InlineSVG src={GPTImg} />
+              </div>
+              <div className="chat-gpt-button-area-text">ChatGPT</div>
+            </div>
+          )}
           <div className="chat-gpt-board">
             <div className="chat-gpt-board-title">
               ChatGPT
@@ -144,20 +163,22 @@ const ChatGPT = () => {
               </div>
             </div>
           </div>
-          <div className="chat-gpt-button-area">
-            <button onClick={() => setClick(!isClick)}>
-              <InlineSVG
-                width={20}
-                height={20}
-                src={isClick ? CloseImg : DownImg}
-                style={{ stroke: "white" }}
-              />
-            </button>
-            <div className="chat-gpt-button-area-svg">
-              <InlineSVG src={GPTImg} />
+          {direction === "rtl" && (
+            <div className="chat-gpt-button-area">
+              <button onClick={() => setClick(!isClick)}>
+                <InlineSVG
+                  width={20}
+                  height={20}
+                  src={isClick ? CloseImg : DownImg}
+                  style={{ stroke: "white" }}
+                />
+              </button>
+              <div className="chat-gpt-button-area-svg">
+                <InlineSVG src={GPTImg} />
+              </div>
+              <div className="chat-gpt-button-area-text">ChatGPT</div>
             </div>
-            <div className="chat-gpt-button-area-text">ChatGPT</div>
-          </div>
+          )}
         </div>
       </motion.div>
     </AnimatePresence>

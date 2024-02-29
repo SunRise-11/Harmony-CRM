@@ -55,4 +55,435 @@ $themes: ("original", "suggested", "monday", "dynamics");
       background-color: themify($theme, "Graph-04");
     }
   }
+
+  .direction-ltr {
+    .menu-item {
+      padding: 15px 10px 15px 20px;
+
+      &-container {
+        justify-content: flex-start;
+      }
+
+      &-svg {
+        transform: rotate(90deg);
+      }
+
+      &-title {
+        text-align: initial;
+      }
+    }
+
+    .logo {
+      margin-left: 20px;
+      margin-right: -30px;
+    }
+
+    .header {
+      padding: 10px 20px 10px 60px;
+
+      &-search-text {
+        text-align: initial;
+      }
+
+      &-theme-modal {
+        left: initial;
+        right: 163px;
+
+        &-main-title {
+          text-align: initial;
+        }
+
+        &::before {
+          content: " ";
+          position: absolute;
+          top: 22px;
+          left: 100%; /* To the right of the tooltip */
+          margin-top: -11px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent transparent white;
+        }
+      }
+    }
+
+    .chat-gpt {
+      border-width: 2px 0px 2px 2px;
+      border-radius: 8px 0px 0px 8px;
+
+      &-board-history-text {
+        text-align: initial;
+      }
+      &-button-area {
+        bottom: 440px;
+        left: -44px;
+        right: initial;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+
+        & button svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .button-label {
+      text-align: initial;
+    }
+
+    .checkbox-title {
+      text-align: initial;
+    }
+
+    .label-title,
+    .label-require {
+      text-align: initial;
+    }
+
+    .title-label-main {
+      text-align: initial;
+    }
+
+    .quick-menu {
+      text-align: initial;
+    }
+
+    .table {
+      .ant-table-wrapper .ant-table-thead > tr > th,
+      .ant-table-wrapper .ant-table-tbody > tr > td {
+        text-align: initial;
+      }
+    }
+
+    .medium-card {
+      padding: 20px 15px 10px 20px;
+
+      & &-content-data-title,
+      & &-content-data-content {
+        text-align: initial;
+      }
+
+      &-content-user span {
+        text-align: initial;
+      }
+
+      & &-footer-attach {
+        text-align: initial;
+      }
+
+      & &-footer-info {
+        .card-number {
+          text-align: initial;
+
+          &-text {
+            text-align: initial;
+          }
+        }
+      }
+    }
+
+    .mini-card {
+      &-name,
+      &-title,
+      &-content {
+        text-align: initial;
+      }
+    }
+
+    .small-card {
+      & &-content-data-title,
+      & &-content-data-content {
+        text-align: initial;
+      }
+
+      & &-content-user span {
+        text-align: initial;
+      }
+
+      & &-footer-attach span {
+        text-align: initial;
+      }
+
+      & &-footer-info .card-number {
+        text-align: initial;
+
+        &-text {
+          text-align: initial;
+        }
+      }
+    }
+
+    .upload-main-label {
+      text-align: initial;
+    }
+
+    .video-frame-name {
+      text-align: initial;
+    }
+
+    .alerts button {
+      text-align: initial;
+    }
+
+    .customers {
+      &-navbar-title {
+        text-align: initial;
+      }
+
+      &-navbar button {
+        text-align: initial;
+      }
+
+      &-table {
+        text-align: initial;
+      }
+    }
+
+    .crm-drawer {
+      &-title {
+        text-align: initial;
+      }
+
+      &-card-phone {
+        text-align: initial;
+      }
+    }
+
+    .crm-new-record > div:first-child {
+      text-align: initial;
+    }
+
+    .service-applicants-navbar {
+      &-title,
+      & button {
+        text-align: initial;
+      }
+    }
+
+    .service-applicants-table td {
+      text-align: initial;
+    }
+
+    .daily-planner {
+      .rbc-time-header {
+        text-align: initial;
+      }
+
+      &-navbar-others-current {
+        text-align: initial;
+      }
+
+      &-navbar button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-daily-planner-create-title {
+      text-align: initial;
+    }
+
+    .card-list-buttons div {
+      text-align: initial;
+    }
+
+    .dashboard2-main .chart div:first-child {
+      text-align: initial;
+      & > div {
+        text-align: initial;
+      }
+    }
+
+    .quick-info-text {
+      .text1,
+      .text2 {
+        text-align: initial;
+      }
+    }
+
+    .opportunities-navbar-button {
+      text-align: initial;
+    }
+
+    .opportunities-table td {
+      text-align: initial;
+    }
+
+    .main-task-step-add div {
+      text-align: initial;
+    }
+
+    .main-task-step-header {
+      &-count,
+      &-title {
+        text-align: initial;
+      }
+    }
+
+    .main-task-create-button span {
+      text-align: initial;
+    }
+
+    .info .statistic .charts .statistic {
+      .state .item {
+        .percent,
+        .content {
+          text-align: initial;
+        }
+      }
+
+      .row .state2 .item {
+        .percent,
+        .content {
+          text-align: initial;
+        }
+      }
+    }
+
+    .recipient .ant-tabs-tab-btn {
+      text-align: initial;
+    }
+
+    .recipient-daily-planner-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-daily-planner-create span {
+      text-align: initial;
+    }
+
+    .recipient-documents-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-employment-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-events-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-home-board-main button,
+    .recipient-home-new-event,
+    .recipient-questionnaire-modal,
+    .card-list-buttons div {
+      text-align: initial;
+    }
+
+    .recipient-home-statusbar-overview {
+      &-name,
+      &-id > span {
+        text-align: initial;
+      }
+    }
+
+    .recipient-home-statusbar-info span {
+      text-align: initial;
+    }
+
+    .recipient-home-statusbar-contact {
+      text-align: initial;
+    }
+
+    .recipient-home-statusbar-setting > div {
+      text-align: initial;
+    }
+
+    .recipient-medical-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-bar-charts-header {
+      &-title,
+      &-count {
+        text-align: initial;
+      }
+    }
+
+    .recipient-profile-footer button {
+      text-align: initial;
+    }
+
+    .recipient-questionnaires-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-studies-navbar {
+      &-title,
+      button {
+        text-align: initial;
+      }
+    }
+
+    .recipient-tasks-step-add div {
+      text-align: initial;
+    }
+
+    .recipient-tasks-step-header {
+      &-count,
+      &-title {
+        text-align: initial;
+      }
+    }
+
+    .recipient-tasks-create-button span {
+      text-align: initial;
+    }
+
+    .add-task-user {
+      text-align: initial;
+    }
+
+    .employment {
+      &-title,
+      button,
+      &-table td {
+        text-align: initial;
+      }
+    }
+
+    .expense {
+      &-title,
+      &-board button,
+      &-table td {
+        text-align: initial;
+      }
+    }
+
+    .presence {
+      &-title,
+      &-board button,
+      &-table td {
+        text-align: initial;
+      }
+    }
+
+    .event-report-navbar-buttons button {
+      text-align: initial;
+    }
+
+    .tutorials-navbar button,
+    .tutorials-board-line-title {
+      text-align: initial;
+    }
+  }
 }

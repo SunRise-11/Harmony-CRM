@@ -22,7 +22,14 @@ const PageLayout = (props) => {
     dynamics: "#F4F9FF",
   };
   return (
-    <div className={"layout-container theme-" + theme} style={{ direction }}>
+    <div
+      className={
+        "layout-container theme-" +
+        theme +
+        (direction === "ltr" ? " direction-ltr" : "")
+      }
+      style={{ direction }}
+    >
       <Layout>
         <Sider
           theme="light"
@@ -55,8 +62,9 @@ const PageLayout = (props) => {
               backgroundColor: backgroundColors[theme],
             }}
           >
+            {direction === "ltr" && <ChatGPT />}
             {children}
-            <ChatGPT />
+            {direction === "rtl" && <ChatGPT />}
           </Content>
         </Layout>
       </Layout>

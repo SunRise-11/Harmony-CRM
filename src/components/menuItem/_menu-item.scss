@@ -18,9 +18,11 @@
   display: inline-flex;
   cursor: pointer;
   justify-content: space-between;
+
   &:hover {
     background-color: #d3edf6;
   }
+
   &-container {
     justify-content: flex-end;
     align-items: center;
