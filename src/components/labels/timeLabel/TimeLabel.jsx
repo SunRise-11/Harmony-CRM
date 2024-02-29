@@ -6,7 +6,7 @@ import clockImg from "../../../assets/icons/clock.svg";
 
 const TimeLabel = ({ content, color }) => {
   return (
-    <div className="time-label" style={{ backgroundColor: color }}>
+    <div className={"time-label " + color}>
       <InlineSVG src={clockImg} />
       <div className="time-label-content">{content}</div>
     </div>

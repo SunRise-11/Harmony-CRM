@@ -6,7 +6,7 @@
       "title": "קורות חיים",
       "content": "שיפור קורות חיים שיפור קורות חייםשיפור קורות",
       "dueContent": "24 במאי",
-      "color": "#EA4335"
+      "color": "Graph-03"
     },
     {
       "avatar": "../../assets/images/avatar5.png",
@@ -14,7 +14,7 @@
       "title": "חסר שירות צבאי",
       "content": "שיפור קורות חיים שיפור קורות חייםשיפור קורות",
       "dueContent": "24 במאי",
-      "color": "#FF8A00"
+      "color": "Graph-04"
     },
     {
       "avatar": "../../assets/images/avatar6.png",
@@ -22,7 +22,7 @@
       "title": "סודיות רפואית",
       "content": "שיפור קורות חיים שיפור קורות חייםשיפור קורות",
       "dueContent": "24 במאי",
-      "color": "#8AD341"
+      "color": "Graph-01"
     },
     {
       "avatar": "../../assets/images/avatar5.png",
@@ -30,7 +30,7 @@
       "title": "קורות חיים",
       "content": "שיפור קורות חיים שיפור קורות חייםשיפור קורות",
       "dueContent": "24 במאי",
-      "color": "#EA4335"
+      "color": "Graph-03"
     }
   ]
 }

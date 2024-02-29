@@ -3,6 +3,7 @@ import { Bar } from "react-chartjs-2";
 import PropTypes from "prop-types";
 import "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { useSelector } from "react-redux";
 
 import {
   Chart as ChartJS,
@@ -27,11 +28,19 @@ ChartJS.register(
 );
 
 const BarChart = ({ Data, labels, defaultOptions, defaultData }) => {
+  const theme = useSelector((state) => state.app.theme);
+  const backgroundColors = {
+    original: "#16bfd6",
+    suggested: "#70c6dd",
+    monday: "#5b9bfc",
+    dynamics: "#3594dd",
+  };
+
   const data = {
     labels: labels,
     datasets: [
       {
-        backgroundColor: "#16BFD6",
+        backgroundColor: backgroundColors[theme],
         data: Data,
         barThickness: 17,
       },

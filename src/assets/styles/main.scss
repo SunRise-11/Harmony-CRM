@@ -16,8 +16,43 @@ $themes: ("original", "suggested", "monday", "dynamics");
       }
 
       &-board-title-icon {
-        stroke: themify($theme, "CHAT-GPT");
+        stroke: themify($theme, "Chat-GPT");
       }
+    }
+
+    .quick-info {
+      background-color: themify($theme, "Status-Bar");
+
+      &-text .text1,
+      &-text .text2 {
+        color: themify($theme, "Status-Bar-Color");
+      }
+    }
+
+    .title-label {
+      &-main {
+        color: themify($theme, "Title-Label");
+      }
+
+      svg {
+        stroke: themify($theme, "Title-Label");
+      }
+    }
+
+    .Graph-01 {
+      background-color: themify($theme, "Graph-01");
+    }
+
+    .Graph-02 {
+      background-color: themify($theme, "Graph-02");
+    }
+
+    .Graph-03 {
+      background-color: themify($theme, "Graph-03");
+    }
+
+    .Graph-04 {
+      background-color: themify($theme, "Graph-04");
     }
   }
 }

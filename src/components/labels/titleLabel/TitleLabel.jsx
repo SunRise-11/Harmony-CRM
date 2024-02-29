@@ -5,7 +5,7 @@ import InlineSVG from "react-inlinesvg";
 const TitleLabel = ({ icon, title }) => {
   return (
     <div className="title-label">
-      <InlineSVG src={icon} style={{ stroke: "#13566C" }} />
+      <InlineSVG src={icon} />
       <div className="title-label-main">{title}</div>
     </div>
   );

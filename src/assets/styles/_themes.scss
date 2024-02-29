@@ -3,6 +3,13 @@ $theme-original: (
   color: white,
   Chat-GPT: #10a37f,
   Link: #0096eb,
+  Status-Bar: #b3e3e3,
+  Status-Bar-Color: #344449,
+  Title-Label: #4a9ecd,
+  Graph-01: #16bfd6,
+  Graph-02: #a155b9,
+  Graph-03: #f765a3,
+  Graph-04: #ffab48,
 );
 
 $theme-suggested: (
@@ -10,6 +17,13 @@ $theme-suggested: (
   color: white,
   Chat-GPT: #70c6dd,
   Link: #70c6dd,
+  Status-Bar: #abd1bc,
+  Status-Bar-Color: #000000,
+  Title-Label: #79ae94,
+  Graph-01: #70c6dd,
+  Graph-02: #79ae94,
+  Graph-03: #abd1bc,
+  Graph-04: #eeae70,
 );
 
 $theme-monday: (
@@ -17,6 +31,13 @@ $theme-monday: (
   color: white,
   Chat-GPT: #10a37f,
   Link: #01c776,
+  Status-Bar: #b3e3e3,
+  Status-Bar-Color: #50a0a1,
+  Title-Label: #5a9bfd,
+  Graph-01: #5b9bfc,
+  Graph-02: #00c877,
+  Graph-03: #fed602,
+  Graph-04: #ff5b7b,
 );
 
 $theme-dynamics: (
@@ -24,6 +45,13 @@ $theme-dynamics: (
   color: white,
   Chat-GPT: #10a37f,
   Link: #3594dd,
+  Status-Bar: #aadfff,
+  Status-Bar-Color: #3e5565,
+  Title-Label: #3594dd,
+  Graph-01: #3594dd,
+  Graph-02: #29cc6d,
+  Graph-03: #f1c40c,
+  Graph-04: #ce3c73,
 );
 
 @function themify($theme-name, $property) {

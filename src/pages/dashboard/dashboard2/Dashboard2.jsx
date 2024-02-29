@@ -6,6 +6,7 @@ import CardList from "../cardList/CardList";
 import BarChart from "../../../components/charts/barChart/BarChart";
 import Doughnut from "../../../components/charts/doughnut/Doughnut";
 import PieChart from "../../../components/charts/pieChart/PieChart";
+import { useSelector } from "react-redux";
 
 const barLabels = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני"];
 const barData = [25, 24, 23, 24, 23, 25];
@@ -16,18 +17,26 @@ const doughLabels = [
   "הכוון שיקומי",
   "הכוון מקצועי",
 ];
-const doughData = {
-  data: [12.5, 12.5, 25.5, 50],
-  backgroundColor: ["#2D9CDB", "#90BE6D", "#F9C74F", "#F94144"],
+const doughData = [12.5, 12.5, 25.5, 50];
+// backgroundColor: ["#2D9CDB", "#90BE6D", "#F9C74F", "#F94144"],
+const backgroundColors = {
+  original: ["#16bfd6", "#ffab48", "#a155b9", "#f765a3"],
+  suggested: ["#70c6dd", "#eeae70", "#79ae94", "#abd1bc"],
+  monday: ["#5b9bfc", "#ff5b7b", "#00c877", "#fed602"],
+  dynamics: ["#3594dd", "#ce3c73", "#29cc6d", "#f1c40c"],
 };
 
 const pieLabels = ["מפעל מוגן", "תעסוקה נתמכת", "מועדון תעסוקתי"];
-const pieData = {
-  data: [8, 3, 15],
-  backgroundColor: ["#F765A3", "#A155B9", "#16BFD6"],
+const pieData = [8, 5, 15];
+const backgroundColors2 = {
+  original: ["#f765a3", "#a155b9", "#16bfd6"],
+  suggested: ["#abd1bc", "#79ae94", "#70c6dd"],
+  monday: ["#fed602", "#00c877", "#5b9bfc"],
+  dynamics: ["#f1c40c", "#29cc6d", "#3594dd"],
 };
 
 const DashBoard2 = () => {
+  const theme = useSelector((state) => state.app.theme);
   return (
     <div className="dashboard2">
       <div className="dashboard2-main">
@@ -42,41 +51,26 @@ const DashBoard2 = () => {
           </div>
           <div className="chart-main">
             <div>
-              <PieChart Data={pieData} labels={pieLabels} />
+              <PieChart
+                Data={{
+                  data: pieData,
+                  backgroundColor: backgroundColors2[theme],
+                }}
+                labels={pieLabels}
+              />
             </div>
             <div className="pie-labels">
               <div className="item">
                 <div>מועדון תעסוקתי</div>
-                <div
-                  style={{
-                    width: "20px",
-                    height: "7.5px",
-                    backgroundColor: "#16BFD6",
-                    borderRadius: "2px",
-                  }}
-                ></div>
+                <div className="pie-item Graph-01" />
               </div>
               <div className="item">
                 <div>מפעל מוגן</div>
-                <div
-                  style={{
-                    width: "20px",
-                    height: "7.5px",
-                    backgroundColor: "#F765A3",
-                    borderRadius: "2px",
-                  }}
-                ></div>
+                <div className="pie-item Graph-02" />
               </div>
               <div className="item">
                 <div>תעסוקה נתמכת</div>
-                <div
-                  style={{
-                    width: "20px",
-                    height: "7.5px",
-                    backgroundColor: "#A155B9",
-                    borderRadius: "2px",
-                  }}
-                ></div>
+                <div className="pie-item Graph-03" />
               </div>
             </div>
           </div>
@@ -89,52 +83,31 @@ const DashBoard2 = () => {
           </div>
           <div className="chart-main">
             <div>
-              <Doughnut Data={doughData} labels={doughLabels} flag={true} />
+              <Doughnut
+                Data={{
+                  data: doughData,
+                  backgroundColor: backgroundColors[theme],
+                }}
+                labels={doughLabels}
+                flag={true}
+              />
             </div>
             <div className="labels">
               <div className="item">
                 <div>הכוון מקצועי</div>
-                <div
-                  style={{
-                    width: "8.3px",
-                    height: "8.3px",
-                    backgroundColor: "#F765A3",
-                    borderRadius: "50%",
-                  }}
-                ></div>
+                <div className="label-item Graph-03" />
               </div>
               <div className="item">
                 <div>קליטת עובד</div>
-                <div
-                  style={{
-                    width: "8.3px",
-                    height: "8.3px",
-                    backgroundColor: "#FFAB48",
-                    borderRadius: "50%",
-                  }}
-                ></div>
+                <div className="label-item Graph-04" />
               </div>
               <div className="item">
                 <div>הערכה פסיכיאטרית</div>
-                <div
-                  style={{
-                    width: "8.3px",
-                    height: "8.3px",
-                    backgroundColor: "#16BFD6",
-                    borderRadius: "50%",
-                  }}
-                ></div>
+                <div className="label-item Graph-01" />
               </div>
               <div className="item">
                 <div>הכוון שיקומי</div>
-                <div
-                  style={{
-                    width: "8.3px",
-                    height: "8.3px",
-                    backgroundColor: "#A155B9",
-                    borderRadius: "50%",
-                  }}
-                ></div>
+                <div className="label-item Graph-02" />
               </div>
             </div>
           </div>
