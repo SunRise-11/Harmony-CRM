@@ -13,11 +13,11 @@ const Contacts = ({ selected }) => {
       selected={selected}
       content={
         <>
-          <Item type="dropdown" width="200px" required text="שם מלא" />
+          <Item type="input" width="200px" required text="שם מלא" />
           <Item type="input" width="200px" required text="טלפון" />
           <Item type="input" width="200px" required text="טלפון נייד" />
           <Item type="input" width="640px" text="דואר אלקטרוני" />
-          <Item type="dropdown" width="640px" required text="מסגרת מפנה" />
+          <Item type="input" width="640px" required text="מסגרת מפנה" />
           <div
             style={{
               width: "100%",

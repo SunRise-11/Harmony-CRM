@@ -10,7 +10,21 @@ const Detail = ({ selected }) => {
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
   const direction = useSelector((state) => state.app.direction);
-
+  const options = [
+    { label: "אין רישיון", value: 0 },
+    { label: "דרגה A לאופנועים", value: 1 },
+    { label: "דרגה B לרכב עד 3.5 טון ועד 8 נוסעים", value: 2 },
+    { label: "דרגה C לרכב משא עד 12 טון", value: 3 },
+    { label: "דרגה D להסעת נוסעים (מוניות ואוטובוסים)", value: 4 },
+  ];
+  const [currentSelected, setCurrentSelected] = useState(-1);
+  const options1 = [
+    { label: "קופת חולים כללית", value: 0 },
+    { label: "קופת חולים מאוחדת", value: 1 },
+    { label: "קופת חולים מכבי", value: 2 },
+    { label: "קופת חולים לאומית", value: 3 },
+  ];
+  const [currentSelected1, setCurrentSelected1] = useState(-1);
   return (
     <Basic
       title="פרטים נוספים"
@@ -85,8 +99,22 @@ const Detail = ({ selected }) => {
             </div>
           </div>
           <Item type="input" width="640px" text="הערות" />
-          <Item type="dropdown" width="200px" text="רישיון נהיגה" />
-          <Item type="dropdown" width="200px" text="קופת חולים" />
+          <Item
+            type="dropdown"
+            width="200px"
+            text="רישיון נהיגה"
+            options={options}
+            selected={options[currentSelected]}
+            onChange={(value) => setCurrentSelected(value)}
+          />
+          <Item
+            type="dropdown"
+            width="200px"
+            text="קופת חולים"
+            options={options1}
+            selected={options1[currentSelected1]}
+            onChange={(value) => setCurrentSelected1(value)}
+          />
           <Item type="dropdown" width="200px" text="פסיכיאטר" />
         </>
       }

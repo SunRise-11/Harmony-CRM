@@ -4,7 +4,7 @@ import ReactSelect from "react-select";
 import InlineSVG from "react-inlinesvg";
 import { useSelector } from "react-redux";
 
-const Select = ({ placeholder, options, icon }) => {
+const Select = ({ value, placeholder, options, icon }) => {
   const [isHover, setHover] = useState(false);
   const direction = useSelector((state) => state.app.direction);
 
@@ -16,6 +16,7 @@ const Select = ({ placeholder, options, icon }) => {
         isSearchable={true}
         isClearable={true}
         options={options}
+        value={value}
         placeholder={placeholder}
         styles={{
           control: (baseStyles) => ({

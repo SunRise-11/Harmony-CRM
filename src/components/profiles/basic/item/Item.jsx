@@ -6,7 +6,16 @@ import TimePicker from "../../../pickers/timePicker/TimePicker";
 import CheckBox from "../../../checkBox/CheckBox";
 import { useState } from "react";
 
-const Item = ({ type, width, required, text }) => {
+const Item = ({
+  type,
+  width,
+  required,
+  text,
+  placeholder,
+  options,
+  selected,
+  onChange,
+}) => {
   const [checked, setChecked] = useState(false);
   return (
     <div className="profiles-item" style={{ width }}>
@@ -15,8 +24,15 @@ const Item = ({ type, width, required, text }) => {
         {required && <span style={{ color: "red" }}>*</span>}
       </div>
       <div>
-        {type === "input" && <Input placeholder="הקלד..." />}
-        {type === "dropdown" && <Select placeholder="בחר..." />}
+        {type === "input" && <Input placeholder={placeholder || "הקלד..."} />}
+        {type === "dropdown" && (
+          <Select
+            placeholder={placeholder || "בחר..."}
+            options={options}
+            value={selected}
+            onChange={(result) => onChange(result.value)}
+          />
+        )}
         {type === "disabled" && (
           <div
             style={{
@@ -52,10 +68,14 @@ Item.propTypes = {
   width: PropTypes.string,
   required: PropTypes.bool,
   text: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  options: PropTypes.array,
+  number: PropTypes.number,
 };
 
 Item.defaultProps = {
   require: true,
   width: "auto",
+  placeholder: "",
 };
 export default Item;

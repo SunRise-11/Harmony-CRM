@@ -1,8 +1,16 @@
 import Basic from "../basic/Basic";
 import geometricsSVG from "../../../assets/icons/geometrics.svg";
 import Item from "../basic/item/Item";
+import { useState } from "react";
 
 const Address = ({ selected }) => {
+  const options = [
+    { label: "אביעזר", value: 0 },
+    { label: "אבירים", value: 1 },
+    { label: "אבן יהודה", value: 2 },
+    { label: "אבן מנחם", value: 3 },
+  ];
+  const [currentSelected, setCurrentSelected] = useState(-1);
   return (
     <Basic
       title="כתובת ופרטי התקשרות"
@@ -10,7 +18,15 @@ const Address = ({ selected }) => {
       selected={selected}
       content={
         <>
-          <Item type="dropdown" width="200px" required text="ישוב" />
+          <Item
+            type="dropdown"
+            width="200px"
+            required
+            text="ישוב"
+            options={options}
+            selected={options[currentSelected]}
+            onChange={(value) => setCurrentSelected(value)}
+          />
           <Item type="input" width="200px" required text="רחוב" />
           <Item type="input" width="200px" required text="מספר" />
           <Item type="input" width="640px" text="הערות" />
