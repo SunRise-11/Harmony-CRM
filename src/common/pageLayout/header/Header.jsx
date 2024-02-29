@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Input } from "antd";
 import InlineSVG from "react-inlinesvg";
 import PropTypes from "prop-types";
-import logoSvg from "../../../assets/icons/mark.svg";
 import Table from "../../../components/table/Table";
 import Theme from "./theme/Theme";
 
@@ -14,6 +13,30 @@ import AvatarImg2 from "../../../assets/images/avatar2.png";
 import AvatarImg3 from "../../../assets/images/avatar3.png";
 import AvatarImg4 from "../../../assets/images/avatar4.png";
 import useViewportWidth from "../../../hooks/useViewportWidth";
+import { useSelector } from "react-redux";
+import originalLogo from "../../../assets/icons/logo-original.svg";
+import suggestedLogo from "../../../assets/icons/logo-suggested.svg";
+import mondayLogo from "../../../assets/icons/logo-monday.svg";
+import dynamicsLogo from "../../../assets/icons/logo-dynamics.svg";
+
+const styles = {
+  original: {
+    color: "#5FBCFF",
+    icon: originalLogo,
+  },
+  suggested: {
+    color: "#70c6dd",
+    icon: suggestedLogo,
+  },
+  monday: {
+    color: "#01c776",
+    icon: mondayLogo,
+  },
+  dynamics: {
+    color: "#3594dd",
+    icon: dynamicsLogo,
+  },
+};
 
 const columns1 = [
   {
@@ -205,6 +228,7 @@ const Header = ({ collapsed, setCollapsed }) => {
   const [isSearchVisible, setSearchVisible] = useState("invisible");
   const [isHover, setHover] = useState(false);
   const viewportWidth = useViewportWidth();
+  const theme = useSelector((state) => state.app.theme);
 
   return (
     <>
@@ -234,7 +258,10 @@ const Header = ({ collapsed, setCollapsed }) => {
             className="logo"
             style={{ visibility: collapsed ? "visible" : "hidden" }}
           >
-            <InlineSVG src={logoSvg} onClick={() => setCollapsed()} />
+            <InlineSVG
+              src={styles[theme].icon}
+              onClick={() => setCollapsed()}
+            />
           </div>
         )}
         <div className="header">

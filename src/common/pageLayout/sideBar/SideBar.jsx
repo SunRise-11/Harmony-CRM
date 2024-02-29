@@ -5,7 +5,10 @@ import PropTypes from "prop-types";
 import MenuItem from "../../../components/menuItem/MenuItem";
 import InlineSVG from "react-inlinesvg";
 
-import logoImg from "../../../assets/images/logo.svg";
+import originalLogo from "../../../assets/icons/big-logo-original.svg";
+import suggestedLogo from "../../../assets/icons/big-logo-suggested.svg";
+import mondayLogo from "../../../assets/icons/big-logo-monday.svg";
+import dynamicsLogo from "../../../assets/icons/big-logo-dynamics.svg";
 import homeImg from "../../../assets/icons/home.svg";
 import usersImg from "../../../assets/icons/users.svg";
 import pieImg from "../../../assets/icons/pie.svg";
@@ -17,17 +20,38 @@ import crmImg from "../../../assets/icons/crm.svg";
 import videoImg from "../../../assets/icons/video.svg";
 import warnImg from "../../../assets/icons/warn.svg";
 import addSVG from "../../../assets/icons/add.svg";
+import { useSelector } from "react-redux";
 
 const SideBar = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
 
+  const styles = {
+    original: {
+      color: "#5FBCFF",
+      icon: originalLogo,
+    },
+    suggested: {
+      color: "#70c6dd",
+      icon: suggestedLogo,
+    },
+    monday: {
+      color: "#01c776",
+      icon: mondayLogo,
+    },
+    dynamics: {
+      color: "#3594dd",
+      icon: dynamicsLogo,
+    },
+  };
+
   const [isSelected, setSelected] = useState(0);
   const [showSubMenu, setShowSubMenu] = useState(-1);
+  const theme = useSelector((state) => state.app.theme);
 
   return (
     <div style={{ height: "100vh", overflow: "auto" }}>
       <div className="sidebar-logo">
-        <img src={logoImg} onClick={() => setCollapsed()} />
+        <InlineSVG src={styles[theme].icon} onClick={() => setCollapsed()} />
       </div>
       <div className="sidebar-main">
         <MenuItem
@@ -91,13 +115,13 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               key={14}
             />,
             <div className="sub-menu-unselected" key="15">
-              <div className="menu-item" style={{ color: "#0075FF" }}>
+              <div className="menu-item">
                 <div className="menu-item-container">
                   <InlineSVG
                     src={addSVG}
-                    stroke="#0075FF"
                     width={24}
                     height={24}
+                    stroke={styles[theme].color}
                   />
                   <div className="menu-item-title">אהרון ליפשיץ</div>
                 </div>

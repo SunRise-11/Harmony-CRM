@@ -1,1 +1,23 @@
 @import "themes";
+
+$themes: ("original", "suggested", "monday", "dynamics");
+
+@each $theme in $themes {
+  .theme-#{$theme} {
+    .chat-gpt {
+      border-color: themify($theme, "Chat-GPT");
+
+      &-button-area {
+        background-color: themify($theme, "Chat-GPT");
+      }
+
+      &-board-history-gpt-icon {
+        background-color: themify($theme, "Chat-GPT");
+      }
+
+      &-board-title-icon {
+        stroke: themify($theme, "CHAT-GPT");
+      }
+    }
+  }
+}

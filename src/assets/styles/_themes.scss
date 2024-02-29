@@ -1,29 +1,29 @@
 $theme-original: (
-  background-color: #197213,
+  Background: #197213,
   color: white,
-  chat-gpt: #10a37f,
-  chat-gpt-border: #9f9f9f,
+  Chat-GPT: #10a37f,
+  Link: #0096eb,
 );
 
 $theme-suggested: (
-  background-color: #0075ff,
+  Background: #0075ff,
   color: white,
-  chat-gpt: #70c6dd,
-  chat-gpt-border: #000000,
+  Chat-GPT: #70c6dd,
+  Link: #70c6dd,
 );
 
 $theme-monday: (
-  background-color: #293810,
+  Background: #293810,
   color: white,
-  chat-gpt: #10a37f,
-  chat-gpt-border: #000000,
+  Chat-GPT: #10a37f,
+  Link: #01c776,
 );
 
 $theme-dynamics: (
-  background-color: #237489,
+  Background: #237489,
   color: white,
-  chat-gpt: #10a37f,
-  chat-gpt-border: #3e5565,
+  Chat-GPT: #10a37f,
+  Link: #3594dd,
 );
 
 @function themify($theme-name, $property) {

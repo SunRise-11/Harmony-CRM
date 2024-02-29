@@ -4,6 +4,26 @@ import InlineSVG from "react-inlinesvg";
 
 import leftImg from "../../assets/icons/left.svg";
 import subMenuImg from "../../assets/icons/subMenu.svg";
+import { useSelector } from "react-redux";
+
+const colors = {
+  original: {
+    backgroundColor: "#5FBCFF",
+    color: "#0075FF",
+  },
+  suggested: {
+    backgroundColor: "#70c6dd",
+    color: "#70C6DD",
+  },
+  monday: {
+    backgroundColor: "#01c776",
+    color: "#78E2B8",
+  },
+  dynamics: {
+    backgroundColor: "#3594dd",
+    color: "#0CBBFF",
+  },
+};
 
 const MenuItem = ({
   hasSubMenu,
@@ -15,6 +35,7 @@ const MenuItem = ({
   onClick,
   subMenuSelected,
 }) => {
+  const theme = useSelector((state) => state.app.theme);
   return (
     <div
       className={
@@ -30,7 +51,7 @@ const MenuItem = ({
           isSubMenu
             ? isSelect
               ? {
-                  backgroundColor: "#5FBCFF",
+                  backgroundColor: colors[theme].backgroundColor,
                   color: "white",
                 }
               : {
@@ -39,14 +60,15 @@ const MenuItem = ({
             : isSelect
             ? hasSubMenu
               ? {
-                  backgroundColor: "#BBE3FF",
-                  color: "#0075FF",
-                  borderTop: subMenuSelected && "1px #0075FF solid",
+                  backgroundColor: colors[theme].backgroundColor + "44",
+                  color: colors[theme].color,
+                  borderTop:
+                    subMenuSelected && `1px ${colors[theme].color} solid`,
                 }
               : {
                   color: "#FFFFFF",
-                  backgroundColor: "#5FBCFF",
-                  borderLeft: "3px #0096EB solid",
+                  backgroundColor: colors[theme].backgroundColor,
+                  borderLeft: `3px ${colors[theme].color} solid`,
                 }
             : {}
         }
@@ -66,7 +88,7 @@ const MenuItem = ({
                 : isSelect
                 ? hasSubMenu
                   ? {
-                      stroke: "#0075FF",
+                      stroke: colors[theme].color,
                     }
                   : {
                       stroke: "#FFFFFF",
