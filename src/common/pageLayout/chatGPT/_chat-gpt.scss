@@ -1,11 +1,11 @@
+@import "../../../assets/styles/main";
 .chat-gpt {
   color: #343541;
   background-color: white;
   width: 490px;
   border-radius: 0px 8px 8px 0px;
-  border-top: 2px solid #10a37f;
-  border-right: 2px solid #10a37f;
-  border-bottom: 2px solid #10a37f;
+  border: 2px 2px 2px 0px;
+  border-style: solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   &-button-area {
     height: 2.75rem;
     padding: 0.375rem 0.625rem;
-    background-color: #0d9488;
+
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     position: absolute;
@@ -201,7 +201,6 @@
           width: 30px;
           height: 30px;
           padding: 0.25rem;
-          background-color: #319795;
           border-radius: 0.125rem;
         }
       }
@@ -246,6 +245,24 @@
     &-board-history-gpt {
       flex-direction: column;
       align-items: center;
+    }
+  }
+}
+
+$themes: ("original", "suggested", "monday", "dynamics");
+
+@each $theme in $themes {
+  .theme-#{$theme} {
+    .chat-gpt {
+      border-color: themify($theme, "chat-gpt");
+
+      &-button-area {
+        background-color: themify($theme, "chat-gpt");
+      }
+
+      &-board-history-gpt-icon {
+        background-color: themify($theme, "chat-gpt");
+      }
     }
   }
 }

@@ -3,41 +3,6 @@
 @import "pages/pages-combined";
 @import "common/common-combined";
 
-$theme-original: (
-  background-color: #197213,
-  color: white,
-);
-
-$theme-suggested: (
-  background-color: #0075ff,
-  color: white,
-  priamry: #012931,
-);
-
-$theme-monday: (
-  background-color: #293810,
-  color: white,
-);
-
-$theme-dynamics: (
-  background-color: #237489,
-  color: white,
-);
-
-@mixin themify($property, $value) {
-  @if $value== "original" {
-    #{$property}: map-get($theme-original, $property);
-  } @else if $value== "suggested" {
-    #{$property}: map-get($theme-suggested, $property);
-  } @else if $value== "monday" {
-    #{$property}: map-get($theme-monday, $property);
-  } @else if $value== "dynamics" {
-    #{$property}: map-get($theme-dynamics, $property);
-  } @else {
-    #{$property}: map-get($theme-original, $property);
-  }
-}
-
 .col-1 {
   grid-column: span 1;
 }

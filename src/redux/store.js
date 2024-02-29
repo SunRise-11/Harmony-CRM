@@ -3,7 +3,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const appSlice = createSlice({
   name: "app",
   initialState: {
-    theme: "light",
+    theme: "original",
     direction: "rtl",
   },
   reducers: {

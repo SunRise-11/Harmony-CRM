@@ -1,0 +1,41 @@
+$theme-original: (
+  background-color: #197213,
+  color: white,
+  chat-gpt: #10a37f,
+  chat-gpt-border: #9f9f9f,
+);
+
+$theme-suggested: (
+  background-color: #0075ff,
+  color: white,
+  chat-gpt: #70c6dd,
+  chat-gpt-border: #000000,
+);
+
+$theme-monday: (
+  background-color: #293810,
+  color: white,
+  chat-gpt: #10a37f,
+  chat-gpt-border: #000000,
+);
+
+$theme-dynamics: (
+  background-color: #237489,
+  color: white,
+  chat-gpt: #10a37f,
+  chat-gpt-border: #3e5565,
+);
+
+@function themify($theme-name, $property) {
+  @if $theme-name == "original" {
+    @return map-get($theme-original, $property);
+  } @else if $theme-name == "suggested" {
+    @return map-get($theme-suggested, $property);
+  } @else if $theme-name == "monday" {
+    @return map-get($theme-monday, $property);
+  } @else if $theme-name == "dynamics" {
+    @return map-get($theme-dynamics, $property);
+  } @else {
+    @error "Unknown theme name: #{$theme-name}.";
+  }
+}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-// import { useSelector } from 'react-redux';
 
 import { Layout } from "antd";
 const { Sider, Content } = Layout;
@@ -23,7 +22,7 @@ const PageLayout = (props) => {
     dynamics: "#F4F9FF",
   };
   return (
-    <div className="layout-container" style={{ direction }}>
+    <div className={"layout-container theme-" + theme} style={{ direction }}>
       <Layout>
         <Sider
           theme="light"
