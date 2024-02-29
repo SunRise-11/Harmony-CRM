@@ -51,7 +51,11 @@ const CreateModal = ({ visible, onCancel }) => {
   const [zoomMeeting, setZoomMeeting] = useState(false);
   const [reminderType, setReminderType] = useState(0);
   return (
-    <ReactModal isOpen={visible} style={Styles}>
+    <ReactModal
+      isOpen={visible}
+      style={Styles}
+      className={direction === "ltr" ? "direction-modal-ltr" : ""}
+    >
       <AnimatePresence>
         {visible && (
           <motion.div

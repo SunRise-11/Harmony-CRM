@@ -1,7 +1,7 @@
 import React from "react";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import Basic from "../../modals/basic/Basic";
+import { useSelector } from "react-redux";
 
 ReactModal.setAppElement("#root");
 
@@ -18,8 +18,13 @@ const modalVariants = {
 };
 
 const Modal = ({ title, icon, content, visible, onCancel }) => {
+  const direction = useSelector((state) => state.app.direction);
   return (
-    <ReactModal isOpen={visible} onCancel={onCancel}>
+    <ReactModal
+      isOpen={visible}
+      onCancel={onCancel}
+      className={direction === "ltr" ? "direction-modal-ltr" : ""}
+    >
       <AnimatePresence>
         {visible && (
           <motion.div

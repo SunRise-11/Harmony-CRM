@@ -3,11 +3,13 @@ import detailSVG from "../../../assets/icons/detail.svg";
 import Item from "../basic/item/Item";
 import CheckBox from "../../checkBox/CheckBox";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Detail = ({ selected }) => {
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
   const [checked3, setChecked3] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <Basic
@@ -18,7 +20,11 @@ const Detail = ({ selected }) => {
         <>
           <div
             className="profiles-item"
-            style={{ width: "200px", borderLeft: "1px solid #CED8DB" }}
+            style={{
+              width: "200px",
+              borderLeft: direction === "rtl" ? "1px solid #CED8DB" : "",
+              borderRight: direction === "ltr" ? "1px solid #CED8DB" : "",
+            }}
           >
             <div className="profiles-item-name">
               <span>שירות צבאי</span>
@@ -38,7 +44,11 @@ const Detail = ({ selected }) => {
           </div>
           <div
             className="profiles-item"
-            style={{ width: "200px", borderLeft: "1px solid #CED8DB" }}
+            style={{
+              width: "200px",
+              borderLeft: direction === "rtl" ? "1px solid #CED8DB" : "",
+              borderRight: direction === "ltr" ? "1px solid #CED8DB" : "",
+            }}
           >
             <div className="profiles-item-name">
               <span>רישום פלילי</span>

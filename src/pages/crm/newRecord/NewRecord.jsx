@@ -48,7 +48,11 @@ const CreateModal = ({ visible, onCancel }) => {
     <ReactModal
       isOpen={visible}
       style={Styles}
-      className="daily-planner-create-modal"
+      className={
+        direction === "ltr"
+          ? "direction-modal-ltr daily-planner-create-modal"
+          : "daily-planner-create-modal"
+      }
     >
       <AnimatePresence>
         {visible && (

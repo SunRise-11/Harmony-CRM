@@ -71,7 +71,11 @@ const EventHistory = ({ visible, onCancel }) => {
     },
   };
   return (
-    <ReactModal isOpen={visible} style={Styles}>
+    <ReactModal
+      isOpen={visible}
+      style={Styles}
+      className={direction === "ltr" ? "direction-modal-ltr" : ""}
+    >
       <AnimatePresence>
         {visible && (
           <motion.div

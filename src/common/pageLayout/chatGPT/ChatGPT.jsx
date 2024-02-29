@@ -34,7 +34,7 @@ const ChatGPT = () => {
         animate={isClick ? "visible" : "hidden"}
         transition={{ duration: 0.7 }}
         style={{
-          zIndex: 102,
+          zIndex: 27,
           position: "fixed",
           top: "calc(50% - 367px)",
           left: direction === "rtl" ? "0px" : "initial",

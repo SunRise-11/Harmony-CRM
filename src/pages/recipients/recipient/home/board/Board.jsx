@@ -27,6 +27,7 @@ import EventHistory from "./modals/eventHistory/EventHistory";
 import NewEvent from "./modals/newEvent/NewEvent";
 import NewQuestionnaire from "./modals/newQuestionnaire/NewQuestionnaire";
 import QuestionnaireHistory from "./modals/questionnaireHistory/QuestionnaireHistory";
+import { useSelector } from "react-redux";
 
 const Board = () => {
   const [firstSelected, setFirstSelected] = useState(0);
@@ -40,6 +41,7 @@ const Board = () => {
 
   const firstRights = ["20px", "210px", "420px", "620px"];
   const secondRights = ["22px", "190px", "385px", "600px"];
+  const direction = useSelector((state) => state.app.direction);
 
   return (
     <div className="recipient-home-board">
@@ -54,7 +56,8 @@ const Board = () => {
             style={{
               position: "absolute",
               bottom: "-34px",
-              right: firstRights[firstSelected],
+              right: direction === "rtl" ? firstRights[firstSelected] : "",
+              left: direction === "ltr" ? firstRights[firstSelected] : "",
               transition: "all 0.05s",
             }}
           />
@@ -110,7 +113,8 @@ const Board = () => {
             style={{
               position: "absolute",
               bottom: "-30px",
-              right: secondRights[secondSelected],
+              right: direction === "rtl" ? secondRights[secondSelected] : "",
+              left: direction === "ltr" ? secondRights[secondSelected] : "",
               width: "120px",
               transition: "all 0.03s",
             }}

@@ -48,7 +48,11 @@ const Modal = ({ visible, onCancel }) => {
 
   const [value, setValue] = useState(1);
   return (
-    <ReactModal isOpen={visible} style={Styles}>
+    <ReactModal
+      isOpen={visible}
+      style={Styles}
+      className={direction === "ltr" ? "direction-modal-ltr" : ""}
+    >
       <AnimatePresence>
         {visible && (
           <motion.div

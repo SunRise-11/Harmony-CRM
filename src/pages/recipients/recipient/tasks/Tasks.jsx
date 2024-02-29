@@ -9,6 +9,7 @@ import avatarImg1 from "../../../../assets/images/avatar1.png";
 import avatarImg2 from "../../../../assets/images/avatar2.png";
 import avatarImg3 from "../../../../assets/images/avatar3.png";
 import addImg from "../../../../assets/icons/add.svg";
+import { useSelector } from "react-redux";
 
 const items = [
   {
@@ -21,14 +22,14 @@ const items = [
         title: "ישראל ישראלי",
         content:
           "שיפור קורות חיים שיפור קורות חייםשיפור קורות חיים שיפור קורות חייםשיפור קורות חייםשיפור קורות חיים",
-        labelColor: "#FF8A00",
+        labelColor: "Graph-01",
       },
       {
         name: "ישראל ישראלי",
         avatar: avatarImg2,
         title: "ישראל ישראלי",
         content: "שיפור קורות חיים",
-        labelColor: "#EA4335",
+        labelColor: "Graph-02",
       },
     ],
   },
@@ -42,7 +43,7 @@ const items = [
         title: "חסר שירות צבאי",
         content:
           "שיפור קורות חיים שיפור קורות חייםשיפור קורות חיים שיפור קורות חייםשיפור קורות חייםשיפור קורות חיים שיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חיים",
-        labelColor: "#EA4335",
+        labelColor: "Graph-04",
       },
       {
         name: "ישראל ישראלי",
@@ -50,7 +51,7 @@ const items = [
         title: "חסר שירות צבאי",
         content:
           "שיפור קורות חיים שיפור קורות חייםשיפור קורות חיים שיפור קורות חייםשיפור קורות חייםשיפור קורות חיים שיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חייםשיפור קורות חיים",
-        labelColor: "#8AD341",
+        labelColor: "Graph-03",
       },
     ],
   },
@@ -58,6 +59,7 @@ const items = [
 
 const Tasks = () => {
   const [visible, setVisible] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="recipient-tasks">
       {items.map((item) => {
@@ -85,7 +87,11 @@ const Tasks = () => {
             </div>
             <div
               className="recipient-tasks-step-add"
-              style={{ paddingRight: "10px" }}
+              style={
+                direction === "rtl"
+                  ? { paddingRight: "10px" }
+                  : { paddingLeft: "10px" }
+              }
             >
               <button onClick={() => setVisible(true)}>
                 <InlineSVG src={addImg} width={24} height={24} />

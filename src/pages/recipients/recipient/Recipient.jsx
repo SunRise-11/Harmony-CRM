@@ -162,7 +162,8 @@ const Recipient = () => {
           backgroundColor: "white",
           height: "64px",
           overflow: "auto",
-          padding: "0px 20px",
+          paddingRight: direction === "rtl" ? "20px" : "",
+          paddingLeft: direction === "ltr" ? "20px" : "",
         }}
       />
     </ConfigProvider>

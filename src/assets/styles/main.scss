@@ -57,7 +57,8 @@ $themes: ("original", "suggested", "monday", "dynamics");
   }
 }
 
-.direction-ltr {
+.direction-ltr,
+.direction-modal-ltr {
   text-align: initial !important;
 
   .header-theme-button {
@@ -164,16 +165,26 @@ $themes: ("original", "suggested", "monday", "dynamics");
     text-align: initial;
   }
 
-  .profiles-basic-board {
-    .profiles-item {
-    }
-  }
+  // .profiles-basic-board {
+  //   .profiles-item {
+  //     // border-right: 1px solid rgb(206, 216, 219);
+  //   }
+  // }
 
   .table {
     .ant-table-wrapper .ant-table-thead > tr > th,
     .ant-table-wrapper .ant-table-tbody > tr > td {
       text-align: initial;
       padding: 12px 2px 12px 10px;
+    }
+  }
+
+  .recipient-home-statusbar {
+    &-overview,
+    &-info,
+    &-contact {
+      border-left: initial;
+      border-right: 1px solid #ced8db;
     }
   }
 
@@ -557,5 +568,20 @@ $themes: ("original", "suggested", "monday", "dynamics");
   .select-svg {
     right: initial;
     left: 15px;
+  }
+
+  .recipient-daily-planner-create-title {
+    padding: 0px 15px 0px 4px;
+  }
+
+  .table .ant-table-wrapper .ant-table-tbody > tr > td {
+    text-align: initial;
+  }
+  td,
+  th {
+    text-align: initial;
+  }
+
+  .ant-table-column-title {
   }
 }
