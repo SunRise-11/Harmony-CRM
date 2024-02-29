@@ -54,7 +54,10 @@ const CreateModal = ({ visible, onCancel }) => {
     <ReactModal
       isOpen={visible}
       style={Styles}
-      className="daily-planner-create-modal"
+      className={
+        (direction === "ltr" ? "direction-modal-ltr " : "") +
+        "daily-planner-create-modal"
+      }
     >
       <AnimatePresence>
         {visible && (
@@ -121,7 +124,9 @@ const CreateModal = ({ visible, onCancel }) => {
                             borderRadius: "10px",
                             paddingTop: "3px",
                             paddingBottom: "3px",
-                            paddingRight: "90px",
+                            // paddingRight: direction === "rtl" ? "90px" : "0px",
+                            // paddingLeft: direction === "ltr" ? "90px" : "90px",
+                            // backgroundColor: "red",
                           }),
                           indicatorSeparator: (base) => ({
                             ...base,
@@ -141,7 +146,8 @@ const CreateModal = ({ visible, onCancel }) => {
                       <span
                         style={{
                           position: "absolute",
-                          marginRight: "45px",
+                          marginRight: direction === "rtl" ? "45px" : "0",
+                          marginLeft: direction === "ltr" ? "45px" : "0",
                           marginTop: "3px",
                         }}
                       >
@@ -263,7 +269,11 @@ const CreateModal = ({ visible, onCancel }) => {
                     </div>
                     <div
                       className="main-task-step-add"
-                      style={{ paddingRight: "10px" }}
+                      style={
+                        direction === "rtl"
+                          ? { paddingRight: "10px" }
+                          : { paddingLeft: "10px" }
+                      }
                     >
                       <button>
                         <InlineSVG src={addImg} />

@@ -28,6 +28,7 @@ const PageLayout = (props) => {
         theme +
         (direction === "ltr" ? " direction-ltr" : "")
       }
+      id="layout-container"
       style={{ direction }}
     >
       <Layout>

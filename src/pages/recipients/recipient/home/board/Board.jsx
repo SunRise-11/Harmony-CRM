@@ -34,8 +34,9 @@ const Board = () => {
   const [showEventHistory, setShowEventHistory] = useState(false);
   const [showNewEvent, setShowNewEvent] = useState(false);
   const [showNewQuestionnaire, setShowNewQuestionnaire] = useState(false);
-  const [showQuestionnaireHistory, setShowQuestionnaireHistory] =
-    useState(false);
+  const [showQuestionnaireHistory, setShowQuestionnaireHistory] = useState(
+    false
+  );
 
   const firstRights = ["20px", "210px", "420px", "620px"];
   const secondRights = ["22px", "190px", "385px", "600px"];

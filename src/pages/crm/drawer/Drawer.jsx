@@ -3,6 +3,7 @@ import Button from "../../../components/button/Button";
 import Table from "../../../components/table/Table";
 import editSVG from "../../../assets/icons/pencil.svg";
 import createSVG from "../../../assets/icons/create2.svg";
+import { useSelector } from "react-redux";
 
 const items = [
   {
@@ -174,10 +175,11 @@ const secondItem = {
 };
 
 const NewDrawer = ({ onClose, open }) => {
+  const direction = useSelector((state) => state.app.direction);
   return (
     <Drawer
       title={<div className="crm-drawer-title">פרטים מלאים</div>}
-      placement="left"
+      placement={direction === "rtl" ? "left" : "right"}
       closable={true}
       onClose={onClose}
       open={open}

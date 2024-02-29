@@ -26,7 +26,8 @@ const Select = ({ placeholder, options, icon }) => {
             borderRadius: "10px",
             paddingTop: "3px",
             paddingBottom: "3px",
-            paddingRight: `${icon ? "30px" : "0px"}`,
+            paddingRight: `${icon && direction === "rtl" ? "30px" : "0px"}`,
+            paddingLeft: `${icon && direction === "ltr" ? "30px" : "0px"}`,
           }),
           indicatorSeparator: (base) => ({
             ...base,

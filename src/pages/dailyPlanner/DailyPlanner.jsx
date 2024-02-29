@@ -22,7 +22,10 @@ const CustomToolbar = ({ setShowCreateModal }) => {
   return (
     <div className="daily-planner-navbar">
       <div className="daily-planner-navbar-others">
-        <Button className="daily-planner-navbar-others-current">
+        <Button
+          style={{ direction: "rtl" }}
+          className="daily-planner-navbar-others-current"
+        >
           <div>
             <InlineSVG src={nextSVG} width={20} />
             <InlineSVG src={previousSVG} width={20} />
