@@ -21,19 +21,19 @@ import dynamicsLogo from "../../../assets/icons/logo-dynamics.svg";
 
 const styles = {
   original: {
-    color: "#5FBCFF",
+    color: "#0E8FE2",
     icon: originalLogo,
   },
   suggested: {
-    color: "#70c6dd",
+    color: "#ABD1BC",
     icon: suggestedLogo,
   },
   monday: {
-    color: "#01c776",
+    color: "#01C776",
     icon: mondayLogo,
   },
   dynamics: {
-    color: "#3594dd",
+    color: "#00A2E1",
     icon: dynamicsLogo,
   },
 };
@@ -250,7 +250,7 @@ const Header = ({ collapsed, setCollapsed }) => {
           flexDirection: "row",
           backgroundColor: "white",
           boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.1)",
-          borderBottom: "1px solid #bb91ff",
+          borderBottom: `1px solid ${styles[theme].color}`,
         }}
       >
         {collapsed && (
