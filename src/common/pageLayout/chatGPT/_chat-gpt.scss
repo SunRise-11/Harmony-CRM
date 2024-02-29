@@ -263,6 +263,10 @@ $themes: ("original", "suggested", "monday", "dynamics");
       &-board-history-gpt-icon {
         background-color: themify($theme, "chat-gpt");
       }
+
+      &-board-title-icon {
+        stroke: themify($theme, "chat-gpt");
+      }
     }
   }
 }

@@ -42,7 +42,10 @@ const ChatGPT = () => {
           <div className="chat-gpt-board">
             <div className="chat-gpt-board-title">
               ChatGPT
-              <InlineSVG src={GPTGreenImg} />
+              <InlineSVG
+                src={GPTGreenImg}
+                className="chat-gpt-board-title-icon"
+              />
             </div>
             <div className="chat-gpt-board-history-user">
               <div className="chat-gpt-board-history-user-icon">
