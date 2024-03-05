@@ -61,9 +61,23 @@ $themes: ("original", "suggested", "monday", "dynamics");
 .direction-modal-ltr {
   text-align: initial !important;
 
+  .recipient-home-board-item{
+    margin-left: 21px;
+    margin-right: initial;
+  }
+
+  .chat-gpt-board-history-gpt {
+    direction: ltr;
+  }
+
+  .recipient-profile-footer {
+    right: initial;
+    left: 135px;
+  }
+
   .header-theme-button {
     a:last-child {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
 

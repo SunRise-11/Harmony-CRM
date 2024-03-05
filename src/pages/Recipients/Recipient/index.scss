@@ -1,0 +1,27 @@
+.recipient {
+  & .ant-tabs-nav {
+    position: sticky;
+    top: 0px;
+    z-index: 12;
+  }
+
+  .ant-tabs-content {
+    padding: 0 3%;
+    height: 100%;
+  }
+
+  & .ant-tabs-tab-btn {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #434f68;
+    text-align: right;
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.15px;
+  }
+}

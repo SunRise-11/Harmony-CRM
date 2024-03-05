@@ -1,7 +1,7 @@
-<svg width="51" height="51" stroke="white" viewBox="0 0 51 51" fill="none"
+<svg stroke="black" width="51" height="51" stroke="white" viewBox="0 0 51 51" fill="none"
     xmlns="http://www.w3.org/2000/svg">
     <path
         d="M36 23.9312C37.3333 24.701 37.3333 26.6255 36 27.3953L21 36.0555C19.6667 36.8253 18 35.8631 18 34.3235L18 17.003C18 15.4634 19.6667 14.5011 21 15.2709L36 23.9312Z"
-        fill="white" />
+        fill="white" stroke="transparent"/>
     <circle cx="25.5" cy="25.5" r="24.5" stroke-width="2" />
 </svg>

@@ -1,8 +1,8 @@
+@import "utils";
+@import "common";
+@import "components";
+@import "pages";
 @import "assets/styles/main";
-@import "utils/utils-combined";
-@import "components/components-combined";
-@import "pages/pages-combined";
-@import "common/common-combined";
 
 .col-1 {
   grid-column: span 1;
@@ -20,8 +20,6 @@
   grid-column: span 4;
 }
 
-/*---width---*/
-
 .w-full {
   width: 100%;
 }
@@ -30,19 +28,9 @@
   width: 50%;
 }
 
-/*--padding---*/
-
-/*---margin---*/
-
 .mr-24 {
   margin-right: 96px;
 }
-
-// .ant-layout-content {
-//   display: flex;
-//   justify-content: center;
-//   padding: 30px 0px;
-// }
 
 th {
   color: #000;
@@ -65,23 +53,20 @@ td {
 }
 
 ::-webkit-scrollbar {
-  width: 7px; /* Width of the vertical scrollbar */
-  height: 7px; /* Height of the horizontal scrollbar */
+  width: 7px;
+  height: 7px;
 }
 
-/* Background of the scrollbar except button or resizer */
 ::-webkit-scrollbar-track {
   background-color: #f5f5f5;
   border-radius: 10px;
 }
 
-/* Background of the scrollbar button or resizer */
 ::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 10px;
 }
 
-/* On hover, brighten the color */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #666;
 }
@@ -97,4 +82,8 @@ td {
 .ant-radio-checked .ant-radio-inner {
   background-color: #f37021 !important;
   border-color: #f37021 !important;
+}
+
+.ant-tabs-nav-operations, .ant-tabs-nav {
+  overflow: initial !important;
 }
