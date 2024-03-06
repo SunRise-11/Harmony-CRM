@@ -6,11 +6,13 @@
   padding: 20px;
   flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
   border-radius: 10px 10px 15px 15px;
   background-color: white;
   box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
-  overflow: auto;
+  min-width: 1130px;
+  width: -webkit-fill-available;
 
   &-title {
     display: flex;
@@ -34,42 +36,78 @@
     gap: 20px;
     width: 100%;
 
-    & > div {
+    &-primary,
+    &-secondary {
       display: flex;
       flex-direction: row;
+      gap: 0px;
       position: relative;
-
-      & > div {
-        cursor: pointer;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
     }
 
-    & > div:first-child {
-      display: flex;
-      flex-direction: row;
+    &-primary-effect {
+      position: absolute;
+      margin-top: 50px;
+      transition: all 0.1s;
     }
 
-    & > div:nth-child(2) {
-      background-color: rgb(253, 204, 89);
-      border-radius: 15px;
-      padding: 5px;
-      display: flex;
-      flex-direction: row;
+    &-secondary-effect {
+      position: absolute;
+      margin-top: 148px;
+      transition: all 0.1s;
     }
 
-    & > div:last-child {
+    &-secondary {
+      border-radius: 20px;
+      background: #ffe6a6;
+      padding: 6px 12px;
+      transition: all 0.2s;
+    }
+
+    &-work {
       background-color: #e6f2ff;
       padding: 35px;
-      width: 100%;
       display: flex;
       flex-direction: row;
+      width: 100%;
       gap: 15px;
       border-radius: 10px;
     }
+    // & > div {
+    //   display: flex;
+    //   flex-direction: row;
+    //   position: relative;
+
+    //   & > div {
+    //     cursor: pointer;
+    //     position: relative;
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //   }
+    // }
+
+    // & > div:first-child {
+    //   display: flex;
+    //   flex-direction: row;
+    // }
+
+    // & > div:nth-child(2) {
+    //   background-color: rgb(253, 204, 89);
+    //   border-radius: 15px;
+    //   padding: 5px;
+    //   display: flex;
+    //   flex-direction: row;
+    // }
+
+    // & > div:last-child {
+    //   background-color: #e6f2ff;
+    //   padding: 35px;
+    //   width: 100%;
+    //   display: flex;
+    //   flex-direction: row;
+    //   gap: 15px;
+    //   border-radius: 10px;
+    // }
 
     & button {
       box-sizing: border-box;

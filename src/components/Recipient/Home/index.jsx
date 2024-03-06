@@ -7,9 +7,7 @@ const Home = () => {
     <div className="recipient-home">
       <div>
         <StatusBar />
-        <div>
-          <Board />
-        </div>
+        <Board />
       </div>
       <div>
         <CardList />

@@ -27,7 +27,7 @@ const Number = ({ type, number }) => {
   );
 };
 
-const Step = ({ location, type = "empty", text, number }) => {
+const Step = ({ location, type = "empty", text, number, onClick }) => {
   const color = {
     empty: "transparent",
     primary: "#FFB400",
@@ -39,18 +39,21 @@ const Step = ({ location, type = "empty", text, number }) => {
     end: "3px 5px 3px 20px",
     middle: "3px 5px 3px 0px",
     front: "3px 10px 3px 0px",
+    alone: "3px 10px",
   };
 
   const borderRadius = {
     end: "10px 0px 0px 10px",
     middle: "0px",
     front: "0px 10px 10px 0px",
+    alone: "10px",
   };
 
   const borderWidth = {
     end: "5px 0px 5px 5px",
     middle: "5px 0px",
     front: "5px 5px 5px 0px",
+    alone: "5px",
   };
 
   return (
@@ -59,8 +62,10 @@ const Step = ({ location, type = "empty", text, number }) => {
       style={{
         borderRadius: borderRadius[location],
       }}
+      onClick={onClick}
     >
       {location !== "front" &&
+        location !== "alone" &&
         (type === "empty" || type === "done" ? (
           <svg
             width="19"
@@ -68,9 +73,6 @@ const Step = ({ location, type = "empty", text, number }) => {
             viewBox="0 0 19 56"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{
-              filter: "drop-shadow(5px 0px 5px 5px rgba(0, 0, 0, 0.25))",
-            }}
           >
             <path
               d="M0 0H15.1962C16.7277 0 17.6909 1.65088 16.9373 2.98413L4.1883 25.5397C3.32536 27.0664 3.32536 28.9336 4.1883 30.4603L16.9373 53.0159C17.6909 54.3491 16.7277 56 15.1962 56H0V0Z"
@@ -110,6 +112,7 @@ const Step = ({ location, type = "empty", text, number }) => {
         <span>{text}</span>
       </div>
       {location !== "end" &&
+        location !== "alone" &&
         (type === "empty" || type === "done" ? (
           <svg
             style={{
@@ -138,7 +141,7 @@ const Step = ({ location, type = "empty", text, number }) => {
             <path
               d="M30.7791 5V2.5H28.2791H23.8289C21.1317 2.5 18.6422 3.94829 17.3091 6.29299L4.23186 29.293C2.92496 31.5916 2.92496 34.4084 4.23186 36.707L17.3091 59.707C18.6422 62.0517 21.1317 63.5 23.8289 63.5H28.2791H30.7791V61V5Z"
               fill="white"
-              stroke-width="5"
+              strokeWidth="5"
               stroke={color[type]}
             />
             <rect
