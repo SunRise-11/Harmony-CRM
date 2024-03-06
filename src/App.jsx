@@ -25,7 +25,7 @@ const App = () => {
           id="dynamic-favicon"
           rel="icon"
           type="image/x-icon"
-          href="icons/blue.ico"
+          href="icons/blue.svg"
         />
       </Helmet>
       <Provider store={store}>

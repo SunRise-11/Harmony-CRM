@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Number = ({ type, number }) => {
   const backgroundColor = {
@@ -28,6 +29,7 @@ const Number = ({ type, number }) => {
 };
 
 const Step = ({ location, type = "empty", text, number, onClick }) => {
+  const direction = useSelector((store) => store.app.direction);
   const color = {
     empty: "transparent",
     primary: "#FFB400",
@@ -36,31 +38,55 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
   };
 
   const padding = {
-    end: "3px 5px 3px 20px",
-    middle: "3px 5px 3px 0px",
-    front: "3px 10px 3px 0px",
-    alone: "3px 10px",
+    rtl: {
+      end: "3px 5px 3px 20px",
+      middle: "3px 5px 3px 0px",
+      front: "3px 10px 3px 0px",
+      alone: "3px 10px",
+    },
+    ltr: {
+      end: "3px 20px 3px 5px",
+      middle: "3px 0px 3px 5px",
+      front: "3px 0px 3px 10px",
+      alone: "3px 10px",
+    },
   };
 
   const borderRadius = {
-    end: "10px 0px 0px 10px",
-    middle: "0px",
-    front: "0px 10px 10px 0px",
-    alone: "10px",
+    rtl: {
+      end: "10px 0px 0px 10px",
+      middle: "0px",
+      front: "0px 10px 10px 0px",
+      alone: "10px",
+    },
+    ltr: {
+      end: "0px 10px 10px 0px",
+      middle: "0px",
+      front: "10px 0px 0px 10px",
+      alone: "10px",
+    },
   };
 
   const borderWidth = {
-    end: "5px 0px 5px 5px",
-    middle: "5px 0px",
-    front: "5px 5px 5px 0px",
-    alone: "5px",
+    rtl: {
+      end: "5px 0px 5px 5px",
+      middle: "5px 0px",
+      front: "5px 5px 5px 0px",
+      alone: "5px",
+    },
+    ltr: {
+      end: "5px 5px 5px 0px",
+      middle: "5px 0px",
+      front: "5px 0px 5px 5px",
+      alone: "5px",
+    },
   };
 
   return (
     <div
       className="recipient-home-step"
       style={{
-        borderRadius: borderRadius[location],
+        borderRadius: borderRadius[direction][location],
       }}
       onClick={onClick}
     >
@@ -101,9 +127,9 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
       <div
         className="recipient-home-step-main"
         style={{
-          padding: padding[location],
-          borderRadius: borderRadius[location],
-          borderWidth: borderWidth[location],
+          padding: padding[direction][location],
+          borderRadius: borderRadius[direction][location],
+          borderWidth: borderWidth[direction][location],
           borderColor: color[type],
           height: type === "empty" || type === "done" ? "40px" : "50px",
         }}
@@ -115,9 +141,15 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
         location !== "alone" &&
         (type === "empty" || type === "done" ? (
           <svg
-            style={{
-              marginRight: "-1px",
-            }}
+            style={
+              direction === "rtl"
+                ? {
+                    marginRight: "-1px",
+                  }
+                : {
+                    marginLeft: "-1px",
+                  }
+            }
             width="24"
             height="56"
             viewBox="0 0 24 56"
@@ -136,7 +168,11 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
             viewBox="0 0 34 66"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ marginRight: "-1px" }}
+            style={
+              direction === "rtl"
+                ? { marginRight: "-1px" }
+                : { marginLeft: "-1px" }
+            }
           >
             <path
               d="M30.7791 5V2.5H28.2791H23.8289C21.1317 2.5 18.6422 3.94829 17.3091 6.29299L4.23186 29.293C2.92496 31.5916 2.92496 34.4084 4.23186 36.707L17.3091 59.707C18.6422 62.0517 21.1317 63.5 23.8289 63.5H28.2791H30.7791V61V5Z"
