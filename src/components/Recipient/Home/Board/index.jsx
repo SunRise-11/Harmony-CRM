@@ -29,6 +29,7 @@ import EventHistory from "../../../Modals/EventHistory";
 import NewEvent from "../../../Modals/NewEvent";
 import NewQuestionnaire from "../../../Modals/NewQuestionnaire";
 import QuestionnaireHistory from "../../../Modals/QuestionnaireHistory";
+import Step from "./Step";
 
 const Board = () => {
   const [firstSelected, setFirstSelected] = useState(0);
@@ -193,7 +194,14 @@ const Board = () => {
             </Button>
           </div>
         )}
-        {(secondSelected === 2 || secondSelected === 3) && <div></div>}
+        {(secondSelected === 2 || secondSelected === 3) && (
+          <div>
+            <Step type="done" location="middle" text="עדכון תוכנית שיקום" number="3" />
+            <Step type="secondary" location="middle" text="עדכון תוכנית שיקום" number="3" />
+            <Step type="primary" location="middle" text="עדכון תוכנית שיקום" number="3" />
+            <Step type="empty" location="middle" text="עדכון תוכנית שיקום" number="3" />
+          </div>
+        )}
       </div>
       <EventHistory
         visible={showEventHistory}
