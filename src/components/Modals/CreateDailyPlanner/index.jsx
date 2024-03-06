@@ -51,7 +51,7 @@ const CreateModal = ({ visible, onCancel }) => {
   const options = [];
   const [checked, setChecked] = useState(false);
   const [zoomMeeting, setZoomMeeting] = useState(false);
-  const [reminderType, setReminderType] = useState(0);
+  const [reminderType, setReminderType] = useState([false, false, false]);
   return (
     <ReactModal
       isOpen={visible}
@@ -253,18 +253,27 @@ const CreateModal = ({ visible, onCancel }) => {
                         >
                           <CheckBox
                             title="הודעה"
-                            checked={reminderType === 0}
-                            onChange={() => setReminderType(0)}
+                            checked={reminderType[0]}
+                            onChange={() => {
+                              reminderType[0] = !reminderType[0];
+                              setReminderType([...reminderType]);
+                            }}
                           />
                           <CheckBox
                             title="דוא”ל"
-                            checked={reminderType === 1}
-                            onChange={() => setReminderType(1)}
+                            checked={reminderType[1]}
+                            onChange={() => {
+                              reminderType[1] = !reminderType[1];
+                              setReminderType([...reminderType]);
+                            }}
                           />
                           <CheckBox
                             title="WhatsApp"
-                            checked={reminderType === 2}
-                            onChange={() => setReminderType(2)}
+                            checked={reminderType[2]}
+                            onChange={() => {
+                              reminderType[2] = !reminderType[2];
+                              setReminderType([...reminderType]);
+                            }}
                           />
                         </div>
                       </div>

@@ -13,7 +13,8 @@
     height: fit-content;
     flex-direction: column;
     row-gap: 8px;
-    max-width: 500px;
+    min-width: 300px;
+    width: 500px;
     background-color: #d3edf640;
     border-radius: 20px;
     padding: 0px 0px 15px 0px;

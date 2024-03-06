@@ -16,7 +16,7 @@ import searchIcon from "../../../assets/icons/system/search.svg";
 import trashIcon from "../../../assets/icons/master/trash.svg";
 import editIcon from "../../../assets/icons/master/edit.svg";
 
-import CreateModal from "../../Modals/CreateDailyPlanner";
+import CreateModal from "../../Modals/AddDailyPlanner";
 import Table from "../../Table";
 
 const { RangePicker } = DatePicker;

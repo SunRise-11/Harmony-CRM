@@ -45,6 +45,7 @@ const data = [
 ];
 const Employment = () => {
   const [isEdit, setIsEdit] = useState("");
+  const [isSelected, setIsSelected] = useState(-1);
   const columns = [
     {
       title: "שם מקבל שירות",
@@ -72,6 +73,38 @@ const Employment = () => {
       dataIndex: "businessDays",
       sorter: true,
       width: "120px",
+      render: (businessDays, record) => {
+        if (isEdit === record.key && isSelected === 0) {
+          return (
+            <Input
+              style={{
+                margin: "-14px -10px",
+                width: "calc(100% + 20px)",
+                borderRadius: "0px",
+                height: "61px",
+              }}
+            />
+          );
+        } else {
+          return (
+            <div
+              style={{
+                margin: "-14px -10px",
+                width: "calc(100% + 20px)",
+                height: "61px",
+              }}
+              onClick={() => {
+                if (isEdit !== "") {
+                  setIsEdit(record.key);
+                  setIsSelected(0);
+                }
+              }}
+            >
+              {businessDays}
+            </div>
+          );
+        }
+      },
     },
     {
       title: "הערות",
@@ -79,10 +112,35 @@ const Employment = () => {
       dataIndex: "remarks",
       sorter: true,
       render: (remarks, record) => {
-        if (isEdit === record.key) {
-          return <Input />;
+        if (isEdit === record.key && isSelected === 1) {
+          return (
+            <Input
+              style={{
+                margin: "-14px -10px",
+                width: "calc(100% + 20px)",
+                borderRadius: "0px",
+                height: "61px",
+              }}
+            />
+          );
         } else {
-          return <span>{remarks}</span>;
+          return (
+            <div
+              style={{
+                margin: "-14px -10px",
+                width: "calc(100% + 20px)",
+                height: "61px",
+              }}
+              onClick={() => {
+                if (isEdit !== "") {
+                  setIsEdit(record.key);
+                  setIsSelected(1);
+                }
+              }}
+            >
+              {remarks}
+            </div>
+          );
         }
       },
     },
@@ -90,23 +148,35 @@ const Employment = () => {
       title: "פעולות",
       key: "operations",
       dataIndex: "operations",
-      sorter: true,
       width: "100px",
       render: (_, record) => (
         <div
           style={{
+            margin: "-14px -10px",
+            width: "100px",
+            height: "61px",
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
+            alignItems: "center",
+            border: isEdit === record.key ? "1px solid #1677ff" : "",
           }}
         >
-          <span
-            onClick={() => setIsEdit(record.key)}
-            className="recipient-medical-table-see"
+          <div
+            style={{
+              width: "100%",
+              margin: "auto",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+            }}
           >
-            <InlineSVG src={editIcon} />
-          </span>
-          <InlineSVG src={trashIcon} />
+            <span
+              onClick={() => setIsEdit(record.key)}
+              className="recipient-medical-table-see"
+            >
+              <InlineSVG src={editIcon} />
+            </span>
+            <InlineSVG src={trashIcon} />
+          </div>
         </div>
       ),
     },
@@ -122,7 +192,11 @@ const Employment = () => {
             <span>שליחה</span>
           </Button>
           <Button>
-            <InlineSVG src={sendIcon} width={20} style={{ stroke: "#434F68" }} />
+            <InlineSVG
+              src={sendIcon}
+              width={20}
+              style={{ stroke: "#434F68" }}
+            />
             <span>שמירה</span>
           </Button>
         </div>

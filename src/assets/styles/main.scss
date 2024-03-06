@@ -61,9 +61,20 @@ $themes: ("original", "suggested", "monday", "dynamics");
 .direction-modal-ltr {
   text-align: initial !important;
 
-  .recipient-home-board-item{
+  .recipient-home-board-item {
     margin-left: 21px;
     margin-right: initial;
+  }
+
+  .medium-card-more,
+  .small-card-more {
+    left: initial;
+    right: 3px;
+  }
+
+  .quick-menu {
+    left: initial;
+    right: -12px;
   }
 
   .chat-gpt-board-history-gpt {
@@ -340,6 +351,10 @@ $themes: ("original", "suggested", "monday", "dynamics");
     }
   }
 
+  .small-card-content-data-title,
+  .small-card-content-data-content {
+    text-align: initial;
+  }
   .quick-info-text {
     .text1,
     .text2 {

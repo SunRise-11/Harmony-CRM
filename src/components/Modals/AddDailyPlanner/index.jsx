@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import closeIcon from "../../../../../assets/icons/master/close.svg";
-import addEventSVG from "../../../../../assets/icons/addevent.svg";
-import avatarImg1 from "../../../../../assets/images/avatar1.png";
-import Button from "../../../../../components/button/Button";
-import Item from "../../../../../components/profiles/basic/item/Item";
-import CheckBox from "../../../../../components/checkBox/CheckBox";
-import addImg from "../../../../../assets/icons/add.svg";
-import geometricsSVG from "../../../../../assets/icons/geometrics.svg";
+import closeIcon from "../../../assets/icons/master/close.svg";
+import calendarPlusIcon from "../../../assets/icons/master/calendar-plus.svg";
+import avatarImg1 from "../../../assets/avatars/avatar1.png";
+import Button from "../../Button";
+import Item from "../../Recipient/Profile/Basic/Item";
+import CheckBox from "../../CheckBox";
+import addIcon from "../../../assets/icons/add.svg";
+import locationIcon from "../../../assets/icons/master/location.svg";
 import { useSelector } from "react-redux";
 import { Input } from "antd";
 
@@ -49,7 +49,7 @@ const CreateModal = ({ visible, onCancel }) => {
   };
   const [checked, setChecked] = useState(false);
   const [zoomMeeting, setZoomMeeting] = useState(false);
-  const [reminderType, setReminderType] = useState(0);
+  const [reminderType, setReminderType] = useState([false, false, false]);
   return (
     <ReactModal
       isOpen={visible}
@@ -80,7 +80,10 @@ const CreateModal = ({ visible, onCancel }) => {
               <div className="recipient-daily-planner-create">
                 <div style={{ display: "flex", gap: "10px" }}>
                   <span className="modal-title">
-                    <InlineSVG src={addEventSVG} className="modal-title-svg" />
+                    <InlineSVG
+                      src={calendarPlusIcon}
+                      className="modal-title-svg"
+                    />
                     <div className="modal-title-value">פגישה חדשה עבור:</div>
                   </span>
                   <span className="recipient-daily-planner-create-title">
@@ -152,10 +155,7 @@ const CreateModal = ({ visible, onCancel }) => {
                                 type="text"
                                 placeholder="חפש או הקלד"
                                 prefix={
-                                  <InlineSVG
-                                    src={geometricsSVG}
-                                    stroke="#999"
-                                  />
+                                  <InlineSVG src={locationIcon} stroke="#999" />
                                 }
                                 className="input-main"
                               />
@@ -253,18 +253,27 @@ const CreateModal = ({ visible, onCancel }) => {
                           >
                             <CheckBox
                               title="הודעה"
-                              checked={reminderType === 0}
-                              onChange={() => setReminderType(0)}
+                              checked={reminderType[0]}
+                              onChange={() => {
+                                reminderType[0] = !reminderType[0];
+                                setReminderType([...reminderType]);
+                              }}
                             />
                             <CheckBox
                               title="דוא”ל"
-                              checked={reminderType === 1}
-                              onChange={() => setReminderType(1)}
+                              checked={reminderType[1]}
+                              onChange={() => {
+                                reminderType[1] = !reminderType[1];
+                                setReminderType([...reminderType]);
+                              }}
                             />
                             <CheckBox
                               title="WhatsApp"
-                              checked={reminderType === 2}
-                              onChange={() => setReminderType(2)}
+                              checked={reminderType[2]}
+                              onChange={() => {
+                                reminderType[2] = !reminderType[2];
+                                setReminderType([...reminderType]);
+                              }}
                             />
                           </div>
                         </div>
@@ -274,7 +283,7 @@ const CreateModal = ({ visible, onCancel }) => {
                         style={{ paddingRight: "10px" }}
                       >
                         <button onClick={() => setVisible(true)}>
-                          <InlineSVG src={addImg} />
+                          <InlineSVG src={addIcon} />
                         </button>
                         <div>משימה חדשה</div>
                       </div>
