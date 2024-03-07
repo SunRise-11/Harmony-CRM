@@ -178,7 +178,7 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
         }}
       >
         <Number type={type} number={number} />
-        <span>{text}</span>
+        <pre>{text}</pre>
       </div>
       {location !== "end" &&
         location !== "alone" &&

@@ -23,7 +23,10 @@
     font-weight: 500;
     line-height: normal;
     width: fit-content;
-
+    & span {
+      word-break: break-word;
+    }
+    
     &-number {
       border-radius: 40px;
       width: 39px;
