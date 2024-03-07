@@ -4,8 +4,10 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
+  gap: -1px;
 
   &-main {
+    z-index: 1;
     border-style: solid;
     display: flex;
     box-sizing: content-box;
@@ -41,4 +43,8 @@
       line-height: normal;
     }
   }
+}
+
+.select {
+  z-index: 2;
 }

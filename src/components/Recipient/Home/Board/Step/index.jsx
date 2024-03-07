@@ -82,6 +82,26 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
     },
   };
 
+  const boxShadow = {
+    rtl: {
+      end:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), -4px 0px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      middle:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      front:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), 4px 0px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      alone: "4px 4px 4px -4px rgb(0, 0, 0, 0.3)",
+    },
+    ltr: {
+      end:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), 4px 0px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      middle:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      front:
+        "0px 4px 4px -4px rgb(0, 0, 0, 0.3), -4px 0px 4px -4px rgb(0, 0, 0, 0.3), 0px -4px 4px -4px rgb(0, 0, 0, 0.3)",
+      alone: "4px 4px 4px -4px rgb(0, 0, 0, 0.3)",
+    },
+  };
   return (
     <div
       className="recipient-home-step"
@@ -99,6 +119,17 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
             viewBox="0 0 19 56"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style={
+              direction === "rtl"
+                ? {
+                    marginLeft: "-3.7px",
+                    filter: "drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
+                : {
+                    marginRight: "-3.7px",
+                    filter: "drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
+            }
           >
             <path
               d="M0 0H15.1962C16.7277 0 17.6909 1.65088 16.9373 2.98413L4.1883 25.5397C3.32536 27.0664 3.32536 28.9336 4.1883 30.4603L16.9373 53.0159C17.6909 54.3491 16.7277 56 15.1962 56H0V0Z"
@@ -112,6 +143,17 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
             viewBox="0 0 28 66"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style={
+              direction === "rtl"
+                ? {
+                    marginLeft: "-5px",
+                    filter: "drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
+                : {
+                    marginRight: "-5px",
+                    filter: "drop-shadow(2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
+            }
           >
             <path
               d="M5 2.5H2.5V5V61V63.5H5H20.1962C23.642 63.5 25.8093 59.7855 24.1137 56.7857L11.3647 34.2302C10.9332 33.4668 10.9332 32.5332 11.3647 31.7698L24.1137 9.21429C25.8093 6.21447 23.642 2.5 20.1962 2.5H5Z"
@@ -131,6 +173,7 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
           borderRadius: borderRadius[direction][location],
           borderWidth: borderWidth[direction][location],
           borderColor: color[type],
+          boxShadow: boxShadow[direction][location],
           height: type === "empty" || type === "done" ? "40px" : "50px",
         }}
       >
@@ -144,10 +187,12 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
             style={
               direction === "rtl"
                 ? {
-                    marginRight: "-1px",
+                    marginRight: "-5px",
+                    filter: "drop-shadow(-2px 0px 2px rgba(0, 0, 0, 0.3))",
                   }
                 : {
-                    marginLeft: "-1px",
+                    marginLeft: "-5px",
+                    filter: "drop-shadow(-2px 0px 2px rgba(0, 0, 0, 0.3))",
                   }
             }
             width="24"
@@ -170,8 +215,14 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
             xmlns="http://www.w3.org/2000/svg"
             style={
               direction === "rtl"
-                ? { marginRight: "-1px" }
-                : { marginLeft: "-1px" }
+                ? {
+                    marginRight: "-5px",
+                    filter: "drop-shadow(-2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
+                : {
+                    marginLeft: "-5px",
+                    filter: "drop-shadow(-2px 0px 2px rgba(0, 0, 0, 0.3))",
+                  }
             }
           >
             <path
