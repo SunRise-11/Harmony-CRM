@@ -5,6 +5,16 @@ import InlineSVG from "react-inlinesvg";
 import ReactSelect from "react-select";
 
 import dataflowIcon from "../../../../assets/icons/master/dataflow.svg";
+import passportIcon from "../../../../assets/icons/master/passport.svg";
+import sendIcon from "../../../../assets/icons/master/send.svg";
+import historyIcon from "../../../../assets/icons/master/history.svg";
+import createIcon from "../../../../assets/icons/master/create.svg";
+import routeIcon from "../../../../assets/icons/master/route.svg";
+import calendarPlusIcon from "../../../../assets/icons/master/calendar-plus.svg";
+import uploadIcon from "../../../../assets/icons/master/upload.svg";
+import calendarIcon from "../../../../assets/icons/master/calendar.svg";
+import warningIcon from "../../../../assets/icons/master/warning.svg";
+import fileIcon from "../../../../assets/icons/master/file.svg";
 
 import Item from "./Item";
 import EventHistory from "../../../Modals/EventHistory";
@@ -33,7 +43,16 @@ const Board = () => {
       },
       {
         effect1: "140px",
-        effect2: ["60px", "230px", "360px", "485px", "610px", "750px", "890px", "1020px"],
+        effect2: [
+          "60px",
+          "230px",
+          "360px",
+          "485px",
+          "610px",
+          "750px",
+          "890px",
+          "1020px",
+        ],
         position: "0px",
       },
       {
@@ -125,75 +144,651 @@ const Board = () => {
       {
         title: "קליטה",
         items: [
-          { label: "אינטק", item: <></> },
-          { label: "חתימה על מסמכי הקליטה", item: <></> },
-          { label: "שליחת שם משתמש וסיסמא לכניסה", item: <></> },
-          { label: "חתימה", item: <></> },
-          { label: "בניית תוכנית שיקום רשאונית", item: <></> },
+          {
+            label: "אינטק",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה על מסמכי הקליטה",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "שליחת שם משתמש וסיסמא לכניסה",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "בניית תוכנית שיקום רשאונית",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
         ],
       },
       {
         title: "הכוון שיקומי",
         items: [
-          { label: "בניית תוכנית שיקום\n אבחון חמשת הצירים", item: <></> },
-          { label: "הדרכה", item: <></> },
-          { label: "מוטיבציה", item: <></> },
-          { label: "אמונה\n ביכולת", item: <></> },
-          { label: "ידע\n וכלים", item: <></> },
-          { label: "פרו\n אקטיביות", item: <></> },
-          { label: "רקע\n תעסוקתי", item: <></> },
-          { label: "סיכום", item: <></> },
+          {
+            label: "בניית תוכנית שיקום\n אבחון חמשת הצירים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "הדרכה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "מוטיבציה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "אמונה\n ביכולת",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "ידע\n וכלים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "פרו\n אקטיביות",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "רקע\n תעסוקתי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "סיכום",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "הערכה\n פסיכולוגית",
         items: [
-          { label: "הכנה למפגש", item: <></> },
-          { label: "פגישה עם פסיכולוג", item: <></> },
-          { label: "תוצאות ורפלקציה", item: <></> },
-          { label: "הערכה מקצועית", item: <></> },
-          { label: "סיכום", item: <></> },
+          {
+            label: "הכנה למפגש",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "פגישה עם פסיכולוג",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "תוצאות ורפלקציה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "הערכה מקצועית",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "סיכום",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "הערכה\n מקצועית",
         items: [
-          { label: "הדרכה", item: <></> },
-          { label: "אבחון מקצועי", item: <></> },
+          {
+            label: "הדרכה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "אבחון מקצועי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={fileIcon} />
+                  <span>שאלונים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "השלמת פערים",
         items: [
-          { label: "הכנה לעבודה", item: <></> },
-          { label: "לימוד עצמי", item: <></> },
-          { label: "התנסות", item: <></> },
-          { label: "שוברים", item: <></> },
-          { label: "השכלה", item: <></> },
-          { label: "ביטוח לאומי", item: <></> },
+          {
+            label: "הכנה לעבודה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "לימוד עצמי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "התנסות",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "שוברים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "השכלה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "ביטוח לאומי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "הכנה לעבודה",
         items: [
-          { label: "תכנון דרכי חיפוש עבודה", item: <></> },
-          { label: "מנטור", item: <></> },
-          { label: "ארגון זמן", item: <></> },
-          { label: "הכנה לראיונות", item: <></> },
+          {
+            label: "תכנון דרכי חיפוש עבודה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "מנטור",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "ארגון זמן",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "הכנה לראיונות",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={warningIcon} />
+                  <span>אירוע מעכב</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "סיום שירות",
-        items: [{ label: "מילוי סיום בשקדיה", item: <></> }],
+        items: [
+          {
+            label: "מילוי סיום בשקדיה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+        ],
       },
     ],
     [
       {
         title: "קליטה",
         items: [
-          { label: "אינטק", item: <></> },
-          { label: "חתימה על מסמכי הקליטה", item: <></> },
-          { label: "בניית תוכנית שיקום רשאונית", item: <></> },
+          {
+            label: "אינטק",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה על מסמכי הקליטה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={sendIcon} />
+                  <span>שלח טופס</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית טפסים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "בניית תוכנית שיקום רשאונית",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
         ],
       },
       {
@@ -206,89 +801,411 @@ const Board = () => {
 
       {
         title: "עדכון תוכנית שיקום",
-        items: [{ label: "בניית תוכנית שיקום", item: <></> }],
+        items: [
+          {
+            label: "בניית תוכנית שיקום",
+            item: (
+              <Button>
+                <InlineSVG src={routeIcon} />
+                <span>בניית תוכנית שיקום</span>
+              </Button>
+            ),
+          },
+        ],
       },
       {
         title: "סיום",
-        items: [{ label: "מילוי סיום בשקדיה", item: <></> }],
+        items: [
+          {
+            label: "מילוי סיום בשקדיה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+        ],
       },
     ],
     [
       {
         title: "קליטה",
         items: [
-          { label: "אינטק", item: <></> },
-          { label: "חתימה על מסמכי הקליטה", item: <></> },
+          {
+            label: "אינטק",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה על מסמכי הקליטה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={sendIcon} />
+                  <span>שלח טופס</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית טפסים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "בניית תוכנית שיקום",
         items: [
-          { label: "מיפוי צרכים", item: <></> },
-          { label: "קביעת מטרות ראשוניות", item: <></> },
+          {
+            label: "מיפוי צרכים",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>כתיבת תוכנית שיקום</span>
+              </Button>
+            ),
+          },
+          {
+            label: "קביעת מטרות ראשוניות",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>כתיבת תוכנית שיקום</span>
+              </Button>
+            ),
+          },
         ],
       },
       {
         title: "חיפוש עבודה",
         items: [
-          { label: "הדרכה", item: <></> },
-          { label: "סיכום שאלונים", item: <></> },
+          {
+            label: "הדרכה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={uploadIcon} />
+                  <span>העלאת קורות חיים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "סיכום שאלונים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "השמה",
         items: [
-          { label: "מיפוי אתגרים", item: <></> },
-          { label: "הכנה לכניסה לעבודה", item: <></> },
-          { label: "חיפוש מעסיק", item: <></> },
-          { label: "קשר עם המעסיק", item: <></> },
+          {
+            label: "מיפוי אתגרים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "הכנה לכניסה לעבודה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "חיפוש מעסיק",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "קשר עם המעסיק",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "לווי שוטף",
         items: [
-          { label: "הדרכה", item: <></> },
-          { label: "סיכום שאלונים", item: <></> },
+          {
+            label: "הדרכה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "סיכום שאלונים",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "פיתוח קריירה",
-        items: [{ label: "סיכום שאלונים", item: <></> }],
+        items: [
+          {
+            label: "סיכום שאלונים",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>כתיבת תוכנית שיקום</span>
+              </Button>
+            ),
+          },
+        ],
       },
       {
         title: "סיום",
-        items: [{ label: "סיכום שאלונים", item: <></> }],
+        items: [
+          {
+            label: "סיכום שאלונים",
+            item: (
+              <Button>
+                <InlineSVG src={uploadIcon} />
+                <span>העלאת דוח סיום</span>
+              </Button>
+            ),
+          },
+        ],
       },
     ],
     [
       {
         title: "קליטה",
         items: [
-          { label: "קבלת הפניה מילוי", item: <></> },
-          { label: "פניה ראשונית", item: <></> },
-          { label: "אינטק", item: <></> },
-          { label: "חתימה על מסמכי קליטה", item: <></> },
+          {
+            label: "קבלת הפניה מילוי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "פניה ראשונית",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "אינטק",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה על מסמכי קליטה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={sendIcon} />
+                  <span>שלח טופס</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית טפסים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "הגדרת תוכנית שיקום",
         items: [
-          { label: "עבודה על אתגרים בהשגת המטרות", item: <></> },
-          { label: "מציאת מענים מתאימים בקהילה", item: <></> },
+          {
+            label: "עבודה על אתגרים בהשגת המטרות",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "מציאת מענים מתאימים בקהילה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "עדכון תוכנית שיקום",
         items: [
-          { label: "מעבר על התוכנית", item: <></> },
-          { label: "השיקום ועדכון", item: <></> },
+          {
+            label: "מעבר על התוכנית",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "השיקום ועדכון",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>כתיבת תוכנית שיקום</span>
+              </Button>
+            ),
+          },
         ],
       },
       {
         title: "סיום",
         items: [
-          { label: "דוח סיום", item: <></> },
-          { label: "עדכון בשקדיה", item: <></> },
+          {
+            label: "דוח סיום",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "עדכון בשקדיה",
+            item: (
+              <Button>
+                <InlineSVG src={uploadIcon} />
+                <span>העלאת קורות חיים</span>
+              </Button>
+            ),
+          },
         ],
       },
     ],
@@ -296,33 +1213,143 @@ const Board = () => {
       {
         title: "קליטה",
         items: [
-          { label: "אינטק", item: <></> },
-          { label: "חתימה על מסמכי הקליטה", item: <></> },
+          {
+            label: "אינטק",
+            item: (
+              <Button>
+                <InlineSVG src={passportIcon} />
+                <span>מילוי פרופיל</span>
+              </Button>
+            ),
+          },
+          {
+            label: "חתימה על מסמכי הקליטה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={sendIcon} />
+                  <span>שלח טופס</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית טפסים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "צימוד חונך",
         items: [
-          { label: "גישה עם ניהול מקצועי", item: <></> },
-          { label: "פגישה עם חונך", item: <></> },
+          {
+            label: "גישה עם ניהול מקצועי",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "פגישה עם חונך",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
       {
         title: "תהליך תכנון השיקום",
         items: [
-          { label: "בניית תוכנית אישית", item: <></> },
-          { label: "קביעת ימי מפגשים", item: <></> },
+          {
+            label: "בניית תוכנית אישית",
+            item: (
+              <Button>
+                <InlineSVG src={createIcon} />
+                <span>כתיבת תוכנית שיקום</span>
+              </Button>
+            ),
+          },
+          {
+            label: "קביעת ימי מפגשים",
+            item: (
+              <Button>
+                <InlineSVG src={calendarIcon} />
+                <span>יומן</span>
+              </Button>
+            ),
+          },
         ],
       },
       {
         title: "לווי שוטף",
-        items: [{ label: "חתימה על מסמכי הקליטה", item: <></> }],
+        items: [
+          {
+            label: "חתימה על מסמכי הקליטה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+        ],
       },
       {
         title: "סיום",
         items: [
-          { label: "תהליך סיום", item: <></> },
-          { label: "הקלדה בשקדיה", item: <></> },
+          {
+            label: "תהליך סיום",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
+          {
+            label: "הקלדה בשקדיה",
+            item: (
+              <>
+                <Button>
+                  <InlineSVG src={calendarPlusIcon} />
+                  <span>הוסף אירוע</span>
+                </Button>
+                <Button>
+                  <InlineSVG src={historyIcon} />
+                  <span>היסטורית אירועים</span>
+                </Button>
+              </>
+            ),
+          },
         ],
       },
     ],
@@ -331,7 +1358,7 @@ const Board = () => {
   return (
     <div className="recipient-home-board">
       <div className="recipient-home-board-title">
-        <InlineSVG src={dataflowIcon} />
+        <InlineSVG src={dataflowIcon} stroke="#13566c" />
         <span>תהליכים:</span>
         <div className="select" style={{ width: "280px" }}>
           <ReactSelect
