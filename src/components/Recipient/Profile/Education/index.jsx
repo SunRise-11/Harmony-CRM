@@ -7,6 +7,7 @@ import addIcon from "../../../../assets/icons/add.svg";
 
 import Basic from "../Basic";
 import Item from "../Basic/Item";
+import { Input as AntdInput } from "antd";
 
 const Education = ({ selected }) => {
   const options = [
@@ -35,7 +36,24 @@ const Education = ({ selected }) => {
             options={options}
             onChange={(value) => setCurrentSelected(value)}
           />
-          <Item type="input" width="157px" required text="שנות לימוד" />
+          {/* <Item type="input" width="157px" required text="שנות לימוד" /> */}
+          <div className="profiles-item" style={{ width: "157px" }}>
+            <div className="profiles-item-name">
+              <span>שנות לימוד</span>
+              <span style={{ color: "red" }}>*</span>
+            </div>
+            <div>
+              <div className="input">
+                <AntdInput
+                  allowClear
+                  min={0}
+                  type="number"
+                  placeholder="הקלד..."
+                  className="input-main"
+                />
+              </div>
+            </div>
+          </div>
           <div
             style={{
               width: "100%",

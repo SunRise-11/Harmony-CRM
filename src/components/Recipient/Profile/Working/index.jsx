@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import Basic from "../Basic";
 import bagIcon from "../../../../assets/icons/master/bag.svg";
-import CheckBox from "../../../CheckBox";
+import { Radio } from "antd";
 
 const Working = ({ selected }) => {
-  const [checked, setChecked] = useState(false);
+  const [value, setValue] = useState(0);
   return (
     <Basic
       title="עבודה"
@@ -18,17 +18,15 @@ const Working = ({ selected }) => {
               <span>עובד</span>
               <span style={{ color: "red" }}>*</span>
             </div>
-            <div style={{ display: "flex", gap: "60px" }}>
-              <CheckBox
-                title="לא"
-                checked={!checked}
-                onChange={() => setChecked(false)}
-              />
-              <CheckBox
-                title="כן"
-                checked={checked}
-                onChange={() => setChecked(true)}
-              />
+            <div>
+              <Radio.Group
+                onChange={(e) => setValue(e.target.value)}
+                value={value}
+                style={{ display: "flex", gap: "40px" }}
+              >
+                <Radio value={0}>לא</Radio>
+                <Radio value={1}>כן</Radio>
+              </Radio.Group>
             </div>
           </div>
           {/* <Item type="input" text="" */}
