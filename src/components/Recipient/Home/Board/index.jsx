@@ -38,7 +38,7 @@ const Board = () => {
     [
       {
         effect1: "0px",
-        effect2: ["0px", "180px", "450px", "680px", "870px"],
+        effect2: ["0px", "180px", "450px", "740px"],
         position: "0px",
       },
       {
@@ -164,15 +164,6 @@ const Board = () => {
           },
           {
             label: "שליחת שם משתמש וסיסמא לכניסה",
-            item: (
-              <Button>
-                <InlineSVG src={passportIcon} />
-                <span>מילוי פרופיל</span>
-              </Button>
-            ),
-          },
-          {
-            label: "חתימה",
             item: (
               <Button>
                 <InlineSVG src={passportIcon} />
