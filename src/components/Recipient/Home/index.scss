@@ -1,0 +1,24 @@
+@import "CardList";
+@import "Board";
+@import "StatusBar";
+
+.recipient-home {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow: auto;
+  height: 100%;
+
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    // max-width: 1200px;
+    width: -webkit-fill-available;
+    min-width: 1200px;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: auto;
+  }
+}

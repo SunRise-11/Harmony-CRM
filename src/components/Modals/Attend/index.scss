@@ -1,0 +1,72 @@
+.attend {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 1.25rem;
+  border-bottom-width: 1px;
+  border-color: rgb(209 213 219);
+
+  &-time {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 20px;
+    & > div {
+      grid-column: span 1;
+    }
+  }
+
+  &-vacation,
+  &-sickness {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+  }
+
+  &-sickness > div:last-child {
+    width: calc(100% - 200px);
+    min-width: 200px;
+  }
+
+  &-vacation-checkbox,
+  &-sickness-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .attend {
+    align-items: center;
+
+    &-time {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      & > div {
+        & .picker {
+          width: 100%;
+        }
+        width: 100%;
+      }
+
+      & .label-title {
+        width: auto;
+      }
+    }
+
+    &-vacation-checkbox,
+    &-sickness-checkbox {
+      column-gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+}

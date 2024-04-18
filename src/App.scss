@@ -1,42 +1,8 @@
-@import "utils/utils-combined";
-@import "components/components-combined";
-@import "pages/pages-combined";
-@import "common/common-combined";
-
-$theme-original: (
-  background-color: #197213,
-  color: white,
-);
-
-$theme-suggested: (
-  background-color: #0075ff,
-  color: white,
-  priamry: #012931,
-);
-
-$theme-monday: (
-  background-color: #293810,
-  color: white,
-);
-
-$theme-dynamics: (
-  background-color: #237489,
-  color: white,
-);
-
-@mixin themify($property, $value) {
-  @if $value == "original" {
-    #{$property}: map-get($theme-original, $property);
-  } @else if $value == "suggested" {
-    #{$property}: map-get($theme-suggested, $property);
-  } @else if $value == "monday" {
-    #{$property}: map-get($theme-monday, $property);
-  } @else if $value == "dynamics" {
-    #{$property}: map-get($theme-dynamics, $property);
-  } @else {
-    #{$property}: map-get($theme-original, $property);
-  }
-}
+@import "utils";
+@import "common";
+@import "components";
+@import "pages";
+@import "assets/styles/main";
 
 .col-1 {
   grid-column: span 1;
@@ -54,8 +20,6 @@ $theme-dynamics: (
   grid-column: span 4;
 }
 
-/*---width---*/
-
 .w-full {
   width: 100%;
 }
@@ -64,16 +28,63 @@ $theme-dynamics: (
   width: 50%;
 }
 
-/*--padding---*/
-
-/*---margin---*/
-
 .mr-24 {
   margin-right: 96px;
 }
 
-.ant-layout-content {
-  display: flex;
-  justify-content: center;
-  padding: 30px 0px;
+th {
+  color: #000;
+  font-family: Afek 1.5 AAA;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.12px;
+}
+
+td {
+  color: #000;
+  font-family: Afek 1.5 AAA;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.15px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+.ant-picker-range {
+  & .ant-picker-input {
+    width: 75px;
+  }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-indeterminate .ant-checkbox-inner:after,
+.ant-radio-checked .ant-radio-inner {
+  background-color: #f37021 !important;
+  border-color: #f37021 !important;
+}
+
+.ant-tabs-nav-operations,
+.ant-tabs-nav {
+  overflow: initial !important;
 }

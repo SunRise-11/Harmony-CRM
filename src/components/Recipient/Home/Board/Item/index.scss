@@ -1,0 +1,14 @@
+.recipient-home-board-item {
+  display: flex;
+  z-index: 3;
+  flex-direction: row;
+  padding: 3px 9px 3px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border-radius: 5px;
+  background-color: transparent;
+  position: absolute;
+  margin-top: -6px;
+  margin-right: 21px;
+}

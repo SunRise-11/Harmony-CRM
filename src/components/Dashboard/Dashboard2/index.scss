@@ -1,0 +1,164 @@
+.dashboard2 {
+  display: flex;
+  align-items: center;
+  margin: 30px 5%;
+
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+
+    & > div:first-child {
+      grid-column: span 3;
+    }
+
+    .chart {
+      grid-column: span 1;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+      & > div:first-child {
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        row-gap: 0.25rem;
+        border: 1px solid #f0f0f0;
+        text-align: right;
+
+        & > div:nth-child(1) {
+          color: #60a5fa;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: -0.02em;
+          text-align: right;
+        }
+
+        & > div:nth-child(2) {
+          color: #1e3a8a;
+          font-size: 37px;
+          font-weight: 500;
+          line-height: 43px;
+          letter-spacing: -0.0375em;
+          text-align: right;
+        }
+
+        & > div:nth-child(3) {
+          color: #6b7280;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14px;
+          letter-spacing: -0.01em;
+          text-align: right;
+        }
+      }
+
+      &-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+
+        .labels {
+          display: grid;
+          column-gap: 20px;
+          row-gap: 5px;
+          grid-template-columns: auto auto;
+          align-items: center;
+          margin-top: 20px;
+
+          .item {
+            display: flex;
+            column-gap: 5px;
+            justify-content: flex-end;
+            align-items: center;
+          }
+        }
+
+        .pie-labels {
+          margin-top: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 15px;
+
+          .item {
+            display: flex;
+            column-gap: 5px;
+            justify-content: flex-start;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  .dashboard2-main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard2-main {
+    width: 90vw;
+
+    .chart {
+      grid-column: span 3;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .dashboard2-main {
+    width: 95%;
+
+    & .quick-info-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      & button {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .dashboard2-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    & > div:first-child {
+      grid-column: span 2;
+    }
+
+    .chart {
+      grid-column: span 1;
+    }
+
+    & .chart:nth-child(4) {
+      grid-column: span 2;
+    }
+  }
+}
+
+.pie-item {
+  width: 20px;
+  height: 7.5px;
+  border-radius: 2px;
+}
+
+.label-item {
+  width: 8.3px;
+  height: 8.3px;
+  border-radius: 50%;
+}

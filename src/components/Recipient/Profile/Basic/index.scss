@@ -1,0 +1,41 @@
+@import "Item";
+@import "Modal";
+
+.profiles-basic {
+  margin: auto;
+  width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 50px 100px 100px 100px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: white;
+  box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+
+  &-title {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1.5px solid #ff8a00;
+    width: fit-content;
+    color: #ff8a00;
+  }
+
+  &-board {
+    display: flex;
+    max-width: 650px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  & .ant-picker,
+  & .ant-input-affix-wrapper {
+    border-color: #bababa;
+    box-shadow: none;
+  }
+}

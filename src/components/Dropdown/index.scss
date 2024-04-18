@@ -1,0 +1,35 @@
+.dropdown {
+  border-radius: 10px;
+  padding: auto;
+  gap: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-color: transparent;
+  border-width: 2px;
+  transition: all 0.3;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: #4096ff;
+  }
+
+  & span {
+    font-family: Afek 1.5 AAA;
+    font-size: 15px;
+    color: #434f68;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}

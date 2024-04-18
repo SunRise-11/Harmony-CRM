@@ -1,0 +1,30 @@
+.recipient-profile-sidebar {
+  z-index: 28;
+  position: fixed;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 5px;
+    align-self: stretch;
+    align-items: center;
+    border-bottom: 0.5px solid #434f68;
+    color: "#434f68";
+    font-family: Afek 1.5 AAA;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}

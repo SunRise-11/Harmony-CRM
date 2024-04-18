@@ -1,0 +1,24 @@
+.document-modal {
+  &-board {
+    padding: 30px;
+    padding-bottom: 10px;
+
+    & label {
+      padding: 10px;
+      border-radius: 30px;
+      &:hover {
+        background: #d3edf6;
+      }
+    }
+  }
+
+  &-footer {
+    background-color: #eef2f9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}

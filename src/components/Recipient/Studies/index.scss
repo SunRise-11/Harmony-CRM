@@ -1,0 +1,58 @@
+.recipient-studies {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: auto;
+
+    &-navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-between;
+
+        &-title {
+            font-family: Afek 1.5 AAA;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 38px;
+            letter-spacing: -0.0375em;
+            text-align: right;
+            color: #13566c;
+        }
+
+        & button {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 168px;
+            height: 44px;
+            font-family: Afek 1.5 AAA;
+            font-size: 15px;
+            text-align: right;
+            border-width: 2px;
+            border-color: transparent;
+
+            &:hover {
+                border-color: #4096ff;
+            }
+
+            & span {
+                color: #434f68;
+            }
+        }
+    }
+
+    &-table {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 1.689px 8.447px 0px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -1,0 +1,53 @@
+.recipient-home-step {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  gap: -1px;
+
+  &-main {
+    z-index: 1;
+    border-style: solid;
+    display: flex;
+    box-sizing: content-box;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    color: #000;
+    gap: 4px;
+    text-align: center;
+    font-family: "Afek 1.5 AAA";
+    font-size: 14.614px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: fit-content;
+    & span {
+      word-break: break-word;
+    }
+    
+    &-number {
+      border-radius: 40px;
+      width: 39px;
+      height: 39px;
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      text-align: center;
+      font-family: "Afek 1.5 AAA";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}
+
+.select {
+  z-index: 2;
+}

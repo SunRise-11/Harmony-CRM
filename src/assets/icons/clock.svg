@@ -1,5 +1,8 @@
-<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="clock">
-<path id="Vector" d="M7.5 3.5V8L10.5 11M7.5 15C3.63401 15 0.5 11.866 0.5 8C0.5 4.13401 3.63401 1 7.5 1C11.366 1 14.5 4.13401 14.5 8C14.5 11.866 11.366 15 7.5 15Z" stroke="white" stroke-linejoin="round"/>
-</g>
+<svg width="15" height="16" stroke="white" viewBox="0 0 15 16" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <g id="clock">
+        <path id="Vector"
+            d="M7.5 3.5V8L10.5 11M7.5 15C3.63401 15 0.5 11.866 0.5 8C0.5 4.13401 3.63401 1 7.5 1C11.366 1 14.5 4.13401 14.5 8C14.5 11.866 11.366 15 7.5 15Z"
+            stroke-linejoin="round" />
+    </g>
 </svg>
