@@ -20,11 +20,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-<<<<<<< HEAD:src/pages/Reports/index.scss
     gap: 10px;
-=======
-    row-gap: 10px;
->>>>>>> 80d8aca86af461b7b5a6dbce84ad96bba4db711e:src/pages/reports/eventReport/_event-report.scss
     align-items: center;
 
     &-toggle {
@@ -61,6 +57,7 @@
         }
       }
     }
+
     &-buttons {
       display: flex;
       flex-direction: row;
