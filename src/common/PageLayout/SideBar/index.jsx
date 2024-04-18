@@ -1,62 +1,36 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
-import InlineSVG from "react-inlinesvg";
 
-import MenuItem from "../../../components/MenuItem";
+import MenuItem from "../../../components/menuItem/MenuItem";
 
-import originalLogo from "../../../assets/icons/logos/harmony-logo-original.svg";
-import suggestedLogo from "../../../assets/icons/logos/harmony-logo-suggested.svg";
-import mondayLogo from "../../../assets/icons/logos/harmony-logo-monday.svg";
-import dynamicsLogo from "../../../assets/icons/logos/harmony-logo-dynamics.svg";
-import homeIcon from "../../../assets/icons/master/home.svg";
-import usersIcon from "../../../assets/icons/master/users.svg";
-import pieIcon from "../../../assets/icons/master/pie.svg";
-import ClipboardCheckIcon from "../../../assets/icons/master/clipboard-check.svg";
-import CalendarIcon from "../../../assets/icons/master/calendar.svg";
-import CreateIcon from "../../../assets/icons/master/create.svg";
-import bagIcon from "../../../assets/icons/master/bag.svg";
-import targetIcon from "../../../assets/icons/master/target.svg";
-import presentationIcon from "../../../assets/icons/master/presentation.svg";
-import warningIcon from "../../../assets/icons/master/warning.svg";
-import addIcon from "../../../assets/icons/add.svg";
-import { useSelector } from "react-redux";
+import logoImg from "../../../assets/images/logo.svg";
+import homeImg from "../../../assets/icons/home.svg";
+import usersImg from "../../../assets/icons/users.svg";
+import pieImg from "../../../assets/icons/pie.svg";
+import taskImg from "../../../assets/icons/task.svg";
+import planImg from "../../../assets/icons/plan.svg";
+import reportImg from "../../../assets/icons/report.svg";
+import jobImg from "../../../assets/icons/job.svg";
+import crmImg from "../../../assets/icons/crm.svg";
+import videoImg from "../../../assets/icons/video.svg";
+import warnImg from "../../../assets/icons/warn.svg";
 
 const SideBar = ({ collapsed, setCollapsed }) => {
   const navigate = useNavigate();
 
-  const styles = {
-    original: {
-      color: "#5FBCFF",
-      icon: originalLogo,
-    },
-    suggested: {
-      color: "#70c6dd",
-      icon: suggestedLogo,
-    },
-    monday: {
-      color: "#01c776",
-      icon: mondayLogo,
-    },
-    dynamics: {
-      color: "#3594dd",
-      icon: dynamicsLogo,
-    },
-  };
-
   const [isSelected, setSelected] = useState(0);
   const [showSubMenu, setShowSubMenu] = useState(-1);
-  const theme = useSelector((state) => state.app.theme);
 
   return (
-    <div style={{ height: "100vh", overflow: "auto" }}>
+    <div style={{ minHeight: "100vh" }}>
       <div className="sidebar-logo">
-        <InlineSVG src={styles[theme].icon} onClick={() => setCollapsed()} />
+        <img src={logoImg} onClick={() => setCollapsed()} />
       </div>
       <div className="sidebar-main">
         <MenuItem
           key={0}
-          icon={homeIcon}
+          icon={homeImg}
           title="דף הבית"
           isSelect={isSelected === 0}
           onClick={() => {
@@ -68,7 +42,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           hasSubMenu={true}
           key={1}
           subMenuSelected={Math.floor(isSelected / 10) === 1}
-          icon={usersIcon}
+          icon={usersImg}
           title="מקבלי שירות"
           onClick={() => {
             setShowSubMenu(showSubMenu === 1 ? -1 : 1);
@@ -114,24 +88,18 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               onClick={() => setSelected(14)}
               key={14}
             />,
-            <div className="sub-menu-unselected" key="15">
-              <div className="menu-item">
-                <div className="menu-item-container">
-                  <InlineSVG
-                    src={addIcon}
-                    width={24}
-                    height={24}
-                    stroke={styles[theme].color}
-                  />
-                  <div className="menu-item-title">אהרון ליפשיץ</div>
-                </div>
-              </div>
-            </div>,
+            <MenuItem
+              isSubMenu={true}
+              title="אהרון ליפשיץ"
+              isSelect={isSelected === 15}
+              onClick={() => setSelected(15)}
+              key={15}
+            />,
           ]}
         />
         <MenuItem
           hasSubMenu={true}
-          icon={pieIcon}
+          icon={pieImg}
           subMenuSelected={Math.floor(isSelected / 10) === 2}
           title="דוחות"
           onClick={() => setShowSubMenu(showSubMenu === 2 ? -1 : 2)}
@@ -179,22 +147,21 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           ]}
         />
         <MenuItem
-          icon={ClipboardCheckIcon}
+          icon={taskImg}
           title="משימות"
           isSelect={isSelected === 3}
           onClick={() => {
             setSelected(3);
-            navigate("/main-task");
+            navigate("/maintask");
           }}
           key={3}
         />
         <MenuItem
-          icon={CalendarIcon}
+          icon={planImg}
           title="יומן פגישות"
           isSelect={isSelected === 4}
           onClick={() => {
             setSelected(4);
-            navigate("/daily-planner");
           }}
           key={4}
         />
@@ -203,7 +170,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           isSelect={showSubMenu === 5}
           hasSubMenu={true}
           subMenuSelected={Math.floor(isSelected / 10) === 5}
-          icon={CreateIcon}
+          icon={reportImg}
           title="דיווחים"
           key={5}
           subMenus={[
@@ -221,38 +188,29 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"דיווח הוצאות"}
               isSelect={isSelected === 51}
-              onClick={() => {
-                setSelected(51);
-                navigate("/reporting/expense");
-              }}
+              onClick={() => setSelected(51)}
               key={51}
             />,
             <MenuItem
               isSubMenu={true}
               title={"דיווח תעסוקה"}
               isSelect={isSelected === 52}
-              onClick={() => {
-                setSelected(52);
-                navigate("/reporting/employment");
-              }}
+              onClick={() => setSelected(52)}
               key={52}
             />,
           ]}
         />
         <MenuItem
-          icon={bagIcon}
+          icon={jobImg}
           title="הזדמנויות תעסוקה"
           isSelect={isSelected === 6}
-          onClick={() => {
-            setSelected(6);
-            navigate("/employment");
-          }}
+          onClick={() => setSelected(6)}
           key={6}
         />
         <MenuItem
           hasSubMenu={true}
           subMenuSelected={Math.floor(isSelected / 10) === 7}
-          icon={targetIcon}
+          icon={crmImg}
           title="CRM"
           onClick={() => setShowSubMenu(showSubMenu === 7 ? -1 : 7)}
           isSelect={showSubMenu === 7}
@@ -262,42 +220,30 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSubMenu={true}
               title={"מבקשי שירות פוטנציאליים"}
               isSelect={isSelected === 70}
-              onClick={() => {
-                setSelected(70);
-                navigate("/crm/service-applicants");
-              }}
+              onClick={() => setSelected(70)}
               key={70}
             />,
             <MenuItem
               isSubMenu={true}
               title={"לקוחות פוטנציאליים"}
               isSelect={isSelected === 71}
-              onClick={() => {
-                setSelected(71);
-                navigate("/crm/customers");
-              }}
+              onClick={() => setSelected(71)}
               key={71}
             />,
           ]}
         />
         <MenuItem
-          icon={presentationIcon}
+          icon={videoImg}
           title="הדרכות"
           isSelect={isSelected === 8}
-          onClick={() => {
-            setSelected(8);
-            navigate("/tutorials");
-          }}
+          onClick={() => setSelected(8)}
           key={8}
         />
         <MenuItem
-          icon={warningIcon}
+          icon={warnImg}
           title="התראות"
           isSelect={isSelected === 9}
-          onClick={() => {
-            setSelected(9);
-            navigate("/alerts");
-          }}
+          onClick={() => setSelected(9)}
           key={9}
         />
       </div>
