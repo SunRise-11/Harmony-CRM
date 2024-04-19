@@ -17,6 +17,10 @@
     row-gap: 20px;
     border-bottom-width: 1px;
     border-color: #ced7da;
+
+    &-name {
+      width: 50%;
+    }
   }
 
   &-date {
@@ -47,6 +51,10 @@
     &-state {
       display: flex;
       flex-direction: column;
+    }
+
+    &-info-name{
+      width: 100%;
     }
   }
 }

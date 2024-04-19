@@ -60,17 +60,17 @@ const DashBoard2 = () => {
               />
             </div>
             <div className="pie-labels">
-              <div className="item">
-                <div>מועדון תעסוקתי</div>
-                <div className="pie-item Graph-01" />
+              <div className="label">
+                <div className="label-name">מועדון תעסוקתי</div>
+                <div className="label-item Graph-01" />
               </div>
-              <div className="item">
-                <div>מפעל מוגן</div>
-                <div className="pie-item Graph-02" />
+              <div className="label">
+                <div className="label-name">מפעל מוגן</div>
+                <div className="label-item Graph-02" />
               </div>
-              <div className="item">
-                <div>תעסוקה נתמכת</div>
-                <div className="pie-item Graph-03" />
+              <div className="label">
+                <div className="label-name">תעסוקה נתמכת</div>
+                <div className="label-item Graph-03" />
               </div>
             </div>
           </div>
@@ -92,20 +92,20 @@ const DashBoard2 = () => {
                 flag={true}
               />
             </div>
-            <div className="labels">
-              <div className="item">
+            <div className="dou-labels">
+              <div className="label">
                 <div>הכוון מקצועי</div>
                 <div className="label-item Graph-03" />
               </div>
-              <div className="item">
+              <div className="label">
                 <div>קליטת עובד</div>
                 <div className="label-item Graph-04" />
               </div>
-              <div className="item">
+              <div className="label">
                 <div>הערכה פסיכיאטרית</div>
                 <div className="label-item Graph-01" />
               </div>
-              <div className="item">
+              <div className="label">
                 <div>הכוון שיקומי</div>
                 <div className="label-item Graph-02" />
               </div>

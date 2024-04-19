@@ -1,10 +1,11 @@
 .label {
-  height: 25px;
+  height: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
   column-gap: 0.125rem;
+  margin-bottom: 5px;
 
   &-title {
     color: #464648;
@@ -21,7 +22,7 @@
     color: #f87171;
     font-size: 18px;
     font-weight: 700;
-    line-height: 29px;
+    line-height: 28px;
     letter-spacing: -0.02em;
     text-align: right;
   }

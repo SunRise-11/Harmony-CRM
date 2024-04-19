@@ -24,7 +24,7 @@ const AddTask = ({ visible, onCancel }) => {
       content={
         <div className="add-task">
           <div className="add-task-info">
-            <div className="w-half">
+            <div className="add-task-info-name">
               <Label title="מקבל שירות" />
               <Select placeholder="בחירת מקבל שירות" icon={userIcon} />
             </div>
