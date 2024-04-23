@@ -29,13 +29,13 @@
     flex-wrap: wrap;
   }
 
-  &-sickness > div:last-child {
-    width: calc(100% - 200px);
-    min-width: 200px;
-  }
+  // &-sickness > div:last-child {
+  //   width: calc(100% - 200px);
+  //   min-width: 200px;
+  // }
 
-  &-vacation-checkbox,
-  &-sickness-checkbox {
+  &-vacation-radioGroup,
+  &-sickness-radioGroup {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -43,9 +43,14 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+.ant-radio-inner,
+.ant-radio-outer {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+@media only screen and (max-width: 450px) {
   .attend {
-    align-items: center;
 
     &-time {
       width: 100%;

@@ -130,6 +130,7 @@ const columns = [
               borderRadius: "6px",
               padding: "6px 10px",
               backgroundColor: "#8AD341",
+              cursor: 'pointer',
               color: "white",
               fontFamily: "Afek 1.5 AAA",
               fontSize: "15px",
