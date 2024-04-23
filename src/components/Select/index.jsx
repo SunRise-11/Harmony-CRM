@@ -1,12 +1,40 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ReactSelect from "react-select";
+import { components } from "react-select";
 import InlineSVG from "react-inlinesvg";
 import { useSelector } from "react-redux";
 
+import downIcon from "../../assets/icons/chevrons/down.svg";
+
 const Select = ({ value, placeholder, options, icon, onChange }) => {
+  const [isOpen, setOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+
+  const DropdownIndicator = (props) => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <InlineSVG
+          style={{ cursor: "pointer" }}
+          src={downIcon}
+          style={
+            isOpen
+              ? { transform: "rotate(0deg)" }
+              : { transform: "rotate(-90deg)" }
+          }
+        />
+      </components.DropdownIndicator>
+    );
+  };
+
+  const handleMenuOpen = () => {
+    setOpen(true);
+  };
+
+  const handleMenuClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="select">
@@ -19,6 +47,9 @@ const Select = ({ value, placeholder, options, icon, onChange }) => {
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        onMenuOpen={handleMenuOpen}
+        onMenuClose={handleMenuClose}
+        components={{ DropdownIndicator }}
         styles={{
           control: (baseStyles) => ({
             ...baseStyles,
@@ -35,17 +66,23 @@ const Select = ({ value, placeholder, options, icon, onChange }) => {
             ...base,
             width: "0px",
           }),
+          indicatorContainer: (base) => ({
+            ...base,
+            transition: "",
+          }),
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       />
-      <InlineSVG
-        src={icon}
-        className="select-svg"
-        style={{
-          stroke: isHover && "#0075FF",
-        }}
-      />
+      <div className="select-icon">
+        <InlineSVG
+          src={icon}
+          className="select-icon-svg"
+          style={{
+            stroke: isHover && "#0075FF",
+          }}
+        />
+      </div>
     </div>
   );
 };

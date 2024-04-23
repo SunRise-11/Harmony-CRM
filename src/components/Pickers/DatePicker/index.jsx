@@ -4,6 +4,11 @@ import { DatePicker as AntdDatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
+import he_IL from "antd/locale/he_IL";
+import dayjs from "dayjs";
+import 'dayjs/locale/he';
+
+dayjs.locale('he');
 
 import planImg from "../../../assets/icons/master/calendar.svg";
 
@@ -12,7 +17,7 @@ const DatePicker = ({ pl, pr, py }) => {
   const direction = useSelector((state) => state.app.direction);
   return (
     <div className="picker">
-      <ConfigProvider direction={direction}>
+      <ConfigProvider direction={direction} locale={he_IL}>
         <AntdDatePicker
           style={{
             paddingLeft: `${pl}px`,

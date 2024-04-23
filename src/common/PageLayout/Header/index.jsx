@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import searchIcon from "../../../assets/icons/system/search.svg";
 import userIcon from "../../../assets/icons/system/user.svg";
 import downIcon from "../../../assets/icons/chevrons/down.svg";
+import rightIcon from "../../../assets/icons/chevrons/right.svg";
 import AvatarImg1 from "../../../assets/avatars/avatar1.png";
 import AvatarImg2 from "../../../assets/avatars/avatar2.png";
 import AvatarImg3 from "../../../assets/avatars/avatar3.png";
@@ -295,15 +296,25 @@ const Header = ({ collapsed, setCollapsed }) => {
                 />
                 {viewportWidth > 1100 && "חיפוש מקבל שירות..."}
               </div>
-              <InlineSVG src={downIcon} />
+              <InlineSVG src={rightIcon} />
             </Button>
             {isDropVisible == "visible" && (
               <div className="header-select-modal">
                 <Input
                   className="modal-button"
-                  suffix={<InlineSVG src={searchIcon} stroke="rgba(0, 0, 0, 0.88)"/>}
+                  suffix={
+                    <InlineSVG src={searchIcon} stroke="rgba(0, 0, 0, 0.88)" />
+                  }
                   placeholder="שא"
                 />
+                <div
+                  className="modal-downbtn"
+                  onClick={() => {
+                    setDropVisible("invisible");
+                  }}
+                >
+                  <InlineSVG src={downIcon} />
+                </div>
                 <div className="modal-table">
                   <div className="table">
                     <div

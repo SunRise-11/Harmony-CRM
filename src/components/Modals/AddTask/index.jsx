@@ -48,8 +48,8 @@ const AddTask = ({ visible, onCancel }) => {
             </div>
           </div>
           <div className="add-task-state">
-            <div>
-              <Label title="סטטוס" />
+            <div className="add-task-state-toggle">
+              <Label className="label" title="סטטוס" />
               <ToggleSelector
                 flag={false}
                 visible={true}

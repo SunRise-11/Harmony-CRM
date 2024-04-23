@@ -4,16 +4,24 @@ import PropTypes from "prop-types";
 import Modal from "../Basic";
 import DatePicker from "../../Pickers/DatePicker";
 import TimePicker from "../../Pickers/TimePicker";
-import CheckBox from "../../CheckBox";
 import ToggleSelector from "../../ToggleSelector";
 import UploadDoc from "../../Uploads/UploadDoc";
 import Label from "../../Labels/Label";
 
+import { Radio } from "antd";
 import createIcon from "../../../assets/icons/master/create.svg";
 
 const AttendModal = ({ visible, onCancel }) => {
   const [isVacation, setVacation] = useState(false);
   const [isSickness, setSickness] = useState(false);
+
+  const onChangeVacation = (e) => {
+    setVacation(e.target.value);
+  };
+
+  const onChangeSickness = (e) => {
+    setSickness(e.target.value);
+  };
 
   return (
     <Modal
@@ -41,17 +49,11 @@ const AttendModal = ({ visible, onCancel }) => {
           <div className="attend-vacation">
             <div>
               <Label title="חופשה" required={true} />
-              <div className="attend-vacation-checkbox">
-                <CheckBox
-                  title="לא"
-                  checked={!isVacation}
-                  onChange={() => setVacation(false)}
-                />
-                <CheckBox
-                  title="כן"
-                  checked={isVacation}
-                  onChange={() => setVacation(true)}
-                />
+              <div className="attend-vacation-radioGroup">
+                <Radio.Group onChange={onChangeVacation} value={isVacation}>
+                  <Radio value={false}>לא</Radio>
+                  <Radio value={true}>כן</Radio>
+                </Radio.Group>
               </div>
             </div>
             {isVacation && (
@@ -69,19 +71,12 @@ const AttendModal = ({ visible, onCancel }) => {
             <div>
               <Label title="מחלה" required={true} />
               <div
-                className="attend-sickness-checkbox"
-                style={{ width: "100%" }}
+                className="attend-sickness-radioGroup"
               >
-                <CheckBox
-                  title="לא"
-                  checked={!isSickness}
-                  onChange={() => setSickness(false)}
-                />
-                <CheckBox
-                  title="כן"
-                  checked={isSickness}
-                  onChange={() => setSickness(true)}
-                />
+                <Radio.Group onChange={onChangeSickness} value={isSickness}>
+                  <Radio value={false}>לא</Radio>
+                  <Radio value={true}>כן</Radio>
+                </Radio.Group>
               </div>
             </div>
             {isSickness && (
