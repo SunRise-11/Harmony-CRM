@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Input } from "antd";
 import InlineSVG from "react-inlinesvg";
 import PropTypes from "prop-types";
@@ -296,10 +296,22 @@ const Header = ({ collapsed, setCollapsed }) => {
                 />
                 {viewportWidth > 1100 && "חיפוש מקבל שירות..."}
               </div>
-              <InlineSVG src={rightIcon} />
+              <InlineSVG
+                src={rightIcon}
+                style={{
+                  visibility: isDropVisible == "visible" ? "hidden" : "visible",
+                }}
+              />
             </Button>
             {isDropVisible == "visible" && (
-              <div className="header-select-modal">
+              <div
+                className="header-select-modal"
+                style={{
+                  width:
+                    viewportWidth < 1000 &&
+                    (collapsed ? "calc(100% - 100px)" : "calc(100% - 370px)"),
+                }}
+              >
                 <Input
                   className="modal-button"
                   suffix={
@@ -354,7 +366,14 @@ const Header = ({ collapsed, setCollapsed }) => {
               <InlineSVG src={searchIcon} />
             </Button>
             {isSearchVisible == "visible" && (
-              <div className="header-search-modal">
+              <div
+                className="header-search-modal"
+                style={{
+                  width:
+                  viewportWidth < 1000 &&
+                  (collapsed ? "calc(100% - 100px)" : "calc(100% - 370px)"),
+                }}
+              >
                 <Input
                   className="modal-button"
                   suffix={<InlineSVG src={searchIcon} />}

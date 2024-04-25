@@ -6,11 +6,13 @@ import Header from "./Header";
 import SideBar from "./SideBar";
 import ChatGPT from "./ChatGPT";
 import { ColorConstants } from "../../constants";
+import useViewportWidth from "../../hooks/useViewportWidth";
 
 const { Sider, Content } = Layout;
 
 const PageLayout = (props) => {
   const { children } = props;
+  const viewPortWidth = useViewportWidth();
 
   const [collapsed, setCollapsed] = useState(false);
   const theme = useSelector((state) => state.app.theme);
@@ -35,9 +37,7 @@ const PageLayout = (props) => {
           collapsible
           collapsed={collapsed}
           onCollapse={() => setCollapsed(!collapsed)}
-          style={{
-            zIndex: 10,
-          }}
+          style={{ zIndex: 10, position: (viewPortWidth > 600) ? 'relative' : 'fixed' }}
         >
           <SideBar
             setCollapsed={() => setCollapsed(!collapsed)}
@@ -51,10 +51,10 @@ const PageLayout = (props) => {
           />
           <Content
             style={{
-              height: "calc(90vh - 65px)",
               overflow: "auto",
               padding: "0px",
               position: "relative",
+              minHeight: '100vh',
               backgroundColor: ColorConstants.LAYOUT_BACKGROUND_COLORS[theme],
             }}
           >

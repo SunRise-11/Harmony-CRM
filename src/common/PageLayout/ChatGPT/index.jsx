@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import GPTIcon from "../../../assets/icons/gpt.svg";
 import DownIcon from "../../../assets/icons/chevrons/down.svg";
 import HandUpIcon from "../../../assets/icons/handUp.svg";
-import HandDownIcon from "../../../assets/icons/chevrons/down.svg";
+import HandDownIcon from "../../../assets/icons/handDown.svg";
 import SendIcon from "../../../assets/icons/master/send.svg";
 import CloseIcon from "../../../assets/icons/master/close.svg";
 

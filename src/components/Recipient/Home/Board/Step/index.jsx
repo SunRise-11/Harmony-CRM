@@ -178,7 +178,7 @@ const Step = ({ location, type = "empty", text, number, onClick }) => {
         }}
       >
         <Number type={type} number={number} />
-        <pre>{text}</pre>
+        <pre className="recipient-home-step-main-text">{text}</pre>
       </div>
       {location !== "end" &&
         location !== "alone" &&
