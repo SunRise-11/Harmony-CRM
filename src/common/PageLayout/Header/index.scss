@@ -41,6 +41,8 @@
       width: 100%;
       border-radius: 10px;
       min-width: 300px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      overflow: auto;
       position: absolute;
       top: -5px;
       display: flex;
@@ -49,7 +51,7 @@
       background-color: white;
       z-index: 22;
 
-      .modal-button{
+      .modal-button {
         .ant-input-suffix {
           position: absolute;
           left: 30px;
@@ -74,7 +76,7 @@
       width: 100%;
       border-radius: 10px;
       min-width: 300px;
-
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       position: absolute;
       top: -5px;
       display: flex;
@@ -181,13 +183,12 @@
   }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 1000px) {
   .header-search-modal,
   .header-select-modal {
-    width: calc(100vw - 20px);
     position: fixed;
     top: 62px;
-    left: 10px;
+    left: 85px;
     margin-right: 10px;
   }
 }

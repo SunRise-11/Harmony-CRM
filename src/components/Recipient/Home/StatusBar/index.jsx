@@ -11,8 +11,6 @@ const StatusBar = () => {
   return (
     <div className="recipient-home-statusbar">
       <div className="recipient-home-statusbar-overview">
-        {/* <img src={avatarImg} width={54} height={54} /> */}
-        {/* <div> */}
         <div className="recipient-home-statusbar-overview-name">
           שמוליק גוטמן
         </div>
@@ -20,7 +18,6 @@ const StatusBar = () => {
           <span>ת.ז.&nbsp;</span>
           <span>328567820</span>
         </div>
-        {/* </div> */}
       </div>
       <div className="recipient-home-statusbar-info">
         <div>
@@ -57,15 +54,14 @@ const StatusBar = () => {
       <div className="recipient-home-statusbar-setting">
         <div>
           <div>סטטוס קבוע</div>
-          <div className="recipient-home-statusbar-setting-temp-state">
-            <div
-              onClick={() => setVisible1(true)}
-              className={
-                visible1
-                  ? "recipient-home-statusbar-setting-temp-state-hover"
-                  : ""
-              }
-            >
+          <div
+            className="recipient-home-statusbar-setting-temp-state"
+            onClick={(e) => {
+              setVisible1(!visible1);
+              e.stopPropagation();
+            }}
+          >
+            <div>
               <label
                 onClick={(e) => {
                   if (visible1) {
@@ -117,15 +113,14 @@ const StatusBar = () => {
         </div>
         <div>
           <div>סטטוס זמני</div>
-          <div className="recipient-home-statusbar-setting-state">
-            <div
-              onClick={() => setVisible2(true)}
-              className={
-                visible1
-                  ? "recipient-home-statusbar-setting-temp-state-hover"
-                  : ""
-              }
-            >
+          <div
+            className="recipient-home-statusbar-setting-state"
+            onClick={(e) => {
+              setVisible2(!visible2);
+              e.stopPropagation();
+            }}
+          >
+            <div>
               <label
                 onClick={(e) => {
                   if (visible2) {
