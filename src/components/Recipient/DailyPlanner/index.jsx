@@ -7,7 +7,8 @@ import {
   Tabs,
   DatePicker,
 } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
 import InlineSVG from "react-inlinesvg";
 
 import calendarIcon from "../../../assets/icons/master/calendar.svg";
@@ -18,6 +19,7 @@ import editIcon from "../../../assets/icons/master/edit.svg";
 
 import CreateModal from "../../Modals/AddDailyPlanner";
 import Table from "../../Table";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -129,9 +131,11 @@ const columns = [
 ];
 
 const DailyPlanner = () => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-daily-planner">
       <div className="recipient-daily-planner-navbar">
@@ -163,7 +167,7 @@ const DailyPlanner = () => {
           )}
           {open && <RangePicker style={{ height: "44px" }} />}
         </div>
-        <Button onClick={() => setShowModal(true)}>
+        <Button onClick={() => setShowModal(true) || viewportWidth < 1430 ? dispatch(setToggleCollapsed(true)) : {}}>
           <InlineSVG src={calendarPlusIcon} width={20} />
           <span>הוסף פגישה</span>
         </Button>

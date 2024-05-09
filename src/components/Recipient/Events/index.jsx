@@ -7,6 +7,7 @@ import calendarIcon from "../../../assets/icons/master/calendar.svg";
 
 import Table from "../../../components/Table";
 import Select from "../../../components/Select";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -79,15 +80,16 @@ const columns = [
 const Events = () => {
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-events">
       <div className="recipient-events-navbar">
         <span className="recipient-events-navbar-title"></span>
-        <div style={{ width: "240px" }}>
-          <Select placeholder="סוג אירוע" />
+        <div style={{ width: "240px", marginRight: "-10px", position:'relative', zIndex: 5}}>
+          <Select placeholder="סוג אירוע"/>
         </div>
-        <div style={{ width: "240px" }}>
-          <Select placeholder="בחירת פעילות" />
+        <div style={{ width: "240px", position:'relative', zIndex:3}}>
+          <Select placeholder="בחירת פעילות"/>
         </div>
         <ConfigProvider direction={direction}>
           <Segmented

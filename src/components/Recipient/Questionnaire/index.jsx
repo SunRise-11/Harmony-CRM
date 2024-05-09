@@ -8,6 +8,9 @@ import sendIcon from "../../../assets/icons/master/send.svg";
 import Table from "../../../components/Table";
 import ColorLabel from "../../../components/Labels/ColorLabel";
 import Modal from "../../../components/Modals/AddQuestionnaire";
+import { useDispatch } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const data = [
   {
@@ -142,12 +145,14 @@ const columns = [
 ];
 
 const Employment = () => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-questionnaires">
       <div className="recipient-questionnaires-navbar">
         <span className="recipient-questionnaires-navbar-title"></span>
-        <Button onClick={() => setShowModal(true)}>
+        <Button onClick={() => setShowModal(true) || viewportWidth < 932 ? dispatch(setToggleCollapsed(true)) : {}}>
           <InlineSVG src={sendIcon} width={20} stroke="#434f68" />
           <span>שליחת שאלון</span>
         </Button>

@@ -33,6 +33,9 @@ const Profile = () => {
   const [current, setCurrent] = useState(0);
   const [showSideBar, setShowSideBar] = useState(false);
   const viewportWidth = useViewportWidth();
+  const svgStyle = {
+    '--svg-color': 'white' // Set the color dynamically
+  };
   return (
     <div className="recipient-profile">
       {showSideBar === true && viewportWidth < 1520 && (
@@ -47,27 +50,28 @@ const Profile = () => {
           onClick={() => setShowSideBar(false)}
         ></div>
       )}
-      {viewportWidth < 1520 && showSideBar === false ? (
-        <Button
-          style={{
-            position: "fixed",
-            backgroundColor: "rgb(255, 180, 0)",
-            width: "5px",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            display: "flex",
-            color: "white",
-            zIndex: "24",
-          }}
-          // icon={moreSVG}
-          onClick={() => setShowSideBar(true)}
-        ></Button>
+      {viewportWidth < 1684 ? (
+        // <Button
+        //   style={{
+        //     position: "fixed",
+        //     backgroundColor: "rgb(255, 180, 0)",
+        //     width: "5px",
+        //     alignItems: "center",
+        //     justifyContent: "center",
+        //     textAlign: "center",
+        //     display: "flex",
+        //     color: "white",
+        //     zIndex: "24",
+        //   }}
+        //   // icon={moreSVG}
+        //   onClick={() => setShowSideBar(true)}
+        // ></Button>
+        <></>
       ) : (
         <SideBar current={current} setCurrent={setCurrent} />
       )}
       <div className="recipient-profile-board">
-        <Service selected={current === 0} />
+        <Service selected={current === 0}  />
         <Address selected={current === 1} />
         <Contacts selected={current === 2} />
         <Education selected={current === 3} />
@@ -76,13 +80,13 @@ const Profile = () => {
         <Detail selected={current === 6} />
       </div>
       <div className="recipient-profile-footer">
-        <Button>
-          <InlineSVG src={userPlusIcon} />
-          <span>שמירה</span>
+        <Button type='primary' style={{backgroundColor:'MediumSeaGreen'}}>
+          <InlineSVG src={userPlusIcon} style={{fill:'white', stroke: 'white'}}/>
+          <span style={{color:'white'}}>שמירה</span>
         </Button>
-        <Button>
-          <InlineSVG src={closeIcon} />
-          <span>ביטול</span>
+        <Button type='primary' style={{backgroundColor:'#ff3333'}}>
+          <InlineSVG src={closeIcon} style={{stroke:'white'}} />
+          <span style={{color:'white'}}>ביטול</span>
         </Button>
       </div>
     </div>

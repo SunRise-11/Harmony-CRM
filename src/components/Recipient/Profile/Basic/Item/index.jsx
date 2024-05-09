@@ -16,10 +16,13 @@ const Item = ({
   options,
   selected,
   onChange,
+  style,
+  menuPlacement,
+  menuPosition
 }) => {
   const [checked, setChecked] = useState(false);
   return (
-    <div className="profiles-item" style={{ width }}>
+    <div className="profiles-item" style={{ ...style, width }}>
       <div className="profiles-item-name">
         <span>{text}</span>
         {required && <span style={{ color: "red" }}>*</span>}
@@ -31,7 +34,10 @@ const Item = ({
             placeholder={placeholder || "בחר..."}
             options={options}
             value={selected}
-            onChange={(result) => onChange(result.value)}
+            onChange={(result) => onChange(result)}
+            allowClear
+            menuPlacement={menuPlacement}
+            menuPosition={menuPosition}
           />
         )}
         {type === "disabled" && (
