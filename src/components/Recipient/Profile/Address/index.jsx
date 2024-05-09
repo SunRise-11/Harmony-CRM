@@ -28,6 +28,7 @@ const Address = ({ selected }) => {
             options={options}
             selected={options[currentSelected]}
             onChange={(value) => setCurrentSelected(value)}
+            style={{position: 'relative', zIndex: 4}}
           />
           <Item type="input" width="200px" required text="רחוב" />
           <Item type="input" width="200px" required text="מספר" />

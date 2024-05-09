@@ -6,11 +6,14 @@ import puzzleIcon from "../../../../assets/icons/master/puzzle.svg";
 import Basic from "../Basic";
 import Item from "../Basic/Item";
 import CheckBox from "../../../CheckBox";
+import { Radio } from 'antd';
+
+import style from './index.scss';
 
 const Detail = ({ selected }) => {
-  const [checked1, setChecked1] = useState(false);
-  const [checked2, setChecked2] = useState(false);
-  const [checked3, setChecked3] = useState(false);
+  const [checked1, setChecked1] = useState(0);
+  const [checked2, setChecked2] = useState(0);
+  const [checked3, setChecked3] = useState(0);
   const direction = useSelector((state) => state.app.direction);
   const options = [
     { label: "אין רישיון", value: 0 },
@@ -45,17 +48,15 @@ const Detail = ({ selected }) => {
             <div className="profiles-item-name">
               <span>שירות צבאי</span>
             </div>
-            <div style={{ display: "flex", gap: "60px" }}>
-              <CheckBox
-                title="לא"
-                checked={!checked1}
-                onChange={() => setChecked1(false)}
-              />
-              <CheckBox
-                title="כן"
-                checked={checked1}
-                onChange={() => setChecked1(true)}
-              />
+            <div>
+              <Radio.Group
+                onChange={e => setChecked1(e.target.value)}
+                value={checked1}
+                style={{display: 'flex', gap: '60px'}}
+              >
+                <Radio value={0}>לא</Radio>
+                <Radio value={1}>כן</Radio>
+              </Radio.Group>
             </div>
           </div>
           <div
@@ -70,35 +71,31 @@ const Detail = ({ selected }) => {
               <span>רישום פלילי</span>
               <span style={{ color: "red" }}>*</span>
             </div>
-            <div style={{ display: "flex", gap: "60px" }}>
-              <CheckBox
-                title="לא"
-                checked={!checked2}
-                onChange={() => setChecked2(false)}
-              />
-              <CheckBox
-                title="כן"
-                checked={checked2}
-                onChange={() => setChecked2(true)}
-              />
+            <div>
+              <Radio.Group
+                onChange={e => setChecked2(e.target.value)}
+                value={checked2}
+                style={{display: 'flex', gap: '60px'}}
+              >
+                <Radio value={0}>לא</Radio>
+                <Radio value={1}>כן</Radio>
+              </Radio.Group>
             </div>
           </div>
           <div className="profiles-item">
             <div className="profiles-item-name">
               <span>מדד תאוצה</span>
             </div>
-            <div style={{ display: "flex", gap: "60px" }}>
-              <CheckBox
-                title="לא"
-                checked={!checked3}
-                onChange={() => setChecked3(false)}
-              />
-              <CheckBox
-                title="כן"
-                checked={checked3}
-                onChange={() => setChecked3(true)}
-              />
-            </div>
+            <div>
+              <Radio.Group
+                onChange={e => setChecked3(e.target.value)}
+                value={checked3}
+                style={{display: 'flex', gap: '60px'}}
+              >
+                <Radio value={0}>לא</Radio>
+                <Radio value={1}>כן</Radio>
+              </Radio.Group>
+            </div>          
           </div>
           <Item type="input" width="640px" text="הערות" />
           <Item
@@ -108,6 +105,7 @@ const Detail = ({ selected }) => {
             options={options}
             selected={options[currentSelected]}
             onChange={(value) => setCurrentSelected(value)}
+            menuPlacement="top"
           />
           <Item
             type="dropdown"
@@ -116,8 +114,9 @@ const Detail = ({ selected }) => {
             options={options1}
             selected={options1[currentSelected1]}
             onChange={(value) => setCurrentSelected1(value)}
+            menuPlacement="top"
           />
-          <Item type="dropdown" width="200px" text="פסיכיאטר" />
+          <Item type="dropdown" width="200px" text="פסיכיאטר" menuPlacement='top' />
         </>
       }
     />

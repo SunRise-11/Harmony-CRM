@@ -11,7 +11,7 @@ import CheckBox from "../../CheckBox";
 import addIcon from "../../../assets/icons/add.svg";
 import locationIcon from "../../../assets/icons/master/location.svg";
 import { useSelector } from "react-redux";
-import { Input } from "antd";
+import { Input, Radio } from "antd";
 
 const { TextArea } = Input;
 ReactModal.setAppElement("#root");
@@ -121,7 +121,7 @@ const CreateModal = ({ visible, onCancel }) => {
                           <span>סוג פגישה</span>
                           <span style={{ color: "red" }}>*</span>
                         </div>
-                        <div
+                        {/* <div
                           style={{
                             display: "flex",
                             flexDirection: "row",
@@ -138,6 +138,16 @@ const CreateModal = ({ visible, onCancel }) => {
                             checked={checked}
                             onChange={() => setChecked(true)}
                           />
+                        </div> */}
+                        <div>
+                          <Radio.Group
+                            onChange={e => setChecked(e.target.value)}
+                            value={checked}
+                            style={{display: 'flex', gap: '61px', flexDirection: 'row'}}
+                          >
+                            <Radio value={false}>אונליין</Radio>
+                            <Radio value={true}>פיזית</Radio>
+                          </Radio.Group>
                         </div>
                       </div>
                       {checked && (

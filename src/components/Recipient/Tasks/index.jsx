@@ -1,7 +1,8 @@
 import { Button } from "antd";
 import { useState } from "react";
 import InlineSVG from "react-inlinesvg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
 
 import SmallCard from "../../../components/TaskCards/SmallCard";
 import AddTask from "../../../components/Modals/AddTask";
@@ -11,6 +12,7 @@ import avatarImg1 from "../../../assets/avatars/avatar1.png";
 import avatarImg2 from "../../../assets/avatars/avatar2.png";
 import avatarImg3 from "../../../assets/avatars/avatar3.png";
 import addIcon from "../../../assets/icons/add.svg";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const items = [
   {
@@ -61,6 +63,8 @@ const items = [
 const Tasks = () => {
   const [visible, setVisible] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const dispatch = useDispatch();
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-tasks">
       {items.map((item) => {
@@ -94,7 +98,7 @@ const Tasks = () => {
                   : { paddingLeft: "10px" }
               }
             >
-              <button onClick={() => setVisible(true)}>
+              <button onClick={() => setVisible(true) || viewportWidth < 1400 ? dispatch(setToggleCollapsed(true)) : {}}>
                 <InlineSVG src={addIcon} width={24} height={24} />
               </button>
               <div>משימה חדשה</div>

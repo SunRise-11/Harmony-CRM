@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { Layout } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Header from "./Header";
 import SideBar from "./SideBar";
 import ChatGPT from "./ChatGPT";
 import { ColorConstants } from "../../constants";
 
+import { setToggleCollapsed } from "../../redux/store";
+
 const { Sider, Content } = Layout;
 
 const PageLayout = (props) => {
+  const dispatch = useDispatch();
+
   const { children } = props;
 
-  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = useSelector(state => state.app.toggleCollapsed);
+  const [collapsed, setCollapsed] = useState(toggleCollapsed);
   const theme = useSelector((state) => state.app.theme);
   const direction = useSelector((state) => state.app.direction);
 
@@ -33,21 +38,22 @@ const PageLayout = (props) => {
           breakpoint="lg"
           collapsedWidth="0"
           collapsible
-          collapsed={collapsed}
-          onCollapse={() => setCollapsed(!collapsed)}
+          collapsed={toggleCollapsed}
+          // onCollapse={() => setCollapsed(!collapsed)}
+          onCollapse={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           style={{
             zIndex: 10,
           }}
         >
           <SideBar
-            setCollapsed={() => setCollapsed(!collapsed)}
-            collapsed={collapsed}
+            setCollapsed={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
+            collapsed={toggleCollapsed}
           />
         </Sider>
         <Layout>
           <Header
-            collapsed={collapsed}
-            setCollapsed={() => setCollapsed(!collapsed)}
+            collapsed={toggleCollapsed}
+            setCollapsed={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           />
           <Content
             style={{

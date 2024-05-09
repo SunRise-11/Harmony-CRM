@@ -57,7 +57,7 @@ const Service = ({ selected }) => {
       selected={selected}
       content={
         <>
-          <Item type="input" width="200px" required text="שם פרטי" />
+          <Item type="input" width="200px" required text="שם פרטי"/>
           <Item type="input" width="400px" required text="שם משפחה" />
           <Item type="input" width="200px" required text="תעודת זהות" />
           <Item type="date-picker" width="180px" required text="תאריך לידה" />
@@ -70,6 +70,7 @@ const Service = ({ selected }) => {
             options={childrenNumbers}
             selected={childrenNumbers[currentChildrenNumbers]}
             onChange={(value) => setCurrentChildrenNumbers(value)}
+            style={{position: 'relative', zIndex: 5}}
           />
           <Item
             type="dropdown"

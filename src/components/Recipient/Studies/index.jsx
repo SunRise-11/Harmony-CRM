@@ -12,6 +12,9 @@ import editIcon from "../../../assets/icons/master/edit.svg";
 import trashIcon from "../../../assets/icons/master/trash.svg";
 import checkIcon from "../../../assets/icons/master/check.svg";
 import educationIcon from "../../../assets/icons/master/education.svg";
+import { useDispatch } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const data = [
   {
@@ -115,13 +118,15 @@ const columns = [
 ];
 
 const Stuides = () => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [checked, setChecked] = useState(false);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-studies">
       <div className="recipient-studies-navbar">
         <span className="recipient-studies-navbar-title"></span>
-        <Button onClick={() => setShowModal(true)}>
+        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>

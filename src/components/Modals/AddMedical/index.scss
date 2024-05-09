@@ -3,6 +3,12 @@
     border-radius: 5px;
     border: 2px solid #5177a4;
     margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-footer {
@@ -18,5 +24,32 @@
       display: flex;
       gap: 10px;
     }
+  }
+}
+
+.medical-modal-board img {
+  width: 100%; // Makes the image responsive
+  height: auto; // Maintains the aspect ratio
+  display: block; // Removes extra space below the image
+}
+
+
+@media (max-width: 768px) { // Adjust depending on your breakpoint needs
+  .medical-modal-board {
+      margin: 5px; // Reduce margin
+      padding: 5px;
+  }
+
+  .medical-modal-board img {
+    width: 100%; // Adjust if necessary to ensure it fits well
+  }
+
+  .medical-modal-footer {
+      flex-direction: column; // Stack buttons vertically on smaller screens
+      align-items: center;
+
+      & > div {
+          flex-direction: column;
+      }
   }
 }

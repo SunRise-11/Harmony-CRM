@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Upload } from "antd";
+import { Button, Space, Upload } from "antd";
 import InlineSVG from "react-inlinesvg";
 
 import uploadFileIcon from "../../../assets/icons/master/upload-file.svg";
@@ -63,14 +63,16 @@ const Medical = () => {
             alignItems: "center",
           }}
         >
-          <span
-            className="recipient-medical-table-see"
-            onClick={() => setShowModal(true)}
-          >
-            <InlineSVG src={viewIcon} width={20} />
-          </span>
-          <InlineSVG src={downloadIcon} width={20} />
-          <InlineSVG src={trashIcon} width={20} />
+          <Space>
+            <span
+              className="recipient-medical-table-see"
+              onClick={() => setShowModal(true)}
+            >
+              <InlineSVG src={viewIcon} width={20} />
+            </span>
+            <InlineSVG src={downloadIcon} width={20} />
+            <InlineSVG src={trashIcon} width={20} />
+          </Space>
         </div>
       ),
     },

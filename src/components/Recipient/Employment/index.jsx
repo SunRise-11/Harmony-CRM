@@ -10,6 +10,9 @@ import bagIcon from "../../../assets/icons/master/bag.svg";
 import Table from "../../Table";
 import Modal from "../../Modals/Basic";
 import Item from "../../Recipient/Profile/Basic/Item";
+import { useDispatch } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const data = [
   {
@@ -139,12 +142,14 @@ const columns = [
 ];
 
 const Employment = () => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-employment">
       <div className="recipient-employment-navbar">
         <span className="recipient-employment-navbar-title"></span>
-        <Button onClick={() => setShowModal(true)}>
+        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>

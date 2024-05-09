@@ -5,6 +5,7 @@ const appSlice = createSlice({
     theme: "original",
     direction: "rtl",
     language: "he",
+    toggleCollapsed: false
   },
   reducers: {
     setTheme: (state, action) => {
@@ -16,10 +17,13 @@ const appSlice = createSlice({
     setLanguage: (state, action) => {
       state.language = action.payload;
     },
+    setToggleCollapsed: (state, action) => {
+      state.toggleCollapsed = action.payload;
+    }
   },
 });
 
-export const { setTheme, setDirection, setLanguage } = appSlice.actions;
+export const { setTheme, setDirection, setLanguage, setToggleCollapsed } = appSlice.actions;
 
 export const store = configureStore({
   reducer: {

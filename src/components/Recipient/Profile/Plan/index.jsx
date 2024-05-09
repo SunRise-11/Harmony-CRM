@@ -43,6 +43,7 @@ const Plan = ({ selected }) => {
             options={options}
             selected={options[currentSelected]}
             onChange={(value) => setCurrentSelected(value)}
+            style={{position:'', zIndex: 2}}
           />
           <Item type="date-picker" width="200px" required text="תאריך קליטה" />
           <Item type="date-picker" width="200px" required text="תאריך הארכה" />
@@ -54,6 +55,7 @@ const Plan = ({ selected }) => {
             options={options1}
             selected={options1[currentSelected1]}
             onChange={(value) => setCurrentSelected1(value)}
+            style={{position:'', zIndex: 1}}
           />
           <Item type="disabled" width="200px" text="תאריך סיום" />
           <Item type="input" width="200px" required text="חודשי אישור" />

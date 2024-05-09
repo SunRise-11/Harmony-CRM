@@ -38,8 +38,11 @@ const Modal = ({ visible, onCancel }) => {
       flexDirection: "column",
       justifyContent: "end",
       inset: "0",
-      maxWidth: "80vw",
-      padding: "0px",
+      maxWidth: "150%",
+      width: "auto",
+      maxHeight: "90vh",
+      overflow: "auto",
+      padding: "20px"
     },
 
     overlay: {

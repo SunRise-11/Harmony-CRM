@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Upload } from "antd";
+import { Button, Space, Upload } from "antd";
 import InlineSVG from "react-inlinesvg";
 
 import uploadFileIcon from "../../../assets/icons/master/upload-file.svg";
@@ -10,6 +10,9 @@ import trashIcon from "../../../assets/icons/master/trash.svg";
 import Table from "../../Table";
 import ColorLabel from "../../Labels/ColorLabel";
 import Modal from "../../Modals/AddDocuments";
+import { useDispatch } from "react-redux";
+import { setToggleCollapsed } from "../../../redux/store";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const data = [
   {
@@ -88,16 +91,20 @@ const columns = [
           alignItems: "center",
         }}
       >
-        <InlineSVG src={viewIcon} width={20} />
-        <InlineSVG src={downloadIcon} width={20} />
-        <InlineSVG src={trashIcon} width={20} />
+        <Space>
+          <InlineSVG src={viewIcon} width={20} />
+          <InlineSVG src={downloadIcon} width={20} />
+          <InlineSVG src={trashIcon} width={20} />
+        </Space>
       </div>
     ),
   },
 ];
 
 const Documents = () => {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-documents">
       <div className="recipient-documents-navbar">
@@ -111,7 +118,7 @@ const Documents = () => {
         <Upload>
           <Button>שליחת מסמך</Button>
         </Upload>
-        <Button onClick={() => setShowModal(true)}>שליחת טופס דיגיטלי</Button>
+        <Button onClick={() => setShowModal(true) || viewportWidth < 932 ? dispatch(setToggleCollapsed(true)) : {}}>שליחת טופס דיגיטלי</Button>
       </div>
       <div className="recipient-documents-table">
         <Table columns={columns} data={data} />
