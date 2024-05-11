@@ -51,11 +51,7 @@ const CreateModal = ({ visible, onCancel }) => {
   const [zoomMeeting, setZoomMeeting] = useState(false);
   const [reminderType, setReminderType] = useState([false, false, false]);
   return (
-    <ReactModal
-      isOpen={visible}
-      style={Styles}
-      className={direction === "ltr" ? "direction-modal-ltr" : ""}
-    >
+    <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
         {visible && (
           <motion.div
@@ -141,9 +137,13 @@ const CreateModal = ({ visible, onCancel }) => {
                         </div> */}
                         <div>
                           <Radio.Group
-                            onChange={e => setChecked(e.target.value)}
+                            onChange={(e) => setChecked(e.target.value)}
                             value={checked}
-                            style={{display: 'flex', gap: '61px', flexDirection: 'row'}}
+                            style={{
+                              display: "flex",
+                              gap: "61px",
+                              flexDirection: "row",
+                            }}
                           >
                             <Radio value={false}>אונליין</Radio>
                             <Radio value={true}>פיזית</Radio>

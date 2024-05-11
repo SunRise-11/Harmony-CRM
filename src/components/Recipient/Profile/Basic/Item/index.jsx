@@ -18,7 +18,8 @@ const Item = ({
   onChange,
   style,
   menuPlacement,
-  menuPosition
+  menuPosition,
+  placement
 }) => {
   const [checked, setChecked] = useState(false);
   return (
@@ -49,7 +50,7 @@ const Item = ({
             }}
           ></div>
         )}
-        {type === "date-picker" && <DatePicker py={7.5} />}
+        {type === "date-picker" && <DatePicker py={7.5} placement={placement}/>}
         {type === "time-picker" && <TimePicker py={7.5} />}
         {type === "checkbox" && (
           <div style={{ display: "flex", gap: "60px" }}>
@@ -76,6 +77,7 @@ Item.propTypes = {
   required: PropTypes.bool,
   text: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
+  placement: PropTypes.string,
   options: PropTypes.array,
   number: PropTypes.number,
 };

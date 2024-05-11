@@ -8,6 +8,7 @@ import Button from "../../../../components/button/Button";
 import Item from "../../../../components/profiles/basic/item/Item";
 import ModalTitle from "../../../../components/labels/modalTitle/ModalTitle";
 import { useSelector } from "react-redux";
+import { Space } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -112,10 +113,13 @@ const Attendance = ({ visible, onCancel }) => {
                   <Item type="checkbox" text="מחלה" required />
                 </div>
               </div>
-              <div className="basic-modal-footer" style={{ marginTop: "20px" }}>
+              <Space
+                className="basic-modal-footer"
+                style={{ marginTop: "20px" }}
+              >
                 <Button onClick={onCancel} label="שמירה" />
                 <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
-              </div>
+              </Space>
             </div>
           </motion.div>
         )}

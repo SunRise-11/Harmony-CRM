@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button, Tabs, DatePicker } from "antd";
+import { Button, Tabs, DatePicker, ConfigProvider } from "antd";
 import InlineSVG from "react-inlinesvg";
+import he_IL from "antd/locale/he_IL";
 
 import calendarIcon from "../../assets/icons/master/calendar.svg";
 
@@ -8,6 +9,7 @@ import Table from "../../components/Table";
 import Select from "../../components/Select";
 import AvatarImg1 from "../../assets/avatars/avatar1.png";
 import AvatarImg2 from "../../assets/avatars/avatar2.png";
+import { useSelector } from "react-redux";
 
 const { RangePicker } = DatePicker;
 
@@ -78,6 +80,7 @@ const data = [
 
 const Alerts = () => {
   const [open, setOpen] = useState(false);
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="alerts">
       <div className="alerts-navbar">
@@ -104,7 +107,22 @@ const Alerts = () => {
             <span>טווח תאריכים</span>
           </Button>
         )}
-        {open && <RangePicker style={{ height: "44px" }} />}
+        {open && (
+          <ConfigProvider locale={he_IL}>
+            <div
+              className={
+                direction == "rtl"
+                  ? "rangePickerCustomStyles-rtl"
+                  : "rangePickerCustomStyles-ltr"
+              }
+            >
+              <RangePicker
+                style={{ height: "44px" }}
+                getPopupContainer={(trigger) => trigger.parentNode}
+              />
+            </div>
+          </ConfigProvider>
+        )}
       </div>
       <div className="alerts-table">
         <Tabs

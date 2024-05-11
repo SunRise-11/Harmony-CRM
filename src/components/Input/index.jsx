@@ -10,6 +10,8 @@ const Input = ({ placeholder }) => {
         type="text"
         placeholder={placeholder}
         className="input-main"
+        style={{ paddingBottom: "0px" }}
+        size="middle"
       />
     </div>
   );

@@ -53,6 +53,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
+      overflow: auto;
 
       &-others {
         display: flex;
@@ -76,8 +77,8 @@
         & label {
           height: 44px;
           box-sizing: border-box;
-          padding: 10px 15px;
-          font-size: 15px;
+          padding: 10px 13.5px;
+          font-size: 14px;
           font-family: Afek 1.5 AAA;
           border-radius: 0px !important;
           &:first-child {
@@ -112,4 +113,109 @@
       text-align: right;
     }
   }
+}
+
+.rangePickerCustomStyles-rtl {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 40px;
+    margin-right: 86px !important;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 70px;
+    margin-top: -44px;
+    padding: 10px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    padding-right: 20px;
+  }  
+}
+
+.rangePickerCustomStyles-ltr {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 40px;
+    margin-left: 100px !important;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 70px;
+    margin-top: -44px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    padding-left: 20px;
+  }  
 }

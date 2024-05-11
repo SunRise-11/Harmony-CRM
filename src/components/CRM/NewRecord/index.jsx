@@ -47,15 +47,7 @@ const CreateModal = ({ visible, onCancel }) => {
   const [isHover, setHover] = useState(false);
   const options = [];
   return (
-    <ReactModal
-      isOpen={visible}
-      style={Styles}
-      className={
-        direction === "ltr"
-          ? "direction-modal-ltr daily-planner-create-modal"
-          : "daily-planner-create-modal"
-      }
-    >
+    <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
         {visible && (
           <motion.div

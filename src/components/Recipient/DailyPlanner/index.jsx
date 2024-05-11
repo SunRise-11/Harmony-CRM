@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setToggleCollapsed } from "../../../redux/store";
 import InlineSVG from "react-inlinesvg";
+import he_IL from "antd/locale/he_IL";
 
 import calendarIcon from "../../../assets/icons/master/calendar.svg";
 import calendarPlusIcon from "../../../assets/icons/master/calendar-plus.svg";
@@ -148,6 +149,7 @@ const DailyPlanner = () => {
               borderColor: "transparent",
               width: "320px",
             }}
+            allowClear
           />
           <ConfigProvider direction={direction}>
             <Segmented
@@ -165,9 +167,30 @@ const DailyPlanner = () => {
               <span>טווח תאריכים</span>
             </Button>
           )}
-          {open && <RangePicker style={{ height: "44px" }} />}
+          {open && (
+            <ConfigProvider locale={he_IL}>
+              <div
+                className={
+                  direction == "rtl"
+                    ? "rangePickerCustomStyles-rtl"
+                    : "rangePickerCustomStyles-ltr"
+                }
+              >
+                <RangePicker
+                  style={{ height: "44px" }}
+                  getPopupContainer={(trigger) => trigger.parentNode}
+                />
+              </div>
+            </ConfigProvider>
+          )}
         </div>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 1430 ? dispatch(setToggleCollapsed(true)) : {}}>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 1430
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
           <InlineSVG src={calendarPlusIcon} width={20} />
           <span>הוסף פגישה</span>
         </Button>

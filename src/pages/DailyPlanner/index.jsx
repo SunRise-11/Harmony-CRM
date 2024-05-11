@@ -1,7 +1,8 @@
 import { useState } from "react";
 import moment from "moment";
+// import "moment/locale/he"; // This imports the locale settings for Hebrew
 import InlineSVG from "react-inlinesvg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import { Button, Segmented, ConfigProvider, DatePicker } from "antd";
 
@@ -10,17 +11,19 @@ import calendarPlusIcon from "../../assets/icons/master/calendar-plus.svg";
 import rightIcon from "../../assets/icons/chevrons/right.svg";
 import leftIcon from "../../assets/icons/chevrons/left.svg";
 import CreateModal from "../../components/Modals/CreateDailyPlanner";
+import useViewportWidth from "../../hooks/useViewportWidth";
+import { setToggleCollapsed } from "../../redux/store";
+import he_IL from "antd/locale/he_IL";
 
 const { RangePicker } = DatePicker;
 
-const customDayHeaderFormat = (date, culture, localizer) => {
-  const dayName = date.toLocaleDateString("he-IL", { weekday: "short" });
-  return localizer.format(date, "dddd", culture);
-};
+const localizer = momentLocalizer(moment);
 
 const CustomToolbar = ({ setShowCreateModal }) => {
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const dispatch = useDispatch();
+  const viewportWidth = useViewportWidth();
   return (
     <div className="daily-planner-navbar">
       <div className="daily-planner-navbar-others">
@@ -52,10 +55,31 @@ const CustomToolbar = ({ setShowCreateModal }) => {
               <span>טווח תאריכים</span>
             </Button>
           )}
-          {open && <RangePicker style={{ height: "44px" }} />}
+          {open && (
+            <ConfigProvider locale={he_IL}>
+              <div
+                className={
+                  direction == "rtl"
+                    ? "rangePickerCustomStyles-rtl"
+                    : "rangePickerCustomStyles-ltr"
+                }
+              >
+                <RangePicker
+                  style={{ height: "44px" }}
+                  getPopupContainer={(trigger) => trigger.parentNode}
+                />
+              </div>
+            </ConfigProvider>
+          )}
         </div>
       </div>
-      <Button onClick={() => setShowCreateModal(true)}>
+      <Button
+        onClick={() =>
+          setShowCreateModal(true) || viewportWidth < 1430
+            ? dispatch(setToggleCollapsed(true))
+            : {}
+        }
+      >
         <InlineSVG src={calendarPlusIcon} width={20} />
         <span>צור פגישה</span>
       </Button>
@@ -65,11 +89,6 @@ const CustomToolbar = ({ setShowCreateModal }) => {
 
 const DailyPlanner = () => {
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const localizer = momentLocalizer(moment, {
-    formats: {
-      dayFormat: customDayHeaderFormat,
-    },
-  });
   const colors = [
     {
       backgroundColor: "#D3EDF680",
@@ -193,7 +212,17 @@ const DailyPlanner = () => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        view="week"
+        defaultView="week"
+        // culture="he-IL"
+        formats={{
+          dayFormat: "dd", // Display only the date number
+        }}
+        // formats={{
+        //   // dayFormat: (date, culture, localizer) =>
+        //   //   localizer.format(date, "DD", culture), // Format days to show only the date number
+        //   weekdayFormat: (date, culture, localizer) =>
+        //     localizer.format(date, "dddd", culture), // Format for full weekday name
+        // }}
         style={{ width: "100%", height: "100%" }}
         components={{
           event: (event) => (

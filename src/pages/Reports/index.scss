@@ -104,9 +104,9 @@
       gap: 10px;
 
       // height: 44px;
-      & .picker {
-        width: auto;
-      }
+      // & .picker {
+      //   width: auto;
+      // }
     }
   }
 
@@ -129,4 +129,112 @@
       padding: 4px 10px !important;
     }
   }
+}
+
+
+.rangePickerCustomStyles-rtl {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 40px;
+    margin-right: 70px;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 70px;
+    margin-inline-start: 0px;
+    padding: 5px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    padding-left: 40px;
+    height: 30px;
+  }  
+}
+
+.rangePickerCustomStyles-ltr {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 40px;
+    margin-left: 40px;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 70px;
+    padding: 4px;
+    margin-right: 40px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    height: 30px;
+  }  
 }

@@ -12,6 +12,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    overflow: auto;
 
     & .dropdown {
       width: 220px;
@@ -39,8 +40,8 @@
       & label {
         height: 44px;
         box-sizing: border-box;
-        padding: 10px 15px;
-        font-size: 15px;
+        padding: 10px 12.5px;
+        font-size: 13px;
         font-family: Afek 1.5 AAA;
         border-radius: 0px !important;
         &:first-child {

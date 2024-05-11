@@ -126,7 +126,13 @@ const Stuides = () => {
     <div className="recipient-studies">
       <div className="recipient-studies-navbar">
         <span className="recipient-studies-navbar-title"></span>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 1080
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>
@@ -147,6 +153,7 @@ const Stuides = () => {
               flexDirection: "column",
               marginTop: "20px",
               gap: "20px",
+              overflow: "visible",
             }}
           >
             <div

@@ -6,9 +6,9 @@ import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
 import he_IL from "antd/locale/he_IL";
 import dayjs from "dayjs";
-import 'dayjs/locale/he';
+import "dayjs/locale/he";
 
-dayjs.locale('he');
+dayjs.locale("he");
 
 import planImg from "../../../assets/icons/master/calendar.svg";
 
@@ -16,9 +16,10 @@ const DatePicker = ({ pl, pr, py }) => {
   const [isHover, setHover] = useState(false);
   const direction = useSelector((state) => state.app.direction);
   return (
-    <div className="picker">
+    <div className="picker" style={{ position: "relative" }}>
       <ConfigProvider direction={direction} locale={he_IL}>
         <AntdDatePicker
+          getPopupContainer={(trigger) => trigger.parentNode}
           style={{
             paddingLeft: `${pl}px`,
             paddingRight: `${pr}px`,

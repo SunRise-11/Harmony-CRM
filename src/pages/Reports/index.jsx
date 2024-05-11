@@ -1,6 +1,7 @@
 import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import InlineSVG from "react-inlinesvg";
 import { useSelector } from "react-redux";
+import he_IL from "antd/locale/he_IL";
 
 import pdfIcon from "../../assets/icons/document/pdf2.svg";
 import excelIcon from "../../assets/icons/document/excel.svg";
@@ -84,10 +85,10 @@ const EventReport = () => {
       <div className="event-report-title">דו”ח אירועים</div>
       <div className="event-report-navbar">
         <div className="event-report-navbar-others">
-          <div style={{ width: "200px" }}>
+          <div style={{ width: "200px", position: "relative", zIndex: 5 }}>
             <Select placeholder="חיפוש / בחירת מקבל שירות" />
           </div>
-          <div style={{ width: "200px" }}>
+          <div style={{ width: "200px", position: "relative", zIndex: 3 }}>
             <Select placeholder="בחירת פעילות" />
           </div>
           <div style={{ width: "200px" }}>
@@ -99,7 +100,21 @@ const EventReport = () => {
               options={["הכל", "שנה אחרונה", "3 שנים אחרונות"]}
             />
           </ConfigProvider>
-          <RangePicker text="טווח תאריכים" style={{ height: "44px" }} />
+          <ConfigProvider locale={he_IL}>
+            <div
+              className={
+                direction == "rtl"
+                  ? "rangePickerCustomStyles-rtl"
+                  : "rangePickerCustomStyles-ltr"
+              }
+            >
+              <RangePicker
+                style={{ height: "44px" }}
+                text="טווח תאריכים"
+                getPopupContainer={(trigger) => trigger.parentNode}
+              />
+            </div>
+          </ConfigProvider>
         </div>
         <div className="event-report-navbar-buttons">
           <Button>

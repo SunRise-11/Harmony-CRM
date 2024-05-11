@@ -33,9 +33,7 @@ const Profile = () => {
   const [current, setCurrent] = useState(0);
   const [showSideBar, setShowSideBar] = useState(false);
   const viewportWidth = useViewportWidth();
-  const svgStyle = {
-    '--svg-color': 'white' // Set the color dynamically
-  };
+  
   return (
     <div className="recipient-profile">
       {showSideBar === true && viewportWidth < 1520 && (

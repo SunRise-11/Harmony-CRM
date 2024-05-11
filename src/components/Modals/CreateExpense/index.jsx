@@ -54,11 +54,7 @@ const Expense = ({ visible, onCancel }) => {
   };
 
   return (
-    <ReactModal
-      isOpen={visible}
-      style={Styles}
-      className={direction === "ltr" ? "direction-modal-ltr" : ""}
-    >
+    <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
         {visible && (
           <motion.div
@@ -161,13 +157,7 @@ const Expense = ({ visible, onCancel }) => {
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
                       />
-                      <InlineSVG
-                        src={userIcon}
-                        className="select-svg"
-                        style={{
-                          stroke: isHover && "#0075FF",
-                        }}
-                      />
+                      <br />
                       <span
                         style={{
                           position: "absolute",
@@ -179,11 +169,20 @@ const Expense = ({ visible, onCancel }) => {
                       </span>
                     </div>
                   </div>
+                  <InlineSVG
+                    src={userIcon}
+                    className="select-svg"
+                    style={{
+                      stroke: isHover && "#0075FF",
+                      marginTop: "-30px",
+                    }}
+                  />
                   <div
                     style={{
                       display: "flex",
                       flexDirection: "row",
                       gap: "20px",
+                      marginTop: "-10px",
                     }}
                   >
                     <Item text="סכום" type="input" required width="200px" />
@@ -203,7 +202,11 @@ const Expense = ({ visible, onCancel }) => {
                   className="basic-modal-footer"
                   style={{ marginTop: "20px" }}
                 >
-                  <Button onClick={onCancel} label="שמירה" icon={userPlusIcon} />
+                  <Button
+                    onClick={onCancel}
+                    label="שמירה"
+                    icon={userPlusIcon}
+                  />
                   <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
                 </div>
               </div>

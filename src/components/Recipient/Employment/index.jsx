@@ -149,7 +149,13 @@ const Employment = () => {
     <div className="recipient-employment">
       <div className="recipient-employment-navbar">
         <span className="recipient-employment-navbar-title"></span>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 1080
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>
@@ -188,6 +194,7 @@ const Employment = () => {
                 width="calc(50% - 10px)"
                 required
                 text="מוסד לימודים"
+                style={{ position: "relative", zIndex: 5 }}
               />
               <Item
                 type="dropdown"
@@ -209,6 +216,7 @@ const Employment = () => {
                 width="calc(50% - 10px)"
                 required
                 text="עיסוק"
+                style={{ position: "relative", zIndex: 3 }}
               />
               <div
                 className="profiles-item"
