@@ -53,8 +53,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      overflow: auto;
-
+      
       &-others {
         display: flex;
         flex-direction: row;
@@ -68,7 +67,7 @@
         height: 44px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         align-items: center;
-
+       
         & .ant-segmented-item-selected {
           background-color: #0075ff;
           color: #cfd3d9;

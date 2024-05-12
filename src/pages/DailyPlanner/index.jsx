@@ -37,42 +37,47 @@ const CustomToolbar = ({ setShowCreateModal }) => {
           </div>
           <span>נובמבר 2023</span>
         </Button>
-        <div className="daily-planner-navbar-others-setting">
-          <Button>היום</Button>
-          <ConfigProvider direction={direction}>
-            <Segmented
-              className="daily-planner-navbar-toggle"
-              options={["היום", "שבוע", "חודש"]}
-            />
-          </ConfigProvider>
-          {!open && (
-            <Button
-              onClick={() => {
-                setOpen(!open);
-              }}
+        {/* <div className="daily-planner-navbar-others-setting"> */}
+        <Button>היום</Button>
+        <ConfigProvider direction={direction}>
+          <Segmented
+            className="daily-planner-navbar-toggle"
+            options={["היום", "שבוע", "חודש"]}
+          />
+        </ConfigProvider>
+        {/* </div> */}
+        {!open && (
+          <Button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <InlineSVG src={calendarIcon} width={20} />
+            <span>טווח תאריכים</span>
+          </Button>
+        )}
+        {open && (
+          <ConfigProvider locale={he_IL}>
+            <div
+              className={
+                direction == "rtl"
+                  ? "rangePickerCustomStyles-rtl"
+                  : "rangePickerCustomStyles-ltr"
+              }
             >
-              <InlineSVG src={calendarIcon} width={20} />
-              <span>טווח תאריכים</span>
-            </Button>
-          )}
-          {open && (
-            <ConfigProvider locale={he_IL}>
-              <div
-                className={
-                  direction == "rtl"
-                    ? "rangePickerCustomStyles-rtl"
-                    : "rangePickerCustomStyles-ltr"
-                }
-              >
-                <RangePicker
-                  style={{ height: "44px" }}
-                  getPopupContainer={(trigger) => trigger.parentNode}
-                />
-              </div>
-            </ConfigProvider>
-          )}
-        </div>
+              <RangePicker
+                style={{ height: "44px" }}
+                getPopupContainer={(trigger) => trigger.parentNode}
+              />
+            </div>
+          </ConfigProvider>
+        )}
       </div>
+
+      {/* <div className="daily-planner-navbar-rangePicker"> */}
+
+      {/* <br /> */}
+      {/* <div className="daily-planner-navbar-rangePicker-setting"> */}
       <Button
         onClick={() =>
           setShowCreateModal(true) || viewportWidth < 1430
@@ -84,6 +89,8 @@ const CustomToolbar = ({ setShowCreateModal }) => {
         <span>צור פגישה</span>
       </Button>
     </div>
+    // </div>
+    // </div>
   );
 };
 

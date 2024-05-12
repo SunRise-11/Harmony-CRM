@@ -99,22 +99,22 @@ const Expense = ({ visible, onCancel }) => {
                       required
                       width="calc(50% - 10px)"
                     />
-                    <div
-                      className="profiles-item"
-                      style={{ width: "calc(50% - 10px)" }}
-                    >
-                      <div className="profiles-item-name">
-                        <span>סוג הוצאה</span>
-                        <span style={{ color: "red" }}>*</span>
-                      </div>
-                      <ConfigProvider direction={direction}>
-                        <Segmented
-                          className="expense-modal-toggle"
-                          options={["כיבוד", "משרדי", "נסיעות", "נסיעות - ק”מ"]}
-                          onChange={(e) => setCurrentSelected(e)}
-                        />
-                      </ConfigProvider>
+                  </div>
+                  <div
+                    className="profiles-item"
+                    // style={{ width: "calc(50% - 10px)" }}
+                  >
+                    <div className="profiles-item-name">
+                      <span>סוג הוצאה</span>
+                      <span style={{ color: "red" }}>*</span>
                     </div>
+                    <ConfigProvider direction={direction}>
+                      <Segmented
+                        className="expense-modal-toggle"
+                        options={["כיבוד", "משרדי", "נסיעות", "נסיעות - ק”מ"]}
+                        onChange={(e) => setCurrentSelected(e)}
+                      />
+                    </ConfigProvider>
                   </div>
                   {currentSelected === "נסיעות - ק”מ" && (
                     <Item type="input" text="ק”מ" width="240px" required />

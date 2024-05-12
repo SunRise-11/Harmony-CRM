@@ -10,7 +10,7 @@ import bagIcon from "../../../assets/icons/master/bag.svg";
 import Table from "../../Table";
 import Modal from "../../Modals/Basic";
 import Item from "../../Recipient/Profile/Basic/Item";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setToggleCollapsed } from "../../../redux/store";
 import useViewportWidth from "../../../hooks/useViewportWidth";
 
@@ -145,6 +145,7 @@ const Employment = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const viewportWidth = useViewportWidth();
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="recipient-employment">
       <div className="recipient-employment-navbar">
@@ -178,6 +179,8 @@ const Employment = () => {
               gap: "20px",
               width: "fit-content",
               minWidth: "400px",
+              paddingRight: direction == "ltr" ? "20px" : "0px",
+              paddingLeft: direction == "rtl" ? "20px" : "0px",
             }}
           >
             <div

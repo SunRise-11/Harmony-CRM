@@ -89,7 +89,8 @@ const Events = () => {
         <div
           style={{
             width: "240px",
-            marginRight: "-10px",
+            marginRight: direction == "rtl" ? "-10px" : "0px",
+            marginLeft: direction == "ltr" ? "-10px" : "0px",
             position: "relative",
             zIndex: 5,
           }}

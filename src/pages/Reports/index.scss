@@ -143,6 +143,10 @@
     @media (max-width: 650px) {
       overflow: auto;
     }
+
+    @media (max-width: 1549px) {
+      transform: translateY(380px);
+    }
   }
   
   .ant-picker-header .ant-picker-header-super-prev-btn{
@@ -196,6 +200,10 @@
   .ant-picker-dropdown .ant-picker-panel-container {
     @media (max-width: 650px) {
       overflow: auto;
+    }
+
+    @media (max-width: 1549px) {
+      transform: translateY(380px);
     }
   }
   

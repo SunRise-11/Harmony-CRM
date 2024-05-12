@@ -13,6 +13,7 @@ import SideBar from "./SideBar";
 import userPlusIcon from "../../../assets/icons/master/user-plus.svg";
 import closeIcon from "../../../assets/icons/master/close.svg";
 import useViewportWidth from "../../../hooks/useViewportWidth";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   useEffect(() => {
@@ -33,7 +34,8 @@ const Profile = () => {
   const [current, setCurrent] = useState(0);
   const [showSideBar, setShowSideBar] = useState(false);
   const viewportWidth = useViewportWidth();
-  
+  const direction = useSelector((state) => state.app.direction);
+
   return (
     <div className="recipient-profile">
       {showSideBar === true && viewportWidth < 1520 && (
@@ -69,7 +71,7 @@ const Profile = () => {
         <SideBar current={current} setCurrent={setCurrent} />
       )}
       <div className="recipient-profile-board">
-        <Service selected={current === 0}  />
+        <Service selected={current === 0} />
         <Address selected={current === 1} />
         <Contacts selected={current === 2} />
         <Education selected={current === 3} />
@@ -77,14 +79,20 @@ const Profile = () => {
         <Plan selected={current === 5} />
         <Detail selected={current === 6} />
       </div>
-      <div className="recipient-profile-footer">
-        <Button type='primary' style={{backgroundColor:'MediumSeaGreen'}}>
-          <InlineSVG src={userPlusIcon} style={{fill:'white', stroke: 'white'}}/>
-          <span style={{color:'white'}}>שמירה</span>
+      <div
+        className="recipient-profile-footer"
+        style={{ marginLeft: direction == "rtl" ? "0px" : "-135px" }}
+      >
+        <Button type="primary" style={{ backgroundColor: "MediumSeaGreen" }}>
+          <InlineSVG
+            src={userPlusIcon}
+            style={{ fill: "white", stroke: "white" }}
+          />
+          <span style={{ color: "white" }}>שמירה</span>
         </Button>
-        <Button type='primary' style={{backgroundColor:'#ff3333'}}>
-          <InlineSVG src={closeIcon} style={{stroke:'white'}} />
-          <span style={{color:'white'}}>ביטול</span>
+        <Button type="primary" style={{ backgroundColor: "#ff3333" }}>
+          <InlineSVG src={closeIcon} style={{ stroke: "white" }} />
+          <span style={{ color: "white" }}>ביטול</span>
         </Button>
       </div>
     </div>

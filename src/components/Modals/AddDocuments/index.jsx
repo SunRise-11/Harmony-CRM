@@ -74,7 +74,7 @@ const Modal = ({ visible, onCancel }) => {
                 <Radio.Group
                   onChange={(e) => setValue(e.target.value)}
                   value={value}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", alignContent: "center" }}
                 >
                   <div
                     style={{

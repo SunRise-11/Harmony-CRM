@@ -153,7 +153,6 @@ const Stuides = () => {
               flexDirection: "column",
               marginTop: "20px",
               gap: "20px",
-              overflow: "visible",
             }}
           >
             <div
@@ -163,6 +162,7 @@ const Stuides = () => {
                 flexWrap: "wrap",
                 gap: "20px",
                 width: "100%",
+                padding: "25px 0px",
               }}
             >
               <Item
@@ -192,7 +192,21 @@ const Stuides = () => {
                 required
                 text="תאריך התחלה"
               />
-              <Item type="date-picker" width="300" text="תאריך סיום" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                gap: "20px",
+              }}
+            >
+              <Item
+                type="date-picker"
+                width="300"
+                text="תאריך סיום"
+                style={{ paddingTop: "25px" }}
+              />
             </div>
             <div style={{ padding: "20px 0px" }}>
               <CheckBox

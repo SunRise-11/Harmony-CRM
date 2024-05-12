@@ -53,7 +53,6 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      overflow: auto;
 
       &-others {
         display: flex;
@@ -77,7 +76,7 @@
         & label {
           height: 44px;
           box-sizing: border-box;
-          padding: 10px 13.5px;
+          padding: 10px 12px;
           font-size: 14px;
           font-family: Afek 1.5 AAA;
           border-radius: 0px !important;

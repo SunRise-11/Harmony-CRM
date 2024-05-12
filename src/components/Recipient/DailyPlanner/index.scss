@@ -11,7 +11,7 @@
     gap: 10px;
     justify-content: flex-start;
     flex-wrap: wrap;
-    
+
     & > div {
       display: flex;
       flex-direction: row;
@@ -24,7 +24,7 @@
       padding: 0px;
       height: 44px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      align-items: center;
+      align-items: center;  
       // color: #464648;
 
       & .ant-segmented-item-selected {
@@ -35,7 +35,7 @@
       & label {
         height: 44px;
         box-sizing: border-box;
-        padding: 10px 14.5px;
+        padding: 10px 8.5px;
         font-size: 13px;
         font-family: Afek 1.5 AAA;
         border-radius: 0px !important;

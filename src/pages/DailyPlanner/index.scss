@@ -50,8 +50,9 @@
     flex-direction: row;
     gap: 10px;
     padding-bottom: 10px;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    // overflow: auto;
 
     &-others {
       display: flex;
@@ -94,12 +95,33 @@
       }
     }
 
+    // &-rangePicker {
+    //   display: flex;
+    //   flex-direction: column;
+    //   column-gap: 40px;
+    //   row-gap: 10px;
+    //   flex-wrap: wrap;
+    //   overflow: auto;
+
+    //   &-setting {
+    //     display: flex;
+    //     flex-direction: row;
+    //     gap: 10px;
+    //     flex-wrap: wrap;
+    //   }
+
+    //   & button {
+    //     border-radius: 8px;
+    //   }
+    // }
+
     &-toggle {
       background-color: white;
       padding: 0px;
       height: 44px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       align-items: center;
+      overflow-x: auto;
 
       & .ant-segmented-item-selected {
         background-color: #0075ff;

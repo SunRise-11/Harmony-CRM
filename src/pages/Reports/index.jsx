@@ -85,7 +85,13 @@ const EventReport = () => {
       <div className="event-report-title">דו”ח אירועים</div>
       <div className="event-report-navbar">
         <div className="event-report-navbar-others">
-          <div style={{ width: "200px", position: "relative", zIndex: 5 }}>
+          <div
+            style={{
+              width: "200px",
+              position: "relative",
+              zIndex: 5,
+            }}
+          >
             <Select placeholder="חיפוש / בחירת מקבל שירות" />
           </div>
           <div style={{ width: "200px", position: "relative", zIndex: 3 }}>
