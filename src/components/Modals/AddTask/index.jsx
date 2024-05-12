@@ -15,8 +15,8 @@ import userIcon from "../../../assets/icons/master/user.svg";
 const AddTask = ({ visible, onCancel }) => {
   return (
     <Modal
-      px={50}
-      py={25}
+      // px={50}
+      // py={25}
       visible={visible}
       onCancel={onCancel}
       icon={clipboardCheckIcon}

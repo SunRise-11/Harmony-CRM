@@ -10,6 +10,7 @@ import Button from "../../Button";
 import closeIcon from "../../../assets/icons/master/close.svg";
 import addUserIcon from "../../../assets/icons/master/user-plus.svg";
 import checkIcon from "../../../assets/icons/master/check.svg";
+import { Space } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -88,12 +89,14 @@ const Modal = ({
                   className="basic-modal-footer"
                   style={{ marginTop: margin }}
                 >
-                  <Button
-                    onClick={onCancel}
-                    icon={flag ? addUserIcon : checkIcon}
-                    label="שמירה"
-                  />
-                  <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
+                  <Space>
+                    <Button
+                      onClick={onCancel}
+                      icon={flag ? addUserIcon : checkIcon}
+                      label="שמירה"
+                    />
+                    <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
+                  </Space>
                 </div>
               </div>
             </div>

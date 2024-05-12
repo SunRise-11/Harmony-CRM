@@ -152,8 +152,14 @@ const Employment = () => {
     <div className="recipient-questionnaires">
       <div className="recipient-questionnaires-navbar">
         <span className="recipient-questionnaires-navbar-title"></span>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 932 ? dispatch(setToggleCollapsed(true)) : {}}>
-          <InlineSVG src={sendIcon} width={20} stroke="#434f68" />
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 932
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
+          <InlineSVG src={sendIcon} width={20} height={20} stroke="#434f68" />
           <span>שליחת שאלון</span>
         </Button>
       </div>

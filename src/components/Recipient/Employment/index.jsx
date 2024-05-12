@@ -10,7 +10,7 @@ import bagIcon from "../../../assets/icons/master/bag.svg";
 import Table from "../../Table";
 import Modal from "../../Modals/Basic";
 import Item from "../../Recipient/Profile/Basic/Item";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setToggleCollapsed } from "../../../redux/store";
 import useViewportWidth from "../../../hooks/useViewportWidth";
 
@@ -145,11 +145,18 @@ const Employment = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const viewportWidth = useViewportWidth();
+  const direction = useSelector((state) => state.app.direction);
   return (
     <div className="recipient-employment">
       <div className="recipient-employment-navbar">
         <span className="recipient-employment-navbar-title"></span>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 1080
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>
@@ -172,6 +179,8 @@ const Employment = () => {
               gap: "20px",
               width: "fit-content",
               minWidth: "400px",
+              paddingRight: direction == "ltr" ? "20px" : "0px",
+              paddingLeft: direction == "rtl" ? "20px" : "0px",
             }}
           >
             <div
@@ -188,6 +197,7 @@ const Employment = () => {
                 width="calc(50% - 10px)"
                 required
                 text="מוסד לימודים"
+                style={{ position: "relative", zIndex: 5 }}
               />
               <Item
                 type="dropdown"
@@ -209,6 +219,7 @@ const Employment = () => {
                 width="calc(50% - 10px)"
                 required
                 text="עיסוק"
+                style={{ position: "relative", zIndex: 3 }}
               />
               <div
                 className="profiles-item"

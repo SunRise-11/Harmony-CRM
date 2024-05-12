@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import InlineSVG from "react-inlinesvg";
 import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
+import he_IL from "antd/locale/he_IL";
 
 import calendarIcon from "../../../assets/icons/master/calendar.svg";
 
@@ -85,11 +86,19 @@ const Events = () => {
     <div className="recipient-events">
       <div className="recipient-events-navbar">
         <span className="recipient-events-navbar-title"></span>
-        <div style={{ width: "240px", marginRight: "-10px", position:'relative', zIndex: 5}}>
-          <Select placeholder="סוג אירוע"/>
+        <div
+          style={{
+            width: "240px",
+            marginRight: direction == "rtl" ? "-10px" : "0px",
+            marginLeft: direction == "ltr" ? "-10px" : "0px",
+            position: "relative",
+            zIndex: 5,
+          }}
+        >
+          <Select placeholder="סוג אירוע" />
         </div>
-        <div style={{ width: "240px", position:'relative', zIndex:3}}>
-          <Select placeholder="בחירת פעילות"/>
+        <div style={{ width: "240px", position: "relative", zIndex: 3 }}>
+          <Select placeholder="בחירת פעילות" />
         </div>
         <ConfigProvider direction={direction}>
           <Segmented
@@ -107,7 +116,23 @@ const Events = () => {
             <span>טווח תאריכים</span>
           </Button>
         )}
-        {open && <RangePicker style={{ height: "44px" }} />}
+
+        {open && (
+          <ConfigProvider locale={he_IL}>
+            <div
+              className={
+                direction == "rtl"
+                  ? "rangePickerCustomStyles-rtl"
+                  : "rangePickerCustomStyles-ltr"
+              }
+            >
+              <RangePicker
+                style={{ height: "44px" }}
+                getPopupContainer={(trigger) => trigger.parentNode}
+              />
+            </div>
+          </ConfigProvider>
+        )}
       </div>
       <div className="recipient-events-table">
         <Table columns={columns} data={data} />

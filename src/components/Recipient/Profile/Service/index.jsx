@@ -60,7 +60,7 @@ const Service = ({ selected }) => {
           <Item type="input" width="200px" required text="שם פרטי"/>
           <Item type="input" width="400px" required text="שם משפחה" />
           <Item type="input" width="200px" required text="תעודת זהות" />
-          <Item type="date-picker" width="180px" required text="תאריך לידה" />
+          <Item type="date-picker" width="180px" required text="תאריך לידה" style={{position:'relative', zIndex:6}} />
           <Item type="disabled" width="200px" text="גיל מחושב" />
           <Item
             type="dropdown"
@@ -86,6 +86,8 @@ const Service = ({ selected }) => {
             width="200px"
             required
             text="תאריך סיום שירות"
+            style={{position:'relative', zIndex:1}}
+            placement='bottomLeft'
           />
         </>
       }

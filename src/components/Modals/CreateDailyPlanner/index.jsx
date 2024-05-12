@@ -53,14 +53,7 @@ const CreateModal = ({ visible, onCancel }) => {
   const [zoomMeeting, setZoomMeeting] = useState(false);
   const [reminderType, setReminderType] = useState([false, false, false]);
   return (
-    <ReactModal
-      isOpen={visible}
-      style={Styles}
-      className={
-        (direction === "ltr" ? "direction-modal-ltr " : "") +
-        "daily-planner-create-modal"
-      }
-    >
+    <ReactModal isOpen={visible} style={Styles}>
       <AnimatePresence>
         {visible && (
           <motion.div
@@ -77,16 +70,19 @@ const CreateModal = ({ visible, onCancel }) => {
                 width: "80vw",
                 maxWidth: "800px",
                 minWidth: "600px",
+                overflow: "unset",
               }}
             >
               <button className="basic-modal-cancel-btn" onClick={onCancel}>
                 <InlineSVG src={closeIcon} />
               </button>
               <div className="recipient-daily-planner-create">
-                <span className="modal-title">
-                  <InlineSVG src={taskSVG} className="modal-title-svg" />
-                  <div className="modal-title-value">אירוע חדש</div>
-                </span>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <span className="modal-title">
+                    <InlineSVG src={taskSVG} className="modal-title-svg" />
+                    <div className="modal-title-value">אירוע חדש</div>
+                  </span>
+                </div>
               </div>
               <div
                 style={{
@@ -138,13 +134,7 @@ const CreateModal = ({ visible, onCancel }) => {
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
                       />
-                      <InlineSVG
-                        src={userIcon}
-                        className="select-svg"
-                        style={{
-                          stroke: isHover && "#0075FF",
-                        }}
-                      />
+                      <br />
                       <span
                         style={{
                           position: "absolute",
@@ -157,7 +147,16 @@ const CreateModal = ({ visible, onCancel }) => {
                       </span>
                     </div>
                   </div>
-                  <Item type="input" width="100%" text="מיקום" />
+                  <div style={{ marginTop: "-15px" }}>
+                    <InlineSVG
+                      src={userIcon}
+                      className="select-svg"
+                      style={{
+                        stroke: isHover && "#0075FF",
+                      }}
+                    />
+                    <Item type="input" width="100%" text="מיקום" />
+                  </div>
                 </div>
                 <div
                   style={{
@@ -178,18 +177,18 @@ const CreateModal = ({ visible, onCancel }) => {
                   >
                     <Item
                       type="date-picker"
-                      width="calc(25% - 13px)"
+                      width="calc(25% + 13px)"
                       required
                       text="תאריך"
                     />
                     <Item
                       type="time-picker"
-                      width="calc(25% - 13px)"
+                      width="calc(20%)"
                       text="שעת התחלה"
                     />
                     <Item
                       type="time-picker"
-                      width="calc(25% - 13px)"
+                      width="calc(20% - 5px)"
                       text="שעת סיום"
                     />
                     <div style={{ marginTop: "31px" }}>

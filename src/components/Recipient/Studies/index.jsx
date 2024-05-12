@@ -126,7 +126,13 @@ const Stuides = () => {
     <div className="recipient-studies">
       <div className="recipient-studies-navbar">
         <span className="recipient-studies-navbar-title"></span>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 1080 ? dispatch(setToggleCollapsed(true)) : {}}>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 1080
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
           <InlineSVG src={filePlusIcon} width={20} />
           <span>הוספת רשומה</span>
         </Button>
@@ -156,6 +162,7 @@ const Stuides = () => {
                 flexWrap: "wrap",
                 gap: "20px",
                 width: "100%",
+                padding: "25px 0px",
               }}
             >
               <Item
@@ -185,7 +192,21 @@ const Stuides = () => {
                 required
                 text="תאריך התחלה"
               />
-              <Item type="date-picker" width="300" text="תאריך סיום" />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                gap: "20px",
+              }}
+            >
+              <Item
+                type="date-picker"
+                width="300"
+                text="תאריך סיום"
+                style={{ paddingTop: "25px" }}
+              />
             </div>
             <div style={{ padding: "20px 0px" }}>
               <CheckBox

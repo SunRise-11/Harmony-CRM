@@ -7,7 +7,15 @@ import { useSelector } from "react-redux";
 
 import downIcon from "../../assets/icons/chevrons/down.svg";
 
-const Select = ({ value, placeholder, options, icon, onChange, menuPlacement, menuPosition }) => {
+const Select = ({
+  value,
+  placeholder,
+  options,
+  icon,
+  onChange,
+  menuPlacement,
+  menuPosition,
+}) => {
   const [isOpen, setOpen] = useState(false);
   const [isHover, setHover] = useState(false);
   const direction = useSelector((state) => state.app.direction);
@@ -59,8 +67,8 @@ const Select = ({ value, placeholder, options, icon, onChange, menuPlacement, me
             borderColor: "#B9B9B9",
             borderWidth: "2px",
             borderRadius: "10px",
-            paddingTop: "3px",
-            paddingBottom: "3px",
+            // paddingTop: "px",
+            paddingBottom: "2px",
             paddingRight: `${icon && direction === "rtl" ? "30px" : "0px"}`,
             paddingLeft: `${icon && direction === "ltr" ? "30px" : "0px"}`,
           }),
@@ -93,7 +101,7 @@ Select.propTypes = {
   placeholder: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.any),
   icon: PropTypes.any,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 Select.defaultProps = {

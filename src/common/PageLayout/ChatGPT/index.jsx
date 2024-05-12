@@ -127,7 +127,7 @@ const ChatGPT = () => {
             <div className="chat-gpt-footer-input">
               <Input
                 className="chat-gpt-footer-input-main"
-                prefix={<InlineSVG src={SendIcon} />}
+                prefix={<InlineSVG src={SendIcon} width={20} height={20} />}
               />
             </div>
             <div className="chat-gpt-footer-info">
@@ -144,7 +144,7 @@ const ChatGPT = () => {
             </div>
           </div>
           {direction === "rtl" ? (
-            <div className="chat-gpt-button-area">
+            <div className="chat-gpt-button-area" style={{ zIndex: 5 }}>
               <button onClick={() => setClick(!isClick)}>
                 <InlineSVG
                   width={20}
@@ -159,8 +159,8 @@ const ChatGPT = () => {
               <div className="chat-gpt-button-area-text">ChatGPT</div>
             </div>
           ) : (
-            <div className="chat-gpt-button-area">
-              <div className="chat-gpt-button-area-text">ChatGPT</div>              
+            <div className="chat-gpt-button-area" style={{ zIndex: 5 }}>
+              <div className="chat-gpt-button-area-text">ChatGPT</div>
               <div className="chat-gpt-button-area-svg">
                 <InlineSVG src={GPTIcon} />
               </div>

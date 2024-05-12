@@ -2,6 +2,7 @@ import { Button, ConfigProvider, Segmented, DatePicker } from "antd";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import InlineSVG from "react-inlinesvg";
+import he_IL from "antd/locale/he_IL";
 
 import createIcon from "../../../assets/icons/master/create.svg";
 import calendarIcon from "../../../assets/icons/master/calendar.svg";
@@ -135,7 +136,22 @@ const Expense = () => {
                 <span>טווח תאריכים</span>
               </Button>
             )}
-            {open && <RangePicker style={{ height: "44px" }} />}
+            {open && (
+              <ConfigProvider locale={he_IL}>
+                <div
+                  className={
+                    direction == "rtl"
+                      ? "rangePickerCustomStyles-rtl"
+                      : "rangePickerCustomStyles-ltr"
+                  }
+                >
+                  <RangePicker
+                    style={{ height: "44px" }}
+                    getPopupContainer={(trigger) => trigger.parentNode}
+                  />
+                </div>
+              </ConfigProvider>
+            )}
           </div>
           <Button onClick={() => setShowModal(true)}>
             <InlineSVG src={createIcon} width={20} />

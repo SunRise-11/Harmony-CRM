@@ -3,11 +3,10 @@ import ReactModal from "react-modal";
 import { useSelector } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
 import InlineSVG from "react-inlinesvg";
-import { Radio } from "antd";
+import { Radio, Button } from "antd";
 
 import closeIcon from "../../../assets/icons/master/close.svg";
 import sendIcon from "../../../assets/icons/master/send.svg";
-import Button from "../../Button";
 
 ReactModal.setAppElement("#root");
 const modalVariants = {
@@ -96,11 +95,15 @@ const Modal = ({ visible, onCancel }) => {
                 </Radio.Group>
               </div>
               <div className="document-modal-footer">
-                <Button
-                  label="שליחת טופס"
-                  icon={sendIcon}
-                  onClick={() => onCancel()}
-                />
+                <Button onClick={() => onCancel()}>
+                  <InlineSVG
+                    src={sendIcon}
+                    width={20}
+                    height={20}
+                    style={{ stroke: "#434F68" }}
+                  />
+                  <span>שליחת טופס</span>
+                </Button>
               </div>
             </div>
           </motion.div>

@@ -15,7 +15,7 @@ const QuickMenu = ({ visible, hide }) => {
   return (
     <div
       className="quick-menu"
-      style={{ visibility: visible ? "visible" : "hidden" }}
+      style={{ visibility: visible ? "visible" : "hidden", zIndex: 5 }}
     >
       <div
         className="quick-menu-hide"

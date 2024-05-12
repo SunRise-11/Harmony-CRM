@@ -1,5 +1,11 @@
 .daily-planner {
   padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
+
   .rbc-month-view,
   .rbc-time-view {
     background-color: white;
@@ -28,6 +34,15 @@
   .rbc-event {
     background-color: #007bff; /* Set event background color */
     color: #fff; /* Set event text color */
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-label {
+      display: none; /* Hide the time label */
+    }
   }
 
   &-navbar {
@@ -35,8 +50,9 @@
     flex-direction: row;
     gap: 10px;
     padding-bottom: 10px;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    // overflow: auto;
 
     &-others {
       display: flex;
@@ -79,12 +95,33 @@
       }
     }
 
+    // &-rangePicker {
+    //   display: flex;
+    //   flex-direction: column;
+    //   column-gap: 40px;
+    //   row-gap: 10px;
+    //   flex-wrap: wrap;
+    //   overflow: auto;
+
+    //   &-setting {
+    //     display: flex;
+    //     flex-direction: row;
+    //     gap: 10px;
+    //     flex-wrap: wrap;
+    //   }
+
+    //   & button {
+    //     border-radius: 8px;
+    //   }
+    // }
+
     &-toggle {
       background-color: white;
       padding: 0px;
       height: 44px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       align-items: center;
+      overflow-x: auto;
 
       & .ant-segmented-item-selected {
         background-color: #0075ff;
@@ -142,4 +179,108 @@
   //     border: 3px solid #f37021;
   //   }
   // }
+}
+
+.rangePickerCustomStyles-rtl {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    padding: 0;
+    margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 40px;
+    margin-left: -50px;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 70px;
+    margin-top: -44px;
+    padding: 5px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    margin-left: 40px;
+  }  
+}
+
+.rangePickerCustomStyles-ltr {
+  .ant-picker-dropdown {
+    @media (max-width: 650px) {
+      width: 85vw;
+    }
+  }
+   
+  .ant-picker-dropdown .ant-picker-panel-container {
+    @media (max-width: 650px) {
+      overflow: auto;
+    }
+  }
+  
+  .ant-picker-header .ant-picker-header-super-prev-btn{
+    width: 10px;
+    // padding: 0;
+    // margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-prev-btn{
+    width: 10px;
+    // padding: 0;
+    // margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-super-next-btn{
+    width: 10px;
+    // padding: 0;
+    // margin: 0;
+  }
+  
+  .ant-picker-header .ant-picker-header-next-btn{
+    width: 10px;
+    // padding: 0;
+    // margin-right: 0;
+  }
+  
+  .ant-picker-header .ant-picker-month-btn{
+    width: 100px;
+    margin-left: 100px !important;
+  }
+  
+  .ant-picker-header .ant-picker-year-btn{
+    width: 7px;
+  }  
+
+  .ant-picker-header .ant-picker-header-view{
+    width: 150px;
+  }  
 }

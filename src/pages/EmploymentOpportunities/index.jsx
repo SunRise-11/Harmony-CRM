@@ -164,6 +164,7 @@ const Opportunities = () => {
                 width="calc(50% - 10px)"
                 required
                 text="מוסד לימודים"
+                style={{ position: "relative", zIndex: 5 }}
               />
               <Item
                 type="dropdown"
