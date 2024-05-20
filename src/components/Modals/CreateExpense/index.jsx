@@ -3,7 +3,7 @@ import InlineSVG from "react-inlinesvg";
 import ReactModal from "react-modal";
 import ReactSelect from "react-select";
 import { motion, AnimatePresence } from "framer-motion";
-import { Segmented, Upload, ConfigProvider } from "antd";
+import { Segmented, Upload, ConfigProvider, Button } from "antd";
 import { useSelector } from "react-redux";
 
 import closeIcon from "../../../assets/icons/master/close.svg";
@@ -14,7 +14,6 @@ import userPlusIcon from "../../../assets/icons/master/user-plus.svg";
 
 import Item from "../../Recipient/Profile/Basic/Item";
 import ModalTitle from "../../Labels/ModalTitle";
-import Button from "../../Button";
 
 ReactModal.setAppElement("#root");
 
@@ -204,10 +203,32 @@ const Expense = ({ visible, onCancel }) => {
                 >
                   <Button
                     onClick={onCancel}
-                    label="שמירה"
-                    icon={userPlusIcon}
-                  />
-                  <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
+                    style={{
+                      backgroundColor: "MediumSeaGreen",
+                      display: "inline-flex",
+                      gap: "5px",
+                      alignItems: "center",
+                    }}
+                    type="primary"
+                  >
+                    <InlineSVG
+                      src={userPlusIcon}
+                      style={{ fill: "white", stroke: "white" }}
+                    />
+                    <div style={{ color: "white" }}>שמירה</div>
+                  </Button>
+                  <Button
+                    onClick={onCancel}
+                    style={{
+                      backgroundColor: "#ff3333",
+                      display: "inline-flex",
+                      gap: "5px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <InlineSVG src={closeIcon} style={{ stroke: "white" }} />
+                    <div style={{ color: "white" }}>ביטול</div>
+                  </Button>
                 </div>
               </div>
             </div>

@@ -5,13 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import closeIcon from "../../../assets/icons/master/close.svg";
 import calendarPlusIcon from "../../../assets/icons/master/calendar-plus.svg";
 import avatarImg1 from "../../../assets/avatars/avatar1.png";
-import Button from "../../Button";
 import Item from "../../Recipient/Profile/Basic/Item";
 import CheckBox from "../../CheckBox";
 import addIcon from "../../../assets/icons/add.svg";
 import locationIcon from "../../../assets/icons/master/location.svg";
 import { useSelector } from "react-redux";
-import { Input, Radio } from "antd";
+import { Input, Radio, Button } from "antd";
 
 const { TextArea } = Input;
 ReactModal.setAppElement("#root");
@@ -313,8 +312,25 @@ const CreateModal = ({ visible, onCancel }) => {
                   className="basic-modal-footer"
                   style={{ marginTop: "20px" }}
                 >
-                  <Button onClick={onCancel} label="שמירה" />
-                  <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
+                  <Button
+                    onClick={onCancel}
+                    style={{ backgroundColor: "MediumSeaGreen" }}
+                    type="primary"
+                  >
+                    <div style={{ color: "white" }}>שמירה</div>
+                  </Button>
+                  <Button
+                    onClick={onCancel}
+                    style={{
+                      backgroundColor: "#ff3333",
+                      display: "inline-flex",
+                      gap: "5px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <InlineSVG src={closeIcon} style={{ stroke: "white" }} />
+                    <div style={{ color: "white" }}>ביטול</div>
+                  </Button>
                 </div>
               </div>
             </div>

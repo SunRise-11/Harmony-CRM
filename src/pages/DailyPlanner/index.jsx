@@ -1,6 +1,6 @@
 import { useState } from "react";
 import moment from "moment";
-// import "moment/locale/he"; // This imports the locale settings for Hebrew
+import "moment/locale/he"; // This imports the locale settings for Hebrew
 import InlineSVG from "react-inlinesvg";
 import { useDispatch, useSelector } from "react-redux";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -214,22 +214,14 @@ const DailyPlanner = () => {
   return (
     <div className="daily-planner">
       <Calendar
-        // className="daily-planner"
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
         defaultView="week"
-        // culture="he-IL"
         formats={{
           dayFormat: "dd", // Display only the date number
         }}
-        // formats={{
-        //   // dayFormat: (date, culture, localizer) =>
-        //   //   localizer.format(date, "DD", culture), // Format days to show only the date number
-        //   weekdayFormat: (date, culture, localizer) =>
-        //     localizer.format(date, "dddd", culture), // Format for full weekday name
-        // }}
         style={{ width: "100%", height: "100%" }}
         components={{
           event: (event) => (

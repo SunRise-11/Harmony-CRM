@@ -6,12 +6,22 @@ import Button from "../../../components/Button";
 import Doughnut from "../../../components/Charts/DoughNut";
 import AddUserModal from "../../../components/Modals/AddUser";
 import DoughnutData from "../../../mockup/DoughnutData.json";
+import { useSelector } from "react-redux";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const Info = () => {
+  const toggle = useSelector((state) => state.app.toggleCollapsed);
+  const viewportWidth = useViewportWidth();
   const [isClick, setClick] = useState(false);
 
   return (
-    <div className="info">
+    <div
+      className="info"
+      style={{
+        boxSizing: !toggle && viewportWidth < 550 ? "unset" : "border-box",
+        width: !toggle && viewportWidth < 550 ? "200px" : "auto",
+      }}
+    >
       <div className="statistic">
         <div className="count">
           <div className="number">6</div>

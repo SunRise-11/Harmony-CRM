@@ -6,11 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 
 import ModalTitle from "../../Labels/ModalTitle";
-import Button from "../../Button";
 import closeIcon from "../../../assets/icons/master/close.svg";
 import addUserIcon from "../../../assets/icons/master/user-plus.svg";
 import checkIcon from "../../../assets/icons/master/check.svg";
-import { Space } from "antd";
+import { Space, Button } from "antd";
 
 ReactModal.setAppElement("#root");
 
@@ -92,10 +91,32 @@ const Modal = ({
                   <Space>
                     <Button
                       onClick={onCancel}
-                      icon={flag ? addUserIcon : checkIcon}
-                      label="שמירה"
-                    />
-                    <Button onClick={onCancel} icon={closeIcon} label="ביטול" />
+                      style={{
+                        backgroundColor: "MediumSeaGreen",
+                        display: "inline-flex",
+                        gap: "5px",
+                        alignItems: "center",
+                      }}
+                      type="primary"
+                    >
+                      <InlineSVG
+                        src={flag ? addUserIcon : checkIcon}
+                        style={{ fill: "white", stroke: "white" }}
+                      />
+                      <div style={{ color: "white" }}>שמירה</div>
+                    </Button>
+                    <Button
+                      onClick={onCancel}
+                      style={{
+                        backgroundColor: "#ff3333",
+                        display: "inline-flex",
+                        gap: "5px",
+                        alignItems: "center",
+                      }}
+                    >
+                      <InlineSVG src={closeIcon} style={{ stroke: "white" }} />
+                      <div style={{ color: "white" }}>ביטול</div>
+                    </Button>
                   </Space>
                 </div>
               </div>
