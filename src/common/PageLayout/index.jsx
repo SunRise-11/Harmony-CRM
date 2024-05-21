@@ -44,7 +44,7 @@ const PageLayout = (props) => {
           // onCollapse={() => setCollapsed(!collapsed)}
           onCollapse={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           style={{
-            zIndex: 10,
+            zIndex: 100,
           }}
         >
           <SideBar
