@@ -10,7 +10,7 @@ const Input = ({ placeholder }) => {
         type="text"
         placeholder={placeholder}
         className="input-main"
-        style={{ paddingBottom: "0px", zIndex: "0" }}
+        style={{ paddingBottom: "0px", zIndex: "20", position: "relative" }}
         size="middle"
       />
     </div>

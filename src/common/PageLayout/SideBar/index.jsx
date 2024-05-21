@@ -53,10 +53,7 @@ const SideBar = ({ collapsed, setCollapsed }) => {
       <div className="sidebar-logo">
         <InlineSVG src={styles[theme].icon} onClick={() => setCollapsed()} />
       </div>
-      <div
-        className="sidebar-main"
-        style={{ position: "absolute", zIndex: "1000", backgroundColor: "red" }}
-      >
+      <div className="sidebar-main">
         <MenuItem
           key={0}
           icon={homeIcon}
