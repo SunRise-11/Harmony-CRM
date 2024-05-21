@@ -88,3 +88,9 @@ td {
 .ant-tabs-nav {
   overflow: initial !important;
 }
+
+.ant-picker-input {
+  position: relative;
+  z-index: 50;
+  background-color: red;
+}
