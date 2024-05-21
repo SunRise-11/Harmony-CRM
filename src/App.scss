@@ -89,6 +89,10 @@ td {
   overflow: initial !important;
 }
 
+.ant-picker-range .ant-picker-input > input {
+  font-size: 13px; /* Set your desired font size here */
+}
+
 // .ant-picker-input > input {
 //   position: relative;
 //   z-index: 2;
