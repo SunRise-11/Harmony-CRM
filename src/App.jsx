@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { Helmet } from "react-helmet";
 import { store } from "./redux/store";
@@ -33,39 +33,6 @@ const App = () => {
       </Provider>
     </>
   );
-
-  // const [menuVisible, setMenuVisible] = useState(false);
-  // const textboxRef = useRef(null);
-
-  // const loseFocus = () => {
-  //   if (textboxRef.current) {
-  //     textboxRef.current.blur();
-  //   }
-  //   setMenuVisible(!menuVisible);
-  // };
-
-  // return (
-  //   <div>
-  //     <div id="menuBar">
-  //       <div id="showMenu" onClick={loseFocus}>
-  //         ☰
-  //       </div>
-  //       {
-  //         <div id="menu">
-  //           <ul>
-  //             <li>Menu Option 1</li>
-  //             <li>Menu Option 2</li>
-  //             <li>Menu Option 3</li>
-  //           </ul>
-  //         </div>
-  //       }
-  //     </div>
-  //     <div id="content">
-  //       <label htmlFor="textbox">Text:</label>
-  //       <input id="textbox" type="text" ref={textboxRef} />
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default App;

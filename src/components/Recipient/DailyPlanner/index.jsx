@@ -136,6 +136,7 @@ const DailyPlanner = () => {
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
   const viewportWidth = useViewportWidth();
   return (
     <div className="recipient-daily-planner">
@@ -177,7 +178,13 @@ const DailyPlanner = () => {
                 }
               >
                 <RangePicker
-                  style={{ height: "44px" }}
+                  style={{
+                    height: "44px",
+                    caretColor:
+                      viewportWidth < 1236 && !toggleCollapse
+                        ? "transparent"
+                        : "black",
+                  }}
                   getPopupContainer={(trigger) => trigger.parentNode}
                 />
               </div>

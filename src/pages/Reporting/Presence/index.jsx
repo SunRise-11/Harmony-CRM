@@ -12,6 +12,7 @@ import checkIcon from "../../../assets/icons/master/check.svg";
 import downloadIcon from "../../../assets/icons/master/download.svg";
 import Table from "../../../components/Table";
 import AttendModal from "../../../components/Modals/Attend";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -116,6 +117,8 @@ const data = [
 const Presence = () => {
   const [showModal, setShowModal] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+  const viewportWidth = useViewportWidth();
   const [open, setOpen] = useState(false);
   return (
     <div className="presence">
@@ -149,7 +152,13 @@ const Presence = () => {
                   }
                 >
                   <RangePicker
-                    style={{ height: "44px" }}
+                    style={{
+                      height: "44px",
+                      caretColor:
+                        viewportWidth < 1236 && !toggleCollapse
+                          ? "transparent"
+                          : "black",
+                    }}
                     getPopupContainer={(trigger) => trigger.parentElement}
                   />
                 </div>

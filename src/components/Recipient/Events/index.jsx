@@ -81,7 +81,8 @@ const columns = [
 const Events = () => {
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
-  const viewportWidth = useViewportWidth();
+  const viewPortWidth = useViewportWidth();
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
   return (
     <div className="recipient-events">
       <div className="recipient-events-navbar">
@@ -127,7 +128,13 @@ const Events = () => {
               }
             >
               <RangePicker
-                style={{ height: "44px" }}
+                style={{
+                  height: "44px",
+                  caretColor:
+                    viewPortWidth < 1236 && !toggleCollapse
+                      ? "transparent"
+                      : "black",
+                }}
                 getPopupContainer={(trigger) => trigger.parentNode}
               />
             </div>

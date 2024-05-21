@@ -10,6 +10,7 @@ import Select from "../../components/Select";
 import AvatarImg2 from "../../assets/avatars/avatar2.png";
 import AvatarImg3 from "../../assets/avatars/avatar3.png";
 import Table from "../../components/Table";
+import useViewportWidth from "../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -80,6 +81,8 @@ const data = [
 ];
 const EventReport = () => {
   const direction = useSelector((state) => state.app.direction);
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="event-report">
       <div className="event-report-title">דו”ח אירועים</div>
@@ -115,7 +118,13 @@ const EventReport = () => {
               }
             >
               <RangePicker
-                style={{ height: "44px" }}
+                style={{
+                  height: "44px",
+                  caretColor:
+                    viewportWidth < 1236 && !toggleCollapse
+                      ? "transparent"
+                      : "black",
+                }}
                 text="טווח תאריכים"
                 getPopupContainer={(trigger) => trigger.parentNode}
               />

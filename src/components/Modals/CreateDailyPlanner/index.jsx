@@ -297,7 +297,10 @@ const CreateModal = ({ visible, onCancel }) => {
               <div className="basic-modal-footer" style={{ marginTop: "20px" }}>
                 <Button
                   onClick={onCancel}
-                  style={{ backgroundColor: "MediumSeaGreen" }}
+                  style={{
+                    backgroundColor: "MediumSeaGreen",
+                    justifyContent: "center",
+                  }}
                   type="primary"
                 >
                   <div style={{ color: "white" }}>שמירה</div>
@@ -309,6 +312,7 @@ const CreateModal = ({ visible, onCancel }) => {
                     display: "inline-flex",
                     gap: "5px",
                     alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   <InlineSVG src={closeIcon} style={{ stroke: "white" }} />

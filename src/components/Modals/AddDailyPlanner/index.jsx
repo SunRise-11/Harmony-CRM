@@ -326,6 +326,7 @@ const CreateModal = ({ visible, onCancel }) => {
                       display: "inline-flex",
                       gap: "5px",
                       alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     <InlineSVG src={closeIcon} style={{ stroke: "white" }} />

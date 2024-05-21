@@ -10,6 +10,7 @@ import Select from "../../components/Select";
 import AvatarImg1 from "../../assets/avatars/avatar1.png";
 import AvatarImg2 from "../../assets/avatars/avatar2.png";
 import { useSelector } from "react-redux";
+import useViewportWidth from "../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -81,6 +82,8 @@ const data = [
 const Alerts = () => {
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+  const viewportWidth = useViewportWidth();
   return (
     <div className="alerts">
       <div className="alerts-navbar">
@@ -117,7 +120,13 @@ const Alerts = () => {
               }
             >
               <RangePicker
-                style={{ height: "44px" }}
+                style={{
+                  height: "44px",
+                  caretColor:
+                    viewportWidth < 900 && !toggleCollapse
+                      ? "transparent"
+                      : "black",
+                }}
                 getPopupContainer={(trigger) => trigger.parentNode}
               />
             </div>

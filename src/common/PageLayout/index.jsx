@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Layout } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,7 +6,6 @@ import Header from "./Header";
 import SideBar from "./SideBar";
 import ChatGPT from "./ChatGPT";
 import { ColorConstants } from "../../constants";
-import useViewportWidth from "../../hooks/useViewportWidth";
 
 import { setToggleCollapsed } from "../../redux/store";
 
@@ -16,10 +15,8 @@ const PageLayout = (props) => {
   const dispatch = useDispatch();
 
   const { children } = props;
-  const viewPortWidth = useViewportWidth();
 
   const toggleCollapsed = useSelector((state) => state.app.toggleCollapsed);
-  const [collapsed, setCollapsed] = useState(toggleCollapsed);
   const theme = useSelector((state) => state.app.theme);
   const direction = useSelector((state) => state.app.direction);
 
@@ -44,9 +41,7 @@ const PageLayout = (props) => {
           // onCollapse={() => setCollapsed(!collapsed)}
           onCollapse={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           style={{
-            zIndex: 100,
-            position: "absolute",
-            // pointerEvents: "none",
+            zIndex: 10,
           }}
         >
           <SideBar

@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Input as AntdInput } from "antd";
+import useViewportWidth from "../../hooks/useViewportWidth";
+import { useSelector } from "react-redux";
 
 const Input = ({ placeholder }) => {
+  const viewPortWidth = useViewportWidth();
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+
   return (
     <div className="input">
       <AntdInput
@@ -10,7 +15,12 @@ const Input = ({ placeholder }) => {
         type="text"
         placeholder={placeholder}
         className="input-main"
-        style={{ paddingBottom: "0px", zIndex: "20", position: "relative" }}
+        style={{
+          paddingBottom: "0px",
+          position: "relative",
+          caretColor:
+            viewPortWidth < 1236 && !toggleCollapse ? "transparent" : "black",
+        }}
         size="middle"
       />
     </div>

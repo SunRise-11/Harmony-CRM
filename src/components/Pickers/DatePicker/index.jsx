@@ -11,10 +11,14 @@ import "dayjs/locale/he";
 dayjs.locale("he");
 
 import planImg from "../../../assets/icons/master/calendar.svg";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const DatePicker = ({ pl, pr, py }) => {
   const [isHover, setHover] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const viewPortWidth = useViewportWidth();
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+
   return (
     <div className="picker" style={{ position: "relative" }}>
       <ConfigProvider direction={direction} locale={he_IL}>
@@ -25,6 +29,8 @@ const DatePicker = ({ pl, pr, py }) => {
             paddingRight: `${pr}px`,
             paddingTop: `${py}px`,
             paddingBottom: `${py}px`,
+            caretColor:
+              viewPortWidth < 1236 && !toggleCollapse ? "transparent" : "black",
           }}
           className="picker-main"
           placeholder="23/12/2023"

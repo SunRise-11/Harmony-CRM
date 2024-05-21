@@ -10,6 +10,7 @@ import downloadIcon from "../../../assets/icons/master/download.svg";
 import avatarImg1 from "../../../assets/avatars/avatar1.png";
 import Table from "../../../components/Table";
 import ExpenseModal from "../../../components/Modals/CreateExpense";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 const { RangePicker } = DatePicker;
 
@@ -113,6 +114,8 @@ const Expense = () => {
   const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = useState(false);
   const direction = useSelector((state) => state.app.direction);
+  const toggleCollapse = useSelector((state) => state.app.toggleCollapsed);
+  const viewportWidth = useViewportWidth();
 
   return (
     <div className="expense">
@@ -146,7 +149,13 @@ const Expense = () => {
                   }
                 >
                   <RangePicker
-                    style={{ height: "44px" }}
+                    style={{
+                      height: "44px",
+                      caretColor:
+                        viewportWidth < 1236 && !toggleCollapse
+                          ? "transparent"
+                          : "black",
+                    }}
                     getPopupContainer={(trigger) => trigger.parentNode}
                   />
                 </div>

@@ -96,6 +96,7 @@ const Modal = ({
                         display: "inline-flex",
                         gap: "5px",
                         alignItems: "center",
+                        justifyContent: "center",
                       }}
                       type="primary"
                     >
@@ -112,6 +113,7 @@ const Modal = ({
                         display: "inline-flex",
                         gap: "5px",
                         alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
                       <InlineSVG src={closeIcon} style={{ stroke: "white" }} />
