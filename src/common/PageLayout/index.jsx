@@ -45,7 +45,8 @@ const PageLayout = (props) => {
           onCollapse={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           style={{
             zIndex: 10,
-            position: "relative",
+            position: "absolute",
+            backgroundColor: "red",
           }}
         >
           <SideBar
@@ -63,7 +64,7 @@ const PageLayout = (props) => {
               overflow: "auto",
               padding: "0px",
               position: "relative",
-              minHeight: '100vh',
+              minHeight: "100vh",
               backgroundColor: ColorConstants.LAYOUT_BACKGROUND_COLORS[theme],
             }}
           >
