@@ -16,7 +16,7 @@ const PageLayout = (props) => {
 
   const { children } = props;
 
-  const toggleCollapsed = useSelector(state => state.app.toggleCollapsed);
+  const toggleCollapsed = useSelector((state) => state.app.toggleCollapsed);
   const [collapsed, setCollapsed] = useState(toggleCollapsed);
   const theme = useSelector((state) => state.app.theme);
   const direction = useSelector((state) => state.app.direction);
@@ -43,6 +43,7 @@ const PageLayout = (props) => {
           onCollapse={() => dispatch(setToggleCollapsed(!toggleCollapsed))}
           style={{
             zIndex: 10,
+            position: "relative",
           }}
         >
           <SideBar
