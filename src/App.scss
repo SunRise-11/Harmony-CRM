@@ -89,8 +89,8 @@ td {
   overflow: initial !important;
 }
 
-.ant-picker-input {
+.ant-picker-input > input {
   position: relative;
-  z-index: 5;
-  background-color: red;
+  z-index: 2;
+  background-color: blue;
 }
