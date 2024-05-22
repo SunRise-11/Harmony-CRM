@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 
@@ -16,6 +16,19 @@ import useViewportWidth from "../../../hooks/useViewportWidth";
 import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const serviceRef = useRef(null);
+  const addressRef = useRef(null);
+  const contactsRef = useRef(null);
+  const educationRef = useRef(null);
+  const workingRef = useRef(null);
+  const planRef = useRef(null);
+  const detailRef = useRef(null);
+
+  const [current, setCurrent] = useState(0);
+  const [showSideBar, setShowSideBar] = useState(false);
+  const viewportWidth = useViewportWidth();
+  const direction = useSelector((state) => state.app.direction);
+
   useEffect(() => {
     if (document !== null) {
       const [parent] = document.getElementsByClassName("ant-layout-content");
@@ -31,10 +44,31 @@ const Profile = () => {
     }
   }, []);
 
-  const [current, setCurrent] = useState(0);
-  const [showSideBar, setShowSideBar] = useState(false);
-  const viewportWidth = useViewportWidth();
-  const direction = useSelector((state) => state.app.direction);
+  useEffect(() => {
+    const handleScroll = () => {
+      const refs = [
+        serviceRef,
+        addressRef,
+        contactsRef,
+        educationRef,
+        workingRef,
+        planRef,
+        detailRef,
+      ];
+      const visibleIndex = refs.findIndex((ref) => {
+        const rect = ref.current.getBoundingClientRect();
+        return rect.top >= 0 && rect.bottom <= window.innerHeight;
+      });
+      if (visibleIndex !== -1 && visibleIndex !== current) {
+        setCurrent(visibleIndex);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [current]);
 
   return (
     <div className="recipient-profile">
@@ -71,13 +105,13 @@ const Profile = () => {
         <SideBar current={current} setCurrent={setCurrent} />
       )}
       <div className="recipient-profile-board">
-        <Service selected={current === 0} />
-        <Address selected={current === 1} />
-        <Contacts selected={current === 2} />
-        <Education selected={current === 3} />
-        <Working selected={current === 4} />
-        <Plan selected={current === 5} />
-        <Detail selected={current === 6} />
+        <Service selected={current === 0} ref={serviceRef} />
+        <Address selected={current === 1} ref={addressRef} />
+        <Contacts selected={current === 2} ref={contactsRef} />
+        <Education selected={current === 3} ref={educationRef} />
+        <Working selected={current === 4} ref={workingRef} />
+        <Plan selected={current === 5} ref={planRef} />
+        <Detail selected={current === 6} ref={detailRef} />
       </div>
       <div
         className="recipient-profile-footer"

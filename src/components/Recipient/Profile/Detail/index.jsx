@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { useSelector } from "react-redux";
 
 import puzzleIcon from "../../../../assets/icons/master/puzzle.svg";
@@ -6,11 +6,11 @@ import puzzleIcon from "../../../../assets/icons/master/puzzle.svg";
 import Basic from "../Basic";
 import Item from "../Basic/Item";
 import CheckBox from "../../../CheckBox";
-import { Radio } from 'antd';
+import { Radio } from "antd";
 
-import style from './index.scss';
+import style from "./index.scss";
 
-const Detail = ({ selected }) => {
+const Detail = forwardRef(({ selected }, ref) => {
   const [checked1, setChecked1] = useState(0);
   const [checked2, setChecked2] = useState(0);
   const [checked3, setChecked3] = useState(0);
@@ -35,6 +35,7 @@ const Detail = ({ selected }) => {
       title="פרטים נוספים"
       icon={puzzleIcon}
       selected={selected}
+      ref={ref}
       content={
         <>
           <div
@@ -50,9 +51,9 @@ const Detail = ({ selected }) => {
             </div>
             <div>
               <Radio.Group
-                onChange={e => setChecked1(e.target.value)}
+                onChange={(e) => setChecked1(e.target.value)}
                 value={checked1}
-                style={{display: 'flex', gap: '60px'}}
+                style={{ display: "flex", gap: "60px" }}
               >
                 <Radio value={0}>לא</Radio>
                 <Radio value={1}>כן</Radio>
@@ -73,9 +74,9 @@ const Detail = ({ selected }) => {
             </div>
             <div>
               <Radio.Group
-                onChange={e => setChecked2(e.target.value)}
+                onChange={(e) => setChecked2(e.target.value)}
                 value={checked2}
-                style={{display: 'flex', gap: '60px'}}
+                style={{ display: "flex", gap: "60px" }}
               >
                 <Radio value={0}>לא</Radio>
                 <Radio value={1}>כן</Radio>
@@ -88,14 +89,14 @@ const Detail = ({ selected }) => {
             </div>
             <div>
               <Radio.Group
-                onChange={e => setChecked3(e.target.value)}
+                onChange={(e) => setChecked3(e.target.value)}
                 value={checked3}
-                style={{display: 'flex', gap: '60px'}}
+                style={{ display: "flex", gap: "60px" }}
               >
                 <Radio value={0}>לא</Radio>
                 <Radio value={1}>כן</Radio>
               </Radio.Group>
-            </div>          
+            </div>
           </div>
           <Item type="input" width="640px" text="הערות" />
           <Item
@@ -116,11 +117,16 @@ const Detail = ({ selected }) => {
             onChange={(value) => setCurrentSelected1(value)}
             menuPlacement="top"
           />
-          <Item type="dropdown" width="200px" text="פסיכיאטר" menuPlacement='top' />
+          <Item
+            type="dropdown"
+            width="200px"
+            text="פסיכיאטר"
+            menuPlacement="top"
+          />
         </>
       }
     />
   );
-};
+});
 
 export default Detail;

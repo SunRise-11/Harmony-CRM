@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 
 import locationIcon from "../../../../assets/icons/master/location.svg";
 
 import Basic from "../Basic";
 import Item from "../Basic/Item";
 
-const Address = ({ selected }) => {
+const Address = forwardRef(({ selected }, ref) => {
   const options = [
     { label: "אביעזר", value: 0 },
     { label: "אבירים", value: 1 },
@@ -18,6 +18,7 @@ const Address = ({ selected }) => {
       title="כתובת ופרטי התקשרות"
       icon={locationIcon}
       selected={selected}
+      ref={ref}
       content={
         <>
           <Item
@@ -28,7 +29,7 @@ const Address = ({ selected }) => {
             options={options}
             selected={options[currentSelected]}
             onChange={(value) => setCurrentSelected(value)}
-            style={{position: 'relative', zIndex: 4}}
+            style={{ position: "relative", zIndex: 4 }}
           />
           <Item type="input" width="200px" required text="רחוב" />
           <Item type="input" width="200px" required text="מספר" />
@@ -49,6 +50,6 @@ const Address = ({ selected }) => {
       }
     />
   );
-};
+});
 
 export default Address;

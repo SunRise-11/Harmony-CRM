@@ -129,3 +129,14 @@
     border-color: #0075ff;
   }
 }
+
+.quick-menu-item {
+  z-index: 11;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a5bfd8;
+  }
+}

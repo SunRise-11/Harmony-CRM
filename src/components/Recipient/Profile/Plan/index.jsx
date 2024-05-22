@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 
 import routeIcon from "../../../../assets/icons/master/route.svg";
 
 import Basic from "../Basic";
 import Item from "../Basic/Item";
 
-const Plan = ({ selected }) => {
+const Plan = forwardRef(({ selected }, ref) => {
   const options = [
     { label: "מחוז צפון", value: 0 },
     { label: "מחוז חיפה 1", value: 1 },
@@ -33,6 +33,7 @@ const Plan = ({ selected }) => {
       title="תוכניות"
       icon={routeIcon}
       selected={selected}
+      ref={ref}
       content={
         <>
           <Item
@@ -43,7 +44,7 @@ const Plan = ({ selected }) => {
             options={options}
             selected={options[currentSelected]}
             onChange={(value) => setCurrentSelected(value)}
-            style={{position:'', zIndex: 2}}
+            style={{ position: "", zIndex: 2 }}
           />
           <Item type="date-picker" width="200px" required text="תאריך קליטה" />
           <Item type="date-picker" width="200px" required text="תאריך הארכה" />
@@ -55,7 +56,7 @@ const Plan = ({ selected }) => {
             options={options1}
             selected={options1[currentSelected1]}
             onChange={(value) => setCurrentSelected1(value)}
-            style={{position:'', zIndex: 1}}
+            style={{ position: "", zIndex: 1 }}
           />
           <Item type="disabled" width="200px" text="תאריך סיום" />
           <Item type="input" width="200px" required text="חודשי אישור" />
@@ -64,6 +65,6 @@ const Plan = ({ selected }) => {
       }
     />
   );
-};
+});
 
 export default Plan;

@@ -1,3 +1,4 @@
+import React, { forwardRef } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 
@@ -7,12 +8,13 @@ import addImg from "../../../../assets/icons/add.svg";
 import Basic from "../Basic";
 import Item from "../Basic/Item";
 
-const Contacts = ({ selected }) => {
+const Contacts = forwardRef(({ selected }, ref) => {
   return (
     <Basic
       title="אנשי קשר"
       icon={usersSVG}
       selected={selected}
+      ref={ref}
       content={
         <>
           <Item type="input" width="200px" required text="שם מלא" />
@@ -51,6 +53,6 @@ const Contacts = ({ selected }) => {
       }
     />
   );
-};
+});
 
 export default Contacts;

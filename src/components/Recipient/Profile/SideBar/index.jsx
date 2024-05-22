@@ -57,7 +57,7 @@ const SideBar = ({ current, setCurrent }) => {
               : {}
           }
           onClick={() => {
-            setCurrent(index);
+            // setCurrent(index);
             const [element] = document.getElementsByClassName(
               "recipient-profile-board"
             );

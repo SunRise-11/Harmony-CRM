@@ -188,12 +188,12 @@ const Employment = () => {
         <Table data={data} columns={columns} />
         <div className="employment-table-buttons">
           <Button>
-            <InlineSVG src={downloadIcon} width={20} />
+            <InlineSVG src={sendIcon} width={20} />
             <span>שליחה</span>
           </Button>
           <Button>
             <InlineSVG
-              src={sendIcon}
+              src={downloadIcon}
               width={20}
               style={{ stroke: "#434F68" }}
             />

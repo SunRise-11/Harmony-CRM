@@ -98,7 +98,13 @@ const Tasks = () => {
                   : { paddingLeft: "10px" }
               }
             >
-              <button onClick={() => setVisible(true) || viewportWidth < 1400 ? dispatch(setToggleCollapsed(true)) : {}}>
+              <button
+                onClick={() =>
+                  setVisible(true) || viewportWidth < 1400
+                    ? dispatch(setToggleCollapsed(true))
+                    : {}
+                }
+              >
                 <InlineSVG src={addIcon} width={24} height={24} />
               </button>
               <div>משימה חדשה</div>

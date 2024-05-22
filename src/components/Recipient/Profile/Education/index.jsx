@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { Button } from "antd";
 import InlineSVG from "react-inlinesvg";
 
@@ -9,7 +9,7 @@ import Basic from "../Basic";
 import Item from "../Basic/Item";
 import { Input as AntdInput } from "antd";
 
-const Education = ({ selected }) => {
+const Education = forwardRef(({ selected }, ref) => {
   const options = [
     { label: "תעודה 10 שנות לימוד", value: 0 },
     { label: "תעודת 12 שנות לימוד", value: 1 },
@@ -25,6 +25,7 @@ const Education = ({ selected }) => {
       title="השכלה"
       icon={educationIcon}
       selected={selected}
+      ref={ref}
       content={
         <>
           <Item
@@ -85,6 +86,6 @@ const Education = ({ selected }) => {
       }
     />
   );
-};
+});
 
 export default Education;
