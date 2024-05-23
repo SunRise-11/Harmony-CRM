@@ -133,18 +133,9 @@ const CreateModal = ({ visible, onCancel }) => {
                         }}
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
+                        placeholder="חיפוש או בחירת מקבל שירות"
                       />
                       <br />
-                      <span
-                        style={{
-                          position: "absolute",
-                          marginRight: direction === "rtl" ? "45px" : "0",
-                          marginLeft: direction === "ltr" ? "45px" : "0",
-                          marginTop: "3px",
-                        }}
-                      >
-                        חיפוש או בחירת מקבל שירות
-                      </span>
                     </div>
                   </div>
                   <div style={{ marginTop: "-15px" }}>

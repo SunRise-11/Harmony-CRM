@@ -138,7 +138,6 @@ const Expense = ({ visible, onCancel }) => {
                             borderRadius: "10px",
                             paddingTop: "3px",
                             paddingBottom: "3px",
-                            paddingRight: "90px",
                             backgroundColor:
                               currentSelected === "משרדי"
                                 ? "#E5E9EE"
@@ -155,17 +154,8 @@ const Expense = ({ visible, onCancel }) => {
                         }}
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
+                        placeholder="חיפוש או בחירת מקבל שירות"
                       />
-                      <br />
-                      <span
-                        style={{
-                          position: "absolute",
-                          marginRight: "45px",
-                          marginTop: "3px",
-                        }}
-                      >
-                        חיפוש או בחירת מקבל שירות
-                      </span>
                     </div>
                   </div>
                   <InlineSVG
@@ -173,7 +163,7 @@ const Expense = ({ visible, onCancel }) => {
                     className="select-svg"
                     style={{
                       stroke: isHover && "#0075FF",
-                      marginTop: "-30px",
+                      marginBottom: "-10px",
                     }}
                   />
                   <div
@@ -191,7 +181,17 @@ const Expense = ({ visible, onCancel }) => {
                     >
                       <div className="profiles-item-name">חשבוניות</div>
                       <Upload className="expense-modal-upload">
-                        <Button label="העלאת מסמכים" icon={uploadFileIcon} />
+                        <Button
+                          label="העלאת מסמכים"
+                          icon={<InlineSVG src={uploadFileIcon} />}
+                          style={{
+                            height: "5vh",
+                            weight: "5vh",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            display: "inline-flex",
+                          }}
+                        />
                       </Upload>
                     </div>
                   </div>
