@@ -118,7 +118,15 @@ const Documents = () => {
         <Upload>
           <Button>שליחת מסמך</Button>
         </Upload>
-        <Button onClick={() => setShowModal(true) || viewportWidth < 932 ? dispatch(setToggleCollapsed(true)) : {}}>שליחת טופס דיגיטלי</Button>
+        <Button
+          onClick={() =>
+            setShowModal(true) || viewportWidth < 932
+              ? dispatch(setToggleCollapsed(true))
+              : {}
+          }
+        >
+          שליחת טופס דיגיטלי
+        </Button>
       </div>
       <div className="recipient-documents-table">
         <Table columns={columns} data={data} />

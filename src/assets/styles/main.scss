@@ -121,9 +121,10 @@ $themes: ("original", "suggested", "monday", "dynamics");
     }
 
     &-theme-modal {
-      left: initial;
-      right: 163px;
-
+      position: absolute;
+      left: calc(100% - 350px);
+      top: 60px;
+      
       &-main-title {
         text-align: initial;
       }
@@ -131,12 +132,11 @@ $themes: ("original", "suggested", "monday", "dynamics");
       &::before {
         content: " ";
         position: absolute;
-        top: 22px;
-        left: 100%; /* To the right of the tooltip */
-        margin-top: -11px;
+        top: -20px;
+        left: 200px;
         border-width: 10px;
         border-style: solid;
-        border-color: transparent transparent transparent white;
+        border-color: transparent transparent white transparent;
       }
     }
   }

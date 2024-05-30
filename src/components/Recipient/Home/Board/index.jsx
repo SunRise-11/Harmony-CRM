@@ -761,7 +761,12 @@ const Board = () => {
             item: (
               <>
                 <Button>
-                  <InlineSVG src={sendIcon} />
+                  <InlineSVG
+                    src={sendIcon}
+                    width={20}
+                    height={20}
+                    stroke="#434f68"
+                  />
                   <span>שלח טופס</span>
                 </Button>
                 <Button>
@@ -843,7 +848,12 @@ const Board = () => {
             item: (
               <>
                 <Button>
-                  <InlineSVG src={sendIcon} />
+                  <InlineSVG
+                    src={sendIcon}
+                    width={20}
+                    height={20}
+                    stroke="#434f68"
+                  />
                   <span>שלח טופס</span>
                 </Button>
                 <Button>
@@ -1094,7 +1104,12 @@ const Board = () => {
             item: (
               <>
                 <Button>
-                  <InlineSVG src={sendIcon} />
+                  <InlineSVG
+                    src={sendIcon}
+                    width={20}
+                    height={20}
+                    stroke="#434f68"
+                  />
                   <span>שלח טופס</span>
                 </Button>
                 <Button>
@@ -1218,7 +1233,12 @@ const Board = () => {
             item: (
               <>
                 <Button>
-                  <InlineSVG src={sendIcon} />
+                  <InlineSVG
+                    src={sendIcon}
+                    width={20}
+                    height={20}
+                    stroke="#434f68"
+                  />
                   <span>שלח טופס</span>
                 </Button>
                 <Button>

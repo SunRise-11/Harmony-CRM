@@ -36,10 +36,13 @@ const MenuItem = ({
   isSelect,
   onClick,
   subMenuSelected,
+  visible,
 }) => {
   const theme = useSelector((state) => state.app.theme);
   const direction = useSelector((state) => state.app.direction);
-  return (
+  return visible == false ? (
+    <></>
+  ) : (
     <div
       className={
         !subMenuSelected || (hasSubMenu && !isSelect)

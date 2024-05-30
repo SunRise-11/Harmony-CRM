@@ -47,6 +47,11 @@ const SideBar = ({ collapsed, setCollapsed }) => {
   const [isSelected, setSelected] = useState(0);
   const [showSubMenu, setShowSubMenu] = useState(-1);
   const theme = useSelector((state) => state.app.theme);
+  const localStorageValue = useSelector((state) => state.app.localStorageValue);
+  let filteredMenu = [];
+  if (localStorageValue.menuFilter) {
+    filteredMenu = localStorageValue.menuFilter.split(",");
+  }
 
   return (
     <div style={{ height: "100vh", overflow: "auto" }}>
@@ -63,6 +68,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             setSelected(0);
             navigate("/");
           }}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("0")
+          }
         />
         <MenuItem
           hasSubMenu={true}
@@ -75,6 +84,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/recipients");
           }}
           isSelect={showSubMenu === 1}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("1")
+          }
           subMenus={[
             <MenuItem
               key={10}
@@ -137,6 +150,15 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           onClick={() => setShowSubMenu(showSubMenu === 2 ? -1 : 2)}
           isSelect={showSubMenu === 2}
           key={2}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("2") ||
+            filteredMenu.includes("20") ||
+            filteredMenu.includes("21") ||
+            filteredMenu.includes("22") ||
+            filteredMenu.includes("23") ||
+            filteredMenu.includes("24")
+          }
           subMenus={[
             <MenuItem
               isSubMenu={true}
@@ -147,6 +169,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/report/event");
               }}
               key={20}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("20")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -154,6 +180,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSelect={isSelected === 21}
               onClick={() => setSelected(21)}
               key={21}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("21")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -161,6 +191,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSelect={isSelected === 22}
               onClick={() => setSelected(22)}
               key={22}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("22")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -168,6 +202,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSelect={isSelected === 23}
               onClick={() => setSelected(23)}
               key={23}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("23")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -175,6 +213,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
               isSelect={isSelected === 24}
               onClick={() => setSelected(24)}
               key={24}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("24")
+              }
             />,
           ]}
         />
@@ -187,6 +229,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/main-task");
           }}
           key={3}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("3")
+          }
         />
         <MenuItem
           icon={CalendarIcon}
@@ -197,6 +243,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/daily-planner");
           }}
           key={4}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("4")
+          }
         />
         <MenuItem
           onClick={() => setShowSubMenu(showSubMenu === 5 ? -1 : 5)}
@@ -206,6 +256,13 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           icon={CreateIcon}
           title="דיווחים"
           key={5}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("5") ||
+            filteredMenu.includes("50") ||
+            filteredMenu.includes("51") ||
+            filteredMenu.includes("52")
+          }
           subMenus={[
             <MenuItem
               isSubMenu={true}
@@ -216,6 +273,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/reporting/presence");
               }}
               key={50}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("50")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -226,6 +287,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/reporting/expense");
               }}
               key={51}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("51")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -236,6 +301,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/reporting/employment");
               }}
               key={52}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("52")
+              }
             />,
           ]}
         />
@@ -248,6 +317,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/employment");
           }}
           key={6}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("6")
+          }
         />
         <MenuItem
           hasSubMenu={true}
@@ -257,6 +330,12 @@ const SideBar = ({ collapsed, setCollapsed }) => {
           onClick={() => setShowSubMenu(showSubMenu === 7 ? -1 : 7)}
           isSelect={showSubMenu === 7}
           key={7}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("7") ||
+            filteredMenu.includes("70") ||
+            filteredMenu.includes("71")
+          }
           subMenus={[
             <MenuItem
               isSubMenu={true}
@@ -267,6 +346,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/crm/service-applicants");
               }}
               key={70}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("70")
+              }
             />,
             <MenuItem
               isSubMenu={true}
@@ -277,6 +360,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
                 navigate("/crm/customers");
               }}
               key={71}
+              visible={
+                localStorage.getItem("menuFilter") == null ||
+                filteredMenu.includes("71")
+              }
             />,
           ]}
         />
@@ -289,6 +376,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/tutorials");
           }}
           key={8}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("8")
+          }
         />
         <MenuItem
           icon={warningIcon}
@@ -299,6 +390,10 @@ const SideBar = ({ collapsed, setCollapsed }) => {
             navigate("/alerts");
           }}
           key={9}
+          visible={
+            localStorage.getItem("menuFilter") == null ||
+            filteredMenu.includes("9")
+          }
         />
       </div>
     </div>

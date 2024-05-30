@@ -27,7 +27,13 @@ import Questionnaires from "../../../components/Recipient/Questionnaire";
 
 const Recipient = () => {
   const [activeKey, setActiveKey] = useState("1");
-  const tabs = [
+  const localStorageValue = useSelector((state) => state.app.localStorageValue);
+  let filteredTab = [];
+  if (localStorageValue.tabFilter) {
+    filteredTab = localStorageValue.tabFilter.split(",");
+  }
+
+  let tabs = [
     {
       key: "1",
       label: "דף הבית",
@@ -149,6 +155,29 @@ const Recipient = () => {
       ),
     },
   ];
+
+  if (localStorage.getItem("tabFilter") != null) {
+    if (!filteredTab.includes("1"))
+      tabs = tabs.filter((item) => item.key != "1");
+    if (!filteredTab.includes("2"))
+      tabs = tabs.filter((item) => item.key != "2");
+    if (!filteredTab.includes("3"))
+      tabs = tabs.filter((item) => item.key != "3");
+    if (!filteredTab.includes("4"))
+      tabs = tabs.filter((item) => item.key != "4");
+    if (!filteredTab.includes("5"))
+      tabs = tabs.filter((item) => item.key != "5");
+    if (!filteredTab.includes("6"))
+      tabs = tabs.filter((item) => item.key != "6");
+    if (!filteredTab.includes("7"))
+      tabs = tabs.filter((item) => item.key != "7");
+    if (!filteredTab.includes("8"))
+      tabs = tabs.filter((item) => item.key != "8");
+    if (!filteredTab.includes("9"))
+      tabs = tabs.filter((item) => item.key != "9");
+    if (!filteredTab.includes("10"))
+      tabs = tabs.filter((item) => item.key != "10");
+  }
 
   const direction = useSelector((state) => state.app.direction);
   return (

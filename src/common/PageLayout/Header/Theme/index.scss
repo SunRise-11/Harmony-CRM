@@ -18,21 +18,18 @@
     background-color: white;
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.25);
     position: absolute;
-    // top: 0;
-    // left: calc(100% + 10px);
-    left: 163px;
-    top: 10px;
+    left: 110px;
+    top: 60px;
     z-index: 25;
 
     &::before {
       content: "";
       position: absolute;
-      top: 22px;
-      right: 100%;
-      margin-top: -11px;
+      top: -20px;
+      left: 20px;
       border-width: 10px;
       border-style: solid;
-      border-color: transparent white transparent transparent;
+      border-color: transparent transparent white transparent;
     }
 
     &-main {
@@ -78,7 +75,7 @@
           }
 
           &-bar {
-            width: 208px;
+            width: 220px;
             height: 25px;
             justify-content: flex-start;
             align-items: flex-start;
@@ -93,4 +90,22 @@
       }
     }
   }
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab:before {
+  background-color: ghostwhite;
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab .ant-tabs-tab-btn {
+  color: black;
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active,
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active:before {
+  background-color: white;
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: dodgerblue;
 }
