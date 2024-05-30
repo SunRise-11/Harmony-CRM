@@ -616,9 +616,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <span
                 style={{
-                  fontSize: "11px",
-                  marginLeft: "-5px",
-                  marginRight: "-5px",
+                  fontSize: "13px",
+                  marginLeft: "-11px",
+                  marginRight: "-11px",
                 }}
               >
                 צבעי תצוגה
@@ -667,9 +667,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <span
                 style={{
-                  fontSize: "11px",
-                  marginLeft: "-5px",
-                  marginRight: "-5px",
+                  fontSize: "13px",
+                  marginLeft: "-11px",
+                  marginRight: "-11px",
                 }}
               >
                 מסכים ראשיים
@@ -681,12 +681,11 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
               <div
                 className="header-theme-modal-main-board"
                 style={{
-                  paddingTop: "12px",
                   paddingRight: "10px",
                   paddingLeft: "10px",
                   overflow: "auto",
-                  height: "239px",
-                  marginBottom: "10px",
+                  height: "300px",
+                  marginBottom: "20px",
                 }}
               >
                 <Tree
@@ -697,7 +696,8 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                   treeData={menuTree}
                   onCheck={onCheckMenu}
                   onSelect={onSelectMenu}
-                  style={{ width: "208px", textWrap: "wrap" }}
+                  style={{ width: "270px", textWrap: "wrap" }}
+                  rootStyle={{ fontSize: "18px" }}
                 />
               </div>
             </div>
@@ -706,9 +706,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <center
                 style={{
-                  fontSize: "11px",
-                  marginLeft: "-5px",
-                  marginRight: "-5px",
+                  fontSize: "13px",
+                  marginLeft: "-11px",
+                  marginRight: "-11px",
                   width: "105px",
                   textWrap: "wrap",
                 }}
@@ -726,8 +726,8 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                   paddingRight: "12px",
                   paddingLeft: "12px",
                   overflow: "auto",
-                  height: "239px",
-                  marginBottom: "10px",
+                  height: "300px",
+                  marginBottom: "20px",
                 }}
               >
                 <Tree
@@ -738,6 +738,7 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
                   treeData={tabTree}
                   onCheck={onCheckTab}
                   onSelect={onSelectTab}
+                  rootStyle={{ fontSize: "18px" }}
                 />
               </div>
             </div>
