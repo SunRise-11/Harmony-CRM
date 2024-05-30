@@ -617,8 +617,8 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
               <span
                 style={{
                   fontSize: "11px",
-                  marginLeft: "-13px",
-                  marginRight: "-13px",
+                  marginLeft: "-5px",
+                  marginRight: "-5px",
                 }}
               >
                 צבעי תצוגה
@@ -668,8 +668,8 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
               <span
                 style={{
                   fontSize: "11px",
-                  marginLeft: "-13px",
-                  marginRight: "-13px",
+                  marginLeft: "-5px",
+                  marginRight: "-5px",
                 }}
               >
                 מסכים ראשיים
@@ -707,9 +707,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
               <center
                 style={{
                   fontSize: "11px",
-                  marginLeft: "-13px",
-                  marginRight: "-13px",
-                  width: "90px",
+                  marginLeft: "-5px",
+                  marginRight: "-5px",
+                  width: "105px",
                   textWrap: "wrap",
                 }}
               >
