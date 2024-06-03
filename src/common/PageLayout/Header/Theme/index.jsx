@@ -616,7 +616,6 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <span
                 style={{
-                  fontSize: "13px",
                   marginLeft: "-11px",
                   marginRight: "-11px",
                 }}
@@ -667,7 +666,6 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <span
                 style={{
-                  fontSize: "13px",
                   marginLeft: "-11px",
                   marginRight: "-11px",
                 }}
@@ -706,10 +704,9 @@ const Theme = ({ showChangeTheme, setShowChangeTheme }) => {
             tab={
               <center
                 style={{
-                  fontSize: "13px",
                   marginLeft: "-11px",
                   marginRight: "-11px",
-                  width: "105px",
+                  width: "120px",
                   textWrap: "wrap",
                 }}
               >
